@@ -39,3 +39,21 @@ Open questions found after rebuilding `structure.md` and checking it for integri
 4. That commitments solve correctness. They preserve or authenticate a reference; they do not establish that the reference is aligned.
 
 5. That language-of-thought or Paninian grammar gives access to an LLM's actual internal representation. The current realistic target is a protocol of self-description, not direct control of internal cognition.
+
+## Active Spine Questions
+
+1. How to train a non-maximizer, not wrap a maximizer?
+
+This is the central unresolved question of the current spine. Quantilizers, satisficers, incomplete preferences, and social-choice correspondences provide theory-side handles, but the project does not yet have a method for training an LLM/agent core whose learned policy is non-maximizing rather than externally constrained at inference time.
+
+2. Can incomplete preferences remain stable under learning, reflection, and deployment pressure?
+
+The current spine uses incomplete preferences / incommensurability as the design direction, but field completeness has not been manually verified. The open issue is whether incompleteness can be maintained as an operational property rather than collapsing into an implicit scalar proxy.
+
+3. Bottom-up vs top-down governor: does the governor grow the constraint frame or impose it?
+
+The active spine requires a bottom-up AGI governor: a constraint-framed trajectory explorer shaped by plural feedback and oversight incentives. The unresolved question is how to prevent the frame from becoming a top-down hidden utility function under another name.
+
+4. Which bridges should be marked closed rather than open?
+
+Bridge 8 remains `[OPEN QUESTION]` in `structure.md` because the narrow unforgeable-state role is not the same as the rejected branch `quantum-as-general-answer`. A human review should decide whether that narrow bridge belongs in the main public arc, a technical appendix, or only in `rejected_branches.md`.

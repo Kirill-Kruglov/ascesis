@@ -25,3 +25,23 @@ A condition that remains stable under reflection, self-modification, or successo
 ## Second Circle
 
 The public pass through the material after the raw dialogue and field check. It is not a transcript and not a claim of novelty; it is a structured map of connections selected after the first pass (`field_check.md` as the grounding layer).
+
+## Non-Maximizing Core
+
+A governor core that is not trained or specified to maximize a scalar proxy. Related standard areas: quantilization, satisficing, mild optimization, incomplete preferences, social-choice correspondences, reward-hacking limits (`field_check.md` nodes 5, 11, 12, and 13).
+
+## Incomplete Preferences / Incommensurability
+
+A preference structure that does not force all trajectories into a single complete ordering. Related standard areas: incomplete preferences, partial orders, maximal sets, social-choice correspondences (`field_check.md` nodes 12 and 13).
+
+## Governor
+
+A bottom-up constraint-framed trajectory explorer, not a top-down optimizer. It searches among admissible trajectories inside a frame shaped by plural feedback, oversight, and explicit refusal boundaries (`field_check.md` nodes 2, 11, 12, 13, and 14).
+
+## Goodhart Inevitability
+
+The structural failure mode in which optimization of an imperfect proxy eventually degrades the intended target. Related standard areas: reward hacking, reward-model overoptimization, Goodhart geometry (`field_check.md` node 11).
+
+## Lyapunov Horizon
+
+The finite time range over which a sandbox or model remains predictively coupled to the target system before divergence dominates. Related standard areas: Lyapunov time, chaos predictability, critical slowing down, early-warning signals (`field_check.md` node 8).

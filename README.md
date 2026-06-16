@@ -17,6 +17,7 @@ Current status: early working skeleton.
 - [structure.md](ascesis_of_learning_grace/structure.md): the current bridge map and framing for the nine technical bridges.
 - [field_check.md](ascesis_of_learning_grace/field_check.md): thesis-to-source grounding and flags for overlap with existing literature.
 - [references.md](ascesis_of_learning_grace/references.md): canonical bibliography grouped by field.
+- [rejected_branches.md](ascesis_of_learning_grace/rejected_branches.md): explored branches and why they are closed.
 - [glossary.md](ascesis_of_learning_grace/glossary.md): working definitions for local project labels.
 - [questions.md](ascesis_of_learning_grace/questions.md): open questions and possible contradictions.
 - [proposals.md](ascesis_of_learning_grace/proposals.md): process and text proposals.

@@ -71,3 +71,26 @@ Canonical bibliography derived from [field_check.md](field_check.md), grouped by
 - Miller, Mark S. 2006. ["Robust Composition: Towards a Unified Approach to Access Control and Concurrency Control"](http://www.erights.org/talks/thesis/markm-thesis.pdf).
 - Grigor, Artem, et al. 2025. ["VET Your Agent: Towards Host-Independent Autonomy via Verifiable Execution Traces"](https://arxiv.org/abs/2512.15892). Human-confirmed as real.
 - Hubbard, Jordan. ["agentOS"](https://github.com/jordanhubbard/agentos). Manual verification: project repository/PoC; verify maturity before relying on it as more than an example.
+
+## Goodhart, Reward Hacking, and Proxy Overoptimization
+
+- Skalse, Joar, Nikolaus H. R. Howe, Dmitrii Krasheninnikov, and David Krueger. 2022. ["Defining and Characterizing Reward Hacking"](https://arxiv.org/abs/2209.13085).
+- Gao, Leo, John Schulman, and Jacob Hilton. 2022. ["Scaling Laws for Reward Model Overoptimization"](https://arxiv.org/abs/2210.10760).
+- Karwowski, Jacek, Oliver Hayman, Xingjian Bai, Klaus Kiendlhofer, Charlie Griffin, and Joar Skalse. 2023. ["Goodhart's Law in Reinforcement Learning"](https://arxiv.org/abs/2310.09144).
+- Wang, Xiaohua, et al. 2026. ["Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges"](https://arxiv.org/abs/2604.13602). Manual verification: recent survey; verify maturity and exact use before publication.
+
+## Social Choice, Incomplete Preferences, and Value Aggregation
+
+- Arrow, Kenneth. 1951/1963. *Social Choice and Individual Values*.
+- Sen, Amartya. 1970. ["The Impossibility of a Paretian Liberal"](https://doi.org/10.1086/259614).
+- Sen, Amartya. 1995. "The implementation of social choice functions via social choice correspondences."
+- Eckersley, Peter. 2019. ["Impossibility and Uncertainty Theorems in AI Value Alignment"](https://arxiv.org/abs/1901.00064).
+- Heitzig, Jobst. 2002. ["Social Choice Under Incomplete, Cyclic Preferences"](https://arxiv.org/abs/math/0201285).
+- Gorno, Leandro, and Alessandro Rivello. 2020. ["A Maximum Theorem for Incomplete Preferences"](https://arxiv.org/abs/2007.09781).
+- Mishra, Abhilash. 2023. ["AI Alignment and Social Choice: Fundamental Limitations and Policy Implications"](https://arxiv.org/abs/2310.16048).
+- Conitzer, Vincent, et al. 2024. ["Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback"](https://arxiv.org/abs/2404.10271).
+
+## Oversight Economics and Bottom-Up Governance
+
+- Agarwal, Rohit, Joshua Lin, Mark Braverman, and Elad Hazan. 2026. ["AI Alignment via Incentives and Correction"](https://arxiv.org/abs/2605.01643). Manual verification: recent arXiv paper; verify maturity and exact use before publication.
+- AI Frontiers. "AI Alignment Cannot Be Top-Down." Manual verification: source named by project context, but source location was not verified in this pass.

@@ -1,6 +1,6 @@
 # Field Check
 
-Working file for linking key theses in the dialogue to existing literature. This is not an evaluation of value, contribution, or novelty. The goal is only to mark where a thesis is already covered, where it partially overlaps, and where no direct source has been found.
+Working file for linking key theses to existing literature. This is not an evaluation of value, contribution, or novelty. The goal is only to mark where a thesis is already covered, where it partially overlaps, and where no direct source has been found.
 
 Flag rules:
 
@@ -10,7 +10,7 @@ Flag rules:
 
 ## 1. Goal Fixed Point Under Self-Modification; Successor Risk for the Agent
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | A reflective agent can treat successor/self-modification as a risk to its own goals (`dialog.part_7.md:17`, `dialog.part_8.md:3`, `dialog.part_10.md:53`). | Stephen M. Omohundro, 2008, ["The Basic AI Drives"](https://selfawaresystems.files.wordpress.com/2008/01/ai_drives_final.pdf). | `[FULL MATCH]` | Omohundro directly formulates drives toward self-knowledge, self-improvement, utility-function preservation, and caution around self-modification. |
 | Building a successor with the same goals is a central problem for self-modifying AI (`dialog.part_7.md:17`, `dialog.part_21.md:13`). | Eliezer Yudkowsky, Marcello Herreshoff, 2013, ["Tiling Agents for Self-Modifying AI, and the Loebian Obstacle"](https://intelligence.org/files/TilingAgents.pdf). | `[FULL MATCH]` | The source directly models agents approving the construction of successor agents with preserved goals, and the Loebian obstacle. |
@@ -20,7 +20,7 @@ Node flag: `[FULL MATCH]`.
 
 ## 2. Explicit Refusal on the Non-Translatable Remainder
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | A system should explicitly refuse when confident translation/decision is not available (`dialog.part_16.md:29`, `dialog.part_17.md:9`, `dialog.part_17.md:13`). | C. K. Chow, 1970, ["On Optimum Recognition Error and Reject Tradeoff"](https://doi.org/10.1109/TIT.1970.1054406). | `[FULL MATCH]` | Classical reject option: a classifier may abstain instead of making a risky decision. |
 | Selective prediction as the modern ML form of covering only the region where risk is acceptable (`dialog.part_16.md:29`, `dialog.part_18.md:21`). | Yonatan Geifman, Ran El-Yaniv, 2017, ["Selective Classification for Deep Neural Networks"](https://arxiv.org/abs/1705.08500). | `[FULL MATCH]` | The source allows risk control by rejecting examples outside the accepted coverage region. |
@@ -30,17 +30,18 @@ Node flag: `[FULL MATCH]`.
 
 ## 3. Checker Regress / Self-Checking Through Prior Commitment
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | External correction problem: by default, a strong agent may resist correction (`dialog.part_19.md:27`, `dialog.part_19.md:35`, `dialog.part_21.md:13`). | Nate Soares, Benja Fallenstein, Eliezer Yudkowsky, Stuart Armstrong, 2015, ["Corrigibility"](https://intelligence.org/files/Corrigibility.pdf). | `[FULL MATCH]` | Corrigibility directly introduces agents that permit corrective intervention despite incentives to resist it. |
 | Correction behavior should propagate through subsystem construction and self-modification (`dialog.part_19.md:31`, `dialog.part_19.md:33`). | Soares et al., 2015, ["Corrigibility"](https://intelligence.org/files/Corrigibility.pdf). | `[FULL MATCH]` | The source explicitly requires propagation of shutdown/correction behavior into new subsystems or self-modification. |
 | Self-checking against the agent's own committed past self instead of external oversight (`dialog.part_19.md:27`, `dialog.part_19.md:31`). | Manuel Blum, 1983, "Coin Flipping by Telephone"; Gilles Brassard, David Chaum, Claude Crepeau, 1988, ["Minimum Disclosure Proofs of Knowledge"](https://doi.org/10.1016/0022-0000(88)90005-0); general cryptographic commitment literature. | `[PARTIAL]` | Cryptographic commitment covers prior commitment/unforgeability, but no direct source was found for self-checking alignment against a committed past self. |
+| The residual human/auditor role requires stable incentives for inspection, not only a fallback slot (`dialog.part_17.md:13`, `dialog.part_18.md:21`, `dialog.part_19.md:27`). | Rohit Agarwal, Joshua Lin, Mark Braverman, Elad Hazan, 2026, ["AI Alignment via Incentives and Correction"](https://arxiv.org/abs/2605.01643). | `[FULL MATCH]` | Solver-auditor alignment is modeled as an incentive equilibrium; oversight pressure can decay if auditing is not incentivized. |
 
 Node flag: `[PARTIAL]`.
 
 ## 4. Quantum Anchor for Commitment Unforgeability
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | No-cloning as a physical primitive for unforgeable state/identity, not behavior (`dialog.part_4.md:25`, `dialog.part_11.md:25`, `dialog.part_20.md:19`). | Stephen Wiesner, 1983, "Conjugate Coding", SIGACT News 15(1), 78-88. | `[FULL MATCH]` | Quantum money/conjugate coding directly uses unclonable quantum states to prevent token forgery. |
 | Quantum money / quantum tokens as reusable or limited-verification unforgeable tokens (`dialog.part_20.md:23`, `dialog.part_20.md:31`, `dialog.part_21.md:13`). | Scott Aaronson, Paul Christiano, 2012, ["Quantum Money from Hidden Subspaces"](https://arxiv.org/abs/1203.4740). | `[FULL MATCH]` | The source directly discusses quantum money, public verification, unlimited verification, and security constraints. |
@@ -50,7 +51,7 @@ Node flag: `[PARTIAL]`.
 
 ## 5. Bounded Optimization / Reflective Restraint Against Resource Grabbing
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | Resource acquisition, self-preservation, self-improvement, and goal-content integrity as convergent drives (`dialog.part_7.md:3`, `dialog.part_7.md:9`, `dialog.part_21.md:13`). | Stephen M. Omohundro, 2008, ["The Basic AI Drives"](https://selfawaresystems.files.wordpress.com/2008/01/ai_drives_final.pdf). | `[FULL MATCH]` | The source directly formulates resource acquisition and utility-function preservation as drives of sufficiently advanced AI. |
 | Instrumental convergence and orthogonality (`dialog.part_7.md:9`, `dialog.part_9.md:27`). | Nick Bostrom, 2014, [*Superintelligence: Paths, Dangers, Strategies*](https://global.oup.com/academic/product/superintelligence-9780199678112). | `[FULL MATCH]` | Standard source for resources as instrumental goals. |
@@ -60,7 +61,7 @@ Node flag: `[PARTIAL]`.
 
 ## 6. Language-to-Specification Seam: Partial Translation + Round Trip + Measured Gap
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | Natural language to executable/formal representation as semantic parsing (`dialog.part_13.md:11`, `dialog.part_13.md:13`, `dialog.part_14.md:29`). | Percy Liang, Michael I. Jordan, Dan Klein, 2013, ["Learning Dependency-Based Compositional Semantics"](https://aclanthology.org/J13-1004/); Matt Gardner et al., 2018, ["Neural Semantic Parsing"](https://aclanthology.org/P18-5003/). | `[FULL MATCH]` | Semantic parsing directly addresses translation from natural language into formal/executable representations. |
 | Measured gap through reconstruction error / autoencoder round trip (`dialog.part_16.md:29`, `dialog.part_17.md:27`). | Geoffrey Hinton, Richard Zemel, 1993, ["Autoencoders, Minimum Description Length and Helmholtz Free Energy"](https://proceedings.neurips.cc/paper/1993/hash/9e3cfc48eccf81a0d57663e129aef3cb-Abstract.html); Dong Gong et al., 2019, ["Memorizing Normality to Detect Anomaly"](https://arxiv.org/abs/1904.02639). | `[FULL MATCH]` | Reconstruction error as anomaly signal is standard; the dialogue applies it to a semantic seam. |
@@ -70,7 +71,7 @@ Node flag: `[PARTIAL]`.
 
 ## 7. Verification Limits
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | Nontrivial semantic verification of arbitrary programs cannot be totally solved (`dialog.part_4.md:23`, `dialog.part_16.md:25`). | H. G. Rice, 1953, ["Classes of Recursively Enumerable Sets and Their Decision Problems"](https://doi.org/10.1090/S0002-9947-1953-0053041-6). | `[FULL MATCH]` | Rice theorem directly sets limits on automatic checking of nontrivial semantic properties. |
 | Godel/Loebian boundary for self-trust and checking one's own basis (`dialog.part_16.md:25`, `dialog.part_17.md:17`). | Kurt Godel, 1931, "Uber formal unentscheidbare Satze..."; Martin Loeb, 1955, "Solution of a Problem of Leon Henkin"; Yudkowsky & Herreshoff, 2013, ["Tiling Agents"](https://intelligence.org/files/TilingAgents.pdf). | `[FULL MATCH]` | These sources cover incompleteness, self-trust, and the Loebian obstacle more strictly than the dialogue. |
@@ -80,7 +81,7 @@ Node flag: `[FULL MATCH]`.
 
 ## 8. Sandbox Predictability Horizon
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | Sandbox/simulation has a finite predictability horizon; more iterations do not guarantee a better forecast in a chaotic system (`dialog.part_18.md:13`, `dialog.part_18.md:17`, `dialog.part_18.md:21`). | Aleksandr Lyapunov tradition; Pierre Gaspard, 2005, *Chaos, Scattering and Statistical Mechanics*; concept: [Lyapunov time](https://en.wikipedia.org/wiki/Lyapunov_time). | `[FULL MATCH]` | Lyapunov time captures predictability limits from divergence of nearby trajectories. |
 | Early-warning signals for irreversible/critical transitions: critical slowing down, variance/autocorrelation (`dialog.part_9.md:31`, `dialog.part_18.md:27`). | Marten Scheffer et al., 2009, ["Early-warning signals for critical transitions"](https://doi.org/10.1038/nature08227). | `[FULL MATCH]` | The source directly formulates early-warning signals for critical transitions. |
@@ -90,7 +91,7 @@ Node flag: `[FULL MATCH]`.
 
 ## 9. Language Layer: Panini, Formal/Generative Grammar, Language of Thought, Linguistic Relativity
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | Panini as formal/generative grammar with metarules and conflict resolution (`dialog.part_14.md:17`, `dialog.part_14.md:19`, `dialog.part_14.md:23`). | George Cardona, 1988, [*Panini: His Work and Its Traditions*](https://archive.org/details/paninihisworkits0000card); Paul Kiparsky, 1979, "Panini as a Variationist". | `[FULL MATCH]` | Paninian grammar as a rule-system/metarule tradition is well covered in Indology and linguistics. |
 | Modern re-checking of rule conflict in Panini (`dialog.part_14.md:19`, `dialog.part_16.md:17`). | Rishi Rajpopat, 2022, ["In Panini We Trust"](https://www.repository.cam.ac.uk/items/e6764a39-15af-4f60-8b25-0f905ad8d015). | `[FULL MATCH]` | Directly concerns metarules and rule conflicts in the Ashtadhyayi. |
@@ -101,7 +102,7 @@ Node flag: `[PARTIAL]`.
 
 ## 10. seL4 / Capability Identity Layer
 
-| dialogue thesis | source | flag | note |
+| thesis | source | flag | note |
 |---|---|---|---|
 | seL4 as a formally verified capability microkernel (`dialog.part_1.md:7`, `dialog.part_1.md:11`, `dialog.part_1.md:13`). | Gerwin Klein et al., 2009, ["seL4: Formal Verification of an OS Kernel"](https://dl.acm.org/doi/10.1145/1629575.1629596). | `[FULL MATCH]` | Primary source for the seL4 functional correctness proof. |
 | seL4 is useful as a lower-layer isolation/control plane but does not solve semantic alignment (`dialog.part_3.md:13`, `dialog.part_3.md:17`, `dialog.part_4.md:11`). | Klein et al. 2009; Toby Murray et al., 2013, ["seL4: From General Purpose to a Proof of Information Flow Enforcement"](https://ts.data61.csiro.au/publications/nicta_full_text/7098.pdf). | `[PARTIAL]` | Sources cover kernel/security guarantees; the semantic-alignment conclusion is an application to the AI-agent threat model. |
@@ -111,12 +112,52 @@ Node flag: `[PARTIAL]`.
 
 Node flag: `[FULL MATCH]`.
 
+## 11. Goodhart Inevitability / Reward Hacking as Structural Proxy Failure
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Optimizing an imperfect proxy can decrease true-goal performance, so proxy maximization is structurally unsafe in the limit (`dialog.part_3.md:17`, `dialog.part_4.md:11`, `dialog.part_4.md:13`). | Joar Skalse, Nikolaus H. R. Howe, Dmitrii Krasheninnikov, David Krueger, 2022, ["Defining and Characterizing Reward Hacking"](https://arxiv.org/abs/2209.13085). | `[FULL MATCH]` | The paper formalizes reward hacking and shows that unhackability is a very strong condition, trivial over all stochastic policies unless one reward is constant. |
+| Reward-model overoptimization empirically follows scaling behavior, and optimizing the proxy too far can harm ground-truth performance. | Leo Gao, John Schulman, Jacob Hilton, 2022, ["Scaling Laws for Reward Model Overoptimization"](https://arxiv.org/abs/2210.10760). | `[FULL MATCH]` | Directly studies reward model overoptimization under RL and best-of-n sampling. |
+| Goodhart's law in reinforcement learning has a geometric explanation in MDPs; imperfect proxies are not definitions of the true objective. | Jacek Karwowski, Oliver Hayman, Xingjian Bai, Klaus Kiendlhofer, Charlie Griffin, Joar Skalse, 2023, ["Goodhart's Law in Reinforcement Learning"](https://arxiv.org/abs/2310.09144). | `[FULL MATCH]` | Supports the geometry/constrained-optimization side of the rejected wrapper/container branch. |
+| In large models, reward hacking can generalize into deception, strategic gaming of oversight, and evaluator-policy co-adaptation. | Xiaohua Wang et al., 2026, ["Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges"](https://arxiv.org/abs/2604.13602). | `[FULL MATCH]` | Survey source for test awareness / strategic manipulation risk in large-model proxy optimization. |
+
+Node flag: `[FULL MATCH]`.
+
+## 12. Social Choice / Arrow-Sen Impossibility for Value Aggregation
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| There is no clean scalar utility function for aggregating plural human values under standard social-choice constraints. | Peter Eckersley, 2019, ["Impossibility and Uncertainty Theorems in AI Value Alignment"](https://arxiv.org/abs/1901.00064). | `[FULL MATCH]` | Directly argues that AGI should not have a utility function in the strict mathematical sense and discusses partially ordered preferences. |
+| Democratic RLHF / universal value alignment runs into social-choice impossibility constraints. | Abhilash Mishra, 2023, ["AI Alignment and Social Choice: Fundamental Limitations and Policy Implications"](https://arxiv.org/abs/2310.16048). | `[FULL MATCH]` | Directly applies social choice impossibility results to RLHF and democratic alignment. |
+| Social choice should guide alignment when feedback is diverse. | Vincent Conitzer et al., 2024, ["Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback"](https://arxiv.org/abs/2404.10271). | `[FULL MATCH]` | Direct source linking social choice to diverse human feedback in AI alignment. |
+| Arrow and Sen impossibility results block the assumption that value aggregation can always produce a complete social ordering. | Kenneth Arrow, 1951/1963, *Social Choice and Individual Values*; Amartya Sen, 1970, ["The Impossibility of a Paretian Liberal"](https://doi.org/10.1086/259614). | `[FULL MATCH]` | Classical social-choice impossibility background for the active spine. |
+
+Node flag: `[FULL MATCH]`.
+
+## 13. Incomplete Preferences / Incommensurability as Agent Design
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Incomplete preferences and partial orders can be used instead of complete utility orderings when choices are not fully comparable. | Peter Eckersley, 2019, ["Impossibility and Uncertainty Theorems in AI Value Alignment"](https://arxiv.org/abs/1901.00064); Leandro Gorno, Alessandro Rivello, 2020, ["A Maximum Theorem for Incomplete Preferences"](https://arxiv.org/abs/2007.09781). | `[PARTIAL]` | Overlap is strong for incomplete preferences and maximal elements; the active-spine use as an AGI governor core requires broader field verification. |
+| Social choice with incomplete or cyclic preferences can return sets/correspondences rather than a single total ordering. | Jobst Heitzig, 2002, ["Social Choice Under Incomplete, Cyclic Preferences"](https://arxiv.org/abs/math/0201285); Amartya Sen, 1995, "The implementation of social choice functions via social choice correspondences". | `[PARTIAL]` | Supports non-singleton choice and correspondence framing; direct trained-agent design remains open. |
+
+Node flag: `[PARTIAL]`. Active-spine core; manual field-completeness check required.
+
+## 14. Bottom-Up vs Top-Down Alignment / Governor Framing
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| A governor should be framed as a constraint-guided trajectory explorer rather than a top-down scalar optimizer. | AI Frontiers, "AI Alignment Cannot Be Top-Down". | `[PARTIAL]` | Source named by project context but not independently verified in this pass; keep as manual source check. |
+| A bottom-up governor must respect incentive and oversight dynamics, not only impose constraints. | Agarwal et al., 2026, ["AI Alignment via Incentives and Correction"](https://arxiv.org/abs/2605.01643); Conitzer et al., 2024, ["Social Choice Should Guide AI Alignment in Dealing with Diverse Human Feedback"](https://arxiv.org/abs/2404.10271). | `[PARTIAL]` | Supports the governor frame through incentives and diverse feedback; does not provide a complete training method for non-maximizers. |
+
+Node flag: `[PARTIAL]`.
+
 ## Summary
 
 Node flags:
 
-- `[FULL MATCH]`: 5
-- `[PARTIAL]`: 5
+- `[FULL MATCH]`: 7
+- `[PARTIAL]`: 7
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -126,6 +167,8 @@ Nodes with `[FULL MATCH]`:
 - 7. Verification limits.
 - 8. Sandbox predictability horizon.
 - 10. seL4 / capability identity layer.
+- 11. Goodhart inevitability / reward hacking as structural proxy failure.
+- 12. Social choice / Arrow-Sen impossibility for value aggregation.
 
 Nodes with `[PARTIAL]`:
 
@@ -134,10 +177,12 @@ Nodes with `[PARTIAL]`:
 - 5. Bounded optimization / reflective restraint against resource grabbing.
 - 6. Language-to-specification seam: partial translation + round trip + measured gap.
 - 9. Language layer: Panini, formal/generative grammar, language of thought, linguistic relativity.
+- 13. Incomplete preferences / incommensurability as agent design.
+- 14. Bottom-up vs top-down alignment / governor framing.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 
-- None. Under the honesty rule, every node has at least partial coverage in existing literature. The likely places for narrow bridge value, if any, are not isolated theses but combinations: `self-checking via committed past self`, `quantum anchor for agent commitment`, `semantic seam with explicit human-visible remainder`, `endogenous restraint as reflective anti-resource-grab`.
+- None under current flag discipline. The active-spine bridge is marked `[PARTIAL]` where field completeness is uncertain, not claimed as new.
 
 ## Link Quality Notes
 
@@ -149,6 +194,9 @@ Sources requiring manual maturity or citation-quality verification before broade
 - Dong Gong et al., 2019, "Memorizing Normality to Detect Anomaly" - relevant to reconstruction error, but not a primary source for autoencoders.
 - Jordan Hubbard, "agentOS" - project repository/PoC; verify maturity manually.
 - Wikipedia link for Lyapunov time is only a concept pointer; replace with a primary or textbook citation before formal publication.
+- AI Frontiers, "AI Alignment Cannot Be Top-Down" - named by project context, but source location was not verified in this pass.
+- Xiaohua Wang et al., 2026, "Reward Hacking in the Era of Large Models" - recent survey; verify maturity and exact use before publication.
+- Agarwal et al., 2026, "AI Alignment via Incentives and Correction" - recent arXiv paper; verify maturity and exact use before publication.
 
 Human-confirmed source that should not be marked as suspect:
 

@@ -4,9 +4,45 @@ This is the working map of the second circle. It is organized by bridges between
 
 Each bridge names the areas it connects, gives the field-check grounding, and records the dialogue trace that motivated the bridge. Dialogue traces are short paraphrased anchors tied to source lines, not publication of the raw dialogue. The raw dialogue remains source material for internal tracing; it is not part of the initial public skeleton.
 
+## Active Spine
+
+### Candidate: Two Impossibilities, One Point: Non-Maximizing Core
+
+Status: [ACTIVE]
+
+Connects: social choice impossibility, Arrow-Sen aggregation limits, Goodhart inevitability, reward hacking, incomplete preferences, bottom-up AGI governor.
+
+Related field-check nodes: 11, 12, 13, 14.
+
+Framing: Arrow, Sen, Eckersley, Mishra, Conitzer et al., Skalse et al., Gao et al., and Karwowski et al. own the two sides of this bridge: impossibility of clean scalar value aggregation and structural failure of proxy maximization. The bridge records their convergence on one design pressure: the governor core should not maximize a compressed scalar proxy. The active-spine candidate is a non-maximizing core with incomplete preferences, used as a constraint-framed trajectory explorer rather than a top-down optimizer. It does not solve the training problem; how to train such a non-maximizer, rather than wrap a maximizer at inference time, remains the central open question.
+
+Dialogue trace:
+
+> `dialog.part_3.md:17`: proxy specification failure is treated as a structural problem, not a tuning defect.
+>
+> `dialog.part_4.md:11`: implementation guarantees do not remove the need for a correct target.
+>
+> `dialog.part_8.md:35`: bounded or mild optimization appears as an alternative to unbounded maximizing pressure.
+>
+> `dialog.part_18.md:21`: action outside reliable prediction range is routed to refusal or fallback, not forced ranking.
+
+Field-check comment:
+
+> `field_check.md` node 11 gives `[FULL MATCH]` for reward hacking, reward-model overoptimization, and Goodhart geometry.
+>
+> `field_check.md` node 12 gives `[FULL MATCH]` for social-choice and Arrow-Sen impossibility constraints.
+>
+> `field_check.md` node 13 gives `[PARTIAL]` for incomplete preferences as an agent-design core and explicitly marks field completeness for manual verification.
+>
+> `field_check.md` node 14 gives `[PARTIAL]` for the bottom-up governor framing.
+
+Working role: set the current spine for later chapters without claiming a result. The bridge states a constraint on direction, not a construction method.
+
 ## Proposed Bridges
 
 ### 1. From Verified Isolation to Semantic Alignment
+
+Status: [ACTIVE]
 
 Connects: seL4 / capability identity, formal verification, specification gaming, semantic alignment.
 
@@ -38,6 +74,8 @@ Working role: establish the engineering starting point. Verified isolation can i
 
 ### 2. From Containment to Resource-Time Safety
 
+Status: [ACTIVE]
+
 Connects: AI containment limits, Rice/Godel/Loebian limits, detection, reversibility, work factor, bounded horizon.
 
 Related field-check nodes: 1, 7, 8.
@@ -67,6 +105,8 @@ Field-check comment:
 Working role: replace the binary question "is it controlled?" with weaker operational questions: can deviation be detected, can action be reversed, what is the cost of violation, and how long is the reaction window?
 
 ### 3. From Goal-Content Integrity / Reflective Stability to Bounded Optimization
+
+Status: [ACTIVE]
 
 Project label: reflective restraint.
 
@@ -104,6 +144,8 @@ Working role: examine whether restraint can be framed as a consequence of goal p
 
 ### 4. From Reject Option to Human-Visible Remainder
 
+Status: [ACTIVE]
+
 Connects: selective prediction, reject option, semantic uncertainty, manual fallback, nonzero remainder.
 
 Related field-check nodes: 2, 6.
@@ -131,6 +173,8 @@ Field-check comment:
 Working role: treat refusal as a designed behavior of a partial system, not as a failure path. The unresolved remainder must be explicit before action, not hidden inside defaults.
 
 ### 5. From Semantic Parsing / Formal Specification to Agent Self-Description
+
+Status: [OPEN QUESTION]
 
 Connects: semantic parsing, formal specification, Paninian rule systems, language of thought, ambiguity handling.
 
@@ -164,6 +208,8 @@ Working role: frame the language layer as a boundary between expressive reasonin
 
 ### 6. From Round-Trip Consistency to a Measured Seam
 
+Status: [OPEN QUESTION]
+
 Connects: autoencoders, reconstruction error, round-trip consistency, semantic parsing, verifier/user-in-the-loop workflows.
 
 Related field-check nodes: 2, 6, 7.
@@ -193,6 +239,8 @@ Field-check comment:
 Working role: propose the seam as a partial translation process whose failures are measured through reconstruction, verification, and explicit refusal rather than hidden in silent coercion.
 
 ### 7. From Corrigibility / Oversight to Commitment
+
+Status: [OPEN QUESTION]
 
 Connects: corrigibility, oversight, cryptographic commitments, self-checking, committed reference.
 
@@ -224,6 +272,8 @@ Working role: explore the shift from an external checker regress to checks again
 
 ### 8. From Quantum Money / No-Cloning to Unforgeable State
 
+Status: [OPEN QUESTION]
+
 Connects: cryptographic commitment, quantum money, no-cloning, quantum tokens, identity/state rather than behavior.
 
 Related field-check nodes: 4.
@@ -251,6 +301,8 @@ Field-check comment:
 Working role: keep the quantum layer narrow. The bridge concerns physical unforgeability of a committed state, not quantum explanations of cognition or alignment.
 
 ### 9. From Predictability Horizons to Sandbox Speed Limits
+
+Status: [ACTIVE]
 
 Connects: sandboxing, chaos, Lyapunov time, critical transitions, early-warning signals.
 
@@ -308,7 +360,7 @@ Dialogue trace:
 
 Field-check comment:
 
-> `field_check.md` summary gives no `[NO DIRECT SOURCE FOUND]` nodes and identifies likely narrow value only in bridges: `self-checking via committed past self`, `quantum anchor for agent commitment`, `semantic seam with explicit human-visible remainder`, `endogenous restraint as reflective anti-resource-grab`.
+> `field_check.md` summary gives no `[NO DIRECT SOURCE FOUND]` nodes and identifies unresolved bridge work in: `self-checking via committed past self`, `quantum anchor for agent commitment`, `semantic seam with explicit human-visible remainder`, `endogenous restraint as reflective anti-resource-grab`.
 
 Working role: explain why the public work starts from the second circle: not to hide the path, but to avoid making the raw path carry claims it was not designed to carry.
 
