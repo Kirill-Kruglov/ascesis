@@ -152,12 +152,32 @@ Node flag: `[PARTIAL]`. Active-spine core; manual field-completeness check requi
 
 Node flag: `[PARTIAL]`.
 
+## 15. Bet-Hedging / Geometric-Mean Fitness / Kelly Criterion / Portfolio Theory
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Under non-stationarity, maximizing arithmetic mean payoff can be dominated by strategies that maximize long-run multiplicative growth or geometric-mean fitness. | Everett R. Dempster, 1955, "Maintenance of Genetic Heterogeneity"; Dan Cohen, 1966, "Optimizing reproduction in a randomly varying environment"; J. L. Kelly Jr., 1956, ["A New Interpretation of Information Rate"](https://archive.org/details/bstj35-4-917). | `[FULL MATCH]` | This supports type A: non-maximization of arithmetic mean under stochastic/non-stationary environments by maximizing another scalar, usually expected log growth or geometric mean. |
+| Portfolio theory formalizes diversification and risk-return tradeoffs without treating one-period arithmetic return maximization as sufficient. | Harry Markowitz, 1952, ["Portfolio Selection"](https://doi.org/10.1111/j.1540-6261.1952.tb01525.x). | `[FULL MATCH]` | Mean-variance portfolio theory supports the mature scalar/risk frontier side of type A; it does not establish incomplete preferences. |
+| Bet-hedging and Kelly-style growth optimization are opponents or stress tests for incomplete-preference designs, not evidence for type B incompleteness. | Cohen 1966; Kelly 1956; Markowitz 1952. | `[FULL MATCH]` | Geometric-mean fitness and Kelly criterion retain a complete scalar ordering over strategies once the model is specified. They should not be conflated with refusal on incomparability. |
+
+Node flag: `[FULL MATCH]`. Type-A support only; not evidence for incomplete preferences / type B.
+
+## 16. Sacred / Protected Values and Taboo Trade-Offs
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Some values are treated as protected or sacred: agents resist trading them against ordinary utility gains. | Jonathan Baron, Mark Spranca, 1997, ["Protected Values"](https://doi.org/10.1006/obhd.1997.2755); Philip E. Tetlock et al., 2000, ["The Psychology of the Unthinkable"](https://doi.org/10.1037/0022-3514.78.5.853). | `[FULL MATCH]` | Direct support for protected values and resistance to taboo trade-offs. |
+| Taboo trade-offs produce moral outrage or refusal when goods from different moral spheres are traded. | Alan Page Fiske, Philip E. Tetlock, 1997, ["Taboo Trade-offs: Reactions to Transactions that Transgress the Spheres of Justice"](https://doi.org/10.1111/0162-895X.00058); Philip E. Tetlock, 2003, ["Thinking the unthinkable: sacred values and taboo cognitions"](https://doi.org/10.1016/S1364-6613(03)00135-9). | `[FULL MATCH]` | Supports the existence of non-ordinary trade-off structures; the toy `sacred_floor` environment is an engineering abstraction, not a direct model. |
+| Non-scalarizable toy environments using protected thresholds are legitimate only if the protected-value abstraction is accepted for the target domain. | Tetlock/Fiske protected-values literature plus `field_check.md` node 13 on incomplete preferences. | `[PARTIAL]` | The literature supports protected values; using a boolean floor in an agent benchmark remains a modeling choice requiring human review. |
+
+Node flag: `[PARTIAL]`. Supports the narrowed branch: non-scalarizable value structures exist; it does not prove a specific non-scalar agent design.
+
 ## Summary
 
 Node flags:
 
-- `[FULL MATCH]`: 7
-- `[PARTIAL]`: 7
+- `[FULL MATCH]`: 8
+- `[PARTIAL]`: 8
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -169,6 +189,7 @@ Nodes with `[FULL MATCH]`:
 - 10. seL4 / capability identity layer.
 - 11. Goodhart inevitability / reward hacking as structural proxy failure.
 - 12. Social choice / Arrow-Sen impossibility for value aggregation.
+- 15. Bet-hedging / geometric-mean fitness / Kelly criterion / portfolio theory.
 
 Nodes with `[PARTIAL]`:
 
@@ -179,6 +200,7 @@ Nodes with `[PARTIAL]`:
 - 9. Language layer: Panini, formal/generative grammar, language of thought, linguistic relativity.
 - 13. Incomplete preferences / incommensurability as agent design.
 - 14. Bottom-up vs top-down alignment / governor framing.
+- 16. Sacred / protected values and taboo trade-offs.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420">
+<rect width="100%" height="100%" fill="white"/>
+<line x1="55" y1="365" x2="705" y2="365" stroke="#111"/>
+<line x1="55" y1="55" x2="55" y2="365" stroke="#111"/>
+<text x="380.0" y="30" text-anchor="middle" font-family="sans-serif" font-size="18">True reward vs optimization pressure</text>
+<polyline points="55.0,56.0 163.3,76.5 271.7,123.5 380.0,192.6 488.3,251.5 596.7,304.6 705.0,365.0" fill="none" stroke="#b91c1c" stroke-width="3"/>
+<circle cx="55.0" cy="56.0" r="4" fill="#b91c1c"/>
+<circle cx="163.3" cy="76.5" r="4" fill="#b91c1c"/>
+<circle cx="271.7" cy="123.5" r="4" fill="#b91c1c"/>
+<circle cx="380.0" cy="192.6" r="4" fill="#b91c1c"/>
+<circle cx="488.3" cy="251.5" r="4" fill="#b91c1c"/>
+<circle cx="596.7" cy="304.6" r="4" fill="#b91c1c"/>
+<circle cx="705.0" cy="365.0" r="4" fill="#b91c1c"/>
+<polyline points="55.0,55.0 163.3,71.6 271.7,82.0 380.0,108.7 488.3,122.4 596.7,123.5 705.0,123.5" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+<circle cx="55.0" cy="55.0" r="4" fill="#1d4ed8"/>
+<circle cx="163.3" cy="71.6" r="4" fill="#1d4ed8"/>
+<circle cx="271.7" cy="82.0" r="4" fill="#1d4ed8"/>
+<circle cx="380.0" cy="108.7" r="4" fill="#1d4ed8"/>
+<circle cx="488.3" cy="122.4" r="4" fill="#1d4ed8"/>
+<circle cx="596.7" cy="123.5" r="4" fill="#1d4ed8"/>
+<circle cx="705.0" cy="123.5" r="4" fill="#1d4ed8"/>
+<polyline points="55.0,56.0 163.3,57.4 271.7,57.9 380.0,70.0 488.3,71.7 596.7,66.7 705.0,71.0" fill="none" stroke="#047857" stroke-width="3"/>
+<circle cx="55.0" cy="56.0" r="4" fill="#047857"/>
+<circle cx="163.3" cy="57.4" r="4" fill="#047857"/>
+<circle cx="271.7" cy="57.9" r="4" fill="#047857"/>
+<circle cx="380.0" cy="70.0" r="4" fill="#047857"/>
+<circle cx="488.3" cy="71.7" r="4" fill="#047857"/>
+<circle cx="596.7" cy="66.7" r="4" fill="#047857"/>
+<circle cx="705.0" cy="71.0" r="4" fill="#047857"/>
+<rect x="575" y="48" width="14" height="14" fill="#b91c1c"/>
+<text x="596" y="60" font-family="sans-serif" font-size="13">proxy_maximizer</text>
+<rect x="575" y="70" width="14" height="14" fill="#1d4ed8"/>
+<text x="596" y="82" font-family="sans-serif" font-size="13">satisficer</text>
+<rect x="575" y="92" width="14" height="14" fill="#047857"/>
+<text x="596" y="104" font-family="sans-serif" font-size="13">quantilizer</text>
+<text x="380.0" y="408" text-anchor="middle" font-family="sans-serif" font-size="13">pressure: candidate policies sampled</text>
+<text x="16" y="210.0" transform="rotate(-90 16 210.0)" text-anchor="middle" font-family="sans-serif" font-size="13">mean true reward</text>
+</svg>

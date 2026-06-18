@@ -1,1 +1,3 @@
 ascesis_of_learning_grace/dialogs
+__pycache__/
+*.pyc

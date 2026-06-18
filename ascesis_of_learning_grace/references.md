@@ -94,3 +94,22 @@ Canonical bibliography derived from [field_check.md](field_check.md), grouped by
 
 - Agarwal, Rohit, Joshua Lin, Mark Braverman, and Elad Hazan. 2026. ["AI Alignment via Incentives and Correction"](https://arxiv.org/abs/2605.01643). Manual verification: recent arXiv paper; verify maturity and exact use before publication.
 - AI Frontiers. "AI Alignment Cannot Be Top-Down." Manual verification: source named by project context, but source location was not verified in this pass.
+
+## Bet-Hedging, Kelly Growth, and Portfolio Theory
+
+- Dempster, Everett R. 1955. "Maintenance of Genetic Heterogeneity." *Cold Spring Harbor Symposia on Quantitative Biology*. Manual verification: confirm DOI/pages before publication.
+- Cohen, Dan. 1966. "Optimizing reproduction in a randomly varying environment." *Journal of Theoretical Biology*. Manual verification: confirm DOI/pages before publication.
+- Kelly, J. L., Jr. 1956. ["A New Interpretation of Information Rate"](https://archive.org/details/bstj35-4-917). *Bell System Technical Journal* 35(4): 917-926.
+- Markowitz, Harry M. 1952. ["Portfolio Selection"](https://doi.org/10.1111/j.1540-6261.1952.tb01525.x). *The Journal of Finance* 7(1): 77-91.
+
+## Sacred Values, Protected Values, and Taboo Trade-Offs
+
+- Baron, Jonathan, and Mark Spranca. 1997. ["Protected Values"](https://doi.org/10.1006/obhd.1997.2755). *Organizational Behavior and Human Decision Processes*.
+- Fiske, Alan Page, and Philip E. Tetlock. 1997. ["Taboo Trade-offs: Reactions to Transactions that Transgress the Spheres of Justice"](https://doi.org/10.1111/0162-895X.00058). *Political Psychology*.
+- Tetlock, Philip E., et al. 2000. ["The Psychology of the Unthinkable: Taboo Trade-Offs, Forbidden Base Rates, and Heretical Counterfactuals"](https://doi.org/10.1037/0022-3514.78.5.853). *Journal of Personality and Social Psychology*.
+- Tetlock, Philip E. 2003. ["Thinking the unthinkable: sacred values and taboo cognitions"](https://doi.org/10.1016/S1364-6613(03)00135-9). *Trends in Cognitive Sciences*.
+
+## Cross-Cutting Cleavages
+
+- Lipset, Seymour Martin, and Stein Rokkan. 1967. "Cleavage Structures, Party Systems, and Voter Alignments: An Introduction." In *Party Systems and Voter Alignments*.
+- Simmel, Georg. 1955. *Conflict and the Web of Group Affiliations*. Manual verification: classic source for overlapping affiliations/cross-cutting ties.

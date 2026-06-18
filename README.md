@@ -21,6 +21,7 @@ Current status: early working skeleton.
 - [glossary.md](ascesis_of_learning_grace/glossary.md): working definitions for local project labels.
 - [questions.md](ascesis_of_learning_grace/questions.md): open questions and possible contradictions.
 - [proposals.md](ascesis_of_learning_grace/proposals.md): process and text proposals.
+- [experiments/](experiments/): preregistered toy experiments for comparing incomplete preferences, bet-hedging, and governor feasibility.
 
 ## License
 

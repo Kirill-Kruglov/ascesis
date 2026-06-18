@@ -45,3 +45,15 @@ The structural failure mode in which optimization of an imperfect proxy eventual
 ## Lyapunov Horizon
 
 The finite time range over which a sandbox or model remains predictively coupled to the target system before divergence dominates. Related standard areas: Lyapunov time, chaos predictability, critical slowing down, early-warning signals (`field_check.md` node 8).
+
+## Bet-Hedging
+
+A strategy family for variable environments that sacrifices some short-run or arithmetic-mean performance to improve long-run multiplicative survival or geometric-mean fitness. Related standard areas: evolutionary bet-hedging, Kelly criterion, portfolio theory (`field_check.md` node 15). This is type A scalar optimization, not incomplete preferences.
+
+## Geometric-Mean Fitness
+
+Long-run multiplicative fitness measured through the geometric mean, equivalent in many models to maximizing expected log growth. Related standard areas: bet-hedging, stochastic population growth, Kelly criterion (`field_check.md` node 15).
+
+## Kelly Criterion
+
+A betting/allocation rule that maximizes expected logarithmic wealth growth under a specified probabilistic model. Related standard areas: information theory, growth-optimal betting, portfolio allocation (`field_check.md` node 15). It remains a complete scalar objective once probabilities and payoffs are specified.

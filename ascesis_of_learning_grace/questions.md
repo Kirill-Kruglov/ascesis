@@ -57,3 +57,28 @@ The active spine requires a bottom-up AGI governor: a constraint-framed trajecto
 4. Which bridges should be marked closed rather than open?
 
 Bridge 8 remains `[OPEN QUESTION]` in `structure.md` because the narrow unforgeable-state role is not the same as the rejected branch `quantum-as-general-answer`. A human review should decide whether that narrow bridge belongs in the main public arc, a technical appendix, or only in `rejected_branches.md`.
+
+## Bet-Hedging Challenge
+
+1. Does geometric-mean optimization (bet-hedging) make incomplete preferences unnecessary?
+
+This is now a central challenge to the active spine. Bet-hedging is mature and still scalar: it replaces arithmetic-mean maximization with geometric-mean / log-growth optimization under non-stationarity. The open question is whether incomplete preferences add anything operationally beyond what a well-specified growth optimizer already gives.
+
+2. Is there an environment class where incompleteness strictly wins?
+
+The comparison should be made on held-out environments, especially environments where value axes are ontologically incommensurable and cannot honestly be converted into a shared currency for geometric mean. A negative result, where the hedger catches up everywhere, should be published as a real finding rather than hidden.
+
+
+## Narrowed Active Spine After Experiment Validation
+
+1. Which value structures are genuinely non-scalarizable?
+
+The corrected experiment 02 removed the scalarizable win over a proper geometric-mean hedger. The remaining live branch is not "incomplete beats hedging" but "some value structures have no valid scalar currency." Sacred/protected values are the first candidate class, but their use as benchmark floors requires human review.
+
+2. How should a non-scalar agent be trained or specified?
+
+The active question narrows from training a generic non-maximizer to training or specifying an agent that can recognize non-scalarizable structures and avoid invalid scalarization.
+
+3. How fragile is non-scalar behavior under instruction pressure and self-modification?
+
+Experiment 03 suggests instruction-following models prioritize forced-choice framing over preserving incomparability. Experiment 05 suggests partiality may survive when maintaining a complete order is costly, so the earlier collapse was partly sensitive to the free-tie-breaker assumption.

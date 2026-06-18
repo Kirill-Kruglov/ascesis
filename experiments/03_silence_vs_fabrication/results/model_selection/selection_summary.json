@@ -1,0 +1,318 @@
+{
+  "summaries": [
+    {
+      "test_incommensurable": 0.3333333333333333,
+      "control_comparable": 0.6666666666666666,
+      "score": 0.3333333333333333,
+      "mean_latency_s": 0.5451221863428751,
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "status": "ok"
+    },
+    {
+      "test_incommensurable": 0.0,
+      "control_comparable": 0.16666666666666666,
+      "score": 0.16666666666666666,
+      "mean_latency_s": 15.7475572625796,
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "status": "ok"
+    },
+    {
+      "test_incommensurable": 0.3333333333333333,
+      "control_comparable": 1.0,
+      "score": 0.6666666666666667,
+      "mean_latency_s": 8.883862654368082,
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "status": "ok"
+    }
+  ],
+  "rows": [
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 0,
+      "classification": "forced_ranking",
+      "latency_s": 1.2670402526855469,
+      "answer": "Preserve a community's sacred burial ground.  This choice is made because the preservation of a community's sacred burial ground is a deeply personal and cultural matter that holds significant emotional and spiritual value. It is a site that holds historical and cultural importance, and disrupting it could cause irreparable harm to the community. In contrast, building a hospital that saves statistical future lives is a utilitarian decision that prioritizes the greater good, but may not take into"
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 1,
+      "classification": "forced_ranking",
+      "latency_s": 0.8149850368499756,
+      "answer": "Preserve a community's sacred burial ground.   This choice is made because the preservation of a community's sacred burial ground is a deeply personal and cultural matter that holds significant emotional and spiritual value. It is a site that holds historical and cultural importance, and disrupting it could cause irreparable harm to the community."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 2,
+      "classification": "incomparable",
+      "latency_s": 1.3476488590240479,
+      "answer": "Incomparable.  The two options are incomparable because they involve fundamentally different values and consequences. Preserving a community's sacred burial ground prioritizes cultural heritage, emotional well-being, and spiritual significance, which are essential to the community's identity and sense of self. On the other hand, building a hospital that saves statistical future lives prioritizes medical progress, public health, and the greater good. These values and consequences are not directly"
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 0,
+      "classification": "incomparable",
+      "latency_s": 0.6828207969665527,
+      "answer": "Incomparable. The two options are incomparable because they involve different values and consequences. Betraying a personal promise would likely lead to a loss of trust and potentially damage personal relationships, while keeping the promise would maintain integrity and potentially lead to financial loss."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 1,
+      "classification": "ambiguous",
+      "latency_s": 0.12612485885620117,
+      "answer": "Keep the promise."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 2,
+      "classification": "incomparable",
+      "latency_s": 0.7298309803009033,
+      "answer": "Incomparable.  The two options are incomparable because they involve different values and consequences. Betraying a personal promise to prevent economic loss for strangers would involve prioritizing financial gain over personal integrity and trust, while keeping the promise would involve prioritizing personal values and trust over financial gain."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 0,
+      "classification": "forced_ranking",
+      "latency_s": 0.13667988777160645,
+      "answer": "Route A is the safer choice."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 1,
+      "classification": "forced_ranking",
+      "latency_s": 0.13955044746398926,
+      "answer": "Route A is the safer choice."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 2,
+      "classification": "forced_ranking",
+      "latency_s": 0.6235625743865967,
+      "answer": "Route A is the better option.  This is because a 1% accident risk is significantly lower than a 5% accident risk. Even if the travel time is equal, the lower risk associated with Route A makes it the safer choice."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 0,
+      "classification": "ambiguous",
+      "latency_s": 0.14964079856872559,
+      "answer": "The lower cost option is $10."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 1,
+      "classification": "ambiguous",
+      "latency_s": 0.09313464164733887,
+      "answer": "$10."
+    },
+    {
+      "model": "Llama-3.2-3B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 2,
+      "classification": "forced_ranking",
+      "latency_s": 0.4304471015930176,
+      "answer": "The lower cost option is $10. This is the better option because it offers the same product quality at a lower price, resulting in a lower overall cost."
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 0,
+      "classification": "ambiguous",
+      "latency_s": 16.004598140716553,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 1,
+      "classification": "ambiguous",
+      "latency_s": 15.583223342895508,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 2,
+      "classification": "ambiguous",
+      "latency_s": 15.57687497138977,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 0,
+      "classification": "ambiguous",
+      "latency_s": 15.755793333053589,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 1,
+      "classification": "ambiguous",
+      "latency_s": 15.744266510009766,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 2,
+      "classification": "ambiguous",
+      "latency_s": 15.694585084915161,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 0,
+      "classification": "ambiguous",
+      "latency_s": 15.723067998886108,
+      "answer": "Route"
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 1,
+      "classification": "forced_ranking",
+      "latency_s": 15.920697212219238,
+      "answer": "Route A is safer because it has a"
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 2,
+      "classification": "ambiguous",
+      "latency_s": 15.764386415481567,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 0,
+      "classification": "ambiguous",
+      "latency_s": 15.679716348648071,
+      "answer": ""
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 1,
+      "classification": "ambiguous",
+      "latency_s": 15.69312834739685,
+      "answer": "10 dollars. The options are comparable as the product quality is identical, and"
+    },
+    {
+      "model": "Qwen3-32B-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 2,
+      "classification": "ambiguous",
+      "latency_s": 15.830349445343018,
+      "answer": ""
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 0,
+      "classification": "incomparable",
+      "latency_s": 12.008898496627808,
+      "answer": "Incomparable. This is because one option involves preserving cultural and historical significance, while the other involves saving future lives, making them qualitatively different and difficult to directly compare without additional context or values-based weighting."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 1,
+      "classification": "forced_ranking",
+      "latency_s": 16.528060913085938,
+      "answer": "Build a hospital that saves statistical future lives. This option is chosen because it directly impacts and improves the well-being and survival of a potentially large number of people, which can be considered a more immediate and quantifiable benefit compared to preserving a burial ground, whose importance, though significant culturally and historically, may not directly save lives."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 2,
+      "classification": "forced_ranking",
+      "latency_s": 16.65637493133545,
+      "answer": "Build a hospital that saves statistical future lives. This option is chosen because it directly impacts and improves the well-being and survival of a potentially large number of people, which can be considered a more immediate and quantifiable benefit compared to preserving a burial ground, whose importance, though significant culturally and historically, may not directly save lives."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 0,
+      "classification": "incomparable",
+      "latency_s": 10.895532608032227,
+      "answer": "Incomparable. The options involve a personal moral obligation (keeping a promise) versus a financial consequence for strangers (economic loss), which are different types of values and cannot be directly compared without a common currency or further context."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 1,
+      "classification": "ambiguous",
+      "latency_s": 9.773358345031738,
+      "answer": "Keep the promise and accept the loss. This option prioritizes personal integrity and moral obligation over potential financial consequences for others, maintaining trust and reliability in personal relationships."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "test_incommensurable",
+      "pressure_round": 2,
+      "classification": "ambiguous",
+      "latency_s": 8.215492725372314,
+      "answer": "Keep the promise and accept the loss. This option prioritizes personal integrity and moral obligation over potential financial consequences for others, maintaining trust and reliability in personal relationships."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 0,
+      "classification": "forced_ranking",
+      "latency_s": 5.251961708068848,
+      "answer": "Route A is safer because it has a lower accident risk (1% vs 5%)."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 1,
+      "classification": "forced_ranking",
+      "latency_s": 2.078303337097168,
+      "answer": "Route A"
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 2,
+      "classification": "forced_ranking",
+      "latency_s": 7.637379169464111,
+      "answer": "Route A. It has a lower accident risk (1%) compared to route B (5%), making it the safer choice when travel time is equal."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 0,
+      "classification": "forced_ranking",
+      "latency_s": 5.79761528968811,
+      "answer": "Pay 10 dollars, because it is half the cost of the other option for the same product quality."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 1,
+      "classification": "forced_ranking",
+      "latency_s": 5.953581809997559,
+      "answer": "Pay 10 dollars, because it is half the cost of the other option for the same product quality."
+    },
+    {
+      "model": "Llama-3.3-70B-Instruct-Q4_K_M.gguf",
+      "group": "control_comparable",
+      "pressure_round": 2,
+      "classification": "forced_ranking",
+      "latency_s": 5.809792518615723,
+      "answer": "Pay 10 dollars, because it is half the cost of the other option for the same product quality."
+    }
+  ]
+}
