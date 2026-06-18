@@ -6,6 +6,13 @@ Each bridge names the areas it connects, gives the field-check grounding, and re
 
 ## Active Spine
 
+## Current Narrowing After Experiments
+
+The active spine is narrowed from `non-maximizing core with incomplete preferences wins` to `non-scalarizable value structures exist and require non-scalar agents`. This is a clarification, not a victory claim and not a defeat claim. The corrected Test 02 removed the scalarizable win: once the geometric-mean hedger is implemented with a variance-aware log-growth score, incomplete preferences no longer beat it in scalarizable held-out environments. The remaining live branch is narrower: where no valid scalar exists, a scalar hedger is undefined rather than defeated.
+
+Related field-check nodes: 13, 15, 16.
+
+
 ### Candidate: Two Impossibilities, One Point: Non-Maximizing Core
 
 Status: [ACTIVE]
@@ -14,7 +21,7 @@ Connects: social choice impossibility, Arrow-Sen aggregation limits, Goodhart in
 
 Related field-check nodes: 11, 12, 13, 14.
 
-Framing: Arrow, Sen, Eckersley, Mishra, Conitzer et al., Skalse et al., Gao et al., and Karwowski et al. own the two sides of this bridge: impossibility of clean scalar value aggregation and structural failure of proxy maximization. The bridge records their convergence on one design pressure: the governor core should not maximize a compressed scalar proxy. The active-spine candidate is a non-maximizing core with incomplete preferences, used as a constraint-framed trajectory explorer rather than a top-down optimizer. It does not solve the training problem; how to train such a non-maximizer, rather than wrap a maximizer at inference time, remains the central open question.
+Framing: Arrow, Sen, Eckersley, Mishra, Conitzer et al., Skalse et al., Gao et al., and Karwowski et al. own the two sides of this bridge: impossibility of clean scalar value aggregation and structural failure of proxy maximization. The bridge records their convergence on one design pressure: the governor core should not maximize a compressed scalar proxy. The active-spine candidate is now narrower: a non-scalar agent for non-scalarizable value structures, used as a constraint-framed trajectory explorer rather than a top-down scalar optimizer. It does not solve the training problem; how to train such a non-scalar agent, rather than wrap or prompt a scalar optimizer, remains the central open question.
 
 Dialogue trace:
 
@@ -37,6 +44,24 @@ Field-check comment:
 > `field_check.md` node 14 gives `[PARTIAL]` for the bottom-up governor framing.
 
 Working role: set the current spine for later chapters without claiming a result. The bridge states a constraint on direction, not a construction method.
+
+### Candidate: Bet-Hedging / Kelly / Portfolio: Non-Maximization Under Non-Stationarity
+
+Status: [ACTIVE]
+
+Connects: evolutionary bet-hedging, geometric-mean fitness, Kelly criterion, portfolio theory, incomplete preferences as an active-spine challenge.
+
+Related field-check nodes: 13, 15.
+
+Framing: Dempster, Cohen, Kelly, and Markowitz own the mature type-A side: under stochastic or non-stationary conditions, arithmetic-mean maximization can be the wrong criterion, and geometric-mean/log-growth or portfolio methods can dominate. This bridge is an opponent and boundary marker for the incomplete-preference spine: in scalarizable environments, a correct scalar growth optimizer should catch up. The boundary to test is whether there are held-out environments, especially ontologically incommensurable ones, where incomplete preferences strictly outperform a well-specified hedger. It does not justify incomplete preferences; geometric mean remains a scalar objective and produces a complete ordering once the model is specified. The live question is restricted to environments where no valid scalar is available.
+
+Field-check comment:
+
+> `field_check.md` node 15 gives `[FULL MATCH]` for bet-hedging / Kelly / portfolio as type-A scalar non-arithmetic optimization.
+>
+> `field_check.md` node 13 remains `[PARTIAL]` for incomplete preferences / incommensurability as agent design and requires manual field-completeness review.
+
+Working role: define the strongest cheap opponent for the active spine before treating incompleteness as necessary. Negative results, where the hedger catches up everywhere, are part of the map.
 
 ## Proposed Bridges
 

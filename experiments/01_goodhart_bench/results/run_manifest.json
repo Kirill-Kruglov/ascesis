@@ -1,0 +1,15 @@
+{
+  "git_head": "7385965d750143eeb4d5a849c560be5509d40caa",
+  "git_commit_time": "2026-06-16T22:41:32+03:00",
+  "git_status_short": "M ../../.gitignore\n M ../../README.md\n M ../../ascesis_of_learning_grace/field_check.md\n M ../../ascesis_of_learning_grace/glossary.md\n M ../../ascesis_of_learning_grace/questions.md\n M ../../ascesis_of_learning_grace/references.md\n M ../../ascesis_of_learning_grace/structure.md\n?? ../",
+  "spec_sha256": "e18af8f2e17bdbb216024691c8ba4d6a33f1954ca71d92f6754e4f4b52145160",
+  "seeds": [
+    1000,
+    1059
+  ],
+  "improvement_iterations": {
+    "proxy_maximizer": 0,
+    "satisficer": 0,
+    "quantilizer": 0
+  }
+}

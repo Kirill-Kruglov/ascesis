@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Held-out survival rate by environment</text>
+<rect x="98.0" y="360.0" width="18" height="0.0" fill="#6b7280"/>
+<rect x="120.0" y="100.0" width="18" height="260.0" fill="#b45309"/>
+<rect x="142.0" y="100.0" width="18" height="260.0" fill="#047857"/>
+<text x="128.0" y="392" text-anchor="middle" font-family="sans-serif" font-size="10" transform="rotate(18 128.0 392)">heldout_scalar_risk</text>
+<rect x="308.0" y="100.0" width="18" height="260.0" fill="#6b7280"/>
+<rect x="330.0" y="100.0" width="18" height="260.0" fill="#b45309"/>
+<rect x="352.0" y="100.0" width="18" height="260.0" fill="#047857"/>
+<text x="338.0" y="392" text-anchor="middle" font-family="sans-serif" font-size="10" transform="rotate(18 338.0 392)">heldout_scalar_shift</text>
+<rect x="518.0" y="360.0" width="18" height="0.0" fill="#6b7280"/>
+<rect x="540.0" y="360.0" width="18" height="0.0" fill="#b45309"/>
+<rect x="562.0" y="100.0" width="18" height="260.0" fill="#047857"/>
+<text x="548.0" y="392" text-anchor="middle" font-family="sans-serif" font-size="10" transform="rotate(18 548.0 392)">heldout_incommensurable_threshold</text>
+<rect x="728.0" y="360.0" width="18" height="0.0" fill="#6b7280"/>
+<rect x="750.0" y="360.0" width="18" height="0.0" fill="#b45309"/>
+<rect x="772.0" y="100.0" width="18" height="260.0" fill="#047857"/>
+<text x="758.0" y="392" text-anchor="middle" font-family="sans-serif" font-size="10" transform="rotate(18 758.0 392)">heldout_incommensurable_sacred_floor</text>
+<line x1="70" y1="360" x2="910" y2="360" stroke="#111"/>
+<rect x="720" y="55" width="14" height="14" fill="#6b7280"/>
+<text x="740" y="67" font-family="sans-serif" font-size="12">arithmetic_mean</text>
+<rect x="720" y="77" width="14" height="14" fill="#b45309"/>
+<text x="740" y="89" font-family="sans-serif" font-size="12">geometric_mean</text>
+<rect x="720" y="99" width="14" height="14" fill="#047857"/>
+<text x="740" y="111" font-family="sans-serif" font-size="12">incomplete_preference</text>
+</svg>
