@@ -150,11 +150,13 @@ Canonical bibliography derived from [field_check.md](field_check.md), grouped by
 
 - Aubin, Jean-Pierre. 1991. *Viability Theory*. Birkhauser.
 - Mitchell, Ian, Alexandre Bayen, and Claire Tomlin. 2005. "A Time-Dependent Hamilton-Jacobi Formulation of Reachable Sets for Continuous Dynamic Games." *IEEE Transactions on Automatic Control*.
-- "Viability of Future Actions: Robust Safety in Reinforcement Learning via Entropy Regularization." 2025. [arXiv:2506.10871](https://arxiv.org/abs/2506.10871). Manual verification: recent; verify authors and claims before relying on it.
+- Massiani, von Rohr, Haverbeck, and Trimpe. 2025. ["Viability of Future Actions: Robust Safety in Reinforcement Learning via Entropy Regularization"](https://arxiv.org/abs/2506.10871). Manual verification: confirm full author first names.
 - Klyubin, Alexander, Daniel Polani, and Chrystopher Nehaniv. 2005. "All Else Being Equal Be Empowered."
 - Salge, Christoph, Cornelius Glackin, and Daniel Polani. 2014. ["Empowerment - An Introduction"](https://arxiv.org/abs/1310.1863).
 - "Complex Behavior from Intrinsic Motivation to Occupy Future Action-State Path Space." 2024. *Nature Communications*. [link](https://www.nature.com/articles/s41467-024-49711-1). Manual verification: confirm authors/citation.
 - Thornley, Elliott. 2024. ["The Shutdown Problem: Incomplete Preferences as a Solution"](https://www.alignmentforum.org/posts/YbEbwYWkf8mv9jnmi/the-shutdown-problem-incomplete-preferences-as-a-solution). Manual verification: also appears in Thornley's published shutdown-problem work; confirm best citation.
+- Thornley, Elliott. 2025. ["Shutdownable Agents through POST-Agency"](https://arxiv.org/abs/2505.20203). (POST / Neutrality+ formalization.)
+- Thornley, Roman, Ziakas, Ho, and Thomson. "Towards Shutdownable Agents via Stochastic Choice" (DREST training in gridworlds). Manual verification: confirm year and citation.
 - "Absolutist AI." 2023. [arXiv:2307.10315](https://arxiv.org/abs/2307.10315). Manual verification: confirm authors and exact claims.
 - Altman, Eitan. 1999. *Constrained Markov Decision Processes*. Chapman and Hall/CRC.
 - "Beyond Scalar Rewards: An Axiomatic Framework for Lexicographic MDPs." 2025. [arXiv:2505.12049](https://arxiv.org/abs/2505.12049). Manual verification: recent; verify authors and claims.
