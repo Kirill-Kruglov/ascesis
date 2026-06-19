@@ -261,12 +261,47 @@ Node flag: `[PARTIAL]`. Regret minimization is owned; its use as the governor's 
 
 Node flag: `[PARTIAL]`. Open-endedness work is owned; its use as the governor's progress mechanism is the project transfer.
 
+## 27. Viability Theory and Reachability for Non-Collapse
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| The largest set of states from which a system can avoid failure for all time (the viability kernel) is a formal object for non-collapse guarantees. | Jean-Pierre Aubin, 1991, *Viability Theory*; Hamilton-Jacobi reachability: Ian Mitchell, Alexandre Bayen, Claire Tomlin, 2005, "A Time-Dependent Hamilton-Jacobi Formulation of Reachable Sets". | `[FULL MATCH]` | Direct formal home for "stay out of irreversible-collapse states forever" (node 22, safety). |
+| Entropy/viability-regularized RL keeps an agent within a robustly safe set by preserving the viability of future actions. | "Viability of Future Actions: Robust Safety in RL via Entropy Regularization", 2025, [arXiv:2506.10871](https://arxiv.org/abs/2506.10871). | `[PARTIAL]` | Recent; verify. Links viability to entropy/empowerment, sewing non-collapse to option preservation. |
+
+Node flag: `[PARTIAL]`. Viability theory and reachability are owned; their use as the governor's non-collapse guarantee is the project transfer.
+
+## 28. Empowerment as Formal Option Value
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Option value can be formalized information-theoretically as the maximum mutual information (channel capacity) between an agent's actions and its future states (empowerment). | Alexander Klyubin, Daniel Polani, Chrystopher Nehaniv, 2005, "All Else Being Equal Be Empowered"; Christoph Salge, Cornelius Glackin, Daniel Polani, 2014, ["Empowerment - An Introduction"](https://arxiv.org/abs/1310.1863). | `[FULL MATCH]` | Formal home for "preserve and expand options" (positive side of node 20; direction-free progress, nodes 23 and 26). |
+| Intrinsic motivation to occupy diverse future action-state paths produces broad capability without an external objective. | "Complex behavior from intrinsic motivation to occupy future action-state path space", Nature Communications, 2024, [link](https://www.nature.com/articles/s41467-024-49711-1). | `[PARTIAL]` | Recent; verify. Direction-free progress as path-space expansion. |
+
+Node flag: `[PARTIAL]`. Empowerment is owned; its use as the governor's progress/option metric is the project transfer.
+
+## 29. Incomplete-Preference and Lexicographic Corrigibility
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Incomplete preferences have been proposed as a formal solution to the shutdown problem: an agent that holds trajectories of different lengths as incomparable neither resists nor seeks shutdown. | Elliott Thornley, 2024, ["The Shutdown Problem: Incomplete Preferences as a Solution"](https://www.alignmentforum.org/posts/YbEbwYWkf8mv9jnmi/the-shutdown-problem-incomplete-preferences-as-a-solution). | `[FULL MATCH]` | Uses incomplete preferences for corrigibility (successor b; node 3), a different use from the project's closed performance claim. Field-ownership obligation: this is the closest external formalization of the project's incomplete-preference thread. |
+| Lexicographic utility and absolute (non-tradeable) constraints are competing formal routes to corrigibility / shutdown-safety. | Nayebi, 2025 (lexicographic corrigibility); "Absolutist AI", 2023, [arXiv:2307.10315](https://arxiv.org/abs/2307.10315). | `[PARTIAL]` | Recent; verify exact claims and citation form. Absolute constraints correspond to non-tradeable axes (node 16). |
+
+Node flag: `[PARTIAL]`. The shutdown/corrigibility formalizations are owned; the project only connects them to its detection/refusal successor and the closed performance branch.
+
+## 30. Non-Scalar Value Optimization Formalisms
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Value pluralism can be handled without scalarization via constrained MDPs, lexicographic MDPs, and multi-objective omega-regular objectives. | Eitan Altman, 1999, *Constrained Markov Decision Processes*; "Beyond Scalar Rewards: An Axiomatic Framework for Lexicographic MDPs", 2025, [arXiv:2505.12049](https://arxiv.org/abs/2505.12049); "Multi-Objective omega-Regular Reinforcement Learning", *Formal Aspects of Computing*, [link](https://dl.acm.org/doi/10.1145/3605950). | `[FULL MATCH]` | Formal homes for a non-tradeable axis as a constraint (successor a; node 16); omega-regular objectives tie value pluralism to temporal-logic liveness (node 22). |
+
+Node flag: `[PARTIAL]`. The optimization formalisms are owned; their selection and combination for the governor are the project transfer.
+
 ## Summary
 
 Node flags:
 
 - `[FULL MATCH]`: 8
-- `[PARTIAL]`: 18
+- `[PARTIAL]`: 22
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -300,6 +335,10 @@ Nodes with `[PARTIAL]`:
 - 24. Aggregating better-than-even competence.
 - 25. No-regret / online learning.
 - 26. Open-endedness and the adjacent possible.
+- 27. Viability theory and reachability for non-collapse.
+- 28. Empowerment as formal option value.
+- 29. Incomplete-preference and lexicographic corrigibility.
+- 30. Non-scalar value optimization formalisms.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 
