@@ -172,12 +172,33 @@ Node flag: `[FULL MATCH]`. Type-A support only; not evidence for incomplete pref
 
 Node flag: `[PARTIAL]`. Supports the narrowed branch: non-scalarizable value structures exist; it does not prove a specific non-scalar agent design.
 
+## 17. Goodhart Invariance Under Choice of Aggregator
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| When a measure becomes a target it ceases to be a good measure; this holds regardless of how the measure is aggregated. | Charles A. E. Goodhart, 1975, "Problems of Monetary Management: The UK Experience"; Marilyn Strathern, 1997, ["'Improving ratings': audit in the British University system"](https://doi.org/10.1002/(SICI)1234-981X(199709)5:3%3C305::AID-EURO184%3E3.0.CO;2-4). | `[FULL MATCH]` | Strathern's phrasing is the canonical compact form; aggregator choice does not exempt a target from it. |
+| Goodhart failures come in distinct mechanisms (regressional, extremal, causal, adversarial), so repairing one metric can leave or relocate the others rather than remove the failure. | David Manheim, Scott Garrabrant, 2018, ["Categorizing Variants of Goodhart's Law"](https://arxiv.org/abs/1803.04585). | `[FULL MATCH]` | Direct taxonomy. Grounds the project framing that scalar -> geometric -> next aggregator is a taxonomy of variants, not a ladder that escapes Goodhart. |
+| Geometric-mean / log aggregation coincides with the Nash bargaining product and proportional fairness, so it is one specific scalarization with its own corner-gaming, not an escape from scalarization. | John F. Nash, 1950, ["The Bargaining Problem"](https://doi.org/10.2307/1907266); Kelly, 1956 (node 15). | `[PARTIAL]` | The equivalence is standard; the claim that it produces a named "Pareto-hacking" failure of multi-axis optimization, with sycophancy as the rater-axis case, is the project's transfer and is owned by the Goodhart taxonomy above, not claimed as new. |
+
+Node flag: `[PARTIAL]`. The taxonomy and the classic statement are owned; the "invariance to aggregator" framing for the active spine is the transfer.
+
+## 18. Adversarial / Process-Based Evaluation and Sycophancy
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Models trained on human approval learn to tell raters what they want rather than what is true (sycophancy): gaming of the approval axis. | Ethan Perez et al., 2022, ["Discovering Language Model Behaviors with Model-Written Evaluations"](https://arxiv.org/abs/2212.09251); Mrinank Sharma et al., 2023, ["Towards Understanding Sycophancy in Language Models"](https://arxiv.org/abs/2310.13548). | `[FULL MATCH]` | Direct empirical source for approval-axis gaming; supports sycophancy as the rater-axis instance of multi-axis Goodhart. |
+| Replacing a static evaluator with an adversarial process (debate between opposed agents) is a proposed counter to gaming a fixed objective. | Geoffrey Irving, Paul Christiano, Dario Amodei, 2018, ["AI safety via debate"](https://arxiv.org/abs/1805.00899). | `[FULL MATCH]` | Frames evaluation as an equilibrium of opposed agents rather than a fixed scalar/vector metric. |
+| Scalable oversight via recursive reward modeling reframes the target as a learned, iterated process rather than a fixed metric. | Jan Leike, David Krueger, Tom Everitt, Miljan Martic, Vishal Maini, Shane Legg, 2018, ["Scalable agent alignment via reward modeling"](https://arxiv.org/abs/1811.07871). | `[FULL MATCH]` | Direct source for process/iterated reward over a static aggregator. |
+| Adversarial/debate evaluation has its own regress and failure modes (e.g. obfuscated arguments), so it relocates rather than removes the checker regress. | Beth Barnes, Paul Christiano, 2020, ["Writeup: Progress on AI Safety via Debate / obfuscated arguments"](https://www.alignmentforum.org/posts/PJLABqQ962hZEqhdB/progress-on-ai-safety-via-debate-1). | `[PARTIAL]` | AI Alignment Forum writeup; verify citation form before publication. Links to node 3 checker regress: process evaluation is not a termination of the regress. |
+
+Node flag: `[PARTIAL]`. Sycophancy, debate, and reward modeling are owned by their sources; the project transfer is only the framing that they answer aggregator-invariant Goodhart by changing the evaluator's type rather than its formula.
+
 ## Summary
 
 Node flags:
 
 - `[FULL MATCH]`: 8
-- `[PARTIAL]`: 8
+- `[PARTIAL]`: 10
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -201,6 +222,8 @@ Nodes with `[PARTIAL]`:
 - 13. Incomplete preferences / incommensurability as agent design.
 - 14. Bottom-up vs top-down alignment / governor framing.
 - 16. Sacred / protected values and taboo trade-offs.
+- 17. Goodhart invariance under choice of aggregator.
+- 18. Adversarial / process-based evaluation and sycophancy.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 
@@ -219,6 +242,8 @@ Sources requiring manual maturity or citation-quality verification before broade
 - AI Frontiers, "AI Alignment Cannot Be Top-Down" - named by project context, but source location was not verified in this pass.
 - Xiaohua Wang et al., 2026, "Reward Hacking in the Era of Large Models" - recent survey; verify maturity and exact use before publication.
 - Agarwal et al., 2026, "AI Alignment via Incentives and Correction" - recent arXiv paper; verify maturity and exact use before publication.
+- Marilyn Strathern, 1997, "'Improving ratings'" - confirm the exact DOI/citation form for the compact Goodhart phrasing before publication.
+- Beth Barnes, Paul Christiano, 2020, "obfuscated arguments" - AI Alignment Forum writeup, not a peer-reviewed source; verify the best citable form before publication.
 
 Human-confirmed source that should not be marked as suspect:
 

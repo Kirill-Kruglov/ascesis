@@ -73,6 +73,32 @@ Field-check comment:
 
 Working role: define the strongest cheap opponent for the active spine before treating incompleteness as necessary. Negative results, where the hedger catches up everywhere, are part of the map.
 
+### Candidate: Goodhart Is Invariant to the Aggregator; the Response Is Process or Constraint, Not a Better Metric
+
+Status: [ACTIVE]
+
+Connects: Goodhart's law and its variants, reward hacking, multi-objective / Nash-bargaining aggregation, sycophancy, adversarial and process-based evaluation, reject-option and bounded optimization.
+
+Related field-check nodes: 11, 15, 16, 17, 18.
+
+Provenance note: this bridge is a post-experiment synthesis after Tests 02 and 06, not a path recovered from the first-circle dialogue. It has no dialogue trace, and is recorded here as team reasoning rather than as a reconstructed anchor.
+
+Framing: Goodhart, Strathern, and Manheim and Garrabrant own the statement that proxy optimization fails structurally and in distinct variants; Nash owns the bargaining-product equivalence that makes geometric-mean aggregation one scalarization among others; Perez et al. and Sharma et al. own sycophancy; Irving et al. and Leike et al. own debate and reward-modeling as process-based evaluation; Taylor owns quantilization. The bridge records one observation across these fields: replacing an arithmetic scalar proxy with a geometric/Pareto aggregator does not remove Goodhart, it relocates it. Arithmetic aggregation invites pushing a single axis; geometric/Pareto aggregation invites weak-Pareto padding of every measured axis, and where one axis is the rater, that padding is sycophancy. Climbing the aggregator ladder (leximin, Nash, distributionally-robust, minimax-regret) in search of a metric that does not hack is the design-level form of the project's own anti-Goodhart discipline rule, and is flagged as such.
+
+The non-aggregator responses each change a structural assumption rather than the formula, and each keeps its own open regress:
+
+- open / revisable axis set instead of a closed one (social-choice impossibility, node 12-13), justified as anti-gaming discipline after Test 06 removed the performance justification;
+- adversarial or process-based evaluator instead of a static one (debate, reward modeling, node 18), the most direct answer to sycophancy, but inheriting the checker regress of node 3 and bridge 7;
+- bounded optimization pressure plus hard constraints that remove some axes from the trade (quantilization, node 5; protected values, node 16), which converts a weak-Pareto-erodable axis into a non-tradeable one at the cost of having to identify it correctly.
+
+Field-check comment:
+
+> `field_check.md` node 17 grounds the aggregator-invariance claim in Goodhart/Strathern/Manheim-Garrabrant as `[FULL MATCH]`, with the Nash-product transfer as `[PARTIAL]`.
+>
+> `field_check.md` node 18 grounds sycophancy, debate, and reward modeling as `[FULL MATCH]`, with the obfuscated-arguments regress as `[PARTIAL]`.
+
+Working role: explain why the project does not search for a better aggregator. The two responses that survive map onto the same two successors as the narrowing note: removing axes from the trade (existence of non-tradeable axes) and detecting when scalarization is invalid (detection / refusal). "Overcome Pareto-hacking" and "detect the non-scalarizable regime" are the same question seen from the optimizer side.
+
 ## Proposed Bridges
 
 ### 1. From Verified Isolation to Semantic Alignment

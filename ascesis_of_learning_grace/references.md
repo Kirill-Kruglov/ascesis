@@ -78,6 +78,18 @@ Canonical bibliography derived from [field_check.md](field_check.md), grouped by
 - Gao, Leo, John Schulman, and Jacob Hilton. 2022. ["Scaling Laws for Reward Model Overoptimization"](https://arxiv.org/abs/2210.10760).
 - Karwowski, Jacek, Oliver Hayman, Xingjian Bai, Klaus Kiendlhofer, Charlie Griffin, and Joar Skalse. 2023. ["Goodhart's Law in Reinforcement Learning"](https://arxiv.org/abs/2310.09144).
 - Wang, Xiaohua, et al. 2026. ["Reward Hacking in the Era of Large Models: Mechanisms, Emergent Misalignment, Challenges"](https://arxiv.org/abs/2604.13602). Manual verification: recent survey; verify maturity and exact use before publication.
+- Goodhart, Charles A. E. 1975. "Problems of Monetary Management: The UK Experience."
+- Strathern, Marilyn. 1997. ["'Improving ratings': audit in the British University system"](https://doi.org/10.1002/(SICI)1234-981X(199709)5:3%3C305::AID-EURO184%3E3.0.CO;2-4). *European Review* 5(3): 305-321. Manual verification: confirm DOI/citation form.
+- Manheim, David, and Scott Garrabrant. 2018. ["Categorizing Variants of Goodhart's Law"](https://arxiv.org/abs/1803.04585).
+- Nash, John F. 1950. ["The Bargaining Problem"](https://doi.org/10.2307/1907266). *Econometrica* 18(2): 155-162. (Geometric/log aggregation as the Nash product.)
+
+## Adversarial and Process-Based Evaluation, Sycophancy
+
+- Irving, Geoffrey, Paul Christiano, and Dario Amodei. 2018. ["AI safety via debate"](https://arxiv.org/abs/1805.00899).
+- Leike, Jan, David Krueger, Tom Everitt, Miljan Martic, Vishal Maini, and Shane Legg. 2018. ["Scalable agent alignment via reward modeling: a research direction"](https://arxiv.org/abs/1811.07871).
+- Perez, Ethan, et al. 2022. ["Discovering Language Model Behaviors with Model-Written Evaluations"](https://arxiv.org/abs/2212.09251).
+- Sharma, Mrinank, et al. 2023. ["Towards Understanding Sycophancy in Language Models"](https://arxiv.org/abs/2310.13548).
+- Barnes, Beth, and Paul Christiano. 2020. ["Writeup: Progress on AI Safety via Debate / obfuscated arguments"](https://www.alignmentforum.org/posts/PJLABqQ962hZEqhdB/progress-on-ai-safety-via-debate-1). Manual verification: AI Alignment Forum writeup, not peer-reviewed; verify best citable form.
 
 ## Social Choice, Incomplete Preferences, and Value Aggregation
 
