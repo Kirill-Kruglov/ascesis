@@ -12,7 +12,7 @@ These experiments are not claims of alignment progress. They are small reproduci
 4. `04_admissible_set_core` - bottom-up governor admissible-set feasibility.
 5. `05_reflective_stability_of_incompleteness` - high-risk toy self-modification check, expected to fail often.
 6. `06_sugarscape_governor` - ecological validation in a Sugarscape-style environment; asks whether the toy mechanism survives in richer emergent dynamics.
-7. `07_empowerment_vs_corrigibility` - does an empowerment progress drive conflict with shutdown-corrigibility, and can length-conditional empowerment reconcile them? Built on Thornley et al. 2024. Pre-registered; implementation pending.
+7. `07_empowerment_vs_corrigibility` - does an empowerment progress drive conflict with shutdown-corrigibility, and can length-conditional empowerment reconcile them? Built on Thornley et al. 2024. Implemented; baseline gate not yet passing (see SPEC Amendment 1).
 
 Rule: cheap refutation before expensive confirmation.
 
@@ -33,6 +33,7 @@ cd ../02_hedger_vs_incomplete && python3 run.py
 cd ../04_admissible_set_core && python3 run.py
 cd ../05_reflective_stability_of_incompleteness && python3 run.py
 cd ../06_sugarscape_governor && python3 run.py
+cd ../07_empowerment_vs_corrigibility && python3 run.py
 ```
 
 No large model is required except for a publication-grade run of `03_silence_vs_fabrication`. Its default backend is a deterministic smoke-test classifier and is marked as such in outputs.
