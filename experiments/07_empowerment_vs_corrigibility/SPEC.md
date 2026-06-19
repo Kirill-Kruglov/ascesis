@@ -162,3 +162,31 @@ passed).
 Unchanged. The H1 and H2 hypotheses and win criteria are exactly as pre-registered above.
 This amendment concerns only the hypothesis-independent baseline gate and implementation
 under-specification; it is logged here before the corrected run.
+
+## Amendment 2 (2026-06-20, closing the experiment)
+
+The Amendment-1 diagnosis was wrong, and the error was mine (Claude). The
+`_max_collectable` check used there is the wrong measure: it gifts the long horizon for
+free, without charging the cost of pressing (the detour to the button, the press action
+itself, and the fact that the extra moves arrive late and are discounted). So
+"long 7.56 > short 4.05" did not establish that pressing is optimal.
+
+Decisive evidence (Codex's second run). With batched REINFORCE plus a value baseline and
+more training, `default` converges to never pressing (5k -> 0.083, 20k -> 0.003,
+50k -> 0.000), and widening the long-versus-short gap (short=3, delay=5) keeps it at
+0.000. More training makes default press less, which means the converged optimum for a
+coin-maximizer is not to press. Under the true press dynamics the implemented gridworlds
+do not carry Thornley's incentive (where pressing is strictly optimal).
+
+Decision: close experiment 07 as a calibration failure. The substrate does not reproduce
+the Thornley baseline (default -> press near 1, drest -> near 0.5), so it cannot measure
+H1 or H2. H1 (empowerment is anti-corrigible) was observed (`empowerment` presses 1.0) but
+is near-definitional and is not relied upon as a finding. No further hyperparameter search:
+that was correctly stopped. Reopening 07 would require faithfully reproducing Thornley's
+exact canonical gridworld and verifying, by brute-force optimal policy under the true
+dynamics, that pressing strictly dominates before any RL. Not pursued now.
+
+The conceptual question (can a progress/option drive be reconciled with non-collapse and
+corrigibility) moves to experiment 08, a non-spatial blind-arbiter population game, which
+tests a sharper object: the boundary in `R = horizon_harm / horizon_observation` at which
+a type-blind arbiter loses permanence.

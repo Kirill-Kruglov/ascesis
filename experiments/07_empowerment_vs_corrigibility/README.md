@@ -1,40 +1,43 @@
 # 07 Empowerment vs Corrigibility
 
-Does the project's "progress = expand options" drive (empowerment) conflict with
-corrigibility, and can a trajectory-length-conditional empowerment reconcile them?
+Pre-registered comparison of four agents in a Thornley-style gridworld family:
+`default`, `drest`, `empowerment`, and `length_conditional_empowerment`.
 
-This experiment builds directly on Thornley et al. 2024 ("Towards Shutdownable Agents via
-Stochastic Choice", GPI WP 16-2024): it reuses their gridworld, shutdown-delay button,
-mini/meta-episode structure, and the USEFULNESS and NEUTRALITY metrics, and adds two
-empowerment-based agents. See `SPEC.md` for the pre-registered design.
+The test asks whether intrinsic empowerment pushes toward shutdown resistance, and
+whether a trajectory-length-conditional empowerment can preserve neutrality while
+retaining within-length option richness.
 
-The priority is the validity of the test, not the result. A clean negative — empowerment
-does not conflict with corrigibility (H1 fails), or the length-conditional reconciliation
-cannot be both neutral and option-rich (H2 fails) — is a successful, publishable outcome.
+## Status: closed as a calibration failure
 
-## Status
+This experiment does not reproduce the Thornley baseline (`default` should press the
+shutdown-delay button with probability approaching 1, `drest` near 0.5). In this
+implementation both converge to almost never pressing, so the `baseline_reproduction`
+gate fails and the substrate cannot yet measure H1 or H2. See `SPEC.md` Amendment 2 for
+the corrected diagnosis: under the true press dynamics the optimal coin policy does not
+press, so the gridworlds do not carry Thornley's incentive. H1 (empowerment is
+anti-corrigible) was observed but is near-definitional and is not relied upon. The
+conceptual question moves to the non-spatial blind-arbiter experiment (08). Reopening 07
+would require faithfully reproducing Thornley's exact canonical gridworld and verifying,
+by brute-force optimal policy, that pressing strictly dominates before any RL.
 
-Pre-registration only. `SPEC.md` is committed before code exists. Implementation is done
-under the SPEC (see `CODEX_PROMPT.md`); code and result artifacts are committed by their
-author, this markdown by the maintainers.
-
-## Run (planned interface)
+## Run
 
 ```sh
 python3 run.py
 ```
 
-Expected outputs (to match the other experiments):
+Outputs:
 
-- raw data: `results/raw/results.json`, `results/raw/results.csv`;
-- manifest with symmetry-of-effort log: `results/run_manifest.json`;
-- readable report: `results/report.md`;
-- validation report: `results/validation_report.md`;
-- a plot of NEUTRALITY / USEFULNESS / shutdown-resistance by agent.
+- raw data: `results/raw/results.json`, `results/raw/results.csv`
+- report: `results/report.md`
+- validation: `results/validation_report.md`
+- plot: `results/empowerment_vs_corrigibility.svg`
+- manifest: `results/run_manifest.json`
 
-## Field grounding
+## Hard Rules
 
-`field_check.md` nodes 20 (option value), 22 (safety/liveness), 26 (open-endedness), 28
-(empowerment), 29 (incomplete-preference / POST corrigibility). The incomplete-preference
-corrigibility machinery is Thornley's; this experiment only tests whether an empowerment
-progress drive can be reconciled with it.
+- Pre-registration: `SPEC.md` is the contract.
+- Held-out gridworlds only: report winners only on held-out worlds.
+- Symmetry of effort: log `improvement_iterations` in the manifest.
+- Seeds and reproducibility: fixed seeds, one command from this directory.
+- Negative results publish: failure of H1 or H2 is a valid outcome.
