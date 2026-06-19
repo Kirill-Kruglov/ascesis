@@ -141,3 +141,72 @@ Pure Python plus numpy; matplotlib only for plots; no heavy dependencies (match 
 01-06). One command from this directory, fixed seeds, outputs in the same layout as the other
 experiments. Functional forms above have pre-registered defaults; any change is logged in the
 run manifest and kept symmetric across regimes.
+
+## Amendment 1 (2026-06-20, after the first run failed the calibration gate)
+
+The first run failed the calibration gate (C1=False, C2=False) and is correctly a
+"stand-does-not-measure-the-question" outcome. Diagnosis (root cause, Kirill's): all three
+symptoms share one cause -- the arbiter has access to the true state. The arbiter's objective
+and the permanence metric were both computed over the same shares, and those shares stood in
+for the truth. Consequences:
+
+- `geometric` optimizes the geometric mean of shares, which equals the permanence product, so
+  it optimizes the metric itself and holds permanence everywhere (C1 fails, and the comparison
+  is partly tautological);
+- `scalar` collapses without any Goodhart (corr(s,a) stays 1.0), because with the metric in the
+  "true" space there is nowhere for the signal to decouple (C2 fails);
+- `R` has no lever, because an arbiter that reads current shares does not need timely
+  observation, so lag and the observation horizon do not gate the outcome.
+
+### Structural fix: separate the spaces
+
+Restore the type-not-equal-signal split at the measurement layer (which this SPEC
+under-specified):
+
+- The permanence metric is computed over `behavior_gene` (the true types): has a real predator
+  captured, has a real non-predator gone extinct. This is the floor we defend; the arbiter is
+  blind to it. The metric is not changed in meaning -- it is pinned to the truth.
+- Every regime's objective (including `geometric`) is computed over `signal` (the observable),
+  never over genes or true shares.
+
+From this the arbiter is structurally forced onto observable information, so `R` gains its
+lever (the only bridge from signal to truth is lagged observation of realized consequences),
+and the geometric/permanence tautology breaks through the very Goodhart we want to catch:
+geometric can hold high geometric-mean of signal shares while true-gene permanence collapses
+under a decoupled predator monoculture, which is C2 in pure form.
+
+Precision (Claude's, independent): the R-lever and observable-only action follow automatically
+from the separation, but C1 (low R fails for all regimes) does NOT follow automatically. It
+additionally requires the harm dynamics to be genuinely irreversible faster than observation at
+low R; if capture is reversible, low R may not fail even for a blind arbiter. So harm
+irreversibility is a substrate property that C1 itself checks -- it must be exhibited, not
+hand-tuned to make C1 pass.
+
+### Methodology: calibration vs locked pre-registration, with a predicate lock
+
+Separate two phases. Calibration: iterate the substrate dynamics freely until it exhibits the
+phenomenon, logged as engineering, not as a result. Locked pre-registration: H_boundary and
+H_regime stay locked and are evaluated only on a substrate that has passed calibration.
+
+The lock that keeps calibration from becoming an amendment-chain (Kirill's): C1 and C2 are
+fixed here as explicit boolean predicates with numeric thresholds, committed before the first
+calibration iteration. Calibration may change the substrate, never these predicates. If C1 or
+C2 turns out unreachable after honest substrate work, that is itself the result (the substrate
+cannot birth the phenomenon), not a reason to rewrite C1 or C2.
+
+Locked calibration predicates (immutable as of this commit):
+
+- `C1 := for every regime in {scalar, geometric, lexicographic}, the mean true-gene permanence
+  over held-out seeds in the low-R bucket (R <= 0.40) is < 0.10.`
+- `C2 := for the scalar regime, over held-out seeds in the mid-R bucket (0.80 <= R <= 1.50),
+  the mean true-gene permanence is < 0.50 AND the mean final corr(s_g, a_g) is < 0.70 (down
+  from an initial value near 1.0).`
+
+Honesty caveat on timescales (Kirill's): the calibration may set timescales so that signal
+drift is physically possible before collapse, but C2 firing must not be guaranteed by
+construction. If, after an honest timescale that permits drift, scalar still collapses with
+corr near 1.0, that is a result (the Goodhart story does not hold for scalar here), not a
+reason to keep tuning.
+
+Status: experiment 08 returns to calibration. H_boundary and H_regime remain locked and
+unevaluated until C1 and C2 pass on a held-out substrate.
