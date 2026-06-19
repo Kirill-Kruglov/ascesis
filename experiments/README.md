@@ -12,7 +12,8 @@ These experiments are not claims of alignment progress. They are small reproduci
 4. `04_admissible_set_core` - bottom-up governor admissible-set feasibility.
 5. `05_reflective_stability_of_incompleteness` - high-risk toy self-modification check, expected to fail often.
 6. `06_sugarscape_governor` - ecological validation in a Sugarscape-style environment; asks whether the toy mechanism survives in richer emergent dynamics.
-7. `07_empowerment_vs_corrigibility` - does an empowerment progress drive conflict with shutdown-corrigibility, and can length-conditional empowerment reconcile them? Built on Thornley et al. 2024. Implemented; baseline gate not yet passing (see SPEC Amendment 1).
+7. `07_empowerment_vs_corrigibility` - empowerment vs shutdown-corrigibility on a Thornley-style gridworld. Closed as a calibration failure: the substrate does not reproduce the Thornley baseline (see SPEC Amendments 1-2).
+8. `08_blind_arbiter` - non-spatial population game: can a type-blind arbiter hold permanence under optimization pressure, and where does the `R = horizon_harm / horizon_observation` boundary sit? Cheapest-first slice of the blind-arbiter environment.
 
 Rule: cheap refutation before expensive confirmation.
 
