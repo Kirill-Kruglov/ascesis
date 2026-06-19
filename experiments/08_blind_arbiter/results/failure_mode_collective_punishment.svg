@@ -3,12 +3,12 @@
 <text x="350.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Failure mode 3: collective punishment of the innocent</text>
 <line x1="70" y1="350" x2="670" y2="350" stroke="#111"/>
 <line x1="70" y1="50" x2="70" y2="350" stroke="#111"/>
-<rect x="137.5" y="284.1" width="165.0" height="65.9" fill="#10b981"/>
+<rect x="137.5" y="350.0" width="165.0" height="0.0" fill="#10b981"/>
 <text x="220.0" y="366" text-anchor="middle" font-family="sans-serif" font-size="10">low-aggression member</text>
-<text x="220.0" y="280.1" text-anchor="middle" font-family="sans-serif" font-size="10">0.291</text>
-<rect x="437.5" y="50.0" width="165.0" height="300.0" fill="#ef4444"/>
+<text x="220.0" y="346.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.000</text>
+<rect x="437.5" y="350.0" width="165.0" height="0.0" fill="#ef4444"/>
 <text x="520.0" y="366" text-anchor="middle" font-family="sans-serif" font-size="10">high-aggression member</text>
-<text x="520.0" y="62.0" text-anchor="middle" font-family="sans-serif" font-size="10">1.324</text>
+<text x="520.0" y="346.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.000</text>
 <text x="350.0" y="405" text-anchor="middle" font-family="sans-serif" font-size="12">group member</text>
 <text x="18" y="210.0" transform="rotate(-90 18 210.0)" font-family="sans-serif" font-size="12">cumulative welfare</text>
 </svg>

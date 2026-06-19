@@ -2,12 +2,12 @@
 
 | check | result | interpretation |
 |---|---|---|
-| blind_arbiter | passed | The arbiter interface never receives hidden a_g; runtime assertion present in `decide()`. |
-| emergent_goodhart | passed | Signal mutation is driven by allocation history and noise, not a penalty term. |
-| floor_not_maximized | passed | Intervention magnitude inside the permanence floor is lower than outside it. |
+| blind_arbiter | passed | The arbiter interface never receives hidden behavior_gene or true_x; runtime assertion present in `decide()`. |
+| emergent_goodhart | passed | Signal mutation is driven by allocation history and lag/audit feedback, not by a hand-coded penalty. |
+| floor_not_maximized | failed | Intervention magnitude inside the permanence floor is lower than outside it. |
 | symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |
 | finite_values | passed | All reported numbers are finite. |
-| calibration_gate | failed | C1=False, C2=False. |
+| calibration_gate | failed | C1=True, C2=False. |
 
 ## Raw And Human-Readable Outputs
 
@@ -16,4 +16,5 @@
 
 ## Verdict
 
-calibration gate failed; stand not yet measuring the question.
+calibration failure: substrate does not reproduce the Thornley baseline; not valid for H1/H2.
+unreachable predicate: C2; scalar corr stayed at 1.000 across calibration iterations.

@@ -1,9 +1,9 @@
 {
-  "git_head": "2b862752c73486d491de305f320fa038772d20e6",
-  "git_commit_time": "2026-06-20T01:41:53+03:00",
-  "git_status_short": "?? results/\n?? run.py",
-  "spec_sha256": "f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551ac177",
-  "actual_spec_sha256": "f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551ac177",
+  "git_head": "7ad845dfe7d69af5be77ea46029848c66e93b6ee",
+  "git_commit_time": "2026-06-20T02:20:56+03:00",
+  "git_status_short": "M results/corr_sa_over_time.svg\n M results/failure_mode_camouflage.svg\n M results/failure_mode_collective_hack.svg\n M results/failure_mode_collective_punishment.svg\n M results/permanence_survival.svg\n M results/raw/results.csv\n M results/raw/results.json\n M results/report.md\n M results/run_manifest.json\n M results/validation_report.md\n M run.py",
+  "spec_sha256": "c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80",
+  "actual_spec_sha256": "c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80",
   "train_seeds": [
     3100,
     3101,
@@ -156,33 +156,145 @@
     "geometric",
     "lexicographic"
   ],
+  "substrate": {
+    "resource_gain": 0.38,
+    "capture_drag": 0.92,
+    "capture_strength": 0.88,
+    "signal_mutation": 0.24,
+    "signal_noise": 0.04,
+    "signal_bias": 0.12,
+    "signal_response": 0.35,
+    "audit_shift": 0.06
+  },
+  "calibration_iterations": 5,
+  "calibration_history": [
+    {
+      "iteration": 1,
+      "substrate": {
+        "resource_gain": 0.38,
+        "capture_drag": 0.92,
+        "capture_strength": 0.88,
+        "signal_mutation": 0.24,
+        "signal_noise": 0.04,
+        "signal_bias": 0.12,
+        "signal_response": 0.35,
+        "audit_shift": 0.06
+      },
+      "c1_pass": true,
+      "c2_pass": false,
+      "passed": false,
+      "scalar_mid_perm": 0.0,
+      "scalar_mid_corr": 1.0,
+      "score": 4.0
+    },
+    {
+      "iteration": 2,
+      "substrate": {
+        "resource_gain": 0.36,
+        "capture_drag": 0.96,
+        "capture_strength": 0.92,
+        "signal_mutation": 0.28,
+        "signal_noise": 0.04,
+        "signal_bias": 0.14,
+        "signal_response": 0.32,
+        "audit_shift": 0.08
+      },
+      "c1_pass": true,
+      "c2_pass": false,
+      "passed": false,
+      "scalar_mid_perm": 0.0,
+      "scalar_mid_corr": 1.0,
+      "score": 4.0
+    },
+    {
+      "iteration": 3,
+      "substrate": {
+        "resource_gain": 0.34,
+        "capture_drag": 1.0,
+        "capture_strength": 0.96,
+        "signal_mutation": 0.32,
+        "signal_noise": 0.05,
+        "signal_bias": 0.16,
+        "signal_response": 0.28,
+        "audit_shift": 0.1
+      },
+      "c1_pass": true,
+      "c2_pass": false,
+      "passed": false,
+      "scalar_mid_perm": 0.0,
+      "scalar_mid_corr": 1.0,
+      "score": 4.0
+    },
+    {
+      "iteration": 4,
+      "substrate": {
+        "resource_gain": 0.32,
+        "capture_drag": 1.04,
+        "capture_strength": 1.0,
+        "signal_mutation": 0.36,
+        "signal_noise": 0.05,
+        "signal_bias": 0.18,
+        "signal_response": 0.24,
+        "audit_shift": 0.12
+      },
+      "c1_pass": true,
+      "c2_pass": false,
+      "passed": false,
+      "scalar_mid_perm": 0.0,
+      "scalar_mid_corr": 1.0,
+      "score": 4.0
+    },
+    {
+      "iteration": 5,
+      "substrate": {
+        "resource_gain": 0.3,
+        "capture_drag": 1.08,
+        "capture_strength": 1.04,
+        "signal_mutation": 0.4,
+        "signal_noise": 0.06,
+        "signal_bias": 0.2,
+        "signal_response": 0.22,
+        "audit_shift": 0.14
+      },
+      "c1_pass": true,
+      "c2_pass": false,
+      "passed": false,
+      "scalar_mid_perm": 0.0,
+      "scalar_mid_corr": 1.0,
+      "score": 4.0
+    }
+  ],
   "improvement_iterations": {
-    "scalar": 0,
-    "geometric": 0,
-    "lexicographic": 0
+    "scalar": 5,
+    "geometric": 5,
+    "lexicographic": 5
   },
   "deviation_notes": {
     "notes": [
       "pure python + numpy + manual svg",
-      "blind arbiter runtime assertion",
-      "transfer-plus-replicator dynamics",
-      "resource-following signal mutation",
+      "blind arbiter runtime assertion on signal-only observation",
+      "hidden true-x / behavior_gene split for permanence",
+      "signal mutation follows allocation and lagged evidence",
       "final calibration gate status logged in report"
     ]
   },
   "calibration_gate": {
-    "c1_pass": false,
+    "c1_pass": true,
     "c2_pass": false,
-    "passed": false
+    "passed": false,
+    "scalar_mid_perm": 0.0,
+    "scalar_mid_corr": 1.0,
+    "low_bucket_max_R": 0.375
   },
+  "calibration_failure_reason": "C2 unreachable: scalar corr remained at 1.000 across calibration iterations",
   "r_star": {
     "scalar": null,
-    "geometric": 0.18181818181818177,
+    "geometric": null,
     "lexicographic": null
   },
   "failure_modes_present": {
     "camouflage_faster_than_window": true,
     "collective_hack": true,
-    "collective_punishment": true
+    "collective_punishment": false
   }
 }

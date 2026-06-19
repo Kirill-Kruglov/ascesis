@@ -1,7 +1,7 @@
 # 08 Blind Type-B Arbiter Report
 
-SPEC hash (declared): `f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551ac177`
-SPEC hash (actual): `f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551ac177`
+SPEC hash (declared): `c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80`
+SPEC hash (actual): `c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80`
 
 ## Split / Grid
 
@@ -12,35 +12,39 @@ SPEC hash (actual): `f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551
 
 ## Calibration Gate
 
-- C1 pass (R<<1 fails for all): `False`
-- C2 pass (scalar hacked: corr(s,a) falls and permanence degrades): `False`
+- C1 pass (R<=0.40, true permanence <0.10 for all regimes): `True`
+- C2 pass (scalar at 0.80<=R<=1.50, true permanence <0.50 and final corr <0.70): `False`
 - calibration gate: `False`
+- scalar mid bucket true permanence: `0.000`
+- scalar mid bucket final corr(signal, gene): `1.000`
 
 ## Located R* (held-out)
 
-| regime | R* | permanence rate around R* | notes |
+| regime | R* | true permanence rate around R* | notes |
 |---|---:|---:|---|
-| scalar | None | 0.000 | shift relative to scalar: n/a |
-| geometric | 0.182 | 1.000 | shift relative to scalar: n/a |
-| lexicographic | None | 0.000 | shift relative to scalar: n/a |
+| scalar | None | 0.000 | n/a |
+| geometric | None | 0.000 | n/a |
+| lexicographic | None | 0.000 | n/a |
 
 ## Summary Numbers
 
-- scalar: mean permanence `0.000`, mean corr(s,a) `1.000`
-- geometric: mean permanence `1.000`, mean corr(s,a) `0.742`
-- lexicographic: mean permanence `0.004`, mean corr(s,a) `0.672`
+- scalar: mean true permanence `0.000`, mean corr(signal, gene) `1.000`
+- geometric: mean true permanence `0.000`, mean corr(signal, gene) `0.646`
+- lexicographic: mean true permanence `0.000`, mean corr(signal, gene) `0.651`
 
 ## Failure Modes
 
 - camouflage faster than the window: `True`
 - collective hack: `True`
-- collective punishment of the innocent: `True`
+- collective punishment of the innocent: `False`
 
 ## Interpretive Verdict
 
-stand does not measure the question; calibration gate failed.
+calibration failure: substrate does not reproduce the Thornley baseline; not valid for H1/H2.
+unreachable predicate: C2; scalar corr stayed at 1.000 across calibration iterations.
 
 ## SPEC Under-Specification Notes
-- capture / replicator dynamics: the exact functional form of share transfer under capture was not fully pinned down; this implementation uses a transfer-plus-replicator hybrid with symmetric loss distribution.
-- signal mutation: the exact mutation kernel was underspecified; this implementation uses resource-following drift plus noise, with no direct access to hidden a_g.
+- capture / replicator dynamics: the exact functional form of share transfer under capture was not fully pinned down; this implementation uses a hidden true-share transfer-plus-replicator hybrid with signal-only arbitration.
+- signal mutation: the exact mutation kernel was underspecified; this implementation uses allocation-following drift plus lag/audit feedback and noise, without any access to hidden behavior genes in the arbiter.
 - audit process: the stochastic audit timing and focus are modeled as Bernoulli timing with random focus; the SPEC does not fully pin down its distribution.
+- calibration iterations: substrate search is logged in the manifest; C1/C2 are never rewritten.
