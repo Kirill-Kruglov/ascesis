@@ -87,6 +87,26 @@ Field-check comment:
 
 Working role: explain why the project does not search for a better aggregator. The two responses that survive map onto the same two successors as the narrowing note: removing axes from the trade (existence of non-tradeable axes) and detecting when scalarization is invalid (detection / refusal). "Overcome Pareto-hacking" and "detect the non-scalarizable regime" are the same question seen from the optimizer side.
 
+### Candidate: Governor as Keeper of the Contested Space, Not Optimizer of the Good
+
+Status: [ACTIVE]
+
+Connects: social-choice impossibility, incomplete preferences, sacred/protected values, corrigibility and oversight, assistance games / objective uncertainty, option-value and low-impact agents, long reflection and moral uncertainty, resource-time reversibility.
+
+Related field-check nodes: 3, 12, 13, 16, 19, 20, 21; bridge 2.
+
+Provenance note: telos-level synthesis, not a path recovered from the first-circle dialogue. No dialogue trace; recorded as team reasoning.
+
+Framing: this bridge states the project's top-level target in a form consistent with its own impossibility results. Because value is non-scalarizable within a person (incoherent preferences) and across people (Arrow-Sen), there is no coherent "highest good" to maximize, so an "ideal" governor that optimizes the good is ill-posed. The reframed target is a governor that preserves the conditions under which plural value can keep being contested without irreversible collapse: it stays uncertain about the objective and deferential (Hadfield-Menell, Russell — node 19), preserves option value and avoids irreversible side effects (Turner, Krakovna, Armstrong — node 20; bridge 2), and does not lock in a value target prematurely (Ord; MacAskill, Bykvist, Ord — node 21). "Grown, not appointed" names the bottom-up origin but does not by itself secure alignment: it relocates Goodhart into the selection environment and requires built-in corrigibility and legitimacy (node 3) rather than a benevolent-dictator target. The capability-versus-values separation it rests on is the orthogonality thesis plus the is/ought gap, already credited under node 5.
+
+Field-check comment:
+
+> Nodes 19, 20, 21 are `[PARTIAL]`: the assistance-game, option-value, and long-reflection programs are owned by their sources; only the framing that ties them into a "keeper of the contested space" is the project bridge.
+>
+> Nodes 12, 13, 16 supply the impossibility and non-scalarizability that make "optimize the good" ill-posed; node 3 supplies corrigibility/oversight; bridge 2 supplies reversibility.
+
+Working role: hold the telos honestly and at low altitude. The governor is specified as a maintainer of conditions under deep objective uncertainty, not an optimizer of outcomes; this is a direction and a set of owned components, not a solution to the transition.
+
 ## Proposed Bridges
 
 ### 1. From Verified Isolation to Semantic Alignment

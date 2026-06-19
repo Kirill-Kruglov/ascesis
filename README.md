@@ -27,6 +27,10 @@ To orient quickly, start with [status.md](ascesis_of_learning_grace/status.md): 
 - [archive/INDEX.md](ascesis_of_learning_grace/archive/INDEX.md): frozen pointers to closed branches and superseded framings, with the commit SHAs to retrieve full texts.
 - [experiments/](experiments/): preregistered toy experiments for comparing incomplete preferences, bet-hedging, and governor feasibility.
 
+## Contributors
+
+Kirill Kruglov (author and maintainer), Claude (Opus 4.8), and Codex (GPT-5.5). See [CONTRIBUTORS.md](CONTRIBUTORS.md) for roles.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

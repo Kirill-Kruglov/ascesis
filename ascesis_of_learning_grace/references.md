@@ -121,6 +121,17 @@ Canonical bibliography derived from [field_check.md](field_check.md), grouped by
 - Tetlock, Philip E., et al. 2000. ["The Psychology of the Unthinkable: Taboo Trade-Offs, Forbidden Base Rates, and Heretical Counterfactuals"](https://doi.org/10.1037/0022-3514.78.5.853). *Journal of Personality and Social Psychology*.
 - Tetlock, Philip E. 2003. ["Thinking the unthinkable: sacred values and taboo cognitions"](https://doi.org/10.1016/S1364-6613(03)00135-9). *Trends in Cognitive Sciences*.
 
+## Objective Uncertainty, Option Value, and Long Reflection
+
+- Hadfield-Menell, Dylan, Anca Dragan, Pieter Abbeel, and Stuart Russell. 2016. ["Cooperative Inverse Reinforcement Learning"](https://arxiv.org/abs/1606.03137).
+- Hadfield-Menell, Dylan, Anca Dragan, Pieter Abbeel, and Stuart Russell. 2017. ["The Off-Switch Game"](https://arxiv.org/abs/1611.08219).
+- Russell, Stuart. 2019. *Human Compatible: Artificial Intelligence and the Problem of Control*. Viking.
+- Turner, Alexander Matt, Dylan Hadfield-Menell, and Prasad Tadepalli. 2020. ["Conservative Agency via Attainable Utility Preservation"](https://arxiv.org/abs/1902.09725).
+- Krakovna, Victoria, et al. 2019. ["Penalizing Side Effects Using Stepwise Relative Reachability"](https://arxiv.org/abs/1806.01186).
+- Armstrong, Stuart, and Benjamin Levinstein. 2017. ["Low Impact Artificial Intelligences"](https://arxiv.org/abs/1705.10720).
+- Ord, Toby. 2020. *The Precipice: Existential Risk and the Future of Humanity*. Hachette. (The "long reflection.")
+- MacAskill, William, Krister Bykvist, and Toby Ord. 2020. *Moral Uncertainty*. Oxford University Press.
+
 ## Cross-Cutting Cleavages
 
 - Lipset, Seymour Martin, and Stein Rokkan. 1967. "Cleavage Structures, Party Systems, and Voter Alignments: An Introduction." In *Party Systems and Voter Alignments*.

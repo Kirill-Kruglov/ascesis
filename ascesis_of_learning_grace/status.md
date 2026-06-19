@@ -8,6 +8,28 @@ Last updated: 2026-06-19. Transition commits: `ca99c23` closed the
 mechanical-superiority claim; `60b495b` credited the Goodhart-invariance and
 adversarial-evaluation fields.
 
+## Telos and scope
+
+The top-level aim is to map a path by which humanity could build AGI/ASI and not
+collapse after it. Discipline clause: this is a direction, not a claim of a
+solution. The project maps honest bridges between existing fields; it does not
+assert it can secure the transition, and the grandeur of the aim does not license
+loose claims (discipline rule 7; the no-novelty genre). The largest Goodhart risk
+in the project is at this level — letting the importance of the goal excuse loose
+thinking — so claims here stay small and field-owned.
+
+Working reframing of the target: because value is non-scalarizable both within a
+person (incoherent, contradictory preferences) and across people (Arrow-Sen
+aggregation limits), there is no coherent "highest good" to maximize. The
+governor's job is therefore reframed from optimizing the good to preserving the
+conditions under which plural value can keep being contested without irreversible
+collapse — a maintenance goal under deep uncertainty about the objective, not an
+optimization target. "Grown, not appointed" names the bottom-up, process-shaped
+origin of such a governor; it does not by itself escape Goodhart (it relocates it
+into the selection environment) and it requires built-in corrigibility and
+legitimacy rather than a benevolent-dictator target. See the `structure.md`
+candidate "Governor as Keeper of the Contested Space".
+
 ## Current spine (one line)
 
 Non-scalarizable value structures may exist; the open work is whether they are

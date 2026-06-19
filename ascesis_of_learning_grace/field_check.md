@@ -193,12 +193,39 @@ Node flag: `[PARTIAL]`. The taxonomy and the classic statement are owned; the "i
 
 Node flag: `[PARTIAL]`. Sycophancy, debate, and reward modeling are owned by their sources; the project transfer is only the framing that they answer aggregator-invariant Goodhart by changing the evaluator's type rather than its formula.
 
+## 19. Assistance Games / Uncertainty About the Objective
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| An agent that is uncertain about the human objective, and that defers to and stays correctable by humans, avoids the failure of optimizing a single fixed misspecified target. | Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, Stuart Russell, 2016, ["Cooperative Inverse Reinforcement Learning"](https://arxiv.org/abs/1606.03137); Stuart Russell, 2019, *Human Compatible: Artificial Intelligence and the Problem of Control*. | `[FULL MATCH]` | Directly formalizes objective uncertainty plus deference as a safety property; this is the closest existing program to a governor without a fixed target. |
+| Objective uncertainty gives an agent a positive incentive to allow itself to be switched off. | Dylan Hadfield-Menell, Anca Dragan, Pieter Abbeel, Stuart Russell, 2017, ["The Off-Switch Game"](https://arxiv.org/abs/1611.08219). | `[FULL MATCH]` | Grounds corrigibility-as-consequence-of-uncertainty rather than corrigibility-as-imposed-constraint. |
+
+Node flag: `[PARTIAL]`. The assistance-game frame is owned; the transfer to a "grown governor that preserves the contested space" is the project bridge, not a claim of new theory.
+
+## 20. Option-Value Preservation / Low-Impact Agents
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Preserving the ability to achieve many goals, and avoiding irreversible side effects, can be a safety objective in place of maximizing a single objective. | Alexander Matt Turner, Dylan Hadfield-Menell, Prasad Tadepalli, 2020, ["Conservative Agency via Attainable Utility Preservation"](https://arxiv.org/abs/1902.09725). | `[FULL MATCH]` | Attainable-utility preservation is option-value preservation; directly supports "keep the space open" over "optimize the outcome". |
+| Penalizing irreversible side effects and preserving future reachability is a tractable proxy for low impact. | Victoria Krakovna et al., 2019, ["Penalizing Side Effects Using Stepwise Relative Reachability"](https://arxiv.org/abs/1806.01186); Stuart Armstrong, Benjamin Levinstein, 2017, ["Low Impact Artificial Intelligences"](https://arxiv.org/abs/1705.10720). | `[FULL MATCH]` | Reachability/low-impact work supports avoiding irreversible collapse as an operational handle; links to bridge 2 (reversibility / resource-time safety). |
+
+Node flag: `[PARTIAL]`. The mechanisms are owned; using them to define "preserve the conditions for contesting value" is the project transfer.
+
+## 21. Long Reflection / Moral Uncertainty
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Locking in a single value target prematurely is itself a risk; preserving the conditions to keep deliberating about values is preferable. | Toby Ord, 2020, *The Precipice: Existential Risk and the Future of Humanity* (the "long reflection"). | `[FULL MATCH]` | Direct source for "do not lock in; preserve deliberation," which the project reframes as the governor's maintenance goal. |
+| One can act reasonably under moral uncertainty without first resolving which moral theory is correct. | William MacAskill, Krister Bykvist, Toby Ord, 2020, *Moral Uncertainty* (Oxford University Press). | `[FULL MATCH]` | Supports acting under deep uncertainty about the objective rather than assuming a known good; complements node 19. |
+
+Node flag: `[PARTIAL]`. Long reflection and moral uncertainty are owned; the application to a governor that maintains a contested space is the project bridge.
+
 ## Summary
 
 Node flags:
 
 - `[FULL MATCH]`: 8
-- `[PARTIAL]`: 10
+- `[PARTIAL]`: 13
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -224,6 +251,9 @@ Nodes with `[PARTIAL]`:
 - 16. Sacred / protected values and taboo trade-offs.
 - 17. Goodhart invariance under choice of aggregator.
 - 18. Adversarial / process-based evaluation and sycophancy.
+- 19. Assistance games / uncertainty about the objective.
+- 20. Option-value preservation / low-impact agents.
+- 21. Long reflection / moral uncertainty.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 
