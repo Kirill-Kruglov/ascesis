@@ -220,12 +220,53 @@ Node flag: `[PARTIAL]`. The mechanisms are owned; using them to define "preserve
 
 Node flag: `[PARTIAL]`. Long reflection and moral uncertainty are owned; the application to a governor that maintains a contested space is the project bridge.
 
+## 22. Safety vs Liveness
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Properties of a process split into safety ("nothing bad ever happens") and liveness ("something good eventually happens"); avoiding an irreversible bad state is a safety property. | Leslie Lamport, 1977, ["Proving the Correctness of Multiprocess Programs"](https://doi.org/10.1109/TSE.1977.229904); Bowen Alpern, Fred B. Schneider, 1985, ["Defining Liveness"](https://doi.org/10.1016/0020-0190(85)90056-0). | `[FULL MATCH]` | Clean formal distinction. Non-collapse is a safety property; "engine of progress" is a liveness property. |
+| Liveness is guaranteeable only under fairness assumptions on the environment (opportunities recur). | Alpern and Schneider, 1985; standard temporal-logic fairness. | `[FULL MATCH]` | Explains why progress cannot be guaranteed in a closing or adversarial environment; ties to local optima and non-stationarity. |
+
+Node flag: `[PARTIAL]`. The distinction is owned; applying safety/liveness to value pluralism and a governor is the project transfer.
+
+## 23. Development as Freedom / Capability Approach
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Progress/development can be defined as the expansion of substantive freedoms and capabilities rather than the maximization of a single utility. | Amartya Sen, 1999, *Development as Freedom*; Martha Nussbaum, 2011, *Creating Capabilities*. | `[FULL MATCH]` | A direction-free, plural notion of progress; the positive side of option-value (node 20). Directly answers "can preservation become a progress engine" without a fixed good. |
+
+Node flag: `[PARTIAL]`. The capability approach is owned; its use as the governor's notion of progress is the project transfer.
+
+## 24. Aggregating Better-Than-Even Competence
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| If individual judgments are independently better than chance, majority aggregation tends toward near-certainty as the group grows. | Condorcet, 1785, *Essai sur l'application de l'analyse à la probabilité des décisions rendues à la pluralité des voix* (Condorcet Jury Theorem). | `[FULL MATCH]` | Formal home of "leverage a 51% edge"; the independence premise fails under correlated failure, which is exactly the collapse case, bounding the result. |
+
+Node flag: `[PARTIAL]`. The theorem is owned; its use to bound a progress guarantee and its independence caveat are the project transfer.
+
+## 25. No-Regret / Online Learning
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Under unknown or changing environments one cannot guarantee good outcomes, but can bound regret against the best fixed strategy in hindsight. | James Hannan, 1957, "Approximation to Bayes Risk in Repeated Play"; Nicolo Cesa-Bianchi, Gabor Lugosi, 2006, *Prediction, Learning, and Games*. | `[FULL MATCH]` | Provides a stagnation/regret bound where a probability-of-progress guarantee is unavailable. |
+
+Node flag: `[PARTIAL]`. Regret minimization is owned; its use as the governor's "bounded stagnation" guarantee is the project transfer.
+
+## 26. Open-Endedness and the Adjacent Possible
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Search and innovation can proceed without a fixed objective, by expanding diversity and novelty (the adjacent possible). | Stuart Kauffman, 2000, *Investigations*; Joel Lehman, Kenneth O. Stanley, 2011, "Abandoning Objectives: Evolution Through the Search for Novelty Alone"; Jean-Baptiste Mouret, Jeff Clune, 2015, ["Illuminating Search Spaces by Mapping Elites"](https://arxiv.org/abs/1504.04909); Rui Wang et al., 2019, ["Paired Open-Ended Trailblazer (POET)"](https://arxiv.org/abs/1901.01753). | `[FULL MATCH]` | Direction-free progress as diversity/novelty growth; the generative engine a governor preserves rather than drives. |
+
+Node flag: `[PARTIAL]`. Open-endedness work is owned; its use as the governor's progress mechanism is the project transfer.
+
 ## Summary
 
 Node flags:
 
 - `[FULL MATCH]`: 8
-- `[PARTIAL]`: 13
+- `[PARTIAL]`: 18
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -254,6 +295,11 @@ Nodes with `[PARTIAL]`:
 - 19. Assistance games / uncertainty about the objective.
 - 20. Option-value preservation / low-impact agents.
 - 21. Long reflection / moral uncertainty.
+- 22. Safety vs liveness.
+- 23. Development as freedom / capability approach.
+- 24. Aggregating better-than-even competence.
+- 25. No-regret / online learning.
+- 26. Open-endedness and the adjacent possible.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 

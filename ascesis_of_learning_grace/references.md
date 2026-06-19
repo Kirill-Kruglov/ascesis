@@ -132,6 +132,20 @@ Canonical bibliography derived from [field_check.md](field_check.md), grouped by
 - Ord, Toby. 2020. *The Precipice: Existential Risk and the Future of Humanity*. Hachette. (The "long reflection.")
 - MacAskill, William, Krister Bykvist, and Toby Ord. 2020. *Moral Uncertainty*. Oxford University Press.
 
+## Progress Without a Fixed Objective: Freedom, Liveness, No-Regret, Open-Endedness
+
+- Lamport, Leslie. 1977. ["Proving the Correctness of Multiprocess Programs"](https://doi.org/10.1109/TSE.1977.229904). *IEEE Transactions on Software Engineering*.
+- Alpern, Bowen, and Fred B. Schneider. 1985. ["Defining Liveness"](https://doi.org/10.1016/0020-0190(85)90056-0). *Information Processing Letters*.
+- Sen, Amartya. 1999. *Development as Freedom*. Oxford University Press / Knopf.
+- Nussbaum, Martha. 2011. *Creating Capabilities: The Human Development Approach*. Harvard University Press.
+- Condorcet, Marquis de. 1785. *Essai sur l'application de l'analyse à la probabilité des décisions rendues à la pluralité des voix*. (Condorcet Jury Theorem.)
+- Hannan, James. 1957. "Approximation to Bayes Risk in Repeated Play." In *Contributions to the Theory of Games*, vol. 3.
+- Cesa-Bianchi, Nicolo, and Gabor Lugosi. 2006. *Prediction, Learning, and Games*. Cambridge University Press.
+- Kauffman, Stuart. 2000. *Investigations*. Oxford University Press. (The "adjacent possible.")
+- Lehman, Joel, and Kenneth O. Stanley. 2011. "Abandoning Objectives: Evolution Through the Search for Novelty Alone." *Evolutionary Computation* 19(2): 189-223.
+- Mouret, Jean-Baptiste, and Jeff Clune. 2015. ["Illuminating Search Spaces by Mapping Elites"](https://arxiv.org/abs/1504.04909).
+- Wang, Rui, et al. 2019. ["Paired Open-Ended Trailblazer (POET)"](https://arxiv.org/abs/1901.01753).
+
 ## Cross-Cutting Cleavages
 
 - Lipset, Seymour Martin, and Stein Rokkan. 1967. "Cleavage Structures, Party Systems, and Voter Alignments: An Introduction." In *Party Systems and Voter Alignments*.

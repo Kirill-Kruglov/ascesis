@@ -107,6 +107,24 @@ Field-check comment:
 
 Working role: hold the telos honestly and at low altitude. The governor is specified as a maintainer of conditions under deep objective uncertainty, not an optimizer of outcomes; this is a direction and a set of owned components, not a solution to the transition.
 
+### Candidate: Preservation as a Progress Engine — Safety/Liveness and Direction-Free Progress
+
+Status: [ACTIVE]
+
+Connects: safety/liveness, capability approach / development as freedom, Condorcet aggregation, no-regret online learning, open-endedness and the adjacent possible, option-value preservation, long reflection.
+
+Related field-check nodes: 20, 21, 22, 23, 24, 25, 26.
+
+Provenance note: telos-level synthesis, not recovered from the first-circle dialogue. No dialogue trace.
+
+Framing: this bridge asks whether the keeper-of-the-contested-space governor can also be an engine of progress without re-appointing a value target. The honest answer separates two property classes (Lamport; Alpern and Schneider): non-collapse is a safety property, progress is a liveness property, and liveness is guaranteeable only under a fairness assumption that the environment keeps offering opportunities. Progress can then be defined direction-free, as expansion of substantive freedoms and capabilities (Sen, Nussbaum — node 23) or of diversity and novelty (Kauffman; open-endedness — node 26), rather than movement toward a chosen good. A literal probability-of-progress guarantee over open-ended dynamics is not available; what is available is weaker and real: a non-decreasing-option-value drift, a no-regret stagnation bound (node 25), and high-probability preservation of the capacity to progress (nodes 20, 21). The Condorcet jury theorem (node 24) is the formal home of "leverage a 51% edge," but its independence premise is exactly what correlated collapse breaks, so amplification works away from the edge and fails near it. The constructive reading: preservation done richly (diversity, reversibility, robust ratchet, error correction) is itself a progress engine — the governor is the gardener, not the plant — with a real tradeoff dial between ratchet threshold and exploration budget, whose setting is itself revisable.
+
+Field-check comment:
+
+> Nodes 22-26 are `[PARTIAL]`: safety/liveness, the capability approach, Condorcet, no-regret, and open-endedness are owned by their sources; only the framing that ties them into "preservation as a progress engine" is the project bridge.
+
+Working role: state precisely what kind of "engine of progress" is and is not available. Keep progress direction-free and capacity-preserving; "engine of the good" re-grandiosifies and risks value lock-in, so it stays out.
+
 ## Proposed Bridges
 
 ### 1. From Verified Isolation to Semantic Alignment
