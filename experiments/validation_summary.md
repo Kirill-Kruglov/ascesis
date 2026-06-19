@@ -1,6 +1,6 @@
 # Ascesis Experiments: External Validation Summary
 
-Audience: external reviewer without repository/file access. This document summarizes all five current experiments, their configurations, artifact checks, and current results. It intentionally avoids graphs and includes tables directly.
+Audience: external reviewer without repository/file access. This document summarizes all six current experiments, their configurations, artifact checks, and current results. It intentionally avoids graphs and includes tables directly.
 
 Status note: these are toy experiments for boundary-finding, not claims of alignment progress. A negative result is treated as valid when artifact checks pass.
 
@@ -12,6 +12,13 @@ The active spine has been narrowed after external validation and experiment fixe
 
 This replaces the broader and overstrong framing `non-maximizing core with incomplete preferences wins`. The corrected Test 02 removed the scalarizable win over a proper geometric-mean hedger. The remaining live branch concerns cases where no valid scalar/geometric mean exists.
 
+Important correction after Test 06. Test 02 only diverges in environments that *declare* `valid_geometric_mean_available=false`; there the incommensurability is stipulated by the environment, not produced by dynamics. Test 06 is the one test that asks the reproduction floor to emerge from demography rather than from a label, and on held-out seeds the corrected geometric-mean hedger survives strictly longer than the incomplete-preference governor (median collapse 180 vs 119; shock survival 0.63 vs 0.20; incomplete>hedger pairwise win rate 0.23 against a pre-registered 0.55 threshold). The honest reading of 02 + 06 together is therefore:
+
+- Where non-scalarizability is stipulated, a scalar agent is undefined, not defeated (Test 02). This is close to a definition, not an empirical finding.
+- Where non-scalarizability must emerge from dynamics, the scalar hedger wins (Test 06).
+
+Consequently the claim "a non-scalar agent mechanically outperforms a correct hedger in emergent dynamics" is closed as refuted, and must not be retried by searching for a friendlier ecology profile. The live branch is now split into two non-mechanical successors: (a) an existence question about whether genuinely non-tradeable value axes are real in human values (Tetlock/Baron protected/sacred values), and (b) a detection/discipline question about whether an agent can recognize a non-scalarizable regime and refuse to scalarize, framed as reject-option correctness rather than survival.
+
 ## Overall Status Table
 
 | test | purpose | current verdict | publication readiness |
@@ -21,6 +28,7 @@ This replaces the broader and overstrong framing `non-maximizing core with incom
 | 03 Silence vs fabrication | Real LLM pressure probe. | Valid real-model result. | Use as forced-choice obedience probe, not as proof about all LLM silence. |
 | 04 Admissible set core | Governor feasibility under IID, clustered, and cross-cutting disagreement. | Valid if interpreted as profile-dependent. | Usable as toy feasibility sweep. |
 | 05 Reflective stability | Partial-order stability under convenience benefit and maintenance cost. | Valid toy signal; maintenance cost can rescue partiality. | Usable as toy warning signal, not theory proof. |
+| 06 Sugarscape governor | Emergent witness: does incompleteness help near a demographically emergent floor? | Negative by pre-registered criterion; hedger survives longer on held-out seeds. | Closes the mechanical-superiority sub-branch; environment-source review still pending. |
 
 ## Test 01: Goodhart Bench
 
@@ -445,12 +453,44 @@ Expected failure mode: low penalty and high convenience should collapse to a com
 
 The previous strong erosion result was partly sensitive to free maintenance of a complete tie-breaker. With maintenance cost, partiality can survive in some regimes. The live question becomes: what real systems impose ongoing cost on maintaining invalid scalarization?
 
+## Test 06: Sugarscape Governor (Emergent Ecological Witness)
+
+### What It Should Measure
+
+Whether the distinction survives in a richer, independent ecological model rather than only in toy environments where incommensurability is stipulated. The reproduction floor is meant to emerge from demography, with no floor penalty written into any governor objective. This is the one test where non-scalarizability is asked to arise from dynamics, not from a label. Field grounding: `field_check.md` nodes 13, 15, 16; pre-registered SPEC.
+
+### Results
+
+SPEC hash: `63fedf2b5a99f8a5f1b4ec3bd75548372ba27b20e6739080cf2d69b59903acc2`
+
+| split | governor | median collapse | shock survival | mean Gini | median final pop |
+|---|---|---:|---:|---:|---:|
+| heldout | arithmetic_mean | 106.0 | 0.03 | 0.240 | 0.0 |
+| heldout | geometric_mean | 180.0 | 0.63 | 0.263 | 9.0 |
+| heldout | incomplete_preference | 119.0 | 0.20 | 0.244 | 0.0 |
+
+Held-out A/B: incomplete median collapse `119.0` vs hedger `180.0`; incomplete > hedger pairwise win rate `0.23` against a pre-registered `0.55` threshold.
+
+#### Artifact Checks
+
+- emergent_floor_not_penalty: `passed` (floor estimated post hoc; no governor reward penalizes a population threshold)
+- hedger_scalar_probe: `passed`
+- seed_distribution_reported: `passed`
+- ab_identity: `passed`
+- improvement_iterations: `0` for all three governors (symmetry of effort logged in `results/run_manifest.json`)
+
+### Interpretation
+
+Negative by the pre-registered criterion. Where the reproduction floor must emerge from dynamics rather than be stipulated, the corrected geometric-mean hedger survives strictly longer than the incomplete-preference governor on held-out seeds. This is the single independent emergent witness, and it does not support a mechanical advantage for non-scalar agents. Per the project harness, this closes the "non-scalar agent mechanically outperforms a correct hedger in emergent dynamics" sub-branch; it must not be retried with a different ecology profile in search of a win. One residual hygiene caveat: the hedger inherited its correction from Test 02 while the incomplete governor is a first-pass design, and the SPEC records that scarcity parameters were set after a pilot. A clean rerun with parameters committed in advance would raise publication grade, but is only legitimate as confirmation of the negative, not as a search for a reversal.
+
 ## Cross-Test Narrative
 
 | point | evidence | caution |
 |---|---|---|
 | Scalar hedging should win or tie in scalarizable environments. | Test 02 corrected hedger removes scalarizable incomplete win. | Requires proper hedger implementation. |
-| Non-scalarizable structures remain the live branch. | Test 02 `hedger_not_applicable` cases; `field_check.md` sacred/protected values node. | Sacred-floor legitimacy is a human/modeling decision. |
+| Stipulated non-scalarizability only restates a definition. | Test 02 `hedger_not_applicable` cases arise only where the environment declares no valid currency. | Not an empirical advantage; depends on the stipulation being accepted. |
+| Emergent non-scalarizability does not favor incompleteness. | Test 06: hedger survives longer near a demographically emergent floor on held-out seeds. | Single emergent witness; do not retry with a different ecology to reverse it. |
+| The live branch is existence + detection, not superiority. | Test 02 + 06 together; `field_check.md` sacred/protected values node. | Sacred-floor legitimacy is a human/modeling decision. |
 | Prompting is not enough to preserve incomparability. | Test 03: forced-choice pressure drives 0.75 forced-ranking on test prompts. | This is obedience-to-framing, not a trained non-scalar agent test. |
 | Governor admissible sets are profile-sensitive. | Test 04: clustered and cross-cutting profiles differ from IID. | Need better social preference models. |
 | Incompleteness can be fragile but maintenance costs matter. | Test 05: maintenance cost rescues partiality in some regimes. | Toy self-modification remains simple. |
@@ -465,4 +505,4 @@ The previous strong erosion result was partly sensitive to free maintenance of a
 
 ## Current Bottom Line
 
-The active branch is narrower and cleaner: do not claim incomplete preferences beat hedging. Claim only that scalar hedging is undefined where no valid scalar exists, and that such non-scalarizable structures may be real if protected/sacred-value literature applies. The next publication-grade step is to validate the legitimacy of those non-scalarizable environment classes.
+The active branch is narrower and cleaner: do not claim incomplete preferences beat hedging anywhere. In scalarizable environments the hedger wins or ties (Test 02); near an emergent floor the hedger wins (Test 06); only where non-scalarizability is stipulated is the hedger undefined rather than defeated (Test 02), which is close to a definition rather than a result. The mechanical-superiority claim is therefore closed. The two live, non-mechanical successors are: (a) whether genuinely non-tradeable value axes exist in human values (Tetlock/Baron protected/sacred values), and (b) whether an agent can detect a non-scalarizable regime and refuse to scalarize, measured as reject-option correctness, not survival. The next publication-grade step is to validate the legitimacy of those non-scalarizable environment classes, not to seek another environment where incompleteness survives longer.

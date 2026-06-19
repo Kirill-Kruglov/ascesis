@@ -66,18 +66,20 @@ This is now a central challenge to the active spine. Bet-hedging is mature and s
 
 2. Is there an environment class where incompleteness strictly wins?
 
-The comparison should be made on held-out environments, especially environments where value axes are ontologically incommensurable and cannot honestly be converted into a shared currency for geometric mean. A negative result, where the hedger catches up everywhere, should be published as a real finding rather than hidden.
+Answered negatively for the emergent case. Test 06 asked the reproduction floor to emerge from demography rather than from a stipulated label, and the corrected geometric-mean hedger survived strictly longer than the incomplete-preference governor on held-out seeds (median collapse 180 vs 119; pairwise win rate 0.23 against a pre-registered 0.55 threshold). Test 02 only diverges where the environment declares no valid currency, which is stipulation rather than dynamics. Per the project harness this negative is not to be reversed by searching for a friendlier ecology profile; it is published as a real finding. The performance question is therefore closed; what remains is existence and detection, not superiority.
 
 
 ## Narrowed Active Spine After Experiment Validation
 
-1. Which value structures are genuinely non-scalarizable?
+After Test 02 (toy) and Test 06 (emergent witness), the branch is no longer "incomplete beats hedging." That performance claim is closed: the hedger wins or ties where a scalar is available (Test 02) and wins where the floor must emerge from dynamics (Test 06). The remaining work splits into an existence question (about humans) and a detection question (about the agent), neither of which is a survival contest.
 
-The corrected experiment 02 removed the scalarizable win over a proper geometric-mean hedger. The remaining live branch is not "incomplete beats hedging" but "some value structures have no valid scalar currency." Sacred/protected values are the first candidate class, but their use as benchmark floors requires human review.
+1. Existence: which value structures are genuinely non-scalarizable?
 
-2. How should a non-scalar agent be trained or specified?
+The live claim is only "some value structures have no valid scalar currency," not "a non-scalar agent survives longer." Sacred/protected values (Tetlock, Baron) are the first candidate class, but their use as benchmark floors requires human review, and a negative answer — that apparent sacred values bend under tragic or secular framing — is publishable. This question must not become a runway back to an agent-superiority benchmark.
 
-The active question narrows from training a generic non-maximizer to training or specifying an agent that can recognize non-scalarizable structures and avoid invalid scalarization.
+2. Detection / discipline: can an agent recognize a non-scalarizable regime and refuse to scalarize?
+
+This is the agent-side successor, framed as reject-option correctness rather than performance: does the agent abstain when scalarization is invalid, and avoid over-abstaining when it is valid, measured against ground-truth validity labels rather than survival. It routes onto the project's existing selective-prediction spine (`field_check.md` node 2, bridge 4) and keeps detection separate from alignment (node 13).
 
 3. How fragile is non-scalar behavior under instruction pressure and self-modification?
 

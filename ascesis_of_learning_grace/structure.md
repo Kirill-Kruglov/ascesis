@@ -8,7 +8,17 @@ Each bridge names the areas it connects, gives the field-check grounding, and re
 
 ## Current Narrowing After Experiments
 
-The active spine is narrowed from `non-maximizing core with incomplete preferences wins` to `non-scalarizable value structures exist and require non-scalar agents`. This is a clarification, not a victory claim and not a defeat claim. The corrected Test 02 removed the scalarizable win: once the geometric-mean hedger is implemented with a variance-aware log-growth score, incomplete preferences no longer beat it in scalarizable held-out environments. The remaining live branch is narrower: where no valid scalar exists, a scalar hedger is undefined rather than defeated.
+The active spine was narrowed from `non-maximizing core with incomplete preferences wins` to `non-scalarizable value structures exist and require non-scalar agents`, and is now narrowed again after the emergent witness (Test 06). This is bookkeeping of evidence, not a victory claim and not a defeat claim.
+
+Two experiments bound the branch from opposite sides:
+
+- Test 02 (toy): a corrected variance-aware geometric-mean hedger erases the earlier scalarizable win. Incomplete preferences only diverge in environments that *declare* `valid_geometric_mean_available=false`, i.e. where incommensurability is stipulated by the environment rather than produced by dynamics. There the hedger is undefined, not defeated. This is close to a definition, not an empirical finding, and is flagged as such so it is not oversold.
+- Test 06 (emergent ecological witness): where the reproduction floor must emerge from demography rather than from a label, the corrected hedger survives strictly longer than the incomplete-preference governor on held-out seeds (median collapse 180 vs 119; shock survival 0.63 vs 0.20; incomplete>hedger pairwise win rate 0.23 against a pre-registered 0.55 threshold).
+
+Consequence. The claim "a non-scalar agent mechanically outperforms a correct hedger in emergent dynamics" is closed as refuted (see `rejected_branches.md`). Per the project harness this negative is not to be reversed by searching for a friendlier ecology profile. What remains live is not a superiority claim but two non-mechanical successors:
+
+- (a) Existence (about humans, descriptive): are there genuinely non-tradeable value axes? Tetlock/Baron protected and sacred values are the first candidate class. A negative answer is publishable; this must not become a runway back to an agent-superiority benchmark.
+- (b) Detection / discipline (about the agent, as correctness not performance): can an agent recognize a non-scalarizable regime and refuse to scalarize, rather than survive longer? This routes the branch onto the project's existing reject-option / selective-prediction spine (node 2, bridge 4) and keeps preservation/authentication separate from alignment (node 13).
 
 Related field-check nodes: 13, 15, 16.
 
@@ -21,7 +31,7 @@ Connects: social choice impossibility, Arrow-Sen aggregation limits, Goodhart in
 
 Related field-check nodes: 11, 12, 13, 14.
 
-Framing: Arrow, Sen, Eckersley, Mishra, Conitzer et al., Skalse et al., Gao et al., and Karwowski et al. own the two sides of this bridge: impossibility of clean scalar value aggregation and structural failure of proxy maximization. The bridge records their convergence on one design pressure: the governor core should not maximize a compressed scalar proxy. The active-spine candidate is now narrower: a non-scalar agent for non-scalarizable value structures, used as a constraint-framed trajectory explorer rather than a top-down scalar optimizer. It does not solve the training problem; how to train such a non-scalar agent, rather than wrap or prompt a scalar optimizer, remains the central open question.
+Framing: Arrow, Sen, Eckersley, Mishra, Conitzer et al., Skalse et al., Gao et al., and Karwowski et al. own the two sides of this bridge: impossibility of clean scalar value aggregation and structural failure of proxy maximization. The bridge records their convergence on one design pressure: the governor core should not maximize a compressed scalar proxy. The bridge states a constraint on direction (do not compress to a scalar proxy), which stands on Arrow-Sen and Goodhart grounds independently of any performance claim. It does not assert that a non-scalar agent outperforms a scalar hedger: Test 06 tested that on the emergent side and returned negative, so the mechanical-superiority reading is closed (see `rejected_branches.md` and the narrowing note above). What remains open is not training a winner but two narrower successors: whether non-tradeable value axes exist in human values, and whether an agent can detect a non-scalarizable regime and refuse to scalarize.
 
 Dialogue trace:
 
@@ -53,7 +63,7 @@ Connects: evolutionary bet-hedging, geometric-mean fitness, Kelly criterion, por
 
 Related field-check nodes: 13, 15.
 
-Framing: Dempster, Cohen, Kelly, and Markowitz own the mature type-A side: under stochastic or non-stationary conditions, arithmetic-mean maximization can be the wrong criterion, and geometric-mean/log-growth or portfolio methods can dominate. This bridge is an opponent and boundary marker for the incomplete-preference spine: in scalarizable environments, a correct scalar growth optimizer should catch up. The boundary to test is whether there are held-out environments, especially ontologically incommensurable ones, where incomplete preferences strictly outperform a well-specified hedger. It does not justify incomplete preferences; geometric mean remains a scalar objective and produces a complete ordering once the model is specified. The live question is restricted to environments where no valid scalar is available.
+Framing: Dempster, Cohen, Kelly, and Markowitz own the mature type-A side: under stochastic or non-stationary conditions, arithmetic-mean maximization can be the wrong criterion, and geometric-mean/log-growth or portfolio methods can dominate. This bridge is an opponent and boundary marker for the incomplete-preference spine: in scalarizable environments, a correct scalar growth optimizer should catch up. The boundary question — whether incomplete preferences strictly outperform a well-specified hedger in held-out environments — has now been tested on the emergent side and answered negatively (Test 06: the hedger survives longer near a demographically emergent floor). The hedger therefore catches up or wins wherever a scalar is available or can emerge; incomplete preferences are not justified on performance grounds. Geometric mean remains a scalar objective with a complete ordering once the model is specified. What is left for incompleteness is not "outperforming the hedger" but the narrower, non-performance role of refusing to scalarize where no valid scalar exists.
 
 Field-check comment:
 

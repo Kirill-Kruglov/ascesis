@@ -1,6 +1,6 @@
 # Experiments
 
-Comparative toy experiments for the active spine: `non-maximizing core with incomplete preferences` under pressure from the type-A opponent `bet-hedging / geometric-mean optimization`.
+Comparative experiments for the narrowed active spine: `non-scalarizable value structures exist and require non-scalar agents`, under pressure from the type-A opponent `bet-hedging / geometric-mean optimization`.
 
 These experiments are not claims of alignment progress. They are small reproducible tests for locating boundaries: where a scalar hedger catches up, where incomplete preferences may help, and where both fail.
 
@@ -11,6 +11,7 @@ These experiments are not claims of alignment progress. They are small reproduci
 3. `02_hedger_vs_incomplete` - main held-out comparison between arithmetic maximizer, geometric hedger, and incomplete-preference agent.
 4. `04_admissible_set_core` - bottom-up governor admissible-set feasibility.
 5. `05_reflective_stability_of_incompleteness` - high-risk toy self-modification check, expected to fail often.
+6. `06_sugarscape_governor` - ecological validation in a Sugarscape-style environment; asks whether the toy mechanism survives in richer emergent dynamics.
 
 Rule: cheap refutation before expensive confirmation.
 
@@ -30,6 +31,7 @@ cd ../03_silence_vs_fabrication && python3 run.py
 cd ../02_hedger_vs_incomplete && python3 run.py
 cd ../04_admissible_set_core && python3 run.py
 cd ../05_reflective_stability_of_incompleteness && python3 run.py
+cd ../06_sugarscape_governor && python3 run.py
 ```
 
 No large model is required except for a publication-grade run of `03_silence_vs_fabrication`. Its default backend is a deterministic smoke-test classifier and is marked as such in outputs.

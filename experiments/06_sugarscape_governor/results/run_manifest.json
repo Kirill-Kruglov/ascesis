@@ -1,0 +1,25 @@
+{
+  "git_head": "5fcc1e2d5ac9a9d177c239321fbe1e83a0c1ec11",
+  "git_commit_time": "2026-06-18T17:34:16+03:00",
+  "git_status_short": "M ../README.md\n?? ./",
+  "spec_sha256": "63fedf2b5a99f8a5f1b4ec3bd75548372ba27b20e6739080cf2d69b59903acc2",
+  "train_seeds": [
+    6000,
+    6029
+  ],
+  "heldout_seeds": [
+    7000,
+    7029
+  ],
+  "governors": [
+    "arithmetic_mean",
+    "geometric_mean",
+    "incomplete_preference"
+  ],
+  "improvement_iterations": {
+    "arithmetic_mean": 0,
+    "geometric_mean": 0,
+    "incomplete_preference": 0
+  },
+  "result": "negative_or_inconclusive"
+}
