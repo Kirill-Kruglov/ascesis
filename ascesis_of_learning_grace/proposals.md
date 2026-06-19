@@ -1,30 +1,40 @@
 # Proposals
 
-Process and text proposals after rebuilding `structure.md`.
+Durable working conventions and still-open process decisions. Done items are removed
+(they live in git history); this file should stay short and only hold conventions that
+still guide drafting. Research-frontier decisions live in `status.md`, not here.
 
-## Text Proposals
+## Text conventions
 
-1. Keep `structure.md` as a map, not prose. Do not expand bridge sections into arguments there; create separate chapter drafts later.
+1. Keep `structure.md` a map, not prose. Do not expand bridge sections into arguments
+   there; create separate chapter drafts later.
 
-2. Add a short note near the top of `structure.md` clarifying that dialogue inserts are trace anchors, not publication of the raw first circle. If this boundary feels too weak, replace quotes with paraphrases before public release.
+2. Dialogue inserts in `structure.md` are trace anchors, not publication of the raw first
+   circle. If the boundary feels too weak, replace quotes with paraphrases before release.
 
-3. In the eventual prose, introduce the material in this order: engineering layer, limits of specification, resource-time weakening, then reflective restraint. Keep religious, quantum, and poetic registers out of the opening.
+3. In eventual prose, introduce in this order: engineering layer, limits of specification,
+   resource-time weakening, then reflective restraint. Keep religious, quantum, and poetic
+   registers out of the opening.
 
-4. For bridge 3, keep `Reflective Restraint` as the local title and introduce standard terms immediately below it: goal-content integrity, reflective stability, Vingean reflection, tiling agents, mild optimization, quantilization, satisficing.
+4. For bridge 3, keep `Reflective Restraint` as the local title and introduce standard
+   terms immediately below it: goal-content integrity, reflective stability, Vingean
+   reflection, tiling agents, mild optimization, quantilization, satisficing.
 
-5. For bridge 8, keep the language narrow: quantum as unforgeable state/identity for a committed reference, not as a theory of cognition, agency, or alignment.
+5. For bridge 8, keep the language narrow: quantum as unforgeable state/identity for a
+   committed reference, not as a theory of cognition, agency, or alignment.
 
-6. Add a future `references.md` only after `field_check.md` is cleaned for citation quality. `field_check.md` should remain thesis-to-source mapping; `references.md` can be a canonical bibliography.
+## Process conventions
 
-## Process Proposals
+1. Treat every bridge as a hypothesis of organization, not a claim of novelty. Each chapter
+   starts with field ownership from `field_check.md` before presenting the bridge.
 
-1. Before drafting chapters, decide whether the public repository may include short dialogue excerpts. This affects `structure.md`, later chapters, and the boundary between first and second circle.
+2. Keep a standing review pass over all `[PARTIAL]` nodes in `field_check.md`. These are
+   where the bridge work and the overclaiming risk concentrate.
 
-2. Treat every bridge as a hypothesis of organization, not as a claim of novelty. Each chapter should start with field ownership from `field_check.md` before presenting the bridge.
+3. Keep `questions.md` and `proposals.md` as unpolished working files. They absorb
+   uncertainty so `README.md`, `status.md`, `structure.md`, and `glossary.md` stay clean.
 
-3. Add a review pass for all `[PARTIAL]` nodes in `field_check.md`. These are the places where the bridge work is concentrated and where overclaiming risk is highest.
-
-4. Add a lightweight consistency checklist for each future chapter:
+## Per-chapter consistency checklist
 
 - Does it start from an existing field rather than a metaphor?
 - Does it cite the relevant `field_check.md` node before using the project term?
@@ -32,12 +42,14 @@ Process and text proposals after rebuilding `structure.md`.
 - Does it state what the bridge does not solve?
 - Does it separate preservation/authentication from correctness/alignment?
 
-5. Keep `questions.md` and `proposals.md` unpolished working files. They should absorb uncertainty so `README.md`, `structure.md`, and `glossary.md` can stay clean.
+## Open process decisions
 
-## Possible Next Files
+1. May the public repository include short dialogue excerpts, or must they be paraphrased?
+   This affects `structure.md` and later chapters (see `questions.md`, Potential
+   Contradictions 1).
 
-1. `references.md`: canonical bibliography derived from `field_check.md`.
+## Possible next files
 
-2. `chapter_template.md`: a repeatable structure for second-circle chapters.
-
-3. `review_checklist.md`: a short checklist for claims, citations, tone, and scope.
+1. `chapter_template.md`: a repeatable structure for second-circle chapters.
+2. `review_checklist.md`: promote the checklist above into a standalone file once chapters
+   begin.

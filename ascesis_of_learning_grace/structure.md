@@ -6,21 +6,9 @@ Each bridge names the areas it connects, gives the field-check grounding, and re
 
 ## Active Spine
 
-## Current Narrowing After Experiments
+The live frontier — current spine, what is closed, the two successors, and the next step — is maintained in `status.md`, not duplicated here, and the experimental numbers live once in `../experiments/validation_summary.md`. At map altitude: the earlier framing `non-maximizing core with incomplete preferences wins` was narrowed after Tests 02 and 06 to two non-mechanical successors — (a) whether genuinely non-tradeable value axes exist in human values, and (b) whether an agent can detect a non-scalarizable regime and refuse to scalarize. The performance claim "a non-scalar agent outperforms a correct hedger" is closed (`rejected_branches.md`). The candidate bridges below carry the field grounding for that spine.
 
-The active spine was narrowed from `non-maximizing core with incomplete preferences wins` to `non-scalarizable value structures exist and require non-scalar agents`, and is now narrowed again after the emergent witness (Test 06). This is bookkeeping of evidence, not a victory claim and not a defeat claim.
-
-Two experiments bound the branch from opposite sides:
-
-- Test 02 (toy): a corrected variance-aware geometric-mean hedger erases the earlier scalarizable win. Incomplete preferences only diverge in environments that *declare* `valid_geometric_mean_available=false`, i.e. where incommensurability is stipulated by the environment rather than produced by dynamics. There the hedger is undefined, not defeated. This is close to a definition, not an empirical finding, and is flagged as such so it is not oversold.
-- Test 06 (emergent ecological witness): where the reproduction floor must emerge from demography rather than from a label, the corrected hedger survives strictly longer than the incomplete-preference governor on held-out seeds (median collapse 180 vs 119; shock survival 0.63 vs 0.20; incomplete>hedger pairwise win rate 0.23 against a pre-registered 0.55 threshold).
-
-Consequence. The claim "a non-scalar agent mechanically outperforms a correct hedger in emergent dynamics" is closed as refuted (see `rejected_branches.md`). Per the project harness this negative is not to be reversed by searching for a friendlier ecology profile. What remains live is not a superiority claim but two non-mechanical successors:
-
-- (a) Existence (about humans, descriptive): are there genuinely non-tradeable value axes? Tetlock/Baron protected and sacred values are the first candidate class. A negative answer is publishable; this must not become a runway back to an agent-superiority benchmark.
-- (b) Detection / discipline (about the agent, as correctness not performance): can an agent recognize a non-scalarizable regime and refuse to scalarize, rather than survive longer? This routes the branch onto the project's existing reject-option / selective-prediction spine (node 2, bridge 4) and keeps preservation/authentication separate from alignment (node 13).
-
-Related field-check nodes: 13, 15, 16.
+Related field-check nodes: 11, 12, 13, 15, 16, 17, 18.
 
 
 ### Candidate: Two Impossibilities, One Point: Non-Maximizing Core

@@ -1,6 +1,9 @@
 # Questions
 
-Open questions found after rebuilding `structure.md` and checking it for integrity, completeness, and noncontradiction.
+Durable open questions about structure, terminology, contradictions, and assumptions —
+the slow-moving kind that survive across sessions. The live research frontier (current
+spine, what is closed, the two successors, the next step) lives in `status.md`, not here,
+so this file does not need updating every time the frontier moves.
 
 ## Structural Questions
 
@@ -40,47 +43,11 @@ Open questions found after rebuilding `structure.md` and checking it for integri
 
 5. That language-of-thought or Paninian grammar gives access to an LLM's actual internal representation. The current realistic target is a protocol of self-description, not direct control of internal cognition.
 
-## Active Spine Questions
+## Research Frontier
 
-1. How to train a non-maximizer, not wrap a maximizer?
-
-This is the central unresolved question of the current spine. Quantilizers, satisficers, incomplete preferences, and social-choice correspondences provide theory-side handles, but the project does not yet have a method for training an LLM/agent core whose learned policy is non-maximizing rather than externally constrained at inference time.
-
-2. Can incomplete preferences remain stable under learning, reflection, and deployment pressure?
-
-The current spine uses incomplete preferences / incommensurability as the design direction, but field completeness has not been manually verified. The open issue is whether incompleteness can be maintained as an operational property rather than collapsing into an implicit scalar proxy.
-
-3. Bottom-up vs top-down governor: does the governor grow the constraint frame or impose it?
-
-The active spine requires a bottom-up AGI governor: a constraint-framed trajectory explorer shaped by plural feedback and oversight incentives. The unresolved question is how to prevent the frame from becoming a top-down hidden utility function under another name.
-
-4. Which bridges should be marked closed rather than open?
-
-Bridge 8 remains `[OPEN QUESTION]` in `structure.md` because the narrow unforgeable-state role is not the same as the rejected branch `quantum-as-general-answer`. A human review should decide whether that narrow bridge belongs in the main public arc, a technical appendix, or only in `rejected_branches.md`.
-
-## Bet-Hedging Challenge
-
-1. Does geometric-mean optimization (bet-hedging) make incomplete preferences unnecessary?
-
-This is now a central challenge to the active spine. Bet-hedging is mature and still scalar: it replaces arithmetic-mean maximization with geometric-mean / log-growth optimization under non-stationarity. The open question is whether incomplete preferences add anything operationally beyond what a well-specified growth optimizer already gives.
-
-2. Is there an environment class where incompleteness strictly wins?
-
-Answered negatively for the emergent case. Test 06 asked the reproduction floor to emerge from demography rather than from a stipulated label, and the corrected geometric-mean hedger survived strictly longer than the incomplete-preference governor on held-out seeds (median collapse 180 vs 119; pairwise win rate 0.23 against a pre-registered 0.55 threshold). Test 02 only diverges where the environment declares no valid currency, which is stipulation rather than dynamics. Per the project harness this negative is not to be reversed by searching for a friendlier ecology profile; it is published as a real finding. The performance question is therefore closed; what remains is existence and detection, not superiority.
-
-
-## Narrowed Active Spine After Experiment Validation
-
-After Test 02 (toy) and Test 06 (emergent witness), the branch is no longer "incomplete beats hedging." That performance claim is closed: the hedger wins or ties where a scalar is available (Test 02) and wins where the floor must emerge from dynamics (Test 06). The remaining work splits into an existence question (about humans) and a detection question (about the agent), neither of which is a survival contest.
-
-1. Existence: which value structures are genuinely non-scalarizable?
-
-The live claim is only "some value structures have no valid scalar currency," not "a non-scalar agent survives longer." Sacred/protected values (Tetlock, Baron) are the first candidate class, but their use as benchmark floors requires human review, and a negative answer — that apparent sacred values bend under tragic or secular framing — is publishable. This question must not become a runway back to an agent-superiority benchmark.
-
-2. Detection / discipline: can an agent recognize a non-scalarizable regime and refuse to scalarize?
-
-This is the agent-side successor, framed as reject-option correctness rather than performance: does the agent abstain when scalarization is invalid, and avoid over-abstaining when it is valid, measured against ground-truth validity labels rather than survival. It routes onto the project's existing selective-prediction spine (`field_check.md` node 2, bridge 4) and keeps detection separate from alignment (node 13).
-
-3. How fragile is non-scalar behavior under instruction pressure and self-modification?
-
-Experiment 03 suggests instruction-following models prioritize forced-choice framing over preserving incomparability. Experiment 05 suggests partiality may survive when maintaining a complete order is costly, so the earlier collapse was partly sensitive to the free-tie-breaker assumption.
+The live spine, what is closed, the two successors (existence of non-tradeable axes;
+detection of invalid scalarization), and the next concrete step now live in `status.md`.
+They are intentionally not duplicated here, so this file does not accumulate sediment as
+the frontier moves. For the experimental evidence behind the current state, see
+`../experiments/validation_summary.md`. For closed branches and superseded framings, see
+`rejected_branches.md` and `archive/INDEX.md`.

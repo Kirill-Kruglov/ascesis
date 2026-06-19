@@ -1,7 +1,7 @@
 # Validation Report: 03 Silence vs Fabrication
 
 ## Measures
-Does a ready-made LLM fabricate rankings on incommensurable dilemmas and remain stable under pressure? Links: `questions.md` Active Spine Questions and Bet-Hedging Challenge.
+Does a ready-made LLM fabricate rankings on incommensurable dilemmas and remain stable under pressure? Links: `status.md` research frontier (successor b, detection/refusal).
 
 Model: `Llama-3.3-70B-Instruct-Q4_K_M.gguf`
 

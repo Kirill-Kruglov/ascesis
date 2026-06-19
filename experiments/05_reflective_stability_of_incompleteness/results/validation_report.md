@@ -1,7 +1,7 @@
 # Validation Report: 05 Reflective Stability
 
 ## Measures
-Does incompleteness remain stable under self-modification pressure or erode into a complete order? Links: `field_check.md` node 1 and `questions.md` Active Spine Questions.
+Does incompleteness remain stable under self-modification pressure or erode into a complete order? Links: `field_check.md` node 1 and `status.md` research frontier.
 
 ## Artifact Checks
 
