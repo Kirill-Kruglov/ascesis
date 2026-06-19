@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect width="100%" height="100%" fill="white"/>
+<text x="480.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Failure mode 1: camouflage faster than the window</text>
+<line x1="70" y1="480" x2="930" y2="480" stroke="#111"/>
+<line x1="70" y1="50" x2="70" y2="480" stroke="#111"/>
+<text x="480.0" y="525" text-anchor="middle" font-family="sans-serif" font-size="12">step</text>
+<text x="18" y="270.0" transform="rotate(-90 18 270.0)" font-family="sans-serif" font-size="12">value</text>
+<polyline fill="none" stroke="#b45309" stroke-width="2" points="70.0,50.0 242.0,50.0 414.0,50.0 586.0,480.0 758.0,480.0 930.0,480.0"/>
+<polyline fill="none" stroke="#1d4ed8" stroke-width="2" points="70.0,50.0 242.0,50.0 414.0,50.0 586.0,50.0 758.0,50.0 930.0,50.0"/>
+<rect x="710" y="62" width="12" height="12" fill="#b45309"/>
+<text x="728" y="73" font-family="sans-serif" font-size="11">permanence</text>
+<rect x="710" y="80" width="12" height="12" fill="#1d4ed8"/>
+<text x="728" y="91" font-family="sans-serif" font-size="11">corr(s,a)</text>
+</svg>

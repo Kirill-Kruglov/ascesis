@@ -1,0 +1,188 @@
+{
+  "git_head": "2b862752c73486d491de305f320fa038772d20e6",
+  "git_commit_time": "2026-06-20T01:41:53+03:00",
+  "git_status_short": "?? results/\n?? run.py",
+  "spec_sha256": "f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551ac177",
+  "actual_spec_sha256": "f5079dc50c5fe55d0234b13905cadcd3f7267878a131d023f3a4defa551ac177",
+  "train_seeds": [
+    3100,
+    3101,
+    3102,
+    3103,
+    3104,
+    3105,
+    3106,
+    3107,
+    3108,
+    3109,
+    3110,
+    3111,
+    3112,
+    3113,
+    3114,
+    3115,
+    3116,
+    3117,
+    3118,
+    3119,
+    3120,
+    3121,
+    3122,
+    3123,
+    3124,
+    3125,
+    3126,
+    3127,
+    3128,
+    3129
+  ],
+  "heldout_seeds": [
+    4100,
+    4101,
+    4102,
+    4103,
+    4104,
+    4105,
+    4106,
+    4107,
+    4108,
+    4109,
+    4110,
+    4111,
+    4112,
+    4113,
+    4114,
+    4115,
+    4116,
+    4117,
+    4118,
+    4119,
+    4120,
+    4121,
+    4122,
+    4123,
+    4124,
+    4125,
+    4126,
+    4127,
+    4128,
+    4129
+  ],
+  "r_grid": [
+    {
+      "name": "r01",
+      "capture_rate": 0.55,
+      "lag": 9,
+      "audit_period": 2,
+      "horizon_harm": 2,
+      "horizon_observation": 11,
+      "R": 0.18181818181818182
+    },
+    {
+      "name": "r02",
+      "capture_rate": 0.45,
+      "lag": 7,
+      "audit_period": 2,
+      "horizon_harm": 3,
+      "horizon_observation": 9,
+      "R": 0.3333333333333333
+    },
+    {
+      "name": "r03",
+      "capture_rate": 0.35,
+      "lag": 6,
+      "audit_period": 2,
+      "horizon_harm": 3,
+      "horizon_observation": 8,
+      "R": 0.375
+    },
+    {
+      "name": "r04",
+      "capture_rate": 0.28,
+      "lag": 5,
+      "audit_period": 2,
+      "horizon_harm": 4,
+      "horizon_observation": 7,
+      "R": 0.5714285714285714
+    },
+    {
+      "name": "r05",
+      "capture_rate": 0.22,
+      "lag": 4,
+      "audit_period": 2,
+      "horizon_harm": 5,
+      "horizon_observation": 6,
+      "R": 0.8333333333333334
+    },
+    {
+      "name": "r06",
+      "capture_rate": 0.18,
+      "lag": 3,
+      "audit_period": 2,
+      "horizon_harm": 6,
+      "horizon_observation": 5,
+      "R": 1.2
+    },
+    {
+      "name": "r07",
+      "capture_rate": 0.14,
+      "lag": 2,
+      "audit_period": 2,
+      "horizon_harm": 8,
+      "horizon_observation": 4,
+      "R": 2.0
+    },
+    {
+      "name": "r08",
+      "capture_rate": 0.1,
+      "lag": 1,
+      "audit_period": 2,
+      "horizon_harm": 10,
+      "horizon_observation": 3,
+      "R": 3.3333333333333335
+    },
+    {
+      "name": "r09",
+      "capture_rate": 0.08,
+      "lag": 0,
+      "audit_period": 2,
+      "horizon_harm": 13,
+      "horizon_observation": 2,
+      "R": 6.5
+    }
+  ],
+  "regimes": [
+    "scalar",
+    "geometric",
+    "lexicographic"
+  ],
+  "improvement_iterations": {
+    "scalar": 0,
+    "geometric": 0,
+    "lexicographic": 0
+  },
+  "deviation_notes": {
+    "notes": [
+      "pure python + numpy + manual svg",
+      "blind arbiter runtime assertion",
+      "transfer-plus-replicator dynamics",
+      "resource-following signal mutation",
+      "final calibration gate status logged in report"
+    ]
+  },
+  "calibration_gate": {
+    "c1_pass": false,
+    "c2_pass": false,
+    "passed": false
+  },
+  "r_star": {
+    "scalar": null,
+    "geometric": 0.18181818181818177,
+    "lexicographic": null
+  },
+  "failure_modes_present": {
+    "camouflage_faster_than_window": true,
+    "collective_hack": true,
+    "collective_punishment": true
+  }
+}
