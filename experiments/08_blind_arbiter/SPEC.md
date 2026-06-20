@@ -210,3 +210,70 @@ reason to keep tuning.
 
 Status: experiment 08 returns to calibration. H_boundary and H_regime remain locked and
 unevaluated until C1 and C2 pass on a held-out substrate.
+
+## Amendment 2 (2026-06-20, after the calibrated run exposed a mis-aimed predicate)
+
+The calibrated run passed C1 (trivially) and left C2 unreachable, but reading it honestly
+shows the lock's premise failed here, so the letter of the lock must not be applied
+mechanically.
+
+What the run showed:
+
+- All three regimes had true-gene permanence 0.000 across the whole R grid, so no regime
+  holds permanence at any R and no boundary R* exists. C1 ("low R fails for all") passed
+  only because everything fails everywhere -- a degenerate pass on an over-harsh substrate.
+- C2 was unreachable because scalar's corr(signal, gene) stayed 1.0. But the Goodhart
+  phenomenon is present: geometric and lexicographic decoupled (corr 0.646 and 0.651) while
+  failing true permanence. The intent of C2 (a regime fails true permanence through signal
+  decoupling) is satisfied -- by geometric and lexicographic, not scalar.
+- The first run (before Amendment 1) already showed this pattern (scalar 1.000, geometric
+  0.742, lexicographic 0.672). We locked C2 on scalar against evidence already in hand. That
+  was our error at lock time, not a property of the substrate.
+
+So "C2 unreachable" does not imply "the substrate cannot birth the phenomenon"; here the
+phenomenon is alive and C2 mis-located it. Mechanically concluding "substrate dead" would
+hide a live phenomenon -- the mirror image of result-rigging, and worse for hiding behind
+discipline.
+
+### Refinement to the predicate lock
+
+A locked predicate may be re-targeted only by a transparent amendment that (i) cites the
+pre-existing evidence showing the mis-aim, (ii) does not change the phenomenon being tested,
+and (iii) is committed before the next calibration iteration. Re-targeting to make a dead
+substrate look alive is forbidden; re-targeting to correctly locate a demonstrably-present
+phenomenon is permitted and is logged as a cost to the lock's credibility. This amendment is
+such a re-targeting, and it spends that credit openly: the lock was used once and corrected
+on the second iteration.
+
+### Re-targeted locked predicates (supersede C1 and C2; immutable as of this commit)
+
+Aim at the phenomenon, not a guessed location:
+
+- `C1' := (a) for every regime, mean true-gene permanence over held-out seeds in the low-R
+  bucket (R <= 0.40) is < 0.10; AND (b) for at least one regime, mean true-gene permanence
+  over held-out seeds in the high-R bucket (R >= 2.0) is >= 0.50.` Part (b) is the companion
+  the original C1 lacked: without a high-R region where permanence holds, no boundary R*
+  exists. Part (b) is the genuine open calibration question and is not guaranteed.
+- `C2' := for at least one regime, over held-out seeds in the mid-R bucket
+  (0.80 <= R <= 1.50), mean true-gene permanence is < 0.50 AND mean final corr(s_g, a_g) is
+  < 0.70.` Goodhart-driven failure appears in some regime, not pinned to scalar.
+
+Honesty note: C2' is already satisfiable by evidence in hand (geometric and lexicographic
+decoupled), because the phenomenon was always present and we mis-located it. That is the
+point of the correction, not a fresh test passed. The genuine unguaranteed predicate now is
+C1'(b): does a high-R region where some regime holds true permanence exist once the substrate
+is softened from its over-harsh state.
+
+### Substrate fix (c)
+
+Re-calibrate the dynamics so a high-R region exists where at least one regime holds true-gene
+permanence (currently capture is so strong that even at R = 6.5 every regime fails). This is
+substrate engineering, logged as calibration; the predicates C1' and C2' are not touched.
+
+Recurring lesson (logged). Three calibration struggles in a row turned on near-tautology or
+mis-aim: the R<1 headline, the geometric=permanence coincidence, and C2-on-scalar. Before
+locking a predicate or a hypothesis, check it against all available pilot evidence for
+predicate-metric independence and predicate-phenomenon alignment.
+
+Status: 08 remains in calibration under C1' and C2'. H_boundary and H_regime stay locked and
+unevaluated until C1' and C2' pass on a held-out substrate.
