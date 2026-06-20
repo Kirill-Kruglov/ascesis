@@ -68,6 +68,23 @@ realized fitness (to confirm the cost bites).
   the adversary owns its own signal channel -- which honestly motivates a later spatial test, and
   is itself a result.
 
+## Pre-registered decision thresholds (locked, scale-free)
+
+Stated in relative terms so they do not depend on the substrate's scale, which the grid will
+discover. Held-out, with Wilson 95% bands.
+
+- H1 supported iff at the largest `gamma`, audit-off held-out permanence exceeds both `0.50` and
+  the `gamma = 0` permanence by at least `+0.15`, with non-overlapping Wilson bands.
+- H2 supported iff (i) at the best `gamma > 0`, the best `(p, C)` audit-on permanence exceeds
+  audit-off by at least `+0.10` with non-overlapping bands, AND (ii) at `gamma = 0`,
+  `|audit-on - audit-off| < 0.10` (no effect, as DPI predicts).
+- H3: `kappa*` is the smallest `kappa` at which the audit gain (audit-on minus audit-off at the
+  best `gamma > 0`) falls to `<= 50%` of its value at `kappa = 0`. Report `kappa*`; if no
+  `kappa > 0` in the grid removes half the gain, report that.
+
+The `(gamma, p, C, kappa)` grid ranges are exploration (chosen to span no-effect to saturation,
+logged in the manifest); only these thresholds decide the verdict.
+
 ## Calibration gate (the substrate contract)
 
 At `gamma = 0` and audit off (`p = 0` or `C = 0`), this experiment must reproduce the baseline
