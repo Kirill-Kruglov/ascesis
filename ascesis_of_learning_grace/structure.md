@@ -1,6 +1,6 @@
 # Structure
 
-This is the working map of the second circle. It is organized by bridges between fields, not by isolated topics. The list is accepted as a likely first set, but remains open to later revision.
+This is the working map. It is organized by bridges between fields, not by isolated topics. The list is accepted as a likely first set, but remains open to later revision.
 
 Each bridge names the areas it connects, gives the field-check grounding, and records the dialogue trace that motivated the bridge. Dialogue traces are short paraphrased anchors tied to source lines, not publication of the raw dialogue. The raw dialogue remains source material for internal tracing; it is not part of the initial public skeleton.
 
@@ -69,7 +69,7 @@ Connects: Goodhart's law and its variants, reward hacking, multi-objective / Nas
 
 Related field-check nodes: 11, 15, 16, 17, 18.
 
-Provenance note: this bridge is a post-experiment synthesis after Tests 02 and 06, not a path recovered from the first-circle dialogue. It has no dialogue trace, and is recorded here as team reasoning rather than as a reconstructed anchor.
+Provenance note: this bridge is a post-experiment synthesis after Tests 02 and 06, not recovered from the original dialogue trail. It has no dialogue trace, and is recorded here as team reasoning rather than as a reconstructed anchor.
 
 Framing: Goodhart, Strathern, and Manheim and Garrabrant own the statement that proxy optimization fails structurally and in distinct variants; Nash owns the bargaining-product equivalence that makes geometric-mean aggregation one scalarization among others; Perez et al. and Sharma et al. own sycophancy; Irving et al. and Leike et al. own debate and reward-modeling as process-based evaluation; Taylor owns quantilization. The bridge records one observation across these fields: replacing an arithmetic scalar proxy with a geometric/Pareto aggregator does not remove Goodhart, it relocates it. Arithmetic aggregation invites pushing a single axis; geometric/Pareto aggregation invites weak-Pareto padding of every measured axis, and where one axis is the rater, that padding is sycophancy. Climbing the aggregator ladder (leximin, Nash, distributionally-robust, minimax-regret) in search of a metric that does not hack is the design-level form of the project's own anti-Goodhart discipline rule, and is flagged as such.
 
@@ -95,7 +95,7 @@ Connects: social-choice impossibility, incomplete preferences, sacred/protected 
 
 Related field-check nodes: 3, 12, 13, 16, 19, 20, 21; bridge 2.
 
-Provenance note: telos-level synthesis, not a path recovered from the first-circle dialogue. No dialogue trace; recorded as team reasoning.
+Provenance note: telos-level synthesis, not recovered from the original dialogue trail. No dialogue trace; recorded as team reasoning.
 
 Framing: this bridge states the project's top-level target in a form consistent with its own impossibility results. Because value is non-scalarizable within a person (incoherent preferences) and across people (Arrow-Sen), there is no coherent "highest good" to maximize, so an "ideal" governor that optimizes the good is ill-posed. The reframed target is a governor that preserves the conditions under which plural value can keep being contested without irreversible collapse: it stays uncertain about the objective and deferential (Hadfield-Menell, Russell — node 19), preserves option value and avoids irreversible side effects (Turner, Krakovna, Armstrong — node 20; bridge 2), and does not lock in a value target prematurely (Ord; MacAskill, Bykvist, Ord — node 21). "Grown, not appointed" names the bottom-up origin but does not by itself secure alignment: it relocates Goodhart into the selection environment and requires built-in corrigibility and legitimacy (node 3) rather than a benevolent-dictator target. The capability-versus-values separation it rests on is the orthogonality thesis plus the is/ought gap, already credited under node 5.
 
@@ -115,7 +115,7 @@ Connects: safety/liveness, capability approach / development as freedom, Condorc
 
 Related field-check nodes: 20, 21, 22, 23, 24, 25, 26.
 
-Provenance note: telos-level synthesis, not recovered from the first-circle dialogue. No dialogue trace.
+Provenance note: telos-level synthesis, not recovered from the original dialogue trail. No dialogue trace.
 
 Framing: this bridge asks whether the keeper-of-the-contested-space governor can also be an engine of progress without re-appointing a value target. The honest answer separates two property classes (Lamport; Alpern and Schneider): non-collapse is a safety property, progress is a liveness property, and liveness is guaranteeable only under a fairness assumption that the environment keeps offering opportunities. Progress can then be defined direction-free, as expansion of substantive freedoms and capabilities (Sen, Nussbaum — node 23) or of diversity and novelty (Kauffman; open-endedness — node 26), rather than movement toward a chosen good. A literal probability-of-progress guarantee over open-ended dynamics is not available; what is available is weaker and real: a non-decreasing-option-value drift, a no-regret stagnation bound (node 25), and high-probability preservation of the capacity to progress (nodes 20, 21). The Condorcet jury theorem (node 24) is the formal home of "leverage a 51% edge," but its independence premise is exactly what correlated collapse breaks, so amplification works away from the edge and fails near it. The constructive reading: preservation done richly (diversity, reversibility, robust ratchet, error correction) is itself a progress engine — the governor is the gardener, not the plant — with a real tradeoff dial between ratchet threshold and exploration budget, whose setting is itself revisable.
 
@@ -419,41 +419,8 @@ Field-check comment:
 
 Working role: make sandboxing a finite-horizon instrument. The policy question becomes how to keep action within the measured horizon of prediction and rollback.
 
-## Repository Metadata Bridge
-
-This item is not part of the main bridge list at the current stage. It remains repository metadata until the publication form is clearer.
-
-### From First Circle to Second Circle
-
-Connects: raw dialogue, field check, public map, glossary discipline, publication form.
-
-Related field-check nodes: all nodes, especially the final summary.
-
-Dialogue trace:
-
-> `dialog.part_21.md:3`: the first pass is named as a personal method/path and a possible source for later publication.
->
-> `dialog.part_21.md:9`: the publication should be a map of the path, not a promise of a solution.
->
-> `dialog.part_21.md:13`: the map must be checked against the existing field before publication.
->
-> `dialog.part_21.md:15`: dialogue is treated as method, not merely wrapper.
->
-> `dialog.part_22.md:3`: the stated aim is access to the path, not final truth or instruction.
->
-> `dialog.part_22.md:9`: form can matter even when the content already exists elsewhere.
->
-> `dialog.part_22.md:15`: sources must be checked before the public form is built.
-
-Field-check comment:
-
-> `field_check.md` summary gives no `[NO DIRECT SOURCE FOUND]` nodes and identifies unresolved bridge work in: `self-checking via committed past self`, `quantum anchor for agent commitment`, `semantic seam with explicit human-visible remainder`, `endogenous restraint as reflective anti-resource-grab`.
-
-Working role: explain why the public work starts from the second circle: not to hide the path, but to avoid making the raw path carry claims it was not designed to carry.
-
 ## Current Human Decisions
 
 - The nine technical bridges are accepted as a likely first set.
 - Bridge 8 remains in the first public arc for now.
-- The first-circle / second-circle bridge remains repository metadata for now.
 - Bridge 3 uses standard terms first and keeps `reflective restraint` as the project label.

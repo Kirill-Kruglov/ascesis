@@ -1,6 +1,6 @@
 # Glossary
 
-Working definitions for the second circle. These are local project labels; where possible, they are tied back to standard fields in [field_check.md](field_check.md).
+Working definitions for the project. These are local project labels; where possible, they are tied back to standard fields in [field_check.md](field_check.md).
 
 A definition here is neutral about whether a direction is live. The current research stance lives only in [status.md](status.md). Some terms below (for example Non-Maximizing Core) belong to earlier framings and are kept for reading the map and its history, not as the active direction.
 
@@ -23,10 +23,6 @@ The reference commitments, goals, invariants, or specifications against which la
 ## Fixed Point
 
 A condition that remains stable under reflection, self-modification, or successor construction. Related standard areas: tiling agents, Vingean reflection, Loebian obstacle, reflective stability (`field_check.md` node 1).
-
-## Second Circle
-
-The public pass through the material after the raw dialogue and field check. It is not a transcript and not a claim of novelty; it is a structured map of connections selected after the first pass (`field_check.md` as the grounding layer).
 
 ## Non-Maximizing Core
 

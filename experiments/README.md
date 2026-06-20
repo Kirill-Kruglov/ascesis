@@ -13,7 +13,8 @@ These experiments are not claims of alignment progress. They are small reproduci
 5. `05_reflective_stability_of_incompleteness` - high-risk toy self-modification check, expected to fail often.
 6. `06_sugarscape_governor` - ecological validation in a Sugarscape-style environment; asks whether the toy mechanism survives in richer emergent dynamics.
 7. `07_empowerment_vs_corrigibility` - empowerment vs shutdown-corrigibility on a Thornley-style gridworld. Closed as a calibration failure: the substrate does not reproduce the Thornley baseline (see SPEC Amendments 1-2).
-8. `08_blind_arbiter` - non-spatial population game: can a type-blind arbiter hold permanence under optimization pressure, and where does the `R = horizon_harm / horizon_observation` boundary sit? Cheapest-first slice of the blind-arbiter environment.
+
+The blind-arbiter direction (formerly `08`) passed a minimal proof threshold and was extracted into its own focused package at [`../blind_arbiter/`](../blind_arbiter/).
 
 Rule: cheap refutation before expensive confirmation.
 

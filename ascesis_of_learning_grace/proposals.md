@@ -9,8 +9,7 @@ still guide drafting. Research-frontier decisions live in `status.md`, not here.
 1. Keep `structure.md` a map, not prose. Do not expand bridge sections into arguments
    there; create separate chapter drafts later.
 
-2. Dialogue inserts in `structure.md` are trace anchors, not publication of the raw first
-   circle. If the boundary feels too weak, replace quotes with paraphrases before release.
+2. Dialogue inserts in `structure.md` are trace anchors, not publication of the raw dialogue. If the boundary feels too weak, replace quotes with paraphrases before release.
 
 3. In eventual prose, introduce in this order: engineering layer, limits of specification,
    resource-time weakening, then reflective restraint. Keep religious, quantum, and poetic
@@ -50,6 +49,6 @@ still guide drafting. Research-frontier decisions live in `status.md`, not here.
 
 ## Possible next files
 
-1. `chapter_template.md`: a repeatable structure for second-circle chapters.
+1. `chapter_template.md`: a repeatable structure for chapters.
 2. `review_checklist.md`: promote the checklist above into a standalone file once chapters
    begin.

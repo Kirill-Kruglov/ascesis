@@ -1,7 +1,7 @@
 # 08 Blind Type-B Arbiter Report
 
-SPEC hash (declared): `225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e`
-SPEC hash (actual): `225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e`
+SPEC hash (declared): `80fa8ecb11784f54a314c9a78e261089ccda263dcbfc34c7a0a7de255cc39416`
+SPEC hash (actual): `80fa8ecb11784f54a314c9a78e261089ccda263dcbfc34c7a0a7de255cc39416`
 
 ## Split / Grid
 

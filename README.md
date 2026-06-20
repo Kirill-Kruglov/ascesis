@@ -1,35 +1,52 @@
-# Ascesis of Learning Grace
+# Ascesis
 
-`Ascesis of Learning Grace` is a working code name. The final name may change.
+`Ascesis` is a working code name. The final name may change.
 
-This repository is a map-guide for AI alignment work. It is not a scientific paper, not a claim of contribution, and not a claim of novelty.
+This repository is a research trail for AI-alignment thinking, organized as honest bridges
+between areas usually discussed as separate bodies of work (formal verification, capability
+security, instrumental convergence, corrigibility, selective prediction, social choice,
+Goodhart/reward hacking, evolutionary dynamics, mechanism design, and related fields). It is
+not a scientific paper, not a claim of contribution, and not a claim of novelty. The value, if
+any, is in the proposed bridges and in the honest path — both of which live in the commit
+history as much as in the current files. Every field is credited to its originators before any
+local label is used.
 
-The genre is a map of bridges between areas that are usually discussed as separate bodies of work: formal verification, capability security, instrumental convergence, corrigibility, selective prediction, semantic parsing, formal specification, predictability limits, and related fields. The value of the project, if any, is in the proposed bridges, not in claiming the islands.
+## How the repository is organized
 
-The project is built as a second circle. The first circle was a raw dialogue: a live path with false starts and unresolved edges. That raw dialogue is not published here. The second circle is not an edited transcript; it is a new pass through a branch that became visible only after the first circle was completed and checked against the existing field.
+- **Sandbox — the working trail.** This is where the trial-and-error research happens.
+  - [`ascesis_of_learning_grace/`](ascesis_of_learning_grace/): the map and research memos.
+    Start with [status.md](ascesis_of_learning_grace/status.md) for the current frontier and the
+    standing discipline; [field_check.md](ascesis_of_learning_grace/field_check.md) is the
+    field-ownership layer. The sandbox is kept lean: stale material is deleted rather than
+    tidied, since the full record stays in git history.
+  - [`experiments/`](experiments/): small, reproducible toy tests, each pre-registered with a
+    `SPEC.md` before running. Negative results and calibration failures are valid outputs.
+- **Extracted directions — focused packages.** When a direction passes a minimal proof
+  threshold in the sandbox, it is pulled into its own self-contained package (narrative, spec,
+  field references, test, results) so it can be developed in focus and read on its own.
+  - [`blind_arbiter/`](blind_arbiter/): the current active direction (below).
 
-The honesty layer is [field_check.md](ascesis_of_learning_grace/field_check.md). It treats the substantive content as already present in the literature and gives field ownership before any project labels are used.
+## Current direction: the blind arbiter
 
-Current status: early working skeleton.
+Can an AGI/ASI, modelled as an active **feeder** for a population rather than an optimizer of
+"the good," keep that population in equilibrium when part of it is adversarial and actively
+games the signals the feeder can see (reward hacking under hard optimization)?
 
-To orient quickly, start with [status.md](ascesis_of_learning_grace/status.md): the single live-state file holding the current spine, what is closed, the open frontier, and the standing discipline. Everything else is either the stable map or the frozen archive.
-
-## Navigation
-
-- [status.md](ascesis_of_learning_grace/status.md): start here — current frontier and standing discipline (the one file that moves as work proceeds).
-- [structure.md](ascesis_of_learning_grace/structure.md): the current bridge map and framing for the nine technical bridges.
-- [field_check.md](ascesis_of_learning_grace/field_check.md): thesis-to-source grounding and flags for overlap with existing literature.
-- [references.md](ascesis_of_learning_grace/references.md): canonical bibliography grouped by field.
-- [rejected_branches.md](ascesis_of_learning_grace/rejected_branches.md): explored branches and why they are closed.
-- [glossary.md](ascesis_of_learning_grace/glossary.md): working definitions for local project labels.
-- [questions.md](ascesis_of_learning_grace/questions.md): durable open questions (structure, terminology, contradictions, assumptions); the moving frontier is in status.md.
-- [proposals.md](ascesis_of_learning_grace/proposals.md): durable drafting conventions and the per-chapter consistency checklist.
-- [archive/INDEX.md](ascesis_of_learning_grace/archive/INDEX.md): frozen pointers to closed branches and superseded framings, with the commit SHAs to retrieve full texts.
-- [experiments/](experiments/): preregistered toy experiments for comparing incomplete preferences, bet-hedging, and governor feasibility.
+Current result (a weak but real toy demonstration): an active, type-blind arbiter holds the
+population's true permanence above a boundary `R* = horizon_harm / horizon_observation`,
+**even when its observable signal has decoupled from the true types** — it defends the true
+floor through its lagged reaction to consequences, not by reading the signal. Defending the
+floor under this Goodhart pressure requires active intervention; a passive keeper does not hold
+it. The boundary is the safety/development trade-off curve, and it holds in a majority (~0.6) of
+held-out seeds, not always. See [`blind_arbiter/`](blind_arbiter/) for the spec, caveats, and
+how to reproduce.
 
 ## Contributors
 
-Kirill Kruglov (author and maintainer), Claude (Opus 4.8), and Codex (GPT-5.5). See [CONTRIBUTORS.md](CONTRIBUTORS.md) for roles.
+Kirill Kruglov (author and maintainer, who does the core work — proposing and testing
+hypotheses by mind and intuition), Claude (Opus 4.8), and Codex (GPT-5.5). The two assistants'
+contribution to the sandbox trail counts as much as to the extracted packages. See
+[CONTRIBUTORS.md](CONTRIBUTORS.md) for roles.
 
 ## License
 

@@ -1,9 +1,9 @@
 {
-  "git_head": "616bc893c824f696307fa71d976d000c69dead1d",
-  "git_commit_time": "2026-06-20T10:08:11+03:00",
-  "git_status_short": "M results/raw/results.json\n M results/validation_report.md\n M run.py",
-  "spec_sha256": "225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e",
-  "actual_spec_sha256": "225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e",
+  "git_head": "c6be994aab974d1e67e84d3ca85da91349281297",
+  "git_commit_time": "2026-06-20T11:11:55+03:00",
+  "git_status_short": "R  ../experiments/08_blind_arbiter/results/corr_sa_over_time.svg -> results/corr_sa_over_time.svg\nR  ../experiments/08_blind_arbiter/results/failure_mode_camouflage.svg -> results/failure_mode_camouflage.svg\nR  ../experiments/08_blind_arbiter/results/failure_mode_collective_hack.svg -> results/failure_mode_collective_hack.svg\nR  ../experiments/08_blind_arbiter/results/failure_mode_collective_punishment.svg -> results/failure_mode_collective_punishment.svg\nR  ../experiments/08_blind_arbiter/results/permanence_survival.svg -> results/permanence_survival.svg\nR  ../experiments/08_blind_arbiter/results/raw/results.csv -> results/raw/results.csv\nR  ../experiments/08_blind_arbiter/results/raw/results.json -> results/raw/results.json\nRM ../experiments/08_blind_arbiter/results/report.md -> results/report.md\nR  ../experiments/08_blind_arbiter/results/run_manifest.json -> results/run_manifest.json\nR  ../experiments/08_blind_arbiter/results/validation_report.md -> results/validation_report.md\nRM ../experiments/08_blind_arbiter/run.py -> run.py\n?? SPEC.md",
+  "spec_sha256": "80fa8ecb11784f54a314c9a78e261089ccda263dcbfc34c7a0a7de255cc39416",
+  "actual_spec_sha256": "80fa8ecb11784f54a314c9a78e261089ccda263dcbfc34c7a0a7de255cc39416",
   "train_seeds": [
     3100,
     3101,
