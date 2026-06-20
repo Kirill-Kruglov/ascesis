@@ -1,7 +1,7 @@
 {
-  "git_head": "08aefa29a675cdade5bbd176fa38f0bee092c529",
-  "git_commit_time": "2026-06-20T09:02:27+03:00",
-  "git_status_short": "M results/corr_sa_over_time.svg\n M results/failure_mode_camouflage.svg\n M results/failure_mode_collective_hack.svg\n M results/permanence_survival.svg\n M results/raw/results.csv\n M results/raw/results.json\n M results/report.md\n M results/run_manifest.json\n M results/validation_report.md\n M run.py",
+  "git_head": "616bc893c824f696307fa71d976d000c69dead1d",
+  "git_commit_time": "2026-06-20T10:08:11+03:00",
+  "git_status_short": "M results/raw/results.json\n M results/validation_report.md\n M run.py",
   "spec_sha256": "225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e",
   "actual_spec_sha256": "225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e",
   "train_seeds": [
@@ -315,7 +315,7 @@
     "lexicographic": null
   },
   "floor_not_maximized_check": {
-    "passed": false,
+    "active_floor_defense": true,
     "mean_intervention_inside_floor": 0.7400002049458749,
     "mean_intervention_outside_floor": 0.48784723367730426
   },

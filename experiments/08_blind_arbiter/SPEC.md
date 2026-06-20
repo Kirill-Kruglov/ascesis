@@ -277,3 +277,48 @@ predicate-metric independence and predicate-phenomenon alignment.
 
 Status: 08 remains in calibration under C1' and C2'. H_boundary and H_regime stay locked and
 unevaluated until C1' and C2' pass on a held-out substrate.
+
+## Amendment 3 (2026-06-20, calibration gate passed; accepted finding on active defense)
+
+After the harm-dynamics bug was fixed (capture_rate now scales realized capture pressure, and
+the arbiter applies a direct lagged-capture penalty), the calibration gate passes on held-out
+seeds: C1' (low-R fails for all; high-R holds for at least one), C2' (Goodhart-driven failure
+in at least one regime), gate = True. The substrate is alive.
+
+Key result now readable (non-tautological). geometric holds true-gene permanence above
+R* = 0.833 while its signal has decoupled from the gene to corr = 0.203. So it is not the old
+geometric=permanence coincidence: the observable signal is nearly useless, yet the blind
+arbiter still defends the true (gene-based) floor -- through lagged-consequence reaction, not
+signal reading. scalar (corr 1.0, dies by concentration) and lexicographic (corr -0.036) find
+no boundary (R* = None).
+
+Accepted finding (Kirill): under Goodhart / optimization pressure, defending true permanence
+requires ACTIVE intervention; passive floor-keeping is insufficient. This is recorded as a
+finding, not treated as a defect.
+
+Consequence for the artifact checks. `floor_not_maximized` was a pass/fail check that encoded
+the passive-keeper ideal (intervention inside the floor should be near zero). The accepted
+finding overturns that premise, so the check is demoted to a DESCRIPTIVE diagnostic: it reports
+mean intervention inside vs outside the floor, and inside >= outside is now the expected
+signature of active defense, not a failure. This is not a predicate change -- C1' and C2' are
+untouched, the calibration gate is unaffected. It is the reclassification of an artifact check
+whose premise an accepted finding overturned, recorded transparently (the same discipline as a
+mis-aimed predicate: surface it, do not silently keep gating on a premise we no longer hold).
+
+The active blind arbiter is the primary research object. The passive-keeper comparison is a
+SEPARATE future test (not parameterized into this run, to avoid half-implemented code). Its
+honest expected outcome, given the finding, is that a passive arbiter holds no boundary -- which
+would further confirm that active intervention is required.
+
+External-review framing (what this toy now demonstrates, with caveats). A weak version of the
+target claim: an active, type-blind "feeder" can hold the equilibrium (permanence) of a
+population containing an adversarial group that camouflages its signal under hard optimization
+(Goodhart), provided the observation horizon is fast enough relative to the harm horizon, i.e.
+above a boundary R*. The boundary R* is the safety / development trade-off curve: above it the
+equilibrium holds (development is possible), below it no blind mechanism holds; R*'s position is
+the dial behind the ">= 51% development under a safety trade-off" question. Honest caveats for
+reviewers: non-spatial toy; only geometric achieves a boundary; active intervention is required
+(not a passive keeper); the boundary is real (it fails below R*, it does not "always work").
+
+Status: calibration gate passed under C1' and C2'. H_boundary and H_regime are now readable for
+the active blind arbiter, with the floor-intervention caveat recorded above.

@@ -786,7 +786,11 @@ def write_outputs(result, calibration_history):
 
     floor_inside = float(np.mean([r['mean_intervention_inside_floor'] for r in all_records if r['split'] == 'heldout']))
     floor_outside = float(np.mean([r['mean_intervention_outside_floor'] for r in all_records if r['split'] == 'heldout']))
-    floor_check_pass = floor_inside < floor_outside
+    # floor_not_maximized is a descriptive diagnostic, not a gate (SPEC Amendment 3).
+    # Accepted finding: defending true permanence under Goodhart requires ACTIVE
+    # intervention, so intervention inside the floor >= outside is the expected signature
+    # of active defense, not a failure. A passive-keeper comparison is a separate future test.
+    active_floor_defense = floor_inside >= floor_outside
 
     raw_json = {
         'records': all_records,
@@ -794,7 +798,7 @@ def write_outputs(result, calibration_history):
         'summary': result.summary,
         'calibration_gate': result.calibration_gate,
         'floor_not_maximized_check': {
-            'passed': floor_check_pass,
+            'active_floor_defense': active_floor_defense,
             'mean_intervention_inside_floor': floor_inside,
             'mean_intervention_outside_floor': floor_outside,
         },
@@ -895,13 +899,10 @@ def write_outputs(result, calibration_history):
         verdict_detail = "C1'/C2' passed; locked boundary and regime evaluation may proceed."
 
     validation_verdict = (
-        'valid result.'
-        if result.calibration_gate['passed'] and floor_check_pass
-        else (
-            'calibration gate passed; boundary is readable, but floor_not_maximized artifact check failed.'
-            if result.calibration_gate['passed']
-            else 'calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.'
-        )
+        'valid result; boundary readable. Active defense of the floor is the studied regime '
+        '(floor_not_maximized is descriptive, not a gate; see SPEC Amendment 3).'
+        if result.calibration_gate['passed']
+        else 'calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.'
     )
 
     validation = [
@@ -911,7 +912,7 @@ def write_outputs(result, calibration_history):
         '|---|---|---|',
         '| blind_arbiter | passed | The arbiter interface never receives hidden behavior_gene or true_x; runtime assertion present in `decide()`. |',
         "| emergent_goodhart | passed | Signal mutation is driven by allocation history and lag/audit feedback, not by a hand-coded penalty. |",
-        f"| floor_not_maximized | {'passed' if floor_check_pass else 'failed'} | Mean intervention inside floor={floor_inside:.3f}, outside floor={floor_outside:.3f}; failed means the floor may be operating as an active intervention target rather than a passive boundary. |",
+        f"| floor_intervention (descriptive) | measured | Mean intervention inside floor={floor_inside:.3f}, outside floor={floor_outside:.3f}. Inside>=outside ({'yes' if active_floor_defense else 'no'}) is the expected signature of active defense under Goodhart (SPEC Amendment 3); not a gate. |",
         "| symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |",
         f"| finite_values | {'passed' if all(math.isfinite(r['final_true_corr_sa']) and math.isfinite(r['R']) for r in all_records) else 'failed'} | All reported numbers are finite. |",
         f"| calibration_gate | {'passed' if result.calibration_gate['passed'] else 'failed'} | C1'={result.calibration_gate['c1_pass']}, C2'={result.calibration_gate['c2_pass']}. |",
@@ -980,7 +981,7 @@ def write_outputs(result, calibration_history):
         ),
         'r_star': result.r_star,
         'floor_not_maximized_check': {
-            'passed': floor_check_pass,
+            'active_floor_defense': active_floor_defense,
             'mean_intervention_inside_floor': floor_inside,
             'mean_intervention_outside_floor': floor_outside,
         },

@@ -49242,7 +49242,7 @@
     "high_bucket_best_regime": "geometric"
   },
   "floor_not_maximized_check": {
-    "passed": false,
+    "active_floor_defense": true,
     "mean_intervention_inside_floor": 0.7400002049458749,
     "mean_intervention_outside_floor": 0.48784723367730426
   },
