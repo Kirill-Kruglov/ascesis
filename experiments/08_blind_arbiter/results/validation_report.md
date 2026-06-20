@@ -4,10 +4,10 @@
 |---|---|---|
 | blind_arbiter | passed | The arbiter interface never receives hidden behavior_gene or true_x; runtime assertion present in `decide()`. |
 | emergent_goodhart | passed | Signal mutation is driven by allocation history and lag/audit feedback, not by a hand-coded penalty. |
-| floor_not_maximized | failed | Intervention magnitude inside the permanence floor is lower than outside it. |
+| floor_not_maximized | failed | Mean intervention inside floor=0.740, outside floor=0.488; failed means the floor may be operating as an active intervention target rather than a passive boundary. |
 | symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |
 | finite_values | passed | All reported numbers are finite. |
-| calibration_gate | failed | C1'=False, C2'=True. |
+| calibration_gate | passed | C1'=True, C2'=True. |
 
 ## Raw And Human-Readable Outputs
 
@@ -16,5 +16,5 @@
 
 ## Verdict
 
-calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.
-unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was 0.100 (geometric).
+calibration gate passed; boundary is readable, but floor_not_maximized artifact check failed.
+C1'/C2' passed; locked boundary and regime evaluation may proceed.

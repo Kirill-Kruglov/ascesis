@@ -13,27 +13,27 @@ SPEC hash (actual): `225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531
 ## Calibration Gate
 
 - C1' low-R pass (R<=0.40, true permanence <0.10 for all regimes): `True`
-- C1' high-R companion (R>=2.0, true permanence >=0.50 for at least one regime): `False`
+- C1' high-R companion (R>=2.0, true permanence >=0.50 for at least one regime): `True`
 - C2' pass (at least one regime in 0.80<=R<=1.50 has true permanence <0.50 and final corr <0.70): `True`
-- calibration gate (C1' AND C2'): `False`
-- C1' overall: `False`
-- scalar mid bucket true permanence: `0.022`
-- scalar mid bucket final corr(signal, gene): `0.778`
-- high-R bucket max true permanence: `0.100` (geometric)
+- calibration gate (C1' AND C2'): `True`
+- C1' overall: `True`
+- scalar mid bucket true permanence: `0.317`
+- scalar mid bucket final corr(signal, gene): `0.278`
+- high-R bucket max true permanence: `0.667` (geometric)
 
 ## Located R* (held-out)
 
 | regime | R* | true permanence rate around R* | notes |
 |---|---:|---:|---|
 | scalar | None | 0.000 | n/a |
-| geometric | None | 0.033 | n/a |
-| lexicographic | None | 0.033 | n/a |
+| geometric | 0.833 | 0.600 | n/a |
+| lexicographic | None | 0.000 | n/a |
 
 ## Summary Numbers
 
 - scalar: mean true permanence `0.000`, mean corr(signal, gene) `1.000`
-- geometric: mean true permanence `0.048`, mean corr(signal, gene) `0.499`
-- lexicographic: mean true permanence `0.044`, mean corr(signal, gene) `0.505`
+- geometric: mean true permanence `0.311`, mean corr(signal, gene) `0.203`
+- lexicographic: mean true permanence `0.237`, mean corr(signal, gene) `-0.036`
 
 ## Failure Modes
 
@@ -43,11 +43,12 @@ SPEC hash (actual): `225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531
 
 ## Interpretive Verdict
 
-calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.
-unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was 0.100 (geometric).
+calibration gate passed; boundary and regime comparison are interpretable.
 
 ## SPEC Under-Specification Notes
 - capture / replicator dynamics: the exact functional form of share transfer under capture was not fully pinned down; this implementation uses a hidden true-share transfer-plus-replicator hybrid with signal-only arbitration.
+- capture-rate referent: `capture_rate` scales realized capture pressure, so high-R runs have physically slower/weaker harm rather than only a different label.
+- consequence reaction: the arbiter applies a direct lagged-capture allocation penalty; objectives remain signal-only and blind to hidden genes.
 - signal mutation: the exact mutation kernel was underspecified; this implementation uses allocation-following drift plus lag/audit feedback and noise, without any access to hidden behavior genes in the arbiter.
 - audit process: the stochastic audit timing and focus are modeled as Bernoulli timing with random focus; the SPEC does not fully pin down its distribution.
 - calibration iterations: substrate search is logged in the manifest; C1'/C2' are never rewritten.

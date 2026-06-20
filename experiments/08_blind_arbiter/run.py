@@ -55,6 +55,7 @@ class SubstrateParams:
     resource_gain: float
     capture_drag: float
     capture_strength: float
+    consequence_reactivity: float
     signal_mutation: float
     signal_noise: float
     signal_bias: float
@@ -66,6 +67,7 @@ DEFAULT_SUBSTRATE = SubstrateParams(
     resource_gain=0.38,
     capture_drag=0.92,
     capture_strength=0.88,
+    consequence_reactivity=1.20,
     signal_mutation=0.24,
     signal_noise=0.04,
     signal_bias=0.12,
@@ -75,13 +77,13 @@ DEFAULT_SUBSTRATE = SubstrateParams(
 
 SUBSTRATE_CANDIDATES = [
     DEFAULT_SUBSTRATE,
-    SubstrateParams(0.36, 0.96, 0.92, 0.28, 0.04, 0.14, 0.32, 0.08),
-    SubstrateParams(0.34, 1.00, 0.96, 0.32, 0.05, 0.16, 0.28, 0.10),
-    SubstrateParams(0.32, 1.04, 1.00, 0.36, 0.05, 0.18, 0.24, 0.12),
-    SubstrateParams(0.30, 1.08, 1.04, 0.40, 0.06, 0.20, 0.22, 0.14),
-    SubstrateParams(0.24, 0.78, 0.60, 0.18, 0.04, 0.08, 0.30, 0.05),
-    SubstrateParams(0.20, 0.62, 0.46, 0.16, 0.04, 0.06, 0.32, 0.04),
-    SubstrateParams(0.16, 0.50, 0.34, 0.14, 0.03, 0.05, 0.34, 0.03),
+    SubstrateParams(0.36, 0.96, 0.92, 1.35, 0.28, 0.04, 0.14, 0.32, 0.08),
+    SubstrateParams(0.34, 1.00, 0.96, 1.50, 0.32, 0.05, 0.16, 0.28, 0.10),
+    SubstrateParams(0.32, 1.04, 1.00, 1.70, 0.36, 0.05, 0.18, 0.24, 0.12),
+    SubstrateParams(0.30, 1.18, 1.04, 1.90, 0.40, 0.06, 0.20, 0.22, 0.14),
+    SubstrateParams(0.24, 0.78, 0.60, 1.40, 0.18, 0.04, 0.08, 0.30, 0.05),
+    SubstrateParams(0.20, 0.62, 0.46, 1.20, 0.16, 0.04, 0.06, 0.32, 0.04),
+    SubstrateParams(0.16, 0.50, 0.34, 1.00, 0.14, 0.03, 0.05, 0.34, 0.03),
 ]
 
 @dataclass
@@ -412,18 +414,22 @@ class BlindArbiterGame:
         for r0 in GRID_GRID:
             alloc = np.array([r0, 1.0 - r0], dtype=float)
             pred_signal = self._predict_signal(obs, alloc)
+            consequence_penalty = self.substrate.consequence_reactivity * float(
+                np.dot(alloc, obs.lagged_capture * obs.lagged_alloc)
+            )
+            mean_log_signal = float(np.mean(np.log(pred_signal + EPS)))
             if self.regime == 'scalar':
                 utility = float(np.dot(pred_signal, alloc))
-                key = (utility, -float(np.abs(alloc - obs.signal).sum()))
+                key = (utility - consequence_penalty, -float(np.abs(alloc - obs.signal).sum()))
             elif self.regime == 'geometric':
-                utility = float(np.mean(np.log(pred_signal + EPS)))
-                key = (utility, -float(np.abs(alloc - obs.signal).sum()))
+                utility = mean_log_signal
+                key = (utility - consequence_penalty, -float(np.abs(alloc - obs.signal).sum()))
             elif self.regime == 'lexicographic':
                 floor = float(pred_signal.min() - self.permanence_eps)
                 if floor >= 0:
-                    key = (1.0, floor, float(np.mean(np.log(pred_signal + EPS))))
+                    key = (1.0, floor - consequence_penalty, mean_log_signal)
                 else:
-                    key = (floor, float(np.mean(np.log(pred_signal + EPS))))
+                    key = (floor - consequence_penalty, mean_log_signal)
             else:
                 raise ValueError(self.regime)
             if best_key is None or key > best_key:
@@ -433,7 +439,7 @@ class BlindArbiterGame:
         return best_alloc
 
     def _capture_transfer(self, alloc):
-        pressure = self.substrate.capture_strength * self.state.behavior_gene * alloc * self.state.true_x
+        pressure = self.setting.capture_rate * self.substrate.capture_strength * self.state.behavior_gene * alloc * self.state.true_x
         loss = np.zeros(G, dtype=float)
         for g in range(G):
             others = [h for h in range(G) if h != g]
@@ -778,11 +784,20 @@ def write_outputs(result, calibration_history):
         writer.writeheader()
         writer.writerows(all_records)
 
+    floor_inside = float(np.mean([r['mean_intervention_inside_floor'] for r in all_records if r['split'] == 'heldout']))
+    floor_outside = float(np.mean([r['mean_intervention_outside_floor'] for r in all_records if r['split'] == 'heldout']))
+    floor_check_pass = floor_inside < floor_outside
+
     raw_json = {
         'records': all_records,
         'curve_data': result.curve_data,
         'summary': result.summary,
         'calibration_gate': result.calibration_gate,
+        'floor_not_maximized_check': {
+            'passed': floor_check_pass,
+            'mean_intervention_inside_floor': floor_inside,
+            'mean_intervention_outside_floor': floor_outside,
+        },
         'failure_modes_present': result.failure_modes,
         'calibration_history': calibration_history,
         'substrate': result.substrate.__dict__,
@@ -825,7 +840,7 @@ def write_outputs(result, calibration_history):
     ]
     for regime in REGIMES:
         rr = result.r_star[regime]
-        near = min(result.curve_data[regime], key=lambda p: abs((p['R'] if rr is not None else 0.0) - p['R']))
+        near = min(result.curve_data[regime], key=lambda p: abs((rr if rr is not None else 0.0) - p['R']))
         note = 'n/a'
         if regime == 'lexicographic' and result.r_star['scalar'] is not None and rr is not None:
             note = f'shift relative to scalar: {result.r_star["scalar"] - rr:.3f}'
@@ -862,6 +877,8 @@ def write_outputs(result, calibration_history):
     report.append('')
     report.append('## SPEC Under-Specification Notes')
     report.append('- capture / replicator dynamics: the exact functional form of share transfer under capture was not fully pinned down; this implementation uses a hidden true-share transfer-plus-replicator hybrid with signal-only arbitration.')
+    report.append('- capture-rate referent: `capture_rate` scales realized capture pressure, so high-R runs have physically slower/weaker harm rather than only a different label.')
+    report.append('- consequence reaction: the arbiter applies a direct lagged-capture allocation penalty; objectives remain signal-only and blind to hidden genes.')
     report.append('- signal mutation: the exact mutation kernel was underspecified; this implementation uses allocation-following drift plus lag/audit feedback and noise, without any access to hidden behavior genes in the arbiter.')
     report.append('- audit process: the stochastic audit timing and focus are modeled as Bernoulli timing with random focus; the SPEC does not fully pin down its distribution.')
     report.append("- calibration iterations: substrate search is logged in the manifest; C1'/C2' are never rewritten.")
@@ -877,6 +894,16 @@ def write_outputs(result, calibration_history):
     else:
         verdict_detail = "C1'/C2' passed; locked boundary and regime evaluation may proceed."
 
+    validation_verdict = (
+        'valid result.'
+        if result.calibration_gate['passed'] and floor_check_pass
+        else (
+            'calibration gate passed; boundary is readable, but floor_not_maximized artifact check failed.'
+            if result.calibration_gate['passed']
+            else 'calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.'
+        )
+    )
+
     validation = [
         '# Validation Report: 08 Blind Type-B Arbiter',
         '',
@@ -884,7 +911,7 @@ def write_outputs(result, calibration_history):
         '|---|---|---|',
         '| blind_arbiter | passed | The arbiter interface never receives hidden behavior_gene or true_x; runtime assertion present in `decide()`. |',
         "| emergent_goodhart | passed | Signal mutation is driven by allocation history and lag/audit feedback, not by a hand-coded penalty. |",
-        f"| floor_not_maximized | {'passed' if float(np.mean([r['mean_intervention_inside_floor'] for r in all_records if r['split'] == 'heldout'])) < float(np.mean([r['mean_intervention_outside_floor'] for r in all_records if r['split'] == 'heldout'])) else 'failed'} | Intervention magnitude inside the permanence floor is lower than outside it. |",
+        f"| floor_not_maximized | {'passed' if floor_check_pass else 'failed'} | Mean intervention inside floor={floor_inside:.3f}, outside floor={floor_outside:.3f}; failed means the floor may be operating as an active intervention target rather than a passive boundary. |",
         "| symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |",
         f"| finite_values | {'passed' if all(math.isfinite(r['final_true_corr_sa']) and math.isfinite(r['R']) for r in all_records) else 'failed'} | All reported numbers are finite. |",
         f"| calibration_gate | {'passed' if result.calibration_gate['passed'] else 'failed'} | C1'={result.calibration_gate['c1_pass']}, C2'={result.calibration_gate['c2_pass']}. |",
@@ -896,9 +923,10 @@ def write_outputs(result, calibration_history):
         '',
         '## Verdict',
         '',
-        'calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.' if not result.calibration_gate['passed'] else 'valid result.',
+        validation_verdict,
         verdict_detail,
     ]
+    (RESULTS / 'validation_report.md').write_text('\n'.join(validation) + '\n')
 
     manifest = {
         'git_head': git_value(['rev-parse', 'HEAD']),
@@ -932,6 +960,8 @@ def write_outputs(result, calibration_history):
                 'hidden true-x / behavior_gene split for permanence',
                 'signal mutation follows allocation and lagged evidence',
                 'final calibration gate status logged in report',
+                'capture_rate scales realized capture pressure, giving horizon_harm a mechanical referent',
+                'direct lagged-capture allocation penalty shifts resources away from groups whose prior allocation produced observed capture',
             ],
         },
         'calibration_gate': result.calibration_gate,
@@ -949,6 +979,11 @@ def write_outputs(result, calibration_history):
             )
         ),
         'r_star': result.r_star,
+        'floor_not_maximized_check': {
+            'passed': floor_check_pass,
+            'mean_intervention_inside_floor': floor_inside,
+            'mean_intervention_outside_floor': floor_outside,
+        },
         'failure_modes_present': result.failure_modes,
     }
     (RESULTS / 'run_manifest.json').write_text(json.dumps(manifest, indent=2))

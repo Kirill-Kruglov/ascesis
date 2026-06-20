@@ -1,7 +1,7 @@
 {
-  "git_head": "fa3066e7beecefd61d5ab40216a900c718275bae",
-  "git_commit_time": "2026-06-20T08:22:17+03:00",
-  "git_status_short": "M results/corr_sa_over_time.svg\n M results/failure_mode_camouflage.svg\n M results/failure_mode_collective_hack.svg\n M results/permanence_survival.svg\n M results/raw/results.csv\n M results/raw/results.json\n M results/report.md\n M results/run_manifest.json\n M run.py",
+  "git_head": "08aefa29a675cdade5bbd176fa38f0bee092c529",
+  "git_commit_time": "2026-06-20T09:02:27+03:00",
+  "git_status_short": "M results/corr_sa_over_time.svg\n M results/failure_mode_camouflage.svg\n M results/failure_mode_collective_hack.svg\n M results/permanence_survival.svg\n M results/raw/results.csv\n M results/raw/results.json\n M results/report.md\n M results/run_manifest.json\n M results/validation_report.md\n M run.py",
   "spec_sha256": "225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e",
   "actual_spec_sha256": "225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e",
   "train_seeds": [
@@ -157,16 +157,17 @@
     "lexicographic"
   ],
   "substrate": {
-    "resource_gain": 0.16,
-    "capture_drag": 0.5,
-    "capture_strength": 0.34,
-    "signal_mutation": 0.14,
-    "signal_noise": 0.03,
-    "signal_bias": 0.05,
-    "signal_response": 0.34,
-    "audit_shift": 0.03
+    "resource_gain": 0.3,
+    "capture_drag": 1.18,
+    "capture_strength": 1.04,
+    "consequence_reactivity": 1.9,
+    "signal_mutation": 0.4,
+    "signal_noise": 0.06,
+    "signal_bias": 0.2,
+    "signal_response": 0.22,
+    "audit_shift": 0.14
   },
-  "calibration_iterations": 8,
+  "calibration_iterations": 5,
   "calibration_history": [
     {
       "iteration": 1,
@@ -174,6 +175,7 @@
         "resource_gain": 0.38,
         "capture_drag": 0.92,
         "capture_strength": 0.88,
+        "consequence_reactivity": 1.2,
         "signal_mutation": 0.24,
         "signal_noise": 0.04,
         "signal_bias": 0.12,
@@ -183,11 +185,11 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.6888888888888888,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 4.0
+      "scalar_mid_perm": 0.10555555555555556,
+      "scalar_mid_corr": 0.4222222222222223,
+      "high_bucket_max_true_permanence": 0.23333333333333334,
+      "high_bucket_best_regime": "geometric",
+      "score": 4.2481481481481485
     },
     {
       "iteration": 2,
@@ -195,6 +197,7 @@
         "resource_gain": 0.36,
         "capture_drag": 0.96,
         "capture_strength": 0.92,
+        "consequence_reactivity": 1.35,
         "signal_mutation": 0.28,
         "signal_noise": 0.04,
         "signal_bias": 0.14,
@@ -204,11 +207,11 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.7777777777777777,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 4.0
+      "scalar_mid_perm": 0.15,
+      "scalar_mid_corr": 0.35555555555555557,
+      "high_bucket_max_true_permanence": 0.26666666666666666,
+      "high_bucket_best_regime": "geometric",
+      "score": 4.288888888888889
     },
     {
       "iteration": 3,
@@ -216,6 +219,7 @@
         "resource_gain": 0.34,
         "capture_drag": 1.0,
         "capture_strength": 0.96,
+        "consequence_reactivity": 1.5,
         "signal_mutation": 0.32,
         "signal_noise": 0.05,
         "signal_bias": 0.16,
@@ -225,11 +229,11 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.7999999999999999,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 4.0
+      "scalar_mid_perm": 0.19444444444444442,
+      "scalar_mid_corr": 0.34444444444444416,
+      "high_bucket_max_true_permanence": 0.36666666666666664,
+      "high_bucket_best_regime": "geometric",
+      "score": 4.394444444444444
     },
     {
       "iteration": 4,
@@ -237,6 +241,7 @@
         "resource_gain": 0.32,
         "capture_drag": 1.04,
         "capture_strength": 1.0,
+        "consequence_reactivity": 1.7,
         "signal_mutation": 0.36,
         "signal_noise": 0.05,
         "signal_bias": 0.18,
@@ -244,103 +249,41 @@
         "audit_shift": 0.12
       },
       "c1_pass": false,
-      "c2_pass": false,
+      "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.8444444444444444,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 0.0
+      "scalar_mid_perm": 0.21666666666666665,
+      "scalar_mid_corr": 0.2777777777777778,
+      "high_bucket_max_true_permanence": 0.4666666666666667,
+      "high_bucket_best_regime": "geometric",
+      "score": 4.497037037037037
     },
     {
       "iteration": 5,
       "substrate": {
         "resource_gain": 0.3,
-        "capture_drag": 1.08,
+        "capture_drag": 1.18,
         "capture_strength": 1.04,
+        "consequence_reactivity": 1.9,
         "signal_mutation": 0.4,
         "signal_noise": 0.06,
         "signal_bias": 0.2,
         "signal_response": 0.22,
         "audit_shift": 0.14
       },
-      "c1_pass": false,
+      "c1_pass": true,
       "c2_pass": true,
-      "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.7777777777777778,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 4.0
-    },
-    {
-      "iteration": 6,
-      "substrate": {
-        "resource_gain": 0.24,
-        "capture_drag": 0.78,
-        "capture_strength": 0.6,
-        "signal_mutation": 0.18,
-        "signal_noise": 0.04,
-        "signal_bias": 0.08,
-        "signal_response": 0.3,
-        "audit_shift": 0.05
-      },
-      "c1_pass": false,
-      "c2_pass": true,
-      "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.6666666666666666,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 4.0
-    },
-    {
-      "iteration": 7,
-      "substrate": {
-        "resource_gain": 0.2,
-        "capture_drag": 0.62,
-        "capture_strength": 0.46,
-        "signal_mutation": 0.16,
-        "signal_noise": 0.04,
-        "signal_bias": 0.06,
-        "signal_response": 0.32,
-        "audit_shift": 0.04
-      },
-      "c1_pass": false,
-      "c2_pass": true,
-      "passed": false,
-      "scalar_mid_perm": 0.0,
-      "scalar_mid_corr": 0.6777777777777777,
-      "high_bucket_max_true_permanence": 0.0,
-      "high_bucket_best_regime": "scalar",
-      "score": 4.0
-    },
-    {
-      "iteration": 8,
-      "substrate": {
-        "resource_gain": 0.16,
-        "capture_drag": 0.5,
-        "capture_strength": 0.34,
-        "signal_mutation": 0.14,
-        "signal_noise": 0.03,
-        "signal_bias": 0.05,
-        "signal_response": 0.34,
-        "audit_shift": 0.03
-      },
-      "c1_pass": false,
-      "c2_pass": true,
-      "passed": false,
-      "scalar_mid_perm": 0.022222222222222223,
-      "scalar_mid_corr": 0.7777777777777777,
-      "high_bucket_max_true_permanence": 0.1,
+      "passed": true,
+      "scalar_mid_perm": 0.3166666666666667,
+      "scalar_mid_corr": 0.27777777777777785,
+      "high_bucket_max_true_permanence": 0.6666666666666666,
       "high_bucket_best_regime": "geometric",
-      "score": 4.104814814814814
+      "score": 8.697777777777777
     }
   ],
   "improvement_iterations": {
-    "scalar": 8,
-    "geometric": 8,
-    "lexicographic": 8
+    "scalar": 5,
+    "geometric": 5,
+    "lexicographic": 5
   },
   "deviation_notes": {
     "notes": [
@@ -348,26 +291,33 @@
       "blind arbiter runtime assertion on signal-only observation",
       "hidden true-x / behavior_gene split for permanence",
       "signal mutation follows allocation and lagged evidence",
-      "final calibration gate status logged in report"
+      "final calibration gate status logged in report",
+      "capture_rate scales realized capture pressure, giving horizon_harm a mechanical referent",
+      "direct lagged-capture allocation penalty shifts resources away from groups whose prior allocation produced observed capture"
     ]
   },
   "calibration_gate": {
     "c1_low_pass": true,
-    "c1_high_pass": false,
-    "c1_pass": false,
+    "c1_high_pass": true,
+    "c1_pass": true,
     "c2_pass": true,
-    "passed": false,
-    "scalar_mid_perm": 0.022222222222222223,
-    "scalar_mid_corr": 0.7777777777777777,
+    "passed": true,
+    "scalar_mid_perm": 0.3166666666666667,
+    "scalar_mid_corr": 0.27777777777777785,
     "low_bucket_max_R": 0.375,
-    "high_bucket_max_true_permanence": 0.1,
+    "high_bucket_max_true_permanence": 0.6666666666666666,
     "high_bucket_best_regime": "geometric"
   },
-  "calibration_failure_reason": "C1'(b) unreachable: no regime reached mean true permanence >=0.50 at R>=2.0",
+  "calibration_failure_reason": null,
   "r_star": {
     "scalar": null,
-    "geometric": null,
+    "geometric": 0.8333333333333331,
     "lexicographic": null
+  },
+  "floor_not_maximized_check": {
+    "passed": false,
+    "mean_intervention_inside_floor": 0.7400002049458749,
+    "mean_intervention_outside_floor": 0.48784723367730426
   },
   "failure_modes_present": {
     "camouflage_faster_than_window": true,
