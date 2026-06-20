@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: >-
+  If you use this repository, please cite it. Kirill Kruglov is the author and
+  maintainer; Claude (Anthropic) and Codex (OpenAI) are AI collaborators (see
+  CONTRIBUTORS.md). This is a research trail, not a peer-reviewed publication.
+title: "Ascesis: a research trail of honest bridges in AI alignment"
+abstract: >-
+  A research trail for AI-alignment thinking, organized as honest bridges between
+  existing fields, with pre-registered toy experiments and explicit field ownership.
+  The current direction tests whether an active, type-blind arbiter (a "feeder") can
+  hold a population's equilibrium against an adversarial fraction that games observable
+  signals under hard optimization (reward hacking / Goodhart), and locates the
+  observation-horizon boundary R* below which no blind mechanism holds permanence.
+authors:
+  - family-names: Kruglov
+    given-names: Kirill
+    email: mr.kirill.kruglov@gmail.com
+  - name: "Claude (Opus 4.8), Anthropic - AI assistant"
+  - name: "Codex (GPT-5.5), OpenAI - AI assistant"
+repository-code: "https://github.com/Kirill-Kruglov/ascesis"
+url: "https://github.com/Kirill-Kruglov/ascesis"
+license: MIT
+keywords:
+  - AI alignment
+  - AI safety
+  - AGI
+  - ASI
+  - Goodhart's law
+  - reward hacking
+  - corrigibility
+  - value pluralism
+  - mechanism design
+  - replicator dynamics
+  - permanence
+  - blind arbiter
+date-released: 2026-06-20
+version: "0.1.0"

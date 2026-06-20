@@ -48,6 +48,16 @@ hypotheses by mind and intuition), Claude (Opus 4.8), and Codex (GPT-5.5). The t
 contribution to the sandbox trail counts as much as to the extracted packages. See
 [CONTRIBUTORS.md](CONTRIBUTORS.md) for roles.
 
+## Citation
+
+If you draw on this repository, please cite it via the "Cite this repository" button
+(generated from [CITATION.cff](CITATION.cff)). It is a research trail, not a peer-reviewed
+publication; the most useful material for a researcher is often in the commit history.
+
+Keywords: AI alignment, AI safety, AGI, ASI, Goodhart's law, reward hacking, corrigibility,
+value pluralism, mechanism design under hidden types, replicator dynamics, permanence,
+type-blind arbiter.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

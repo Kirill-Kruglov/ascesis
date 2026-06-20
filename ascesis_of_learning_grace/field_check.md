@@ -296,12 +296,29 @@ Node flag: `[PARTIAL]`. The shutdown/corrigibility formalizations are owned; the
 
 Node flag: `[PARTIAL]`. The optimization formalisms are owned; their selection and combination for the governor are the project transfer.
 
+## 31. Population Dynamics, ESS, and Permanence
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| Evolutionary games have stable strategies (ESS), and coexistence of types can be characterized as permanence (the population stays in the interior of the simplex). | John Maynard Smith, 1982, *Evolution and the Theory of Games* (ESS; Hawk-Dove); Josef Hofbauer, Karl Sigmund, 1998, *Evolutionary Games and Population Dynamics* (permanence in replicator dynamics). | `[FULL MATCH]` | Permanence is the formal object the blind-arbiter floor protects; ESS/Hawk-Dove model the adversarial-vs-cooperative structure. |
+| Cooperation can persist under reputation-based mechanisms even among self-interested agents (indirect reciprocity). | Martin A. Nowak, Karl Sigmund, 2005, "Evolution of indirect reciprocity", *Nature* 437. | `[PARTIAL]` | Background for reacting to realized consequences rather than to type; the blind-arbiter transfer is reacting to lagged outcomes, not building reputations. |
+
+Node flag: `[PARTIAL]`. ESS and permanence are owned; their use as the blind-arbiter's defended floor is the project transfer. Credited self-contained in `../../blind_arbiter/references.md`.
+
+## 32. Mechanism Design Under Hidden Types and Stackelberg Commitment
+
+| thesis | source | flag | note |
+|---|---|---|---|
+| A principal who cannot observe agents' types can still shape behaviour by designing payoffs over outcomes (mechanism design / moral hazard), and can commit to a rule that followers best-respond to (Stackelberg). | Roger B. Myerson, 1981, "Optimal Auction Design"; Bengt Holmstrom, 1979, "Moral Hazard and Observability"; Heinrich von Stackelberg, 1934, *Marktform und Gleichgewicht*. | `[FULL MATCH]` | The type-blind arbiter that commits to a dispensing rule and reacts to outcomes is a mechanism-design / Stackelberg leader under hidden types and monitoring lag. |
+
+Node flag: `[PARTIAL]`. The mechanism-design and Stackelberg results are owned; the blind, consequence-reacting, lag-bounded arbiter is the project transfer. Credited self-contained in `../../blind_arbiter/references.md`.
+
 ## Summary
 
 Node flags:
 
 - `[FULL MATCH]`: 8
-- `[PARTIAL]`: 22
+- `[PARTIAL]`: 24
 - `[NO DIRECT SOURCE FOUND]`: 0
 
 Nodes with `[FULL MATCH]`:
@@ -339,6 +356,8 @@ Nodes with `[PARTIAL]`:
 - 28. Empowerment as formal option value.
 - 29. Incomplete-preference and lexicographic corrigibility.
 - 30. Non-scalar value optimization formalisms.
+- 31. Population dynamics, ESS, and permanence.
+- 32. Mechanism design under hidden types and Stackelberg commitment.
 
 Candidates for manual human check (`[NO DIRECT SOURCE FOUND]`):
 

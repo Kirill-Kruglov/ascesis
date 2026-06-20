@@ -4,9 +4,9 @@ Single live-state file. Read this first. It holds where the work is now and the
 discipline that governs it. Everything else is either the stable map (changes
 rarely) or the archive (frozen). History is in git, not restated here.
 
-Last updated: 2026-06-19. Transition commits: `ca99c23` closed the
-mechanical-superiority claim; `60b495b` credited the Goodhart-invariance and
-adversarial-evaluation fields.
+Last updated: 2026-06-20. The repository was reorganized into a sandbox (this map plus
+`../experiments/`) and extracted directions (commit `b7d9400`). The active empirical
+direction is now the blind arbiter (see below).
 
 ## Telos and scope
 
@@ -29,6 +29,19 @@ origin of such a governor; it does not by itself escape Goodhart (it relocates i
 into the selection environment) and it requires built-in corrigibility and
 legitimacy rather than a benevolent-dictator target. See the `structure.md`
 candidate "Governor as Keeper of the Contested Space".
+
+## Active empirical direction: the blind arbiter
+
+The telos is now being pursued empirically in an extracted, self-contained package:
+`../blind_arbiter/`. It operationalizes "keeper of the contested space" as an active,
+type-blind arbiter (a feeder) that defends a population's permanence against an adversarial
+fraction which games the observable signals under hard optimization (Goodhart). Current toy
+result: the active blind arbiter holds true (gene-based) permanence above a boundary `R*` even
+when its signal has decoupled from the true types — defending through lagged consequences, not
+signal reading — and defense requires active intervention. `R*` is the safety/development
+trade-off curve. Full spec, caveats, and field ownership are in the package. The conceptual
+successors (a, b) below remain the map-level open work; the blind arbiter is the current running
+test of the telos.
 
 ## Current spine (one line)
 

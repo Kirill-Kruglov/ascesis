@@ -37,8 +37,8 @@ claimed.
 - Baron & Spranca (1997); Tetlock et al. (2000) — protected / sacred values (non-tradeable
   axes; the adversarial vs protected structure modelled here as a toy).
 
-The shared Goodhart, safety/liveness, and telos fields are recorded with thesis-to-source
-flags in `../ascesis_of_learning_grace/field_check.md` (nodes 11-30). The population-dynamics
-and mechanism-design entries (Maynard Smith, Hofbauer & Sigmund, Nowak & Sigmund, Myerson,
-Holmstrom, Stackelberg) are credited here in this self-contained package and are not yet in the
-sandbox field_check; adding them there is a pending step before any publication-grade use.
+All of these are also recorded with thesis-to-source flags in
+`../ascesis_of_learning_grace/field_check.md`: the shared Goodhart, safety/liveness, and telos
+fields at nodes 11-30, and the population-dynamics and mechanism-design entries (Maynard Smith,
+Hofbauer & Sigmund, Nowak & Sigmund, Myerson, Holmstrom, Stackelberg) at nodes 31-32. This file
+is the self-contained subset relevant to the blind-arbiter direction.
