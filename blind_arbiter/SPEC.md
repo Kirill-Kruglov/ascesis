@@ -1,4 +1,4 @@
-# Blind Type-B Arbiter — Specification
+# Blind Arbiter — Specification
 
 A focused, self-contained working package extracted from the `ascesis_of_learning_grace`
 research trail. The full trial-and-error history (predicate locks, a mis-aimed predicate, a

@@ -1,4 +1,4 @@
-# Validation Report: 08 Blind Type-B Arbiter
+# Validation Report: Blind Arbiter
 
 | check | result | interpretation |
 |---|---|---|

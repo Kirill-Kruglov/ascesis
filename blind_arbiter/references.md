@@ -1,4 +1,4 @@
-# References — Blind Type-B Arbiter
+# References — Blind Arbiter
 
 Field ownership for this direction. The substantive content belongs to these fields and their
 originators; this package only proposes one bridge between them (an active, type-blind arbiter

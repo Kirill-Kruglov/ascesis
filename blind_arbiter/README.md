@@ -1,4 +1,4 @@
-# Blind Type-B Arbiter
+# Blind Arbiter
 
 A focused working package for one research direction: **can an active, type-blind arbiter
 keep a population in equilibrium when part of that population is adversarial and actively

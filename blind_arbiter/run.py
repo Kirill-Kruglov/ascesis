@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / 'results'
 RAW = RESULTS / 'raw'
 
-DECLARED_SPEC_SHA256 = '80fa8ecb11784f54a314c9a78e261089ccda263dcbfc34c7a0a7de255cc39416'
+DECLARED_SPEC_SHA256 = '42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef'
 
 TRAIN_SEEDS = list(range(3100, 3130))
 HELDOUT_SEEDS = list(range(4100, 4130))
@@ -814,7 +814,7 @@ def write_outputs(result, calibration_history):
     ])
 
     report = [
-        '# 08 Blind Type-B Arbiter Report',
+        '# Blind Arbiter Report',
         '',
         f'SPEC hash (declared): `{DECLARED_SPEC_SHA256}`',
         f'SPEC hash (actual): `{spec_hash()}`',
@@ -906,7 +906,7 @@ def write_outputs(result, calibration_history):
     )
 
     validation = [
-        '# Validation Report: 08 Blind Type-B Arbiter',
+        '# Validation Report: Blind Arbiter',
         '',
         '| check | result | interpretation |',
         '|---|---|---|',
