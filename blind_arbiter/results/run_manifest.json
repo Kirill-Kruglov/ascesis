@@ -1,9 +1,9 @@
 {
-  "git_head": "56d96bdba2b8b2a5b0cb9f090107429075eaf981",
-  "git_commit_time": "2026-06-20T12:44:11+03:00",
-  "git_status_short": "M results/raw/results.json\n M results/report.md\n M results/validation_report.md\n M run.py\n?? results/audit_report.md",
-  "spec_sha256": "42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef",
-  "actual_spec_sha256": "42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef",
+  "git_head": "3e5f9e238d22346bc42a4b2d27dcc60add1328e0",
+  "git_commit_time": "2026-06-20T13:37:31+03:00",
+  "git_status_short": "M results/audit_report.md\n M results/raw/results.json\n M results/report.md\n M results/run_manifest.json\n M run.py",
+  "spec_sha256": "2ce172b2febdf575b6506e5f31711a226edd974e33f872f634b645638831af2b",
+  "actual_spec_sha256": "2ce172b2febdf575b6506e5f31711a226edd974e33f872f634b645638831af2b",
   "train_seeds": [
     3100,
     3101,
@@ -187,8 +187,13 @@
       "passed": false,
       "mid_bucket_perm": 0.10555555555555556,
       "mid_bucket_corr": 0.4222222222222223,
-      "high_bucket_max_true_permanence": 0.23333333333333334,
-      "high_bucket_best_regime": "geometric",
+      "high_bucket_mean_by_regime": {
+        "scalar": 0.0,
+        "geometric": 0.15555555555555556,
+        "lexicographic": 0.13333333333333333
+      },
+      "high_bucket_best_mean_regime": "geometric",
+      "high_bucket_best_mean_true_permanence": 0.15555555555555556,
       "score": 4.2481481481481485
     },
     {
@@ -209,8 +214,13 @@
       "passed": false,
       "mid_bucket_perm": 0.15,
       "mid_bucket_corr": 0.35555555555555557,
-      "high_bucket_max_true_permanence": 0.26666666666666666,
-      "high_bucket_best_regime": "geometric",
+      "high_bucket_mean_by_regime": {
+        "scalar": 0.0,
+        "geometric": 0.20000000000000004,
+        "lexicographic": 0.18888888888888888
+      },
+      "high_bucket_best_mean_regime": "geometric",
+      "high_bucket_best_mean_true_permanence": 0.20000000000000004,
       "score": 4.288888888888889
     },
     {
@@ -231,8 +241,13 @@
       "passed": false,
       "mid_bucket_perm": 0.19444444444444442,
       "mid_bucket_corr": 0.34444444444444416,
-      "high_bucket_max_true_permanence": 0.36666666666666664,
-      "high_bucket_best_regime": "geometric",
+      "high_bucket_mean_by_regime": {
+        "scalar": 0.0,
+        "geometric": 0.26666666666666666,
+        "lexicographic": 0.2111111111111111
+      },
+      "high_bucket_best_mean_regime": "geometric",
+      "high_bucket_best_mean_true_permanence": 0.26666666666666666,
       "score": 4.394444444444444
     },
     {
@@ -253,8 +268,13 @@
       "passed": false,
       "mid_bucket_perm": 0.21666666666666665,
       "mid_bucket_corr": 0.2777777777777778,
-      "high_bucket_max_true_permanence": 0.4666666666666667,
-      "high_bucket_best_regime": "geometric",
+      "high_bucket_mean_by_regime": {
+        "scalar": 0.0,
+        "geometric": 0.3444444444444444,
+        "lexicographic": 0.24444444444444446
+      },
+      "high_bucket_best_mean_regime": "geometric",
+      "high_bucket_best_mean_true_permanence": 0.3444444444444444,
       "score": 4.497037037037037
     },
     {
@@ -275,8 +295,13 @@
       "passed": true,
       "mid_bucket_perm": 0.3166666666666667,
       "mid_bucket_corr": 0.27777777777777785,
-      "high_bucket_max_true_permanence": 0.6666666666666666,
-      "high_bucket_best_regime": "geometric",
+      "high_bucket_mean_by_regime": {
+        "scalar": 0.0,
+        "geometric": 0.5111111111111112,
+        "lexicographic": 0.37777777777777777
+      },
+      "high_bucket_best_mean_regime": "geometric",
+      "high_bucket_best_mean_true_permanence": 0.5111111111111112,
       "score": 8.697777777777777
     }
   ],
@@ -321,8 +346,15 @@
       }
     ],
     "low_bucket_max_R": 0.375,
-    "high_bucket_max_true_permanence": 0.6666666666666666,
-    "high_bucket_best_regime": "geometric"
+    "high_bucket_mean_by_regime": {
+      "scalar": 0.0,
+      "geometric": 0.5111111111111112,
+      "lexicographic": 0.37777777777777777
+    },
+    "high_bucket_best_mean_regime": "geometric",
+    "high_bucket_best_mean_true_permanence": 0.5111111111111112,
+    "high_bucket_max_point_true_permanence": 0.6666666666666666,
+    "high_bucket_max_point_regime": "geometric"
   },
   "calibration_failure_reason": null,
   "r_star": {
@@ -340,6 +372,7 @@
     }
   },
   "audit_fixes": [
+    "evaluation fix: C1'(b) uses per-regime high-R bucket means rather than any single high-R point; locked predicate text unchanged",
     "report-only: C2 mid-R fields relabeled from scalar_mid_* to all-regime mid_bucket_*; locked predicate unchanged",
     "report-only: R* now reports first-crossing and sustained boundary separately; locked first_above calculation retained",
     "report-only: added Wilson seed bands and parity audit output; no substrate or regime objective changes"

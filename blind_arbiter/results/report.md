@@ -1,7 +1,7 @@
 # Blind Arbiter Report
 
-SPEC hash (declared): `42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef`
-SPEC hash (actual): `42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef`
+SPEC hash (declared): `2ce172b2febdf575b6506e5f31711a226edd974e33f872f634b645638831af2b`
+SPEC hash (actual): `2ce172b2febdf575b6506e5f31711a226edd974e33f872f634b645638831af2b`
 
 ## Split / Grid
 
@@ -20,7 +20,10 @@ SPEC hash (actual): `42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2
 - mid-R bucket mean true permanence across all regimes: `0.317`
 - mid-R bucket mean final corr(signal, gene) across all regimes: `0.278`
 - C2' witnesses: `2`
-- high-R bucket max true permanence: `0.667` (geometric)
+- high-R bucket per-regime means (locked C1'(b) quantity): `{"geometric": 0.5111111111111112, "lexicographic": 0.37777777777777777, "scalar": 0.0}`
+- high-R bucket best mean true permanence: `0.511` (geometric)
+- C1'(b) margin over 0.50: `0.011`
+- C1'(b) reading: `marginal pass` if the best high-R mean is only slightly above 0.50; current best is `0.511`.
 
 ## Located R* (held-out)
 

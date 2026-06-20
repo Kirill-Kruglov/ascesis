@@ -49,6 +49,7 @@
 ## Headline Audit
 
 - Geometric first-crossing R* survives: `0.833` with true permanence `0.600` (18/30 held-out seeds).
+- C1'(b) passes marginally under the locked high-R mean: best high-R mean is `0.511` for `geometric`, margin `0.011`.
 - The stronger wording 'holds above R*' does not survive strict reading: sustained R* is `None` because geometric falls to `0.433` at R=3.333 and R=6.500.
 - The reported corr `0.203` is the geometric all-R mean of per-run mean corr, not the corr at R*=0.833. At R*=0.833, final corr is `0.067` and mean corr is `0.102`.
 - H_regime survives in the first-crossing sense: only geometric has a finite first-crossing R*. It does not survive as a sustained-boundary claim.
@@ -63,6 +64,7 @@
 
 ## Fixes Applied In This Audit Pass
 
+- Evaluation fix: C1'(b) now uses the locked per-regime high-R bucket mean instead of the weaker any-single-high-R-point test; predicate text and dynamics were unchanged.
 - Report-only fix: C2 mid-R fields were relabeled from misleading `scalar_mid_*` wording to all-regime `mid_bucket_*` wording; C2 predicate was unchanged.
 - Report-only fix: first-crossing R* and sustained R* are now reported separately; the locked first-crossing calculation was retained.
 - Report-only addition: Wilson seed bands and parity audit are emitted here. No substrate, R grid, regime objective, or locked predicate was changed.

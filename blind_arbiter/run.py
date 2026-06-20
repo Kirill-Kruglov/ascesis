@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / 'results'
 RAW = RESULTS / 'raw'
 
-DECLARED_SPEC_SHA256 = '42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef'
+DECLARED_SPEC_SHA256 = '2ce172b2febdf575b6506e5f31711a226edd974e33f872f634b645638831af2b'
 
 TRAIN_SEEDS = list(range(3100, 3130))
 HELDOUT_SEEDS = list(range(4100, 4130))
@@ -655,10 +655,19 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
             })
 
     low_points = [p for regime in REGIMES for p in curve_data[regime] if p['R'] <= LOW_R_THRESHOLD]
-    high_points = [(regime, p) for regime in REGIMES for p in curve_data[regime] if p['R'] >= 2.0]
+    high_points_by_regime = {
+        regime: [p for p in curve_data[regime] if p['R'] >= 2.0]
+        for regime in REGIMES
+    }
+    high_points = [(regime, p) for regime in REGIMES for p in high_points_by_regime[regime]]
+    high_bucket_mean_by_regime = {
+        regime: (float(np.mean([p['true_permanence_rate'] for p in points])) if points else 0.0)
+        for regime, points in high_points_by_regime.items()
+    }
+    high_bucket_best_mean_regime = max(high_bucket_mean_by_regime, key=high_bucket_mean_by_regime.get)
     mid_points = [p for regime in REGIMES for p in curve_data[regime] if MID_R_LO <= p['R'] <= MID_R_HI]
     c1_low_pass = bool(low_points) and all(p['true_permanence_rate'] < 0.10 for p in low_points)
-    c1_high_pass = bool(high_points) and any(p['true_permanence_rate'] >= 0.50 for _, p in high_points)
+    c1_high_pass = any(mean >= 0.50 for mean in high_bucket_mean_by_regime.values())
     c1_pass = c1_low_pass and c1_high_pass
     if mid_points:
         mid_bucket_perm = float(np.mean([p['true_permanence_rate'] for p in mid_points]))
@@ -724,8 +733,11 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
             'mid_bucket_corr': mid_bucket_corr,
             'c2_witnesses': c2_witnesses,
             'low_bucket_max_R': float(max([p['R'] for p in low_points])) if low_points else None,
-            'high_bucket_max_true_permanence': float(max([p['true_permanence_rate'] for _, p in high_points])) if high_points else None,
-            'high_bucket_best_regime': max(high_points, key=lambda rp: rp[1]['true_permanence_rate'])[0] if high_points else None,
+            'high_bucket_mean_by_regime': high_bucket_mean_by_regime,
+            'high_bucket_best_mean_regime': high_bucket_best_mean_regime,
+            'high_bucket_best_mean_true_permanence': high_bucket_mean_by_regime[high_bucket_best_mean_regime],
+            'high_bucket_max_point_true_permanence': float(max([p['true_permanence_rate'] for _, p in high_points])) if high_points else None,
+            'high_bucket_max_point_regime': max(high_points, key=lambda rp: rp[1]['true_permanence_rate'])[0] if high_points else None,
         },
         records=all_records,
         traces=all_traces,
@@ -761,8 +773,9 @@ def pick_best_candidate():
             'passed': result.calibration_gate['passed'],
             'mid_bucket_perm': result.calibration_gate['mid_bucket_perm'],
             'mid_bucket_corr': result.calibration_gate['mid_bucket_corr'],
-            'high_bucket_max_true_permanence': result.calibration_gate['high_bucket_max_true_permanence'],
-            'high_bucket_best_regime': result.calibration_gate['high_bucket_best_regime'],
+            'high_bucket_mean_by_regime': result.calibration_gate['high_bucket_mean_by_regime'],
+            'high_bucket_best_mean_regime': result.calibration_gate['high_bucket_best_mean_regime'],
+            'high_bucket_best_mean_true_permanence': result.calibration_gate['high_bucket_best_mean_true_permanence'],
             'score': score,
         })
         if score > best_score:
@@ -867,7 +880,10 @@ def write_outputs(result, calibration_history):
         f"- mid-R bucket mean true permanence across all regimes: `{result.calibration_gate['mid_bucket_perm']:.3f}`",
         f"- mid-R bucket mean final corr(signal, gene) across all regimes: `{result.calibration_gate['mid_bucket_corr']:.3f}`",
         f"- C2' witnesses: `{len(result.calibration_gate['c2_witnesses'])}`",
-        f"- high-R bucket max true permanence: `{result.calibration_gate['high_bucket_max_true_permanence']:.3f}` ({result.calibration_gate['high_bucket_best_regime']})",
+        f"- high-R bucket per-regime means (locked C1'(b) quantity): `{json.dumps(result.calibration_gate['high_bucket_mean_by_regime'], sort_keys=True)}`",
+        f"- high-R bucket best mean true permanence: `{result.calibration_gate['high_bucket_best_mean_true_permanence']:.3f}` ({result.calibration_gate['high_bucket_best_mean_regime']})",
+        f"- C1'(b) margin over 0.50: `{result.calibration_gate['high_bucket_best_mean_true_permanence'] - 0.50:.3f}`",
+        f"- C1'(b) reading: `marginal pass` if the best high-R mean is only slightly above 0.50; current best is `{result.calibration_gate['high_bucket_best_mean_true_permanence']:.3f}`.",
         '',
         '## Located R* (held-out)',
         '',
@@ -902,7 +918,7 @@ def write_outputs(result, calibration_history):
     if not result.calibration_gate['passed']:
         report.append('calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.')
         if result.calibration_gate['c1_low_pass'] and not result.calibration_gate['c1_high_pass']:
-            report.append(f"unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was {result.calibration_gate['high_bucket_max_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_regime']}).")
+            report.append(f"unreachable predicate: C1'(b); no regime reached mean true permanence >= 0.50 across the high-R bucket; best high-R mean was {result.calibration_gate['high_bucket_best_mean_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_mean_regime']}).")
         elif not result.calibration_gate['c1_low_pass']:
             report.append("unreachable predicate: C1'(a); low-R permanence did not stay below 0.10 for all regimes.")
         else:
@@ -969,6 +985,7 @@ def write_outputs(result, calibration_history):
         '## Headline Audit',
         '',
         f"- Geometric first-crossing R* survives: `{format_optional(geometric_first)}` with true permanence `{geometric_at_first['true_permanence_rate']:.3f}` ({int(round(geometric_at_first['true_permanence_rate'] * len(HELDOUT_SEEDS)))}/{len(HELDOUT_SEEDS)} held-out seeds).",
+        f"- C1'(b) passes marginally under the locked high-R mean: best high-R mean is `{result.calibration_gate['high_bucket_best_mean_true_permanence']:.3f}` for `{result.calibration_gate['high_bucket_best_mean_regime']}`, margin `{result.calibration_gate['high_bucket_best_mean_true_permanence'] - 0.50:.3f}`.",
         f"- The stronger wording 'holds above R*' does not survive strict reading: sustained R* is `{format_optional(result.r_star['geometric']['sustained'])}` because geometric falls to `0.433` at R=3.333 and R=6.500.",
         f"- The reported corr `0.203` is the geometric all-R mean of per-run mean corr, not the corr at R*=0.833. At R*=0.833, final corr is `{geometric_at_first['mean_final_corr']:.3f}` and mean corr is `{geometric_at_first['mean_corr']:.3f}`.",
         '- H_regime survives in the first-crossing sense: only geometric has a finite first-crossing R*. It does not survive as a sustained-boundary claim.',
@@ -983,6 +1000,7 @@ def write_outputs(result, calibration_history):
         '',
         '## Fixes Applied In This Audit Pass',
         '',
+        "- Evaluation fix: C1'(b) now uses the locked per-regime high-R bucket mean instead of the weaker any-single-high-R-point test; predicate text and dynamics were unchanged.",
         '- Report-only fix: C2 mid-R fields were relabeled from misleading `scalar_mid_*` wording to all-regime `mid_bucket_*` wording; C2 predicate was unchanged.',
         '- Report-only fix: first-crossing R* and sustained R* are now reported separately; the locked first-crossing calculation was retained.',
         '- Report-only addition: Wilson seed bands and parity audit are emitted here. No substrate, R grid, regime objective, or locked predicate was changed.',
@@ -991,7 +1009,7 @@ def write_outputs(result, calibration_history):
 
     if not result.calibration_gate['passed']:
         if result.calibration_gate['c1_low_pass'] and not result.calibration_gate['c1_high_pass']:
-            verdict_detail = f"unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was {result.calibration_gate['high_bucket_max_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_regime']})."
+            verdict_detail = f"unreachable predicate: C1'(b); no regime reached mean true permanence >= 0.50 across the high-R bucket; best high-R mean was {result.calibration_gate['high_bucket_best_mean_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_mean_regime']})."
         elif not result.calibration_gate['c1_low_pass']:
             verdict_detail = "unreachable predicate: C1'(a); low-R permanence did not stay below 0.10 for all regimes."
         else:
@@ -1082,6 +1100,7 @@ def write_outputs(result, calibration_history):
         ),
         'r_star': result.r_star,
         'audit_fixes': [
+            "evaluation fix: C1'(b) uses per-regime high-R bucket means rather than any single high-R point; locked predicate text unchanged",
             'report-only: C2 mid-R fields relabeled from scalar_mid_* to all-regime mid_bucket_*; locked predicate unchanged',
             'report-only: R* now reports first-crossing and sustained boundary separately; locked first_above calculation retained',
             'report-only: added Wilson seed bands and parity audit output; no substrate or regime objective changes',
