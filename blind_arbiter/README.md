@@ -15,28 +15,30 @@ for field ownership, and `run.py` for the test. It was extracted from the
 `ascesis_of_learning_grace` research trail once it passed a minimal proof threshold; the full
 trial-and-error history is in the git commit log.
 
-## Current result (one paragraph)
+## Current result (one paragraph, after a strict audit)
 
-The substrate is alive (it passes the locked existence checks C1' and C2'). The key,
-non-tautological finding: the active blind arbiter (`geometric` rule) holds the population's
-true permanence above a boundary `R* = 0.833` **even though its observable signal has
-decoupled from the true types to `corr = 0.203`** — the signal is nearly useless, yet the
-arbiter still defends the true floor, through its lagged reaction to consequences rather than
-through reading the signal. Defending the floor under this Goodhart pressure **requires active
-intervention**; a passive keeper does not hold it.
-
-`R = horizon_harm / horizon_observation` is the safety/development trade-off curve: above `R*`
-equilibrium holds, below it no blind mechanism does.
+An earlier draft claimed the active blind arbiter "holds permanence above a boundary R*"; a
+strict audit (`results/audit_report.md`) withdrew that. The honest result is weaker: a
+non-spatial blind active arbiter does **not** reliably hold the population's true permanence
+under Goodhart. Its permanence is non-monotonic and hovers near coin-flip across mid-to-high
+`R` (about 0.43-0.67 for the best regime, with wide overlapping confidence bands and no value
+of `R` above which it stays above 0.5). The signal is fully decoupled where it matters
+(correlation ~0.07 at the supposed boundary). What does survive is an ordering — scalar
+(permanence 0, dies by concentration) < lexicographic (~0.4) < geometric (~0.5) — so active
+balancing and reacting to lagged consequences helps, but it does not amount to holding
+equilibrium. Defending the floor at all requires active intervention; a passive keeper is not
+expected to do better (a separate test, not yet run).
 
 ## Honest caveats
 
-- Non-spatial toy; only one regime (`geometric`) achieves a boundary.
-- Active intervention is required (not a passive keeper).
-- The boundary is probabilistic: at/above `R*`, permanence holds on roughly 0.60-0.67 of
-  held-out seeds — the ">= 51% under a safety trade-off" regime, not "always works".
-- This is a direction with potential that passed a minimal proof threshold, not a solved
-  problem or a claim of novelty. The value is the honest path and the bridges, credited to
-  their fields in `references.md`.
+- Non-spatial toy; 30 held-out seeds; wide confidence bands.
+- No sustained boundary: the earlier "holds above R*" / "safety-development trade-off curve"
+  framing was withdrawn after audit.
+- C1'(b) (the "alive" check) passes only marginally (geometric high-R mean permanence 0.511,
+  inside the noise).
+- This is a weak/negative result for the optimistic "active feeder holds equilibrium" thesis,
+  not a solved problem and not a claim of novelty. The value is the honest path and the bridges,
+  credited to their fields in `references.md`.
 
 ## Run
 

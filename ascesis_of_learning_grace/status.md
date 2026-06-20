@@ -32,16 +32,18 @@ candidate "Governor as Keeper of the Contested Space".
 
 ## Active empirical direction: the blind arbiter
 
-The telos is now being pursued empirically in an extracted, self-contained package:
+The telos is being pursued empirically in an extracted, self-contained package:
 `../blind_arbiter/`. It operationalizes "keeper of the contested space" as an active,
-type-blind arbiter (a feeder) that defends a population's permanence against an adversarial
-fraction which games the observable signals under hard optimization (Goodhart). Current toy
-result: the active blind arbiter holds true (gene-based) permanence above a boundary `R*` even
-when its signal has decoupled from the true types — defending through lagged consequences, not
-signal reading — and defense requires active intervention. `R*` is the safety/development
-trade-off curve. Full spec, caveats, and field ownership are in the package. The conceptual
-successors (a, b) below remain the map-level open work; the blind arbiter is the current running
-test of the telos.
+type-blind arbiter (a feeder) that tries to defend a population's permanence against an
+adversarial fraction which games the observable signals under hard optimization (Goodhart).
+Current toy result, after a strict audit: a non-spatial blind active arbiter does NOT reliably
+hold permanence. Permanence is non-monotonic and near coin-flip for the best regime
+(geometric), with wide overlapping bands and no sustained boundary; the earlier "holds above
+R*" / "safety-development trade-off curve" headline was withdrawn. What survives is the ordering
+scalar < lexicographic < geometric (active balancing helps), and that defense at all requires
+active intervention. This is a weak/negative result, honestly the harness working: an
+overstated headline was caught and corrected. Full corrected spec, audit, and caveats are in
+the package. The conceptual successors (a, b) below remain the map-level open work.
 
 ## Current spine (one line)
 

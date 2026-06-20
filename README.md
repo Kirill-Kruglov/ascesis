@@ -32,14 +32,15 @@ Can an AGI/ASI, modelled as an active **feeder** for a population rather than an
 "the good," keep that population in equilibrium when part of it is adversarial and actively
 games the signals the feeder can see (reward hacking under hard optimization)?
 
-Current result (a weak but real toy demonstration): an active, type-blind arbiter holds the
-population's true permanence above a boundary `R* = horizon_harm / horizon_observation`,
-**even when its observable signal has decoupled from the true types** — it defends the true
-floor through its lagged reaction to consequences, not by reading the signal. Defending the
-floor under this Goodhart pressure requires active intervention; a passive keeper does not hold
-it. The boundary is the safety/development trade-off curve, and it holds in a majority (~0.6) of
-held-out seeds, not always. See [`blind_arbiter/`](blind_arbiter/) for the spec, caveats, and
-how to reproduce.
+Current result, after a strict audit: the non-spatial toy does **not** reliably hold
+permanence. An earlier draft claimed an active blind arbiter "holds permanence above a boundary
+R*"; the audit withdrew that — the permanence curve is non-monotonic and near coin-flip for the
+best regime (geometric), with wide overlapping confidence bands and no sustained boundary, and
+the signal is fully decoupled where it matters. What survives is an ordering of arbiter rules
+(scalar < lexicographic < geometric): active balancing and reacting to lagged consequences help,
+but do not amount to holding equilibrium. This is a weak/negative result — the harness catching
+and correcting an overstated headline. See [`blind_arbiter/`](blind_arbiter/) for the corrected
+spec, the audit, and how to reproduce.
 
 ## Contributors
 

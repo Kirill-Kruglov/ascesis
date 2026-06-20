@@ -9,8 +9,9 @@ abstract: >-
   existing fields, with pre-registered toy experiments and explicit field ownership.
   The current direction tests whether an active, type-blind arbiter (a "feeder") can
   hold a population's equilibrium against an adversarial fraction that games observable
-  signals under hard optimization (reward hacking / Goodhart), and locates the
-  observation-horizon boundary R* below which no blind mechanism holds permanence.
+  signals under hard optimization (reward hacking / Goodhart). A strict audit found the
+  non-spatial toy does not reliably hold permanence (no sustained boundary; coin-flip at
+  best), a weak/negative result that survives only as an ordering of arbiter rules.
 authors:
   - family-names: Kruglov
     given-names: Kirill

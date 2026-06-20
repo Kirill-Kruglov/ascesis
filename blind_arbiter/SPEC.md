@@ -70,25 +70,44 @@ These are immutable existence checks; if unreachable after honest substrate work
 result. The locked hypotheses (boundary location and regime comparison) are read only on a
 substrate that passes C1' and C2'.
 
-## Accepted findings (current)
+## Findings (current, after a strict audit — see `results/audit_report.md`)
 
-1. The substrate passes C1' and C2' on held-out seeds. It is alive.
-2. The active blind arbiter (geometric) holds true-gene permanence above `R* = 0.833` while its
-   signal has decoupled from the gene to `corr = 0.203`. The observable is nearly useless, yet
-   the arbiter defends the true floor — through lagged-consequence reaction, not signal
-   reading. This is the core, non-tautological result.
-3. `scalar` (dies by concentration, no decoupling) and `lexicographic` find no boundary.
-4. Defending true permanence under Goodhart requires ACTIVE intervention: intervention inside
-   the floor exceeds intervention outside it. Passive floor-keeping is insufficient.
-   Consequently `floor_not_maximized` is a descriptive diagnostic here, not a pass/fail gate.
+An earlier draft of this section overstated the result; the strict audit corrected it.
+
+1. C1' and C2' pass, but C1'(b) passes only marginally: geometric's mean high-R (`R >= 2.0`)
+   true permanence is `0.511`, just over the `0.50` bar and well inside the seed noise. "The
+   substrate is alive" rests on that thin margin. (Note: the gate code currently evaluates
+   C1'(b) as `any point >= 0.50` rather than the locked `mean per regime >= 0.50`; the verdict
+   coincides here but the implementation must be fixed to the locked predicate.)
+2. There is NO sustained boundary. geometric's held-out permanence is non-monotonic and stays
+   near coin-flip across mid-to-high `R` (0.600 at R=0.833, 0.500 at 1.2, 0.667 at 2.0, then
+   0.433 at 3.33 and 6.5), with wide, overlapping Wilson 95% bands. The first-crossing
+   `R* = 0.833` is only where a noisy curve first pokes above 0.5; it does not stay above. So
+   "holds true permanence above R*" and "R* is a safety/development trade-off curve" do NOT
+   survive and are withdrawn.
+3. The signal is fully decoupled where it matters: at R=0.833 the correlation is `0.067` (final)
+   / `0.102` (mean). The earlier `corr = 0.203` was a whole-`R` average, not the value at R*,
+   and was misleading.
+4. Regime ordering does hold: scalar (permanence 0 everywhere, no decoupling, dies by
+   concentration) < lexicographic (~0.33-0.47) < geometric (~0.43-0.67). Active balancing helps;
+   a floor-first rule on the observed signal does not, plausibly because the observed-signal
+   floor is not the true-gene floor under Goodhart. Parity audit found no seed/grid/penalty
+   handicap; one open SPEC question is whether the lagged-capture penalty should override
+   lexicographic's observed-floor tier.
+5. Defending true permanence under Goodhart requires ACTIVE intervention (intervention inside
+   the floor exceeds outside). `floor_not_maximized` is therefore a descriptive diagnostic, not
+   a gate.
+
+Honest summary: a non-spatial blind active arbiter does NOT reliably hold permanence under
+Goodhart. The best regime reaches only coin-flip permanence with the signal decoupled. This is
+a weak/negative result for the optimistic "active feeder holds equilibrium above a boundary"
+thesis; what survives is the ordering scalar < lexicographic < geometric.
 
 ## Caveats (mandatory with any external presentation)
 
-- Non-spatial toy; a single regime (`geometric`) achieves a boundary.
+- Non-spatial toy; 30 held-out seeds; wide confidence bands.
+- No sustained boundary; the headline boundary claim was withdrawn after audit (see above).
 - Active intervention is required; this is not a passive keeper.
-- The boundary is probabilistic, not deterministic: at/above `R*`, permanence holds on roughly
-  0.60-0.67 of held-out seeds, not all. (This is literally the ">= 51% under a safety
-  trade-off" regime, not "always works".)
 - A passive-keeper comparison is a separate future test, not yet run.
 
 ## Reproduce
