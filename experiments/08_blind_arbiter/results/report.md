@@ -1,7 +1,7 @@
 # 08 Blind Type-B Arbiter Report
 
-SPEC hash (declared): `c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80`
-SPEC hash (actual): `c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80`
+SPEC hash (declared): `225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e`
+SPEC hash (actual): `225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e`
 
 ## Split / Grid
 
@@ -12,25 +12,28 @@ SPEC hash (actual): `c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed
 
 ## Calibration Gate
 
-- C1 pass (R<=0.40, true permanence <0.10 for all regimes): `True`
-- C2 pass (scalar at 0.80<=R<=1.50, true permanence <0.50 and final corr <0.70): `False`
-- calibration gate: `False`
-- scalar mid bucket true permanence: `0.000`
-- scalar mid bucket final corr(signal, gene): `1.000`
+- C1' low-R pass (R<=0.40, true permanence <0.10 for all regimes): `True`
+- C1' high-R companion (R>=2.0, true permanence >=0.50 for at least one regime): `False`
+- C2' pass (at least one regime in 0.80<=R<=1.50 has true permanence <0.50 and final corr <0.70): `True`
+- calibration gate (C1' AND C2'): `False`
+- C1' overall: `False`
+- scalar mid bucket true permanence: `0.022`
+- scalar mid bucket final corr(signal, gene): `0.778`
+- high-R bucket max true permanence: `0.100` (geometric)
 
 ## Located R* (held-out)
 
 | regime | R* | true permanence rate around R* | notes |
 |---|---:|---:|---|
 | scalar | None | 0.000 | n/a |
-| geometric | None | 0.000 | n/a |
-| lexicographic | None | 0.000 | n/a |
+| geometric | None | 0.033 | n/a |
+| lexicographic | None | 0.033 | n/a |
 
 ## Summary Numbers
 
 - scalar: mean true permanence `0.000`, mean corr(signal, gene) `1.000`
-- geometric: mean true permanence `0.000`, mean corr(signal, gene) `0.646`
-- lexicographic: mean true permanence `0.000`, mean corr(signal, gene) `0.651`
+- geometric: mean true permanence `0.048`, mean corr(signal, gene) `0.499`
+- lexicographic: mean true permanence `0.044`, mean corr(signal, gene) `0.505`
 
 ## Failure Modes
 
@@ -40,11 +43,11 @@ SPEC hash (actual): `c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed
 
 ## Interpretive Verdict
 
-calibration failure: substrate does not reproduce the Thornley baseline; not valid for H1/H2.
-unreachable predicate: C2; scalar corr stayed at 1.000 across calibration iterations.
+calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.
+unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was 0.100 (geometric).
 
 ## SPEC Under-Specification Notes
 - capture / replicator dynamics: the exact functional form of share transfer under capture was not fully pinned down; this implementation uses a hidden true-share transfer-plus-replicator hybrid with signal-only arbitration.
 - signal mutation: the exact mutation kernel was underspecified; this implementation uses allocation-following drift plus lag/audit feedback and noise, without any access to hidden behavior genes in the arbiter.
 - audit process: the stochastic audit timing and focus are modeled as Bernoulli timing with random focus; the SPEC does not fully pin down its distribution.
-- calibration iterations: substrate search is logged in the manifest; C1/C2 are never rewritten.
+- calibration iterations: substrate search is logged in the manifest; C1'/C2' are never rewritten.

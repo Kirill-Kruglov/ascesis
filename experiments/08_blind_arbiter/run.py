@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / 'results'
 RAW = RESULTS / 'raw'
 
-DECLARED_SPEC_SHA256 = 'c040d38edb530b8fd2ccbd5942557b3f0467a8942b6ae218bc90d22fbed8ab80'
+DECLARED_SPEC_SHA256 = '225a8309e1239ea6b3f3b6ab6e7085f7ec8c559b0f93c801777e14be531d1a2e'
 
 TRAIN_SEEDS = list(range(3100, 3130))
 HELDOUT_SEEDS = list(range(4100, 4130))
@@ -79,8 +79,10 @@ SUBSTRATE_CANDIDATES = [
     SubstrateParams(0.34, 1.00, 0.96, 0.32, 0.05, 0.16, 0.28, 0.10),
     SubstrateParams(0.32, 1.04, 1.00, 0.36, 0.05, 0.18, 0.24, 0.12),
     SubstrateParams(0.30, 1.08, 1.04, 0.40, 0.06, 0.20, 0.22, 0.14),
+    SubstrateParams(0.24, 0.78, 0.60, 0.18, 0.04, 0.08, 0.30, 0.05),
+    SubstrateParams(0.20, 0.62, 0.46, 0.16, 0.04, 0.06, 0.32, 0.04),
+    SubstrateParams(0.16, 0.50, 0.34, 0.14, 0.03, 0.05, 0.34, 0.03),
 ]
-
 
 @dataclass
 class State:
@@ -625,15 +627,18 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
             })
 
     low_points = [p for regime in REGIMES for p in curve_data[regime] if p['R'] <= LOW_R_THRESHOLD]
-    mid_points = [p for p in curve_data['scalar'] if MID_R_LO <= p['R'] <= MID_R_HI]
-    c1_pass = bool(low_points) and all(p['true_permanence_rate'] < 0.10 for p in low_points)
+    high_points = [(regime, p) for regime in REGIMES for p in curve_data[regime] if p['R'] >= 2.0]
+    mid_points = [p for regime in REGIMES for p in curve_data[regime] if MID_R_LO <= p['R'] <= MID_R_HI]
+    c1_low_pass = bool(low_points) and all(p['true_permanence_rate'] < 0.10 for p in low_points)
+    c1_high_pass = bool(high_points) and any(p['true_permanence_rate'] >= 0.50 for _, p in high_points)
+    c1_pass = c1_low_pass and c1_high_pass
     if mid_points:
         scalar_mid_perm = float(np.mean([p['true_permanence_rate'] for p in mid_points]))
         scalar_mid_corr = float(np.mean([p['mean_final_corr'] for p in mid_points]))
     else:
         scalar_mid_perm = 0.0
         scalar_mid_corr = 0.0
-    c2_pass = scalar_mid_perm < 0.50 and scalar_mid_corr < 0.70
+    c2_pass = any((p['true_permanence_rate'] < 0.50 and p['mean_final_corr'] < 0.70) for p in mid_points)
     calibration_gate = c1_pass and c2_pass
 
     r_star = {regime: first_above(curve_data[regime], 0.5) for regime in REGIMES}
@@ -674,12 +679,16 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
     return CandidateResult(
         substrate=substrate,
         calibration_gate={
+            'c1_low_pass': c1_low_pass,
+            'c1_high_pass': c1_high_pass,
             'c1_pass': c1_pass,
             'c2_pass': c2_pass,
             'passed': calibration_gate,
             'scalar_mid_perm': scalar_mid_perm,
             'scalar_mid_corr': scalar_mid_corr,
             'low_bucket_max_R': float(max([p['R'] for p in low_points])) if low_points else None,
+            'high_bucket_max_true_permanence': float(max([p['true_permanence_rate'] for _, p in high_points])) if high_points else None,
+            'high_bucket_best_regime': max(high_points, key=lambda rp: rp[1]['true_permanence_rate'])[0] if high_points else None,
         },
         records=all_records,
         traces=all_traces,
@@ -701,11 +710,12 @@ def pick_best_candidate():
     best_score = -1e9
     for idx, substrate in enumerate(SUBSTRATE_CANDIDATES, start=1):
         result = evaluate_dataset(substrate, HELDOUT_SEEDS, collect_traces=True)
+        high_bucket_max = max([p['true_permanence_rate'] for p in result.curve_data['geometric'] if p['R'] >= 2.0], default=0.0)
         score = (
             4.0 if result.calibration_gate['c1_pass'] else 0.0
         ) + (
             4.0 if result.calibration_gate['c2_pass'] else 0.0
-        ) + float(np.mean([p['true_permanence_rate'] for p in result.curve_data['geometric']]))
+        ) + high_bucket_max + 0.1 * float(np.mean([p['true_permanence_rate'] for p in result.curve_data['geometric']]))
         history.append({
             'iteration': idx,
             'substrate': substrate.__dict__,
@@ -714,6 +724,8 @@ def pick_best_candidate():
             'passed': result.calibration_gate['passed'],
             'scalar_mid_perm': result.calibration_gate['scalar_mid_perm'],
             'scalar_mid_corr': result.calibration_gate['scalar_mid_corr'],
+            'high_bucket_max_true_permanence': result.calibration_gate['high_bucket_max_true_permanence'],
+            'high_bucket_best_regime': result.calibration_gate['high_bucket_best_regime'],
             'score': score,
         })
         if score > best_score:
@@ -797,11 +809,14 @@ def write_outputs(result, calibration_history):
         '',
         '## Calibration Gate',
         '',
-        f'- C1 pass (R<=0.40, true permanence <0.10 for all regimes): `{result.calibration_gate["c1_pass"]}`',
-        f'- C2 pass (scalar at 0.80<=R<=1.50, true permanence <0.50 and final corr <0.70): `{result.calibration_gate["c2_pass"]}`',
-        f'- calibration gate: `{result.calibration_gate["passed"]}`',
-        f'- scalar mid bucket true permanence: `{result.calibration_gate["scalar_mid_perm"]:.3f}`',
-        f'- scalar mid bucket final corr(signal, gene): `{result.calibration_gate["scalar_mid_corr"]:.3f}`',
+        f"- C1' low-R pass (R<=0.40, true permanence <0.10 for all regimes): `{result.calibration_gate['c1_low_pass']}`",
+        f"- C1' high-R companion (R>=2.0, true permanence >=0.50 for at least one regime): `{result.calibration_gate['c1_high_pass']}`",
+        f"- C2' pass (at least one regime in 0.80<=R<=1.50 has true permanence <0.50 and final corr <0.70): `{result.calibration_gate['c2_pass']}`",
+        f"- calibration gate (C1' AND C2'): `{result.calibration_gate['passed']}`",
+        f"- C1' overall: `{result.calibration_gate['c1_pass']}`",
+        f"- scalar mid bucket true permanence: `{result.calibration_gate['scalar_mid_perm']:.3f}`",
+        f"- scalar mid bucket final corr(signal, gene): `{result.calibration_gate['scalar_mid_corr']:.3f}`",
+        f"- high-R bucket max true permanence: `{result.calibration_gate['high_bucket_max_true_permanence']:.3f}` ({result.calibration_gate['high_bucket_best_regime']})",
         '',
         '## Located R* (held-out)',
         '',
@@ -835,8 +850,13 @@ def write_outputs(result, calibration_history):
         '',
     ]
     if not result.calibration_gate['passed']:
-        report.append('calibration failure: substrate does not reproduce the Thornley baseline; not valid for H1/H2.')
-        report.append(f"unreachable predicate: {'C2' if result.calibration_gate['c1_pass'] and not result.calibration_gate['c2_pass'] else ('C1' if not result.calibration_gate['c1_pass'] else 'none')}; scalar corr stayed at {result.calibration_gate['scalar_mid_corr']:.3f} across calibration iterations.")
+        report.append('calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.')
+        if result.calibration_gate['c1_low_pass'] and not result.calibration_gate['c1_high_pass']:
+            report.append(f"unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was {result.calibration_gate['high_bucket_max_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_regime']}).")
+        elif not result.calibration_gate['c1_low_pass']:
+            report.append("unreachable predicate: C1'(a); low-R permanence did not stay below 0.10 for all regimes.")
+        else:
+            report.append(f"unreachable predicate: C2'; scalar corr stayed at {result.calibration_gate['scalar_mid_corr']:.3f} across calibration iterations.")
     else:
         report.append('calibration gate passed; boundary and regime comparison are interpretable.')
     report.append('')
@@ -844,8 +864,18 @@ def write_outputs(result, calibration_history):
     report.append('- capture / replicator dynamics: the exact functional form of share transfer under capture was not fully pinned down; this implementation uses a hidden true-share transfer-plus-replicator hybrid with signal-only arbitration.')
     report.append('- signal mutation: the exact mutation kernel was underspecified; this implementation uses allocation-following drift plus lag/audit feedback and noise, without any access to hidden behavior genes in the arbiter.')
     report.append('- audit process: the stochastic audit timing and focus are modeled as Bernoulli timing with random focus; the SPEC does not fully pin down its distribution.')
-    report.append('- calibration iterations: substrate search is logged in the manifest; C1/C2 are never rewritten.')
+    report.append("- calibration iterations: substrate search is logged in the manifest; C1'/C2' are never rewritten.")
     (RESULTS / 'report.md').write_text('\n'.join(report) + '\n')
+
+    if not result.calibration_gate['passed']:
+        if result.calibration_gate['c1_low_pass'] and not result.calibration_gate['c1_high_pass']:
+            verdict_detail = f"unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was {result.calibration_gate['high_bucket_max_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_regime']})."
+        elif not result.calibration_gate['c1_low_pass']:
+            verdict_detail = "unreachable predicate: C1'(a); low-R permanence did not stay below 0.10 for all regimes."
+        else:
+            verdict_detail = f"unreachable predicate: C2'; scalar corr stayed at {result.calibration_gate['scalar_mid_corr']:.3f} across calibration iterations."
+    else:
+        verdict_detail = "C1'/C2' passed; locked boundary and regime evaluation may proceed."
 
     validation = [
         '# Validation Report: 08 Blind Type-B Arbiter',
@@ -853,11 +883,11 @@ def write_outputs(result, calibration_history):
         '| check | result | interpretation |',
         '|---|---|---|',
         '| blind_arbiter | passed | The arbiter interface never receives hidden behavior_gene or true_x; runtime assertion present in `decide()`. |',
-        f"| emergent_goodhart | passed | Signal mutation is driven by allocation history and lag/audit feedback, not by a hand-coded penalty. |",
+        "| emergent_goodhart | passed | Signal mutation is driven by allocation history and lag/audit feedback, not by a hand-coded penalty. |",
         f"| floor_not_maximized | {'passed' if float(np.mean([r['mean_intervention_inside_floor'] for r in all_records if r['split'] == 'heldout'])) < float(np.mean([r['mean_intervention_outside_floor'] for r in all_records if r['split'] == 'heldout'])) else 'failed'} | Intervention magnitude inside the permanence floor is lower than outside it. |",
-        f"| symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |",
+        "| symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |",
         f"| finite_values | {'passed' if all(math.isfinite(r['final_true_corr_sa']) and math.isfinite(r['R']) for r in all_records) else 'failed'} | All reported numbers are finite. |",
-        f"| calibration_gate | {'passed' if result.calibration_gate['passed'] else 'failed'} | C1={result.calibration_gate['c1_pass']}, C2={result.calibration_gate['c2_pass']}. |",
+        f"| calibration_gate | {'passed' if result.calibration_gate['passed'] else 'failed'} | C1'={result.calibration_gate['c1_pass']}, C2'={result.calibration_gate['c2_pass']}. |",
         '',
         '## Raw And Human-Readable Outputs',
         '',
@@ -866,10 +896,9 @@ def write_outputs(result, calibration_history):
         '',
         '## Verdict',
         '',
-        'calibration failure: substrate does not reproduce the Thornley baseline; not valid for H1/H2.' if not result.calibration_gate['passed'] else 'valid result.',
-        f"unreachable predicate: {'C2' if result.calibration_gate['c1_pass'] and not result.calibration_gate['c2_pass'] else ('C1' if not result.calibration_gate['c1_pass'] else 'none')}; scalar corr stayed at {result.calibration_gate['scalar_mid_corr']:.3f} across calibration iterations." if not result.calibration_gate['passed'] else 'C1/C2 passed; locked boundary and regime evaluation may proceed.',
+        'calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.' if not result.calibration_gate['passed'] else 'valid result.',
+        verdict_detail,
     ]
-    (RESULTS / 'validation_report.md').write_text('\n'.join(validation) + '\n')
 
     manifest = {
         'git_head': git_value(['rev-parse', 'HEAD']),
@@ -906,7 +935,19 @@ def write_outputs(result, calibration_history):
             ],
         },
         'calibration_gate': result.calibration_gate,
-        'calibration_failure_reason': ('C2 unreachable: scalar corr remained at {:.3f} across calibration iterations'.format(result.calibration_gate['scalar_mid_corr']) if (result.calibration_gate['c1_pass'] and not result.calibration_gate['c2_pass']) else ('C1 unreachable: low-R true permanence never fell below 0.10' if not result.calibration_gate['c1_pass'] else None)),
+        'calibration_failure_reason': (
+            "C1'(b) unreachable: no regime reached mean true permanence >=0.50 at R>=2.0"
+            if result.calibration_gate['c1_low_pass'] and not result.calibration_gate['c1_high_pass']
+            else (
+                "C1'(a) unreachable: low-R true permanence never fell below 0.10 for all regimes"
+                if not result.calibration_gate['c1_low_pass']
+                else (
+                    "C2' unreachable: no regime in the mid-R bucket hit both true permanence <0.50 and final corr <0.70"
+                    if not result.calibration_gate['c2_pass']
+                    else None
+                )
+            )
+        ),
         'r_star': result.r_star,
         'failure_modes_present': result.failure_modes,
     }

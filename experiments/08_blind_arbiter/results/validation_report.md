@@ -7,7 +7,7 @@
 | floor_not_maximized | failed | Intervention magnitude inside the permanence floor is lower than outside it. |
 | symmetric_comparison | passed | All regimes use the same seeds and the same R grid. |
 | finite_values | passed | All reported numbers are finite. |
-| calibration_gate | failed | C1=True, C2=False. |
+| calibration_gate | failed | C1'=False, C2'=True. |
 
 ## Raw And Human-Readable Outputs
 
@@ -16,5 +16,5 @@
 
 ## Verdict
 
-calibration failure: substrate does not reproduce the Thornley baseline; not valid for H1/H2.
-unreachable predicate: C2; scalar corr stayed at 1.000 across calibration iterations.
+calibration failure: Amendment 2 gate did not close; not valid for H_boundary/H_regime.
+unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was 0.100 (geometric).
