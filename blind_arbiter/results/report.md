@@ -17,17 +17,18 @@ SPEC hash (actual): `42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2
 - C2' pass (at least one regime in 0.80<=R<=1.50 has true permanence <0.50 and final corr <0.70): `True`
 - calibration gate (C1' AND C2'): `True`
 - C1' overall: `True`
-- scalar mid bucket true permanence: `0.317`
-- scalar mid bucket final corr(signal, gene): `0.278`
+- mid-R bucket mean true permanence across all regimes: `0.317`
+- mid-R bucket mean final corr(signal, gene) across all regimes: `0.278`
+- C2' witnesses: `2`
 - high-R bucket max true permanence: `0.667` (geometric)
 
 ## Located R* (held-out)
 
-| regime | R* | true permanence rate around R* | notes |
-|---|---:|---:|---|
-| scalar | None | 0.000 | n/a |
-| geometric | 0.833 | 0.600 | n/a |
-| lexicographic | None | 0.000 | n/a |
+| regime | first-crossing R* | sustained R* | true permanence at first crossing | final corr at first crossing | notes |
+|---|---:|---:|---:|---:|---|
+| scalar | None | None | 0.000 | 1.000 | n/a |
+| geometric | 0.833 | None | 0.600 | 0.067 | no sustained >=0.50 boundary |
+| lexicographic | None | None | 0.000 | -0.400 | n/a |
 
 ## Summary Numbers
 

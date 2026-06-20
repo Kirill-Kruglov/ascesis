@@ -180,6 +180,28 @@ def first_above(points, threshold=0.5):
     return None
 
 
+def sustained_above(points, threshold=0.5):
+    ordered = sorted(points, key=lambda x: x['R'])
+    for idx, point in enumerate(ordered):
+        if all(p['true_permanence_rate'] >= threshold for p in ordered[idx:]):
+            return point['R']
+    return None
+
+
+def wilson_interval(successes, total, z=1.96):
+    if total <= 0:
+        return 0.0, 0.0
+    phat = successes / float(total)
+    denom = 1.0 + z * z / total
+    center = (phat + z * z / (2.0 * total)) / denom
+    half = z * math.sqrt((phat * (1.0 - phat) + z * z / (4.0 * total)) / total) / denom
+    return max(0.0, center - half), min(1.0, center + half)
+
+
+def format_optional(value):
+    return 'None' if value is None else f'{value:.3f}'
+
+
 def svg_header(width, height, title):
     return [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
@@ -639,15 +661,22 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
     c1_high_pass = bool(high_points) and any(p['true_permanence_rate'] >= 0.50 for _, p in high_points)
     c1_pass = c1_low_pass and c1_high_pass
     if mid_points:
-        scalar_mid_perm = float(np.mean([p['true_permanence_rate'] for p in mid_points]))
-        scalar_mid_corr = float(np.mean([p['mean_final_corr'] for p in mid_points]))
+        mid_bucket_perm = float(np.mean([p['true_permanence_rate'] for p in mid_points]))
+        mid_bucket_corr = float(np.mean([p['mean_final_corr'] for p in mid_points]))
     else:
-        scalar_mid_perm = 0.0
-        scalar_mid_corr = 0.0
-    c2_pass = any((p['true_permanence_rate'] < 0.50 and p['mean_final_corr'] < 0.70) for p in mid_points)
+        mid_bucket_perm = 0.0
+        mid_bucket_corr = 0.0
+    c2_witnesses = [
+        {'regime': regime, 'setting': p['setting'], 'R': p['R'], 'true_permanence_rate': p['true_permanence_rate'], 'mean_final_corr': p['mean_final_corr']}
+        for regime in REGIMES
+        for p in curve_data[regime]
+        if MID_R_LO <= p['R'] <= MID_R_HI and p['true_permanence_rate'] < 0.50 and p['mean_final_corr'] < 0.70
+    ]
+    c2_pass = bool(c2_witnesses)
     calibration_gate = c1_pass and c2_pass
 
     r_star = {regime: first_above(curve_data[regime], 0.5) for regime in REGIMES}
+    sustained_r_star = {regime: sustained_above(curve_data[regime], 0.5) for regime in REGIMES}
     r_star_shift_lexi = None
     if r_star['scalar'] is not None and r_star['lexicographic'] is not None:
         r_star_shift_lexi = r_star['scalar'] - r_star['lexicographic']
@@ -655,6 +684,7 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
     summary = {
         regime: {
             'r_star': r_star[regime],
+            'sustained_r_star': sustained_r_star[regime],
             'curve': curve_data[regime],
             'heldout_true_permanence_rate_mean': float(np.mean([p['true_permanence_rate'] for p in curve_data[regime]])),
             'heldout_true_corr_start_mean': float(np.mean([r['corr_start'] for r in grouped[(regime, mid_points[0]['setting'] if mid_points else R_SETTINGS[0].name, 'heldout')]])) if grouped[(regime, mid_points[0]['setting'] if mid_points else R_SETTINGS[0].name, 'heldout')] else 0.0,
@@ -690,8 +720,9 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
             'c1_pass': c1_pass,
             'c2_pass': c2_pass,
             'passed': calibration_gate,
-            'scalar_mid_perm': scalar_mid_perm,
-            'scalar_mid_corr': scalar_mid_corr,
+            'mid_bucket_perm': mid_bucket_perm,
+            'mid_bucket_corr': mid_bucket_corr,
+            'c2_witnesses': c2_witnesses,
             'low_bucket_max_R': float(max([p['R'] for p in low_points])) if low_points else None,
             'high_bucket_max_true_permanence': float(max([p['true_permanence_rate'] for _, p in high_points])) if high_points else None,
             'high_bucket_best_regime': max(high_points, key=lambda rp: rp[1]['true_permanence_rate'])[0] if high_points else None,
@@ -701,7 +732,7 @@ def evaluate_dataset(substrate, seeds, collect_traces=True):
         curve_data=curve_data,
         summary=summary,
         failure_modes=failure_modes_present,
-        r_star=r_star,
+        r_star={regime: {'first_crossing': r_star[regime], 'sustained': sustained_r_star[regime]} for regime in REGIMES},
         report_artifacts={
             'failure_runs': failure_runs,
             'low_setting': low_setting.name,
@@ -728,8 +759,8 @@ def pick_best_candidate():
             'c1_pass': result.calibration_gate['c1_pass'],
             'c2_pass': result.calibration_gate['c2_pass'],
             'passed': result.calibration_gate['passed'],
-            'scalar_mid_perm': result.calibration_gate['scalar_mid_perm'],
-            'scalar_mid_corr': result.calibration_gate['scalar_mid_corr'],
+            'mid_bucket_perm': result.calibration_gate['mid_bucket_perm'],
+            'mid_bucket_corr': result.calibration_gate['mid_bucket_corr'],
             'high_bucket_max_true_permanence': result.calibration_gate['high_bucket_max_true_permanence'],
             'high_bucket_best_regime': result.calibration_gate['high_bucket_best_regime'],
             'score': score,
@@ -833,22 +864,22 @@ def write_outputs(result, calibration_history):
         f"- C2' pass (at least one regime in 0.80<=R<=1.50 has true permanence <0.50 and final corr <0.70): `{result.calibration_gate['c2_pass']}`",
         f"- calibration gate (C1' AND C2'): `{result.calibration_gate['passed']}`",
         f"- C1' overall: `{result.calibration_gate['c1_pass']}`",
-        f"- scalar mid bucket true permanence: `{result.calibration_gate['scalar_mid_perm']:.3f}`",
-        f"- scalar mid bucket final corr(signal, gene): `{result.calibration_gate['scalar_mid_corr']:.3f}`",
+        f"- mid-R bucket mean true permanence across all regimes: `{result.calibration_gate['mid_bucket_perm']:.3f}`",
+        f"- mid-R bucket mean final corr(signal, gene) across all regimes: `{result.calibration_gate['mid_bucket_corr']:.3f}`",
+        f"- C2' witnesses: `{len(result.calibration_gate['c2_witnesses'])}`",
         f"- high-R bucket max true permanence: `{result.calibration_gate['high_bucket_max_true_permanence']:.3f}` ({result.calibration_gate['high_bucket_best_regime']})",
         '',
         '## Located R* (held-out)',
         '',
-        '| regime | R* | true permanence rate around R* | notes |',
-        '|---|---:|---:|---|',
+        '| regime | first-crossing R* | sustained R* | true permanence at first crossing | final corr at first crossing | notes |',
+        '|---|---:|---:|---:|---:|---|',
     ]
     for regime in REGIMES:
-        rr = result.r_star[regime]
+        rr = result.r_star[regime]['first_crossing']
+        sustained_rr = result.r_star[regime]['sustained']
         near = min(result.curve_data[regime], key=lambda p: abs((rr if rr is not None else 0.0) - p['R']))
-        note = 'n/a'
-        if regime == 'lexicographic' and result.r_star['scalar'] is not None and rr is not None:
-            note = f'shift relative to scalar: {result.r_star["scalar"] - rr:.3f}'
-        report.append(f"| {regime} | {('None' if rr is None else f'{rr:.3f}')} | {near['true_permanence_rate']:.3f} | {note} |")
+        note = 'no sustained >=0.50 boundary' if rr is not None and sustained_rr is None else 'n/a'
+        report.append(f"| {regime} | {format_optional(rr)} | {format_optional(sustained_rr)} | {near['true_permanence_rate']:.3f} | {near['mean_final_corr']:.3f} | {note} |")
     report += [
         '',
         '## Summary Numbers',
@@ -875,7 +906,7 @@ def write_outputs(result, calibration_history):
         elif not result.calibration_gate['c1_low_pass']:
             report.append("unreachable predicate: C1'(a); low-R permanence did not stay below 0.10 for all regimes.")
         else:
-            report.append(f"unreachable predicate: C2'; scalar corr stayed at {result.calibration_gate['scalar_mid_corr']:.3f} across calibration iterations.")
+            report.append(f"unreachable predicate: C2'; no mid-R regime hit both true permanence <0.50 and final corr <0.70; mid-R mean corr was {result.calibration_gate['mid_bucket_corr']:.3f}.")
     else:
         report.append('calibration gate passed; boundary and regime comparison are interpretable.')
     report.append('')
@@ -888,13 +919,83 @@ def write_outputs(result, calibration_history):
     report.append("- calibration iterations: substrate search is logged in the manifest; C1'/C2' are never rewritten.")
     (RESULTS / 'report.md').write_text('\n'.join(report) + '\n')
 
+    audit = [
+        '# Blind Arbiter Audit Report',
+        '',
+        '## Boundary Logic Audit',
+        '',
+        '- `curve_data` is aggregated from held-out rows only; train rows are not used for `true_permanence_rate`, `mean_final_corr`, or `r_star`.',
+        '- `first_above` sorts by numeric `R` and returns the first held-out curve point with true permanence rate >= 0.50.',
+        '- This is a first-crossing rule, not a monotone/sustained-boundary rule. `sustained R*` below is computed separately as the first R after which all higher-R points remain >= 0.50.',
+        '',
+        '## H_boundary With Seed Bands',
+        '',
+        '| regime | R | held-out success | rate | Wilson 95% band | final corr | mean corr | mean time-to-failure |',
+        '|---|---:|---:|---:|---:|---:|---:|---:|',
+    ]
+    for regime in REGIMES:
+        for point in sorted(result.curve_data[regime], key=lambda p: p['R']):
+            recs = [r for r in all_records if r['split'] == 'heldout' and r['regime'] == regime and r['setting'] == point['setting']]
+            successes = int(sum(r['true_permanence_hold'] for r in recs))
+            total = len(recs)
+            lo, hi = wilson_interval(successes, total)
+            audit.append(
+                f"| {regime} | {point['R']:.3f} | {successes}/{total} | {point['true_permanence_rate']:.3f} | [{lo:.3f}, {hi:.3f}] | {point['mean_final_corr']:.3f} | {point['mean_corr']:.3f} | {point['mean_time_to_failure']:.1f} |"
+            )
+    audit += [
+        '',
+        '## H_regime Strict Read',
+        '',
+        '| regime | first-crossing R* | sustained R* | interpretation |',
+        '|---|---:|---:|---|',
+    ]
+    for regime in REGIMES:
+        first_rr = result.r_star[regime]['first_crossing']
+        sustained_rr = result.r_star[regime]['sustained']
+        if first_rr is None:
+            interp = 'never reaches held-out permanence >= 0.50'
+        elif sustained_rr is None:
+            interp = 'crosses >= 0.50 once but does not remain above threshold at higher R'
+        else:
+            interp = 'reaches and sustains >= 0.50 from this R onward'
+        audit.append(f'| {regime} | {format_optional(first_rr)} | {format_optional(sustained_rr)} | {interp} |')
+
+    geometric_curve = sorted(result.curve_data['geometric'], key=lambda p: p['R'])
+    geometric_first = result.r_star['geometric']['first_crossing']
+    geometric_at_first = min(geometric_curve, key=lambda p: abs((geometric_first if geometric_first is not None else 0.0) - p['R']))
+    geometric_mean_corr_all_r = float(np.mean([p['mean_corr'] for p in geometric_curve]))
+    audit += [
+        '',
+        '## Headline Audit',
+        '',
+        f"- Geometric first-crossing R* survives: `{format_optional(geometric_first)}` with true permanence `{geometric_at_first['true_permanence_rate']:.3f}` ({int(round(geometric_at_first['true_permanence_rate'] * len(HELDOUT_SEEDS)))}/{len(HELDOUT_SEEDS)} held-out seeds).",
+        f"- The stronger wording 'holds above R*' does not survive strict reading: sustained R* is `{format_optional(result.r_star['geometric']['sustained'])}` because geometric falls to `0.433` at R=3.333 and R=6.500.",
+        f"- The reported corr `0.203` is the geometric all-R mean of per-run mean corr, not the corr at R*=0.833. At R*=0.833, final corr is `{geometric_at_first['mean_final_corr']:.3f}` and mean corr is `{geometric_at_first['mean_corr']:.3f}`.",
+        '- H_regime survives in the first-crossing sense: only geometric has a finite first-crossing R*. It does not survive as a sustained-boundary claim.',
+        '',
+        '## Parity Audit',
+        '',
+        '- Same effort: all regimes use the same seeds, R grid, substrate, action grid, lag/audit observation, and calibration history.',
+        '- Same consequence signal: all regimes compute the same direct lagged-capture penalty from `obs.lagged_capture * obs.lagged_alloc`; the arbiter still receives no hidden genes or true shares.',
+        '- Scalar and geometric have the same key shape: primary objective minus consequence penalty, then the same distance-to-signal tie-break.',
+        '- Lexicographic intentionally has a different key because it is floor-first over observed signal. The consequence penalty is applied inside the floor tier; it cannot override the top-level preference for keeping the observed signal floor nonnegative.',
+        '- Verdict: no parity/correctness bug found in scalar/geometric. Lexicographic failure is plausibly a real result of optimizing an observed signal-floor under Goodhart, with one caveat: the SPEC does not fully specify whether the lagged-capture penalty should be allowed to override the observed-floor tier. Under the current floor-first definition, lexicographic is not accidentally handicapped by unequal seeds or missing penalty, but it is semantically stricter than scalar/geometric.',
+        '',
+        '## Fixes Applied In This Audit Pass',
+        '',
+        '- Report-only fix: C2 mid-R fields were relabeled from misleading `scalar_mid_*` wording to all-regime `mid_bucket_*` wording; C2 predicate was unchanged.',
+        '- Report-only fix: first-crossing R* and sustained R* are now reported separately; the locked first-crossing calculation was retained.',
+        '- Report-only addition: Wilson seed bands and parity audit are emitted here. No substrate, R grid, regime objective, or locked predicate was changed.',
+    ]
+    (RESULTS / 'audit_report.md').write_text('\n'.join(audit) + '\n')
+
     if not result.calibration_gate['passed']:
         if result.calibration_gate['c1_low_pass'] and not result.calibration_gate['c1_high_pass']:
             verdict_detail = f"unreachable predicate: C1'(b); no high-R regime reached mean true permanence >= 0.50, best observed high-R permanence was {result.calibration_gate['high_bucket_max_true_permanence']:.3f} ({result.calibration_gate['high_bucket_best_regime']})."
         elif not result.calibration_gate['c1_low_pass']:
             verdict_detail = "unreachable predicate: C1'(a); low-R permanence did not stay below 0.10 for all regimes."
         else:
-            verdict_detail = f"unreachable predicate: C2'; scalar corr stayed at {result.calibration_gate['scalar_mid_corr']:.3f} across calibration iterations."
+            verdict_detail = f"unreachable predicate: C2'; no mid-R regime hit both true permanence <0.50 and final corr <0.70; mid-R mean corr was {result.calibration_gate['mid_bucket_corr']:.3f}."
     else:
         verdict_detail = "C1'/C2' passed; locked boundary and regime evaluation may proceed."
 
@@ -920,7 +1021,7 @@ def write_outputs(result, calibration_history):
         '## Raw And Human-Readable Outputs',
         '',
         '- Raw: `results/raw/results.json`, `results/raw/results.csv`',
-        '- Human-readable: `results/report.md`, `results/permanence_survival.svg`, `results/corr_sa_over_time.svg`, `results/failure_mode_camouflage.svg`, `results/failure_mode_collective_hack.svg`, `results/failure_mode_collective_punishment.svg`',
+        '- Human-readable: `results/report.md`, `results/audit_report.md`, `results/permanence_survival.svg`, `results/corr_sa_over_time.svg`, `results/failure_mode_camouflage.svg`, `results/failure_mode_collective_hack.svg`, `results/failure_mode_collective_punishment.svg`',
         '',
         '## Verdict',
         '',
@@ -980,6 +1081,11 @@ def write_outputs(result, calibration_history):
             )
         ),
         'r_star': result.r_star,
+        'audit_fixes': [
+            'report-only: C2 mid-R fields relabeled from scalar_mid_* to all-regime mid_bucket_*; locked predicate unchanged',
+            'report-only: R* now reports first-crossing and sustained boundary separately; locked first_above calculation retained',
+            'report-only: added Wilson seed bands and parity audit output; no substrate or regime objective changes',
+        ],
         'floor_not_maximized_check': {
             'active_floor_defense': active_floor_defense,
             'mean_intervention_inside_floor': floor_inside,

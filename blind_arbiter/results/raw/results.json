@@ -48909,6 +48909,7 @@
   "summary": {
     "scalar": {
       "r_star": null,
+      "sustained_r_star": null,
       "curve": [
         {
           "setting": "r01",
@@ -49016,6 +49017,7 @@
     },
     "geometric": {
       "r_star": 0.8333333333333331,
+      "sustained_r_star": null,
       "curve": [
         {
           "setting": "r01",
@@ -49123,6 +49125,7 @@
     },
     "lexicographic": {
       "r_star": null,
+      "sustained_r_star": null,
       "curve": [
         {
           "setting": "r01",
@@ -49235,8 +49238,24 @@
     "c1_pass": true,
     "c2_pass": true,
     "passed": true,
-    "scalar_mid_perm": 0.3166666666666667,
-    "scalar_mid_corr": 0.27777777777777785,
+    "mid_bucket_perm": 0.3166666666666667,
+    "mid_bucket_corr": 0.27777777777777785,
+    "c2_witnesses": [
+      {
+        "regime": "lexicographic",
+        "setting": "r05",
+        "R": 0.8333333333333331,
+        "true_permanence_rate": 0.43333333333333335,
+        "mean_final_corr": -0.13333333333333333
+      },
+      {
+        "regime": "lexicographic",
+        "setting": "r06",
+        "R": 1.2000000000000002,
+        "true_permanence_rate": 0.36666666666666664,
+        "mean_final_corr": -0.06666666666666667
+      }
+    ],
     "low_bucket_max_R": 0.375,
     "high_bucket_max_true_permanence": 0.6666666666666666,
     "high_bucket_best_regime": "geometric"
@@ -49268,8 +49287,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.10555555555555556,
-      "scalar_mid_corr": 0.4222222222222223,
+      "mid_bucket_perm": 0.10555555555555556,
+      "mid_bucket_corr": 0.4222222222222223,
       "high_bucket_max_true_permanence": 0.23333333333333334,
       "high_bucket_best_regime": "geometric",
       "score": 4.2481481481481485
@@ -49290,8 +49309,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.15,
-      "scalar_mid_corr": 0.35555555555555557,
+      "mid_bucket_perm": 0.15,
+      "mid_bucket_corr": 0.35555555555555557,
       "high_bucket_max_true_permanence": 0.26666666666666666,
       "high_bucket_best_regime": "geometric",
       "score": 4.288888888888889
@@ -49312,8 +49331,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.19444444444444442,
-      "scalar_mid_corr": 0.34444444444444416,
+      "mid_bucket_perm": 0.19444444444444442,
+      "mid_bucket_corr": 0.34444444444444416,
       "high_bucket_max_true_permanence": 0.36666666666666664,
       "high_bucket_best_regime": "geometric",
       "score": 4.394444444444444
@@ -49334,8 +49353,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.21666666666666665,
-      "scalar_mid_corr": 0.2777777777777778,
+      "mid_bucket_perm": 0.21666666666666665,
+      "mid_bucket_corr": 0.2777777777777778,
       "high_bucket_max_true_permanence": 0.4666666666666667,
       "high_bucket_best_regime": "geometric",
       "score": 4.497037037037037
@@ -49356,8 +49375,8 @@
       "c1_pass": true,
       "c2_pass": true,
       "passed": true,
-      "scalar_mid_perm": 0.3166666666666667,
-      "scalar_mid_corr": 0.27777777777777785,
+      "mid_bucket_perm": 0.3166666666666667,
+      "mid_bucket_corr": 0.27777777777777785,
       "high_bucket_max_true_permanence": 0.6666666666666666,
       "high_bucket_best_regime": "geometric",
       "score": 8.697777777777777

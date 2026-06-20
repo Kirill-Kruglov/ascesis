@@ -12,7 +12,7 @@
 ## Raw And Human-Readable Outputs
 
 - Raw: `results/raw/results.json`, `results/raw/results.csv`
-- Human-readable: `results/report.md`, `results/permanence_survival.svg`, `results/corr_sa_over_time.svg`, `results/failure_mode_camouflage.svg`, `results/failure_mode_collective_hack.svg`, `results/failure_mode_collective_punishment.svg`
+- Human-readable: `results/report.md`, `results/audit_report.md`, `results/permanence_survival.svg`, `results/corr_sa_over_time.svg`, `results/failure_mode_camouflage.svg`, `results/failure_mode_collective_hack.svg`, `results/failure_mode_collective_punishment.svg`
 
 ## Verdict
 

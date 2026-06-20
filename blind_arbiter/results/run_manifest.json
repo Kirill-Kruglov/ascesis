@@ -1,7 +1,7 @@
 {
-  "git_head": "ee815d44447cfafa2e97866877ed257c4c281669",
-  "git_commit_time": "2026-06-20T12:18:14+03:00",
-  "git_status_short": "M README.md\n M SPEC.md\n M references.md\n M results/report.md\n M results/validation_report.md\n M run.py",
+  "git_head": "56d96bdba2b8b2a5b0cb9f090107429075eaf981",
+  "git_commit_time": "2026-06-20T12:44:11+03:00",
+  "git_status_short": "M results/raw/results.json\n M results/report.md\n M results/validation_report.md\n M run.py\n?? results/audit_report.md",
   "spec_sha256": "42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef",
   "actual_spec_sha256": "42c3f69c2ff06da7029869f693bc3ba5d0152e2b63a2135852b92abf9d2ca3ef",
   "train_seeds": [
@@ -185,8 +185,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.10555555555555556,
-      "scalar_mid_corr": 0.4222222222222223,
+      "mid_bucket_perm": 0.10555555555555556,
+      "mid_bucket_corr": 0.4222222222222223,
       "high_bucket_max_true_permanence": 0.23333333333333334,
       "high_bucket_best_regime": "geometric",
       "score": 4.2481481481481485
@@ -207,8 +207,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.15,
-      "scalar_mid_corr": 0.35555555555555557,
+      "mid_bucket_perm": 0.15,
+      "mid_bucket_corr": 0.35555555555555557,
       "high_bucket_max_true_permanence": 0.26666666666666666,
       "high_bucket_best_regime": "geometric",
       "score": 4.288888888888889
@@ -229,8 +229,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.19444444444444442,
-      "scalar_mid_corr": 0.34444444444444416,
+      "mid_bucket_perm": 0.19444444444444442,
+      "mid_bucket_corr": 0.34444444444444416,
       "high_bucket_max_true_permanence": 0.36666666666666664,
       "high_bucket_best_regime": "geometric",
       "score": 4.394444444444444
@@ -251,8 +251,8 @@
       "c1_pass": false,
       "c2_pass": true,
       "passed": false,
-      "scalar_mid_perm": 0.21666666666666665,
-      "scalar_mid_corr": 0.2777777777777778,
+      "mid_bucket_perm": 0.21666666666666665,
+      "mid_bucket_corr": 0.2777777777777778,
       "high_bucket_max_true_permanence": 0.4666666666666667,
       "high_bucket_best_regime": "geometric",
       "score": 4.497037037037037
@@ -273,8 +273,8 @@
       "c1_pass": true,
       "c2_pass": true,
       "passed": true,
-      "scalar_mid_perm": 0.3166666666666667,
-      "scalar_mid_corr": 0.27777777777777785,
+      "mid_bucket_perm": 0.3166666666666667,
+      "mid_bucket_corr": 0.27777777777777785,
       "high_bucket_max_true_permanence": 0.6666666666666666,
       "high_bucket_best_regime": "geometric",
       "score": 8.697777777777777
@@ -302,18 +302,48 @@
     "c1_pass": true,
     "c2_pass": true,
     "passed": true,
-    "scalar_mid_perm": 0.3166666666666667,
-    "scalar_mid_corr": 0.27777777777777785,
+    "mid_bucket_perm": 0.3166666666666667,
+    "mid_bucket_corr": 0.27777777777777785,
+    "c2_witnesses": [
+      {
+        "regime": "lexicographic",
+        "setting": "r05",
+        "R": 0.8333333333333331,
+        "true_permanence_rate": 0.43333333333333335,
+        "mean_final_corr": -0.13333333333333333
+      },
+      {
+        "regime": "lexicographic",
+        "setting": "r06",
+        "R": 1.2000000000000002,
+        "true_permanence_rate": 0.36666666666666664,
+        "mean_final_corr": -0.06666666666666667
+      }
+    ],
     "low_bucket_max_R": 0.375,
     "high_bucket_max_true_permanence": 0.6666666666666666,
     "high_bucket_best_regime": "geometric"
   },
   "calibration_failure_reason": null,
   "r_star": {
-    "scalar": null,
-    "geometric": 0.8333333333333331,
-    "lexicographic": null
+    "scalar": {
+      "first_crossing": null,
+      "sustained": null
+    },
+    "geometric": {
+      "first_crossing": 0.8333333333333331,
+      "sustained": null
+    },
+    "lexicographic": {
+      "first_crossing": null,
+      "sustained": null
+    }
   },
+  "audit_fixes": [
+    "report-only: C2 mid-R fields relabeled from scalar_mid_* to all-regime mid_bucket_*; locked predicate unchanged",
+    "report-only: R* now reports first-crossing and sustained boundary separately; locked first_above calculation retained",
+    "report-only: added Wilson seed bands and parity audit output; no substrate or regime objective changes"
+  ],
   "floor_not_maximized_check": {
     "active_floor_defense": true,
     "mean_intervention_inside_floor": 0.7400002049458749,
