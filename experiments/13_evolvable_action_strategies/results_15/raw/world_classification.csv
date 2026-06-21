@@ -1,0 +1,6 @@
+world,classification,robustness,best_family,best_policy,best_permanence,best_perm_lo,best_collapse_hi,best_capture,best_welfare
+W2_pure_capture,Type None,seed artifact,C,full_exp14_best_policy,0.12,0.06999337365267776,0.03699480747600191,0.546506441966701,0.9477194757834863
+W4_scavenger_catastrophe,Type AC+CG,robust,C,anti_concentration_plus_delayed_harm_throttle,0.67,0.5730516033971139,0.03699480747600191,0.4918780625954374,0.9704326625173192
+W6_mutation_corridor,Type AC+CG,robust,C,anti_concentration_plus_delayed_harm_throttle,1.0,0.9630051925239981,0.03699480747600191,0.40639054510255607,0.9584270281982064
+W5_monoculture_shock,Type None,seed artifact,C,anti_concentration_plus_delayed_harm_throttle,0.0,0.0,0.03699480747600191,0.31974055965143383,0.8038748832445067
+W3_catastrophe_ambiguity,Type AC+CG,robust,C,anti_concentration_plus_delayed_harm_throttle,0.85,0.7671626666784216,0.03699480747600191,0.4526701189640282,0.9462527856703293

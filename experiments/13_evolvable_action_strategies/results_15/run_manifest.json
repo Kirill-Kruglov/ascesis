@@ -1,0 +1,88 @@
+{
+  "git_head": "b90633e75da60f14b351c22616491e1987ce4b4d",
+  "git_status_short": "?? SPEC_IMPLEMENTED_15.md\n?? results_15/\n?? run15.py",
+  "spec_implemented_15_sha256": "03a181dba4862c914bfdd4716e08de7815f5bbeddec507561d9f04e70973f97c",
+  "execution_order": [
+    "Part A",
+    "Part B",
+    "Part C"
+  ],
+  "num_cases": 12060,
+  "num_runs": 12060,
+  "num_summary_cells": 364,
+  "validation_checks": {
+    "feeder_observation_excludes_strategy_parameters": true,
+    "derived_exploitative_label_not_in_policy": true,
+    "fixed_hidden_types_absent": true,
+    "mutation_and_selection_occur": true,
+    "feature_proxy_fails_W1": true,
+    "monoculture_fails_W5": true,
+    "exploitative_strategies_rise_under_no_control": true,
+    "part_a_does_not_use_delayed_consequence": true,
+    "part_b_does_not_use_fixed_caps": true,
+    "at_least_one_core_cell_run_per_family": true
+  },
+  "world_classification": [
+    {
+      "world": "W2_pure_capture",
+      "classification": "Type None",
+      "robustness": "seed artifact",
+      "best_family": "C",
+      "best_policy": "full_exp14_best_policy",
+      "best_permanence": 0.12,
+      "best_perm_lo": 0.06999337365267776,
+      "best_collapse_hi": 0.03699480747600191,
+      "best_capture": 0.546506441966701,
+      "best_welfare": 0.9477194757834863
+    },
+    {
+      "world": "W4_scavenger_catastrophe",
+      "classification": "Type AC+CG",
+      "robustness": "robust",
+      "best_family": "C",
+      "best_policy": "anti_concentration_plus_delayed_harm_throttle",
+      "best_permanence": 0.67,
+      "best_perm_lo": 0.5730516033971139,
+      "best_collapse_hi": 0.03699480747600191,
+      "best_capture": 0.4918780625954374,
+      "best_welfare": 0.9704326625173192
+    },
+    {
+      "world": "W6_mutation_corridor",
+      "classification": "Type AC+CG",
+      "robustness": "robust",
+      "best_family": "C",
+      "best_policy": "anti_concentration_plus_delayed_harm_throttle",
+      "best_permanence": 1.0,
+      "best_perm_lo": 0.9630051925239981,
+      "best_collapse_hi": 0.03699480747600191,
+      "best_capture": 0.40639054510255607,
+      "best_welfare": 0.9584270281982064
+    },
+    {
+      "world": "W5_monoculture_shock",
+      "classification": "Type None",
+      "robustness": "seed artifact",
+      "best_family": "C",
+      "best_policy": "anti_concentration_plus_delayed_harm_throttle",
+      "best_permanence": 0.0,
+      "best_perm_lo": 0.0,
+      "best_collapse_hi": 0.03699480747600191,
+      "best_capture": 0.31974055965143383,
+      "best_welfare": 0.8038748832445067
+    },
+    {
+      "world": "W3_catastrophe_ambiguity",
+      "classification": "Type AC+CG",
+      "robustness": "robust",
+      "best_family": "C",
+      "best_policy": "anti_concentration_plus_delayed_harm_throttle",
+      "best_permanence": 0.85,
+      "best_perm_lo": 0.7671626666784216,
+      "best_collapse_hi": 0.03699480747600191,
+      "best_capture": 0.4526701189640282,
+      "best_welfare": 0.9462527856703293
+    }
+  ],
+  "final_verdict": "D. Only their combination is robust."
+}

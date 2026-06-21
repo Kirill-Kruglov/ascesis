@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="30" text-anchor="middle" font-family="sans-serif" font-size="18">Best Capture by World</text>
+<line x1="90" y1="400" x2="950" y2="400" stroke="#111"/>
+<line x1="90" y1="60" x2="90" y2="400" stroke="#111"/>
+<text x="18" y="280.0" transform="rotate(-90 18 280.0)" font-family="sans-serif" font-size="12">capture</text>
+<rect x="110.6" y="214.2" width="130.7" height="185.8" fill="#0f766e"/>
+<text x="176.0" y="414" transform="rotate(45 176.0 414)" font-family="sans-serif" font-size="10">W2_pure_capture</text>
+<text x="176.0" y="210.2" text-anchor="middle" font-family="sans-serif" font-size="10">0.55</text>
+<rect x="282.6" y="232.8" width="130.7" height="167.2" fill="#0f766e"/>
+<text x="348.0" y="414" transform="rotate(45 348.0 414)" font-family="sans-serif" font-size="10">W4_scavenger_catastrophe</text>
+<text x="348.0" y="228.8" text-anchor="middle" font-family="sans-serif" font-size="10">0.49</text>
+<rect x="454.6" y="261.8" width="130.7" height="138.2" fill="#0f766e"/>
+<text x="520.0" y="414" transform="rotate(45 520.0 414)" font-family="sans-serif" font-size="10">W6_mutation_corridor</text>
+<text x="520.0" y="257.8" text-anchor="middle" font-family="sans-serif" font-size="10">0.41</text>
+<rect x="626.6" y="291.3" width="130.7" height="108.7" fill="#0f766e"/>
+<text x="692.0" y="414" transform="rotate(45 692.0 414)" font-family="sans-serif" font-size="10">W5_monoculture_shock</text>
+<text x="692.0" y="287.3" text-anchor="middle" font-family="sans-serif" font-size="10">0.32</text>
+<rect x="798.6" y="246.1" width="130.7" height="153.9" fill="#0f766e"/>
+<text x="864.0" y="414" transform="rotate(45 864.0 414)" font-family="sans-serif" font-size="10">W3_catastrophe_ambiguity</text>
+<text x="864.0" y="242.1" text-anchor="middle" font-family="sans-serif" font-size="10">0.45</text>
+</svg>
