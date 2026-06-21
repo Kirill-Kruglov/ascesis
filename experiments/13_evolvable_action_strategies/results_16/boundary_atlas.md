@@ -1,6 +1,6 @@
 # Experiment 16 Boundary Atlas
 
-Final verdict: **BD: one AC implementation alone reproduces C_full.**
+Final verdict: **BE: the working mechanism is consequence-gated anti-concentration, not two independent levers.**
 
 ## Boundary Frontier
 
@@ -39,7 +39,7 @@ Final verdict: **BD: one AC implementation alone reproduces C_full.**
 | world | max gap_AC | at | max gap_CG | at |
 |---|---:|---|---:|---|
 | W6_mutation_corridor | 1.000 | action_channel_cost_scale:action_channel_cost_scale=0.50 | 1.000 | action_channel_cost_scale:action_channel_cost_scale=0.50 |
-| W3_catastrophe_ambiguity | 0.050 | adversarial_pressure:adversarial_pressure=0.60 | 0.050 | adversarial_pressure:adversarial_pressure=0.60 |
-| W4_scavenger_catastrophe | 0.087 | adversarial_pressure:adversarial_pressure=0.60 | 0.087 | adversarial_pressure:adversarial_pressure=0.60 |
+| W3_catastrophe_ambiguity | 0.887 | delay:delay=6.00 | 1.000 | adversarial_pressure:adversarial_pressure=0.60 |
+| W4_scavenger_catastrophe | 0.750 | mutation_rate:mutation_rate=0.30 | 1.000 | adversarial_pressure:adversarial_pressure=0.60 |
 | W2_pure_capture | 0.675 | resource_concentration_pressure:resource_concentration_pressure=0.70 | 1.000 | adversarial_pressure:adversarial_pressure=0.60 |
 | W5_monoculture_shock | 0.000 | action_channel_cost_scale:action_channel_cost_scale=0.50 | 0.000 | action_channel_cost_scale:action_channel_cost_scale=0.50 |

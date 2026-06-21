@@ -25,6 +25,8 @@ A_REP = ("A", "anti_hhi_allocator", "A")
 B_REP = ("B", "delayed_harm_throttle", "B")
 C_REP = ("C", "anti_concentration_plus_delayed_harm_throttle", "C")
 C_VARIANTS = ["C_full", "C_caps_only", "C_dyn_only"]
+COUPLING_VARIANTS = ["C_dyn_no_consequence", "C_dyn_only", "C_full"]
+ALL_C_VARIANTS = sorted(set(C_VARIANTS + COUPLING_VARIANTS))
 SPEC_HASH_EXPECTED = None
 
 AXES = [
@@ -63,6 +65,11 @@ def git_value(args):
 
 def spec_hash():
     return hashlib.sha256((ROOT / "SPEC_EXP16.md").read_bytes()).hexdigest()
+
+
+def patch_spec_hash():
+    path = ROOT / "SPEC_EXP16_1_PATCH.md"
+    return hashlib.sha256(path.read_bytes()).hexdigest() if path.exists() else "missing"
 
 
 def safe_mean(xs):
@@ -113,6 +120,11 @@ def label_for(axis, kwargs):
 
 class BoundaryAtlasModel(run15.AntiConcentrationVsConsequenceModel):
     def choose_alloc(self):
+        if self.params.family == "C" and self.params.policy15 == "C_dyn_no_consequence":
+            obs = self._delayed_obs()
+            scores = [self._score_c_no_consequence(obs, i) for i in range(exp13.ZONES)]
+            shifted = [max(0.01, s - min(scores) + 0.04) for s in scores]
+            return self._apply_cap(exp13.normalize(shifted), use_caps=False)
         if self.params.family == "C" and self.params.policy15 in set(C_VARIANTS):
             obs = self._delayed_obs()
             scores = [self._score_c(obs, i) for i in range(exp13.ZONES)]
@@ -125,8 +137,14 @@ class BoundaryAtlasModel(run15.AntiConcentrationVsConsequenceModel):
             return self._apply_cap(exp13.normalize(shifted), use_caps=self.params.policy15 != "C_dyn_only")
         return super().choose_alloc()
 
+    def _score_c_no_consequence(self, obs, i):
+        z = self.zones[i]
+        need = 1.0 - min(obs.wellness[i], obs.productivity[i], obs.recovery[i])
+        anti = 0.75 * (1.0 - self._resource_hhi_zone(z)) + 0.35 * (1.0 - self._zone_mass_share(z))
+        return anti + 0.75 * need
+
     def _score_c(self, obs, i):
-        if self.params.policy15 in {"C_full", "C_caps_only", "C_dyn_only"}:
+        if self.params.policy15 in set(ALL_C_VARIANTS):
             old = self.params.policy15
             object.__setattr__(self.params, "policy15", "anti_concentration_plus_delayed_harm_throttle")
             try:
@@ -150,7 +168,7 @@ class BoundaryAtlasModel(run15.AntiConcentrationVsConsequenceModel):
 
 
 def params_for(family, policy15, world, scenario="core", **kwargs):
-    if policy15 in C_VARIANTS:
+    if policy15 in ALL_C_VARIANTS:
         return run15.params_for("C", "anti_concentration_plus_delayed_harm_throttle", world, scenario=scenario, **kwargs).__class__(
             **{**run15.params_for("C", "anti_concentration_plus_delayed_harm_throttle", world, scenario=scenario, **kwargs).__dict__, "policy15": policy15}
         )
@@ -164,7 +182,7 @@ def params_for_variant(variant, world, scenario, **kwargs):
         return run15.params_for("B", "delayed_harm_throttle", world, scenario=scenario, **kwargs)
     if variant == "C":
         return run15.params_for("C", "anti_concentration_plus_delayed_harm_throttle", world, scenario=scenario, **kwargs)
-    if variant in C_VARIANTS:
+    if variant in ALL_C_VARIANTS:
         p = run15.params_for("C", "anti_concentration_plus_delayed_harm_throttle", world, scenario=scenario, **kwargs)
         object.__setattr__(p, "policy15", variant)
         return p
@@ -174,6 +192,7 @@ def params_for_variant(variant, world, scenario, **kwargs):
 def run_one(seed, params, axis="default", axis_value=0.0, axis_label="default", cell="core"):
     m = BoundaryAtlasModel(seed, params)
     out = m.run()
+    containment_timer_activity = sum(z.containment_timer for z in m.zones)
     return {
         "seed": seed,
         "cell": cell,
@@ -199,6 +218,7 @@ def run_one(seed, params, axis="default", axis_value=0.0, axis_label="default", 
         "resource_concentration_pressure": params.resource_concentration_pressure,
         "catastrophe_severity": params.catastrophe_severity,
         "action_channel_cost_scale": params.action_channel_cost_scale,
+        "containment_timer_activity": containment_timer_activity,
         **out,
     }
 
@@ -291,21 +311,39 @@ def decoupling_rows(axes, seeds):
                         yield seed, p, axis, av, al, "decoupling"
 
 
-def experiment_grid(smoke=False):
+def cg_ablation_rows(axes, seeds):
+    selected = [("default", [{}])]
+    for axis, vals in axes:
+        if axis == "adversarial_pressure":
+            selected.append((axis, vals))
+    for world in ROBUST_WORLDS:
+        for axis, vals in selected:
+            for kwargs in vals:
+                av = value_for(axis, kwargs) if kwargs else 0.0
+                al = label_for(axis, kwargs) if kwargs else "default"
+                for variant in COUPLING_VARIANTS:
+                    p = params_for_variant(variant, world, scenario="cg_ablation", **kwargs)
+                    for seed in seeds:
+                        yield seed, p, axis, av, al, "cg_ablation"
+
+
+def experiment_grid(smoke=False, include_cg_ablation=True):
     seeds = SMOKE_SEEDS if smoke else CORE_SEEDS_16
     axes = SMOKE_AXES if smoke else AXES
     cases = []
     cases.extend(validation_rows(seeds))
     cases.extend(grid_rows(axes, seeds))
     cases.extend(decoupling_rows(axes, seeds))
+    if include_cg_ablation:
+        cases.extend(cg_ablation_rows(axes, seeds))
     return cases
 
 
 def paired_gap(rows, world, axis, axis_label, va, vb):
-    a = {r["seed"]: is_viable_run(r) for r in rows if r["world"] == world and r["axis"] == axis and r["axis_label"] == axis_label and r["policy15"] == va}
-    b = {r["seed"]: is_viable_run(r) for r in rows if r["world"] == world and r["axis"] == axis and r["axis_label"] == axis_label and r["policy15"] == vb}
+    a = {r["seed"]: r["permanence"] for r in rows if r["world"] == world and r["axis"] == axis and r["axis_label"] == axis_label and r["policy15"] == va}
+    b = {r["seed"]: r["permanence"] for r in rows if r["world"] == world and r["axis"] == axis and r["axis_label"] == axis_label and r["policy15"] == vb}
     seeds = sorted(set(a) & set(b))
-    diffs = [(1.0 if a[s] else 0.0) - (1.0 if b[s] else 0.0) for s in seeds]
+    diffs = [a[s] - b[s] for s in seeds]
     lo, hi = normal_ci(diffs)
     return safe_mean(diffs), lo, hi, len(diffs)
 
@@ -420,7 +458,45 @@ def threshold_stability(sens):
     return out
 
 
-def validation(summary, rows, boundary_rows, dec_rows, smoke=False):
+def cg_ablation(summary):
+    rows = [r for r in summary if r["scenario"] == "cg_ablation" and r["policy15"] in set(COUPLING_VARIANTS)]
+    return sorted(rows, key=lambda r: (r["world"], r["axis"], r["axis_value"], r["policy15"]))
+
+
+def cg_ablation_export(cg_rows):
+    out = []
+    for r in cg_rows:
+        out.append({
+            "world": r["world"],
+            "axis": r["axis"],
+            "axis_value": r["axis_value"],
+            "axis_label": r["axis_label"],
+            "variant": r["policy15"],
+            "n": r["n"],
+            "permanence": r["permanence_probability"],
+            "permanence_ci_lo": r["permanence_ci_lo"],
+            "permanence_ci_hi": r["permanence_ci_hi"],
+            "robust": r["robust"],
+            "capture": r["capture_index"],
+            "welfare": r["welfare"],
+            "containment_events": r["containment_events"],
+            "containment_timer_activity": r.get("containment_timer_activity", 0.0),
+        })
+    return out
+
+
+def structural_ac_requires_consequence_gate(cg_rows):
+    rows = [r for r in cg_rows if r["policy15"] == "C_dyn_no_consequence"]
+    return bool(rows) and safe_mean([r["containment_events"] for r in rows]) <= 1e-9
+
+
+def coupling_question_answered(cg_rows):
+    expected = {(w, a, lab, v) for w in ROBUST_WORLDS for a, lab in [("default", "default"), *[("adversarial_pressure", label_for("adversarial_pressure", {"adversarial_pressure": x})) for x in [0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8]]] for v in COUPLING_VARIANTS}
+    got = {(r["world"], r["axis"], r["axis_label"], r["policy15"]) for r in cg_rows}
+    return expected.issubset(got)
+
+
+def validation(summary, rows, boundary_rows, dec_rows, cg_rows=None, smoke=False):
     val = {(r["policy15"]): r for r in summary if r["scenario"] == "validation"}
     mutation_and_selection = (
         any(r["mutation_events"] > 0 for r in rows)
@@ -460,24 +536,31 @@ def validation(summary, rows, boundary_rows, dec_rows, smoke=False):
         "ac_cg_strictly_dominates_singles_in_robust_worlds": all(strict) if strict else False,
         "boundary_exists_for_each_axis": boundaries_exist,
         "decoupling_identifies_load_bearing_ac": dec_diff,
+        "coupling_question_answered": coupling_question_answered(cg_rows or []),
         "smoke_mode": smoke,
     }
 
 
-def verdict(checks, bounds, stability, marginal_rows, dec_rows):
+def verdict(checks, bounds, stability, marginal_rows, dec_rows, cg_rows):
     hard_checks = {k: v for k, v in checks.items() if k != "smoke_mode"}
     if not all(hard_checks.values()):
         return "BF: a validation gate failed."
     stable = all(r["ac_cg_fraction"] >= 0.90 for r in stability if r["world"] in ROBUST_WORLDS)
     if not stable:
         return "BC: classification flips under threshold perturbation."
+    structural_gate = structural_ac_requires_consequence_gate(cg_rows)
+    defaults = [r for r in cg_rows if r["axis"] == "default" and r["policy15"] == "C_dyn_no_consequence"]
+    if defaults and all(not bool(r["robust"]) for r in defaults) and structural_gate:
+        return "BE: the working mechanism is consequence-gated anti-concentration, not two independent levers."
+    if defaults and all(bool(r["robust"]) for r in defaults):
+        return "BG: anti-concentration alone in dynamics form is sufficient; re-open Part A."
     for world in ROBUST_WORLDS:
         for axis in {r["axis"] for r in dec_rows if r["world"] == world}:
             fulls = [r for r in dec_rows if r["world"] == world and r["axis"] == axis and r["policy15"] == "C_full"]
             for full in fulls:
                 same = [r for r in dec_rows if r["world"] == world and r["axis"] == axis and r["axis_label"] == full["axis_label"] and r["policy15"] in {"C_caps_only", "C_dyn_only"} and abs(r["permanence_probability"] - full["permanence_probability"]) <= 0.05]
                 if same:
-                    return "BD: one AC implementation alone reproduces C_full."
+                    return "BD: one AC implementation alone reproduces C_full; CG-necessity-given-AC is not cleanly isolable in this substrate."
     bracket_axes = len({(r["world"], r["axis"]) for r in bounds if r["status"] == "bracketed"})
     pos_ac = any(r["gap_AC_ci_lo"] > 0 for r in marginal_rows)
     pos_cg = any(r["gap_CG_ci_lo"] > 0 for r in marginal_rows)
@@ -491,11 +574,16 @@ def write_csv(path, rows):
     if not rows:
         path.write_text("")
         return
-    fields = list(rows[0].keys())
+    fields = []
+    for row in rows:
+        for key in row.keys():
+            if key not in fields:
+                fields.append(key)
     with path.open("w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
+        w = csv.DictWriter(f, fieldnames=fields, lineterminator="\n", extrasaction="ignore")
         w.writeheader()
-        w.writerows(rows)
+        for row in rows:
+            w.writerow({k: row.get(k, "") for k in fields})
 
 
 def parse_csv_value(v):
@@ -517,6 +605,7 @@ def read_csv_rows(path):
 
 
 def relabel_axis_row(row):
+    row.setdefault("containment_timer_activity", 0.0)
     axis = row.get("axis", "default")
     if axis == "default":
         row["axis_value"] = 0.0
@@ -581,7 +670,7 @@ def svg_line(path, title, series):
     path.write_text("\n".join(parts) + "\n")
 
 
-def reports(summary, bounds, marg, dec, sens, stability, checks, final_verdict):
+def reports(summary, bounds, marg, dec, sens, stability, checks, final_verdict, cg_rows):
     lines = ["# Experiment 16 Boundary Atlas", "", f"Final verdict: **{final_verdict}**", "", "## Boundary Frontier", "", "| world | axis | status | last robust | first failing | last perm | first perm | last MI | first MI |", "|---|---|---|---|---|---:|---:|---:|---:|"]
     for r in bounds:
         lines.append(f"| {r['world']} | {r['axis']} | {r['status']} | {r['last_robust_value']} | {r['first_failing_value']} | {r['last_robust_permanence']} | {r['first_failing_permanence']} | {r['last_robust_mi']} | {r['first_failing_mi']} |")
@@ -600,6 +689,9 @@ def reports(summary, bounds, marg, dec, sens, stability, checks, final_verdict):
     lines += ["", "## Threshold Stability", "", "| world | AC+CG fraction | Type None fraction | stable |", "|---|---:|---:|---:|"]
     for r in stability:
         lines.append(f"| {r['world']} | {r['ac_cg_fraction']:.3f} | {r['none_fraction']:.3f} | `{r['threshold_stable']}` |")
+    lines += ["", "## Lever Coupling", "", f"structural_ac_requires_consequence_gate: `{structural_ac_requires_consequence_gate(cg_rows)}`", "", "| world | axis | point | variant | permanence | robust | capture | welfare | containment events | timer activity |", "|---|---|---|---|---:|---:|---:|---:|---:|---:|"]
+    for r in cg_ablation_export(cg_rows):
+        lines.append(f"| {r['world']} | {r['axis']} | {r['axis_label']} | {r['variant']} | {r['permanence']:.3f} | `{bool(r['robust'])}` | {r['capture']:.3f} | {r['welfare']:.3f} | {r['containment_events']:.3f} | {r['containment_timer_activity']:.3f} |")
     lines += ["", "## Decoupling", "", "| world | axis | point | variant | permanence | robust | capture | welfare |", "|---|---|---|---|---:|---:|---:|---:|"]
     for r in sorted(dec, key=lambda x: (x["world"], x["axis"], x["axis_value"], x["policy15"]))[:120]:
         lines.append(f"| {r['world']} | {r['axis']} | {r['axis_label']} | {r['policy15']} | {r['permanence_probability']:.3f} | `{bool(r['robust'])}` | {r['capture_index']:.3f} | {r['welfare']:.3f} |")
@@ -629,14 +721,21 @@ def main():
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--print-cases", action="store_true")
     ap.add_argument("--analyze-existing", action="store_true", help="Rebuild summaries/reports from results_16/raw/runs.csv without rerunning simulations.")
+    ap.add_argument("--run-cg-ablation", action="store_true", help="Append/regenerate only the Exp16.1 consequence-gated AC ablation cells before analysis.")
     args = ap.parse_args()
     cases = experiment_grid(smoke=args.smoke)
-    print(json.dumps({"smoke": args.smoke, "num_cases": len(cases), "seeds": len(SMOKE_SEEDS if args.smoke else CORE_SEEDS_16), "analyze_existing": args.analyze_existing}, indent=2))
+    coupling_cases = list(cg_ablation_rows(SMOKE_AXES if args.smoke else AXES, SMOKE_SEEDS if args.smoke else CORE_SEEDS_16))
+    print(json.dumps({"smoke": args.smoke, "num_cases": len(cases), "cg_ablation_cases": len(coupling_cases), "seeds": len(SMOKE_SEEDS if args.smoke else CORE_SEEDS_16), "analyze_existing": args.analyze_existing, "run_cg_ablation": args.run_cg_ablation}, indent=2))
     if args.print_cases:
         return
     RESULTS.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
-    if args.analyze_existing:
+    if args.run_cg_ablation:
+        existing = [relabel_axis_row(r) for r in read_csv_rows(RAW / "runs.csv")]
+        existing = [r for r in existing if r.get("scenario") != "cg_ablation"]
+        new_rows = [run_one(seed, params, axis, axis_value, axis_label, cell) for seed, params, axis, axis_value, axis_label, cell in coupling_cases]
+        rows = existing + new_rows
+    elif args.analyze_existing:
         rows = [relabel_axis_row(r) for r in read_csv_rows(RAW / "runs.csv")]
     else:
         rows = [run_one(seed, params, axis, axis_value, axis_label, cell) for seed, params, axis, axis_value, axis_label, cell in cases]
@@ -644,17 +743,19 @@ def main():
     bounds = boundary(summary)
     marg = marginal(rows, summary)
     dec = decoupling(summary)
+    cg = cg_ablation(summary)
     sens = sensitivity(rows)
     stability = threshold_stability(sens)
-    checks = validation(summary, rows, bounds, dec, smoke=args.smoke)
-    final_verdict = verdict(checks, bounds, stability, marg, dec)
+    checks = validation(summary, rows, bounds, dec, cg_rows=cg, smoke=args.smoke)
+    final_verdict = verdict(checks, bounds, stability, marg, dec, cg)
     write_csv(RAW / "runs.csv", rows)
     write_csv(RAW / "summary.csv", summary)
     write_csv(RAW / "boundary.csv", bounds)
     write_csv(RAW / "marginal.csv", marg)
     write_csv(RAW / "decoupling.csv", dec)
+    write_csv(RAW / "cg_ablation.csv", cg_ablation_export(cg))
     write_csv(RAW / "sensitivity.csv", sens)
-    reports(summary, bounds, marg, dec, sens, stability, checks, final_verdict)
+    reports(summary, bounds, marg, dec, sens, stability, checks, final_verdict, cg)
     plots(summary, bounds, marg)
     manifest = {
         "git_head": git_value(["rev-parse", "HEAD"]),
@@ -664,10 +765,14 @@ def main():
         "num_cases": len(cases),
         "num_runs": len(rows),
         "analyze_existing": args.analyze_existing,
+        "run_cg_ablation": args.run_cg_ablation,
         "num_summary_cells": len(summary),
         "validation_checks": checks,
         "boundary_summary": bounds,
         "threshold_stability": stability,
+        "structural_ac_requires_consequence_gate": structural_ac_requires_consequence_gate(cg),
+        "coupling_question_answered": coupling_question_answered(cg),
+        "spec_exp16_1_patch_sha256": patch_spec_hash(),
         "final_verdict": final_verdict,
     }
     (RESULTS / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")

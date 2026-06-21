@@ -1,12 +1,13 @@
 {
-  "git_head": "1912e096166101e83fdb81753bfbc33d3b83b596",
-  "git_status_short": "?? SPEC_EXP16.md\n?? results_16/\n?? run16.py",
+  "git_head": "5f88f3716508be0b0464ada82a4c1c5f0127566b",
+  "git_status_short": "M results_16/W3_catastrophe_ambiguity_adversarial_gaps.svg\n M results_16/W4_scavenger_catastrophe_adversarial_gaps.svg\n M results_16/boundary_atlas.md\n M results_16/raw/decoupling.csv\n M results_16/raw/marginal.csv\n M results_16/raw/runs.csv\n M results_16/raw/summary.csv\n M results_16/sensitivity_report.md\n M run16.py\n?? SPEC_EXP16_1_PATCH.md\n?? results_16/raw/cg_ablation.csv",
   "spec_exp16_sha256": "3dc4e5a89899acb905a51ae633a985132c96f4407d9e1af65e9609ee24115b7e",
   "smoke": false,
-  "num_cases": 83040,
-  "num_runs": 83040,
-  "analyze_existing": true,
-  "num_summary_cells": 1038,
+  "num_cases": 88800,
+  "num_runs": 88800,
+  "analyze_existing": false,
+  "run_cg_ablation": true,
+  "num_summary_cells": 1110,
   "validation_checks": {
     "feeder_observation_excludes_strategy_parameters": true,
     "derived_exploitative_label_not_in_policy": true,
@@ -20,6 +21,7 @@
     "ac_cg_strictly_dominates_singles_in_robust_worlds": true,
     "boundary_exists_for_each_axis": true,
     "decoupling_identifies_load_bearing_ac": true,
+    "coupling_question_answered": true,
     "smoke_mode": false
   },
   "boundary_summary": [
@@ -412,5 +414,8 @@
       "threshold_stable": false
     }
   ],
-  "final_verdict": "BD: one AC implementation alone reproduces C_full."
+  "structural_ac_requires_consequence_gate": true,
+  "coupling_question_answered": true,
+  "spec_exp16_1_patch_sha256": "53345b7b37c85b59a329790550ed64f75497833852d2ffc5f9d016ebc7282b66",
+  "final_verdict": "BE: the working mechanism is consequence-gated anti-concentration, not two independent levers."
 }
