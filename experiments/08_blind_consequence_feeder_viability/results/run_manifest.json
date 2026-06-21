@@ -1,0 +1,55 @@
+{
+  "git_head": "aefb44e9b34a787342dfc7beb7746853c9fcfd2e",
+  "git_commit_time": "2026-06-21T08:55:01+03:00",
+  "git_status_short": "M ../README.md\n?? ./",
+  "spec_implemented_sha256": "4b9a461b3912930de549d100de1d129b1c22dc6ebd77b7721ad69be288ae218f",
+  "train_seeds": [
+    8100,
+    8101,
+    8102,
+    8103,
+    8104,
+    8105,
+    8106,
+    8107,
+    8108,
+    8109
+  ],
+  "heldout_seeds": [
+    9100,
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110,
+    9111,
+    9112,
+    9113,
+    9114
+  ],
+  "num_cells": 147,
+  "num_runs": 3675,
+  "num_viable_cells": 57,
+  "final_verdict": "C. Apparent kernel exists but is too fragile / tuned to trust.",
+  "viability_criterion": {
+    "collapse_probability_max": 0.2,
+    "capture_probability_max": 0.2,
+    "dove_extinction_probability_max": 0.1,
+    "adversarial_share_mean_max": 0.35,
+    "mean_welfare_final_min": 0.55,
+    "diversity_mean_min": 0.45,
+    "audit_cost_share_mean_max": 0.25,
+    "permanence_probability_min": 0.6
+  },
+  "notes": [
+    "Toy falsification harness, not a proof of AGI/ASI feeder viability.",
+    "Feeder policies are type-blind and see only delayed consequence observations.",
+    "Feature proxy is retained only as a Goodhart comparator.",
+    "No tuning was performed; train/held-out split is recorded for later iterations."
+  ]
+}

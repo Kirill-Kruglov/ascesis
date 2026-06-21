@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-family="sans-serif" font-size="18">Permanence vs R</text>
+<line x1="70" y1="460" x2="870" y2="460" stroke="#111"/>
+<line x1="70" y1="50" x2="70" y2="460" stroke="#111"/>
+<text x="450.0" y="504" text-anchor="middle" font-family="sans-serif" font-size="12">R = T_irrev / tau</text>
+<text x="18" y="260.0" transform="rotate(-90 18 260.0)" font-family="sans-serif" font-size="12">permanence</text>
+<polyline fill="none" stroke="#1d4ed8" stroke-width="2" points="89.7,405.3 117.1,405.3 151.3,50.0 185.5,405.3 459.3,405.3"/>
+<text x="640" y="68" font-family="sans-serif" font-size="11" fill="#1d4ed8">feature_proxy</text>
+<polyline fill="none" stroke="#b45309" stroke-width="2" points="89.7,423.6 99.9,323.3 117.1,432.7 151.3,182.1 185.5,405.3 212.9,50.0 254.0,460.0 305.3,255.0 322.4,50.0 459.3,405.3 870.0,255.0"/>
+<text x="640" y="86" font-family="sans-serif" font-size="11" fill="#b45309">response_to_aid</text>
+<polyline fill="none" stroke="#047857" stroke-width="2" points="70.0,460.0 77.9,460.0 80.7,50.0 82.8,460.0 89.7,439.5 99.9,50.0 117.1,432.7 125.6,460.0 130.7,50.0 134.2,255.0 151.3,129.3 185.5,425.8 212.9,460.0 254.0,152.5 356.6,50.0 459.3,425.8 664.7,50.0"/>
+<text x="640" y="104" font-family="sans-serif" font-size="11" fill="#047857">local_global</text>
+<polyline fill="none" stroke="#7c3aed" stroke-width="2" points="70.0,460.0 80.7,460.0 82.8,50.0 99.9,186.7 117.1,186.7 125.6,255.0 130.7,460.0 151.3,314.2 171.8,460.0 254.0,50.0 322.4,50.0 356.6,50.0 459.3,50.0 664.7,50.0 870.0,50.0"/>
+<text x="640" y="122" font-family="sans-serif" font-size="11" fill="#7c3aed">audit_penalty</text>
+<polyline fill="none" stroke="#be123c" stroke-width="2" points="70.0,50.0 99.9,50.0 134.2,50.0 151.3,50.0 177.0,50.0 185.5,50.0 356.6,268.7 459.3,460.0 664.7,50.0"/>
+<text x="640" y="140" font-family="sans-serif" font-size="11" fill="#be123c">geometric_diversity</text>
+</svg>

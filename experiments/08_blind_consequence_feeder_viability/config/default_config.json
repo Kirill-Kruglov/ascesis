@@ -1,0 +1,43 @@
+{
+  "steps": 140,
+  "zones": 12,
+  "train_seeds": [
+    8100,
+    8101,
+    8102,
+    8103,
+    8104,
+    8105,
+    8106,
+    8107,
+    8108,
+    8109
+  ],
+  "heldout_seeds": [
+    9100,
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110,
+    9111,
+    9112,
+    9113,
+    9114
+  ],
+  "viability_criterion": {
+    "collapse_probability_max": 0.2,
+    "capture_probability_max": 0.2,
+    "dove_extinction_probability_max": 0.1,
+    "adversarial_share_mean_max": 0.35,
+    "mean_welfare_final_min": 0.55,
+    "diversity_mean_min": 0.45,
+    "audit_cost_share_mean_max": 0.25,
+    "permanence_probability_min": 0.6
+  }
+}

@@ -13,8 +13,9 @@ These experiments are not claims of alignment progress. They are small reproduci
 5. `05_reflective_stability_of_incompleteness` - high-risk toy self-modification check, expected to fail often.
 6. `06_sugarscape_governor` - ecological validation in a Sugarscape-style environment; asks whether the toy mechanism survives in richer emergent dynamics.
 7. `07_empowerment_vs_corrigibility` - empowerment vs shutdown-corrigibility on a Thornley-style gridworld. Closed as a calibration failure: the substrate does not reproduce the Thornley baseline (see SPEC Amendments 1-2).
+8. `08_blind_consequence_feeder_viability` - blind consequence-only feeder viability map over adversarial capture, delay, catastrophe ambiguity, mutation, scavengers, and diversity pressure.
 
-The blind-arbiter direction (formerly `08`) passed a minimal proof threshold and was extracted into its own focused package at [`../blind_arbiter/`](../blind_arbiter/).
+The blind-arbiter direction passed a minimal proof threshold and was extracted into its own focused package at [`../blind_arbiter/`](../blind_arbiter/).
 
 Rule: cheap refutation before expensive confirmation.
 
@@ -36,6 +37,7 @@ cd ../04_admissible_set_core && python3 run.py
 cd ../05_reflective_stability_of_incompleteness && python3 run.py
 cd ../06_sugarscape_governor && python3 run.py
 cd ../07_empowerment_vs_corrigibility && python3 run.py
+cd ../08_blind_consequence_feeder_viability && python3 run.py
 ```
 
 No large model is required except for a publication-grade run of `03_silence_vs_fabrication`. Its default backend is a deterministic smoke-test classifier and is marked as such in outputs.
