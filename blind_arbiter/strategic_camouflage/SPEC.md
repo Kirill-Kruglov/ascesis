@@ -66,11 +66,27 @@ is driven **extinct**? The first threads the corridor; the second repeats the
 
 ## Calibration gate (the substrate contract)
 
-At `(p = 0, C = 0, gamma = 0)` concealment is free and undeterred, so a selfish adversary should
-drive `c -> 1` (full concealment), reproducing the baseline coin-flip (geometric near coin-flip,
-sustained R* = None). If it does not, the strategic layer or the payoff is mis-built -- stop.
-Reuse the `camouflage_audit/` substrate; only add the strategic concealment trait and its
-selection dynamics.
+Amended (2026-06-21, after the first run; the original anchor was mis-specified). The original
+gate required the no-deterrence baseline to reproduce the *passive* model's coin-flip. That was
+wrong: a *strategic* adversary with free concealment drives `c -> 1` (confirmed empirically:
+`c* ~ 0.999`), which sets `signal = 0`, perfectly games the geometric feeder, and collapses
+permanence to ~0 -- the genuine strategic worst case, not coin-flip. Anchoring to the prior
+model's baseline was the error (the second time in this direction; anchor a gate to the model's
+own worst case, not the previous model's).
+
+Corrected gate -- the substrate is sound iff all hold:
+- (a) at `(p = 0, C = 0, gamma = 0)` the selfish adversary drives `c -> 1` (full concealment);
+- (b) full concealment collapses true-gene permanence to ~0 (the worst case deterrence must fix);
+- (c) faithfulness control: with concealment forced off (either `c = 0` honest, or concealment
+  driven by the parent's passive signal drift instead of the strategic best-response), the
+  substrate reproduces the parent coin-flip (geometric near coin-flip across mid-high R, sustained
+  R* = None). This confirms the capture/replicator dynamics are the parent's and only the
+  strategic layer differs.
+
+If (a)-(c) hold, the substrate is alive and H_s1/H_s2/H_s3 are read on the deterrence surface
+(does raising `(p, C, gamma)` drive `c` down and recover permanence, and -- the corridor question
+-- via reveal or via extinction). If the faithfulness control (c) does NOT reproduce the parent,
+the strategic layer corrupted the dynamics -- stop.
 
 ## Pre-registered decision thresholds (locked, scale-free)
 
