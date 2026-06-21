@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="30" text-anchor="middle" font-family="sans-serif" font-size="18">PURE_CAPTURE: Delta Capture vs Baseline</text>
+<line x1="90" y1="225.0" x2="950" y2="225.0" stroke="#111"/>
+<line x1="90" y1="60" x2="90" y2="390" stroke="#111"/>
+<text x="18" y="280.0" transform="rotate(-90 18 280.0)" font-family="sans-serif" font-size="12">delta capture</text>
+<rect x="94.1" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="107.2" y="404" transform="rotate(45 107.2 404)" font-family="sans-serif" font-size="10">no_intervention</text>
+<text x="107.2" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="128.5" y="225.0" width="26.1" height="165.0" fill="#b91c1c"/>
+<text x="141.6" y="404" transform="rotate(45 141.6 404)" font-family="sans-serif" font-size="10">oracle_kill_hawks</text>
+<text x="141.6" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">-1.00</text>
+<rect x="162.9" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="176.0" y="404" transform="rotate(45 176.0 404)" font-family="sans-serif" font-size="10">oracle_freeze_hawk_repro</text>
+<text x="176.0" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="197.3" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="210.4" y="404" transform="rotate(45 210.4 404)" font-family="sans-serif" font-size="10">freeze_all_reproduction_</text>
+<text x="210.4" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="231.7" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="244.8" y="404" transform="rotate(45 244.8 404)" font-family="sans-serif" font-size="10">resource_cap_bad_zones</text>
+<text x="244.8" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="266.1" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="279.2" y="404" transform="rotate(45 279.2 404)" font-family="sans-serif" font-size="10">no_outgoing_migration_ba</text>
+<text x="279.2" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="300.5" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="313.6" y="404" transform="rotate(45 313.6 404)" font-family="sans-serif" font-size="10">no_interceptable_aid_bad</text>
+<text x="313.6" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="334.9" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="348.0" y="404" transform="rotate(45 348.0 404)" font-family="sans-serif" font-size="10">edge_cut_bad_zones</text>
+<text x="348.0" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="369.3" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="382.4" y="404" transform="rotate(45 382.4 404)" font-family="sans-serif" font-size="10">global_density_cap</text>
+<text x="382.4" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="403.7" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="416.8" y="404" transform="rotate(45 416.8 404)" font-family="sans-serif" font-size="10">combined_maximal</text>
+<text x="416.8" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="438.1" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="451.2" y="404" transform="rotate(45 451.2 404)" font-family="sans-serif" font-size="10">freeze_all_reproduction_</text>
+<text x="451.2" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="472.5" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="485.6" y="404" transform="rotate(45 485.6 404)" font-family="sans-serif" font-size="10">resource_cap_bad_zones</text>
+<text x="485.6" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="506.9" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="520.0" y="404" transform="rotate(45 520.0 404)" font-family="sans-serif" font-size="10">no_interceptable_aid_bad</text>
+<text x="520.0" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="541.3" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="554.4" y="404" transform="rotate(45 554.4 404)" font-family="sans-serif" font-size="10">edge_cut_bad_zones</text>
+<text x="554.4" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="575.7" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="588.8" y="404" transform="rotate(45 588.8 404)" font-family="sans-serif" font-size="10">combined_maximal</text>
+<text x="588.8" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="610.1" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="623.2" y="404" transform="rotate(45 623.2 404)" font-family="sans-serif" font-size="10">freeze_all_reproduction_</text>
+<text x="623.2" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="644.5" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="657.6" y="404" transform="rotate(45 657.6 404)" font-family="sans-serif" font-size="10">resource_cap_bad_zones</text>
+<text x="657.6" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="678.9" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="692.0" y="404" transform="rotate(45 692.0 404)" font-family="sans-serif" font-size="10">no_interceptable_aid_bad</text>
+<text x="692.0" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="713.3" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="726.4" y="404" transform="rotate(45 726.4 404)" font-family="sans-serif" font-size="10">edge_cut_bad_zones</text>
+<text x="726.4" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="747.7" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="760.8" y="404" transform="rotate(45 760.8 404)" font-family="sans-serif" font-size="10">combined_maximal</text>
+<text x="760.8" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="782.1" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="795.2" y="404" transform="rotate(45 795.2 404)" font-family="sans-serif" font-size="10">freeze_all_reproduction_</text>
+<text x="795.2" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="816.5" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="829.6" y="404" transform="rotate(45 829.6 404)" font-family="sans-serif" font-size="10">resource_cap_bad_zones</text>
+<text x="829.6" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="850.9" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="864.0" y="404" transform="rotate(45 864.0 404)" font-family="sans-serif" font-size="10">no_interceptable_aid_bad</text>
+<text x="864.0" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="885.3" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="898.4" y="404" transform="rotate(45 898.4 404)" font-family="sans-serif" font-size="10">edge_cut_bad_zones</text>
+<text x="898.4" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+<rect x="919.7" y="225.0" width="26.1" height="0.0" fill="#1d4ed8"/>
+<text x="932.8" y="404" transform="rotate(45 932.8 404)" font-family="sans-serif" font-size="10">combined_maximal</text>
+<text x="932.8" y="221.0" text-anchor="middle" font-family="sans-serif" font-size="10">0.00</text>
+</svg>
