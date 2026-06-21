@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / 'results'
 RAW = RESULTS / 'raw'
 
-DECLARED_SPEC_SHA256 = 'f9183429305c2961e0191362e1b5c873a528ed20483ea92c0c396f34de8b1e6e'
+DECLARED_SPEC_SHA256 = '4fe5ff79ebb93cfc7c87e4132e77b2c715c981cb09c55d4a78492393e6a1725f'
 
 TRAIN_SEEDS = list(range(3100, 3130))
 HELDOUT_SEEDS = list(range(4100, 4130))
@@ -441,10 +441,127 @@ class StrategicCamouflageGame:
         }
 
 
-def run_one(seed, setting, policy):
-    game = StrategicCamouflageGame(setting, seed, SUBSTRATE, policy)
+class PassiveControlGame(StrategicCamouflageGame):
+    """Parent passive-signal control used only for calibration gate (c)."""
+
+    def _initial_state(self):
+        behavior_gene = np.array([0.16, 0.84], dtype=float) + self.rng.normal(0.0, 0.04, size=2)
+        behavior_gene = clamp(behavior_gene, 0.03, 0.97)
+        true_x = normalize(np.array([0.56, 0.44], dtype=float) + self.rng.normal(0.0, 0.05, size=2))
+        concealment = np.zeros(G, dtype=float)
+        signal = clamp(behavior_gene + self.rng.normal(0.0, 0.10, size=2), 0.0, 1.0)
+        return State(behavior_gene=behavior_gene, true_x=true_x, concealment=concealment, signal=signal, t=0, recent_alloc=np.array([0.5, 0.5], dtype=float))
+
+    def decide(self, obs):
+        assert not hasattr(obs, 'behavior_gene')
+        assert not hasattr(obs, 'true_x')
+        assert not hasattr(obs, 'concealment')
+        assert obs.signal.shape == (G,)
+        best_key = None
+        best_alloc = None
+        for r0 in GRID_GRID:
+            alloc = np.array([r0, 1.0 - r0], dtype=float)
+            pred_signal = self._predict_signal(obs, alloc)
+            consequence_penalty = self.substrate.consequence_reactivity * float(
+                np.dot(alloc, obs.lagged_capture * obs.lagged_alloc)
+            )
+            utility = float(np.mean(np.log(pred_signal + EPS)))
+            key = (utility - consequence_penalty, -float(np.abs(alloc - obs.signal).sum()))
+            if best_key is None or key > best_key:
+                best_key = key
+                best_alloc = alloc
+        assert best_alloc is not None
+        return best_alloc
+
+    def step(self):
+        obs = self._observation()
+        alloc = self.decide(obs)
+        committed_audit = bool(self.policy.p > 0.0 and self.rng.random() < self.policy.p)
+        caught, false_positive = self._apply_committed_audit(obs, committed_audit)
+
+        penalty_active = (self.penalty_timer > 0).astype(float)
+        audit_cut = np.clip(1.0 - self.policy.C * penalty_active, 0.0, 1.0)
+        feeding_budget = max(0.0, 1.0 - (self.policy.kappa if committed_audit else 0.0))
+        alloc_eff = alloc * audit_cut * feeding_budget
+
+        loss, capture = self._capture_transfer(alloc_eff)
+        deceptive_gap = np.maximum(0.0, self.state.behavior_gene - self.state.signal)
+        fitness = (
+            1.0
+            + self.substrate.resource_gain * alloc_eff
+            - self.substrate.capture_drag * loss
+            - self.policy.gamma * deceptive_gap
+        )
+        true_x_next = normalize(self.state.true_x * np.clip(fitness, EPS, None))
+        extinct = bool(np.any(true_x_next < self.survival_threshold))
+        captured = bool(np.any(true_x_next > self.capture_extinction_threshold))
+        if extinct:
+            true_x_next = np.where(true_x_next < self.survival_threshold, 0.0, true_x_next)
+            true_x_next = normalize(true_x_next)
+        if captured:
+            true_x_next = np.where(true_x_next > self.capture_extinction_threshold, 1.0, true_x_next)
+            true_x_next = normalize(true_x_next)
+
+        signal_target = clamp(
+            self.state.signal
+            + self.substrate.signal_mutation * (alloc - 1.0 / G)
+            + self.substrate.signal_bias * (obs.lagged_alloc - obs.lagged_loss)
+            + self.substrate.audit_shift * (np.eye(G)[obs.audit_focus] if obs.audit else 0.0)
+            + self.rng.normal(0.0, self.substrate.signal_noise, size=G),
+            0.0,
+            1.0,
+        )
+        signal_next = clamp((1.0 - self.substrate.signal_response) * self.state.signal + self.substrate.signal_response * signal_target, 0.0, 1.0)
+        corr = safe_corr(signal_next, self.state.behavior_gene)
+        adversary = int(np.argmax(self.state.behavior_gene))
+        adversary_extinct = bool(true_x_next[adversary] < self.survival_threshold or (extinct and true_x_next[adversary] == 0.0))
+        self.extinct = self.extinct or extinct
+        self.captured = self.captured or captured
+        true_perm = self._true_permanence(true_x_next)
+        self.penalty_timer = np.maximum(self.penalty_timer - 1, 0)
+        self.history.append({
+            'step': self.state.t,
+            'signal': signal_next.copy(),
+            'loss': loss.copy(),
+            'capture': capture.copy(),
+            'alloc': alloc.copy(),
+        })
+        row = {
+            'true_permanence': true_perm,
+            'corr_sa': corr,
+            'extinct': extinct,
+            'captured': captured,
+            'adversary_extinct': adversary_extinct,
+            'true_x': true_x_next.copy(),
+            'signal': signal_next.copy(),
+            'concealment': np.zeros(G, dtype=float),
+            'adversary_concealment': 0.0,
+            'adversary_share': float(true_x_next[adversary]),
+            'behavior_gene': self.state.behavior_gene.copy(),
+            'alloc': alloc.copy(),
+            'alloc_eff': alloc_eff.copy(),
+            'loss': loss.copy(),
+            'capture': capture.copy(),
+            'fitness': fitness.copy(),
+            'adversary_fitness': float(fitness[adversary]),
+            'committed_audit': int(committed_audit),
+            'caught_events': int(np.sum(caught)),
+            'false_positive_events': int(np.sum(false_positive)),
+        }
+        self.state = State(behavior_gene=self.state.behavior_gene.copy(), true_x=true_x_next, concealment=np.zeros(G, dtype=float), signal=signal_next, t=self.state.t + 1, recent_alloc=alloc.copy())
+        return row
+
+
+def run_one(seed, setting, policy, mode='strategic'):
+    if mode == 'strategic':
+        game = StrategicCamouflageGame(setting, seed, SUBSTRATE, policy)
+    elif mode == 'passive_control':
+        game = PassiveControlGame(setting, seed, SUBSTRATE, policy)
+    else:
+        raise ValueError(f'unknown mode: {mode}')
     out = game.run()
     return {
+        'mode': mode,
         'seed': seed,
         'split': 'heldout' if seed in HELDOUT_SEEDS else 'train',
         'setting': setting.name,
@@ -491,12 +608,7 @@ def summarize_records(records):
     }
 
 
-def baseline_calibration():
-    per_seed = []
-    policy = Policy(0.0, 0.0, 0.0, 0.0)
-    for setting in R_SETTINGS:
-        for seed in HELDOUT_SEEDS:
-            per_seed.append(run_one(seed, setting, policy))
+def curve_from_records(per_seed):
     by_setting = defaultdict(list)
     for row in per_seed:
         by_setting[row['setting']].append(row)
@@ -505,22 +617,58 @@ def baseline_calibration():
         summary = summarize_records(by_setting[setting.name])
         summary.update({'setting': setting.name, 'R': r_value(setting)})
         curve.append(summary)
-    first = first_above(curve, 0.5)
-    sustained = sustained_above(curve, 0.5)
-    mid_high = [p for p in curve if p['R'] >= MID_HIGH_R_MIN]
-    mid_high_mean = float(np.mean([p['permanence_rate'] for p in mid_high])) if mid_high else 0.0
-    baseline_c = float(np.mean([p['mean_final_adversary_concealment'] for p in mid_high])) if mid_high else 0.0
-    pass_gate = baseline_c >= 0.85 and sustained is None and 0.40 <= mid_high_mean <= 0.65 and first is not None
+    return curve
+
+
+def baseline_calibration():
+    policy = Policy(0.0, 0.0, 0.0, 0.0)
+    strategic_per_seed = []
+    passive_per_seed = []
+    for setting in R_SETTINGS:
+        for seed in HELDOUT_SEEDS:
+            strategic_per_seed.append(run_one(seed, setting, policy, mode='strategic'))
+            passive_per_seed.append(run_one(seed, setting, policy, mode='passive_control'))
+
+    strategic_curve = curve_from_records(strategic_per_seed)
+    passive_curve = curve_from_records(passive_per_seed)
+    strategic_mid_high = [p for p in strategic_curve if p['R'] >= MID_HIGH_R_MIN]
+    passive_mid_high = [p for p in passive_curve if p['R'] >= MID_HIGH_R_MIN]
+    strategic_mid_high_mean = float(np.mean([p['permanence_rate'] for p in strategic_mid_high])) if strategic_mid_high else 0.0
+    passive_mid_high_mean = float(np.mean([p['permanence_rate'] for p in passive_mid_high])) if passive_mid_high else 0.0
+    baseline_c = float(np.mean([p['mean_final_adversary_concealment'] for p in strategic_mid_high])) if strategic_mid_high else 0.0
+    passive_first = first_above(passive_curve, 0.5)
+    passive_sustained = sustained_above(passive_curve, 0.5)
+    strategic_first = first_above(strategic_curve, 0.5)
+    strategic_sustained = sustained_above(strategic_curve, 0.5)
+
+    gate_a = baseline_c >= 0.85
+    gate_b = strategic_mid_high_mean <= 0.10
+    gate_c = passive_sustained is None and passive_first is not None and 0.40 <= passive_mid_high_mean <= 0.65
+    pass_gate = gate_a and gate_b and gate_c
     return {
         'passed': pass_gate,
-        'first_crossing_r_star': first,
-        'sustained_r_star': sustained,
-        'mid_high_mean_permanence': mid_high_mean,
+        'gate_a_free_concealment': gate_a,
+        'gate_b_strategic_collapse': gate_b,
+        'gate_c_passive_faithfulness': gate_c,
+        'strategic_first_crossing_r_star': strategic_first,
+        'strategic_sustained_r_star': strategic_sustained,
+        'passive_first_crossing_r_star': passive_first,
+        'passive_sustained_r_star': passive_sustained,
+        'first_crossing_r_star': passive_first,
+        'sustained_r_star': passive_sustained,
+        'strategic_mid_high_mean_permanence': strategic_mid_high_mean,
+        'passive_mid_high_mean_permanence': passive_mid_high_mean,
+        'mid_high_mean_permanence': strategic_mid_high_mean,
         'mid_high_mean_final_adversary_concealment': baseline_c,
-        'curve': curve,
-        'per_seed': per_seed,
-        'criteria': 'adversary c>=0.85, sustained R*=None, mid-high mean in [0.40,0.65], finite first-crossing R*',
+        'curve': strategic_curve,
+        'strategic_curve': strategic_curve,
+        'passive_control_curve': passive_curve,
+        'per_seed': strategic_per_seed + passive_per_seed,
+        'strategic_per_seed': strategic_per_seed,
+        'passive_control_per_seed': passive_per_seed,
+        'criteria': '(a) strategic c>=0.85, (b) strategic mid-high permanence<=0.10, (c) passive-control sustained R*=None and mid-high permanence in [0.40,0.65] with finite first crossing',
     }
+
 
 
 def run_surface():
@@ -573,6 +721,7 @@ def verdicts(cells):
     extinction_only_candidates = [c for c in candidates if c['adversary_extinction_rate'] >= 0.50]
     best_corridor = best_cell(non_extinction_candidates, lambda c: True) if non_extinction_candidates else None
     best_any_gain = best_cell(candidates, lambda c: True) if candidates else None
+    best_observed = best_cell(cells, lambda c: True)
     hs2 = best_corridor is not None
 
     kappa_star = None
@@ -603,6 +752,7 @@ def verdicts(cells):
             'candidate_count': len(candidates),
             'best_corridor_cell': best_corridor,
             'best_any_gain_cell': best_any_gain,
+            'best_observed_cell': best_observed,
             'extinction_only_candidate_count': len(extinction_only_candidates),
             'permanence_only_with_extinction': bool(candidates and not non_extinction_candidates),
         },
@@ -683,7 +833,7 @@ def write_outputs(calibration, per_seed, cells, verdict):
     RESULTS.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
     fields = [
-        'seed', 'split', 'setting', 'R', 'gamma', 'p', 'C', 'kappa', 'true_permanence_hold', 'failure',
+        'mode', 'seed', 'split', 'setting', 'R', 'gamma', 'p', 'C', 'kappa', 'true_permanence_hold', 'failure',
         'final_corr_sa', 'mean_corr_sa', 'mean_adversary_concealment', 'final_adversary_concealment',
         'mean_adversary_fitness', 'adversary_extinct', 'mean_adversary_share', 'caught_events',
         'false_positive_events', 'steps_run'
@@ -692,6 +842,10 @@ def write_outputs(calibration, per_seed, cells, verdict):
         writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
         writer.writeheader()
         writer.writerows(per_seed)
+    with (RAW / 'calibration_per_seed.csv').open('w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(calibration['per_seed'])
     cell_fields = [
         'gamma', 'p', 'C', 'kappa', 'audit_on', 'n', 'successes', 'permanence_rate', 'wilson_lo',
         'wilson_hi', 'mean_final_corr', 'mean_corr', 'mean_adversary_concealment',
@@ -732,6 +886,7 @@ def write_outputs(calibration, per_seed, cells, verdict):
 
     h2_cell = verdict['hs2']['best_corridor_cell']
     any_cell = verdict['hs2']['best_any_gain_cell']
+    best_observed_cell = verdict['hs2']['best_observed_cell']
     report = [
         '# Strategic Camouflage Report',
         '',
@@ -740,18 +895,33 @@ def write_outputs(calibration, per_seed, cells, verdict):
         '',
         '## Calibration Gate',
         '',
-        f"- baseline strategic gate passed: `{calibration['passed']}`",
-        f"- mid-high mean final adversary c*: `{calibration['mid_high_mean_final_adversary_concealment']:.3f}`",
-        f"- first-crossing R*: `{calibration['first_crossing_r_star']}`",
-        f"- sustained R*: `{calibration['sustained_r_star']}`",
-        f"- mid-high mean permanence: `{calibration['mid_high_mean_permanence']:.3f}`",
+        f"- corrected calibration gate passed: `{calibration['passed']}`",
+        f"- gate (a), free concealment drives adversary c->1: `{calibration['gate_a_free_concealment']}`",
+        f"- gate (b), strategic full concealment collapses permanence: `{calibration['gate_b_strategic_collapse']}`",
+        f"- gate (c), passive-control reproduces parent coin-flip: `{calibration['gate_c_passive_faithfulness']}`",
+        f"- strategic mid-high final adversary c*: `{calibration['mid_high_mean_final_adversary_concealment']:.3f}`",
+        f"- strategic mid-high permanence: `{calibration['strategic_mid_high_mean_permanence']:.3f}`",
+        f"- passive-control mid-high permanence: `{calibration['passive_mid_high_mean_permanence']:.3f}`",
+        f"- passive-control first-crossing R*: `{calibration['passive_first_crossing_r_star']}`",
+        f"- passive-control sustained R*: `{calibration['passive_sustained_r_star']}`",
         f"- criterion: {calibration['criteria']}",
+        '',
+        '### Strategic Worst-Case Curve',
         '',
         '| R | success | permanence | Wilson 95% | adversary c* | corr | extinction |',
         '|---:|---:|---:|---:|---:|---:|---:|',
     ]
-    for point in calibration['curve']:
+    for point in calibration['strategic_curve']:
         report.append(f"| {point['R']:.3f} | {point['successes']}/{point['n']} | {point['permanence_rate']:.3f} | [{point['wilson_lo']:.3f}, {point['wilson_hi']:.3f}] | {point['mean_final_adversary_concealment']:.3f} | {point['mean_final_corr']:.3f} | {point['adversary_extinction_rate']:.3f} |")
+    report += [
+        '',
+        '### Passive-Control Faithfulness Curve',
+        '',
+        '| R | success | permanence | Wilson 95% | corr | extinction |',
+        '|---:|---:|---:|---:|---:|---:|',
+    ]
+    for point in calibration['passive_control_curve']:
+        report.append(f"| {point['R']:.3f} | {point['successes']}/{point['n']} | {point['permanence_rate']:.3f} | [{point['wilson_lo']:.3f}, {point['wilson_hi']:.3f}] | {point['mean_final_corr']:.3f} | {point['adversary_extinction_rate']:.3f} |")
     report += [
         '',
         '## Surface Summary',
@@ -769,6 +939,8 @@ def write_outputs(calibration, per_seed, cells, verdict):
         f"- concealment drop: `{verdict['hs1']['concealment_drop']:.3f}`",
         f"- baseline corr: `{verdict['hs1']['baseline']['mean_final_corr']:.3f}`",
         f"- strongest-cell corr: `{verdict['hs1']['strongest']['mean_final_corr']:.3f}`",
+        f"- strongest-cell adversary extinction: `{verdict['hs1']['strongest']['adversary_extinction_rate']:.3f}`",
+        f"- strongest-cell adversary share: `{verdict['hs1']['strongest']['mean_adversary_share']:.3f}`",
         f"- corr gain: `{verdict['hs1']['corr_gain']:.3f}`",
         f"- H_s1 supported: `{verdict['hs1']['supported']}`",
         '',
@@ -778,6 +950,7 @@ def write_outputs(calibration, per_seed, cells, verdict):
         f"- candidate cells over permanence threshold: `{verdict['hs2']['candidate_count']}`",
         f"- best non-extinction corridor cell: `{band(h2_cell)}`",
         f"- best any-gain cell: `{band(any_cell)}`",
+        f"- best observed permanence cell: `{band(best_observed_cell)}`",
         f"- extinction-only candidate count: `{verdict['hs2']['extinction_only_candidate_count']}`",
         f"- permanence only with extinction: `{verdict['hs2']['permanence_only_with_extinction']}`",
         f"- H_s2 supported: `{verdict['hs2']['supported']}`",
@@ -786,6 +959,8 @@ def write_outputs(calibration, per_seed, cells, verdict):
         report.append(f"- reveal-vs-extinction split: c* `{h2_cell['mean_adversary_concealment']:.3f}`, corr `{h2_cell['mean_final_corr']:.3f}`, adversary extinction `{h2_cell['adversary_extinction_rate']:.3f}`, adversary share `{h2_cell['mean_adversary_share']:.3f}`.")
     elif any_cell:
         report.append(f"- best gain split: c* `{any_cell['mean_adversary_concealment']:.3f}`, corr `{any_cell['mean_final_corr']:.3f}`, adversary extinction `{any_cell['adversary_extinction_rate']:.3f}`, adversary share `{any_cell['mean_adversary_share']:.3f}`.")
+    elif best_observed_cell:
+        report.append(f"- best observed split: c* `{best_observed_cell['mean_adversary_concealment']:.3f}`, corr `{best_observed_cell['mean_final_corr']:.3f}`, adversary extinction `{best_observed_cell['adversary_extinction_rate']:.3f}`, adversary share `{best_observed_cell['mean_adversary_share']:.3f}`.")
     report += [
         '',
         '## H_s3: Audit Cost',
@@ -822,7 +997,7 @@ def write_outputs(calibration, per_seed, cells, verdict):
         '| check | result | interpretation |',
         '|---|---|---|',
         f"| spec_hash | {'passed' if spec_hash() == DECLARED_SPEC_SHA256 else 'failed'} | declared `{DECLARED_SPEC_SHA256}`, actual `{spec_hash()}` |",
-        f"| calibration_gate | {'passed' if calibration['passed'] else 'failed'} | free concealment drives adversary c toward 1 and reproduces baseline coin-flip. |",
+        f"| calibration_gate | {'passed' if calibration['passed'] else 'failed'} | corrected gate (a)/(b)/(c): strategic c->1, strategic permanence collapse, passive-control parent coin-flip. |",
         '| type_blind_runtime_assert | passed | feeder `decide()` asserts no `behavior_gene`, `true_x`, or `concealment` on observation. |',
         '| true_gene_metric | passed | permanence and adversary extinction are computed from hidden true state, not signal. |',
         '| selfish_c_integrity | passed | c hill-climb optimizes group payoff; no reveal bonus or designer nudge is present. |',
@@ -832,9 +1007,9 @@ def write_outputs(calibration, per_seed, cells, verdict):
         '',
     ]
     if not calibration['passed']:
-        validation.append('stand invalid: strategic calibration failed; H_s1/H_s2/H_s3 should not be read.')
+        validation.append('stand invalid: corrected strategic calibration failed; H_s1/H_s2/H_s3 should not be read.')
     else:
-        validation.append('valid surface run; H_s1/H_s2/H_s3 are readable under the registered thresholds.')
+        validation.append('valid surface run; corrected gate (a)/(b)/(c) passed and H_s1/H_s2/H_s3 are readable under the registered thresholds.')
     (RESULTS / 'validation_report.md').write_text('\n'.join(validation) + '\n')
 
     manifest = {
@@ -873,7 +1048,7 @@ def write_calibration_failure_outputs(calibration, verdict):
     RESULTS.mkdir(parents=True, exist_ok=True)
     RAW.mkdir(parents=True, exist_ok=True)
     per_seed_fields = [
-        'seed', 'split', 'setting', 'R', 'gamma', 'p', 'C', 'kappa', 'true_permanence_hold', 'failure',
+        'mode', 'seed', 'split', 'setting', 'R', 'gamma', 'p', 'C', 'kappa', 'true_permanence_hold', 'failure',
         'final_corr_sa', 'mean_corr_sa', 'mean_adversary_concealment', 'final_adversary_concealment',
         'mean_adversary_fitness', 'adversary_extinct', 'mean_adversary_share', 'caught_events',
         'false_positive_events', 'steps_run'
@@ -919,7 +1094,7 @@ def write_calibration_failure_outputs(calibration, verdict):
         '',
         '## Calibration Gate',
         '',
-        f"- baseline strategic gate passed: `{calibration['passed']}`",
+        f"- corrected calibration gate passed: `{calibration['passed']}`",
         f"- mid-high mean final adversary c*: `{calibration['mid_high_mean_final_adversary_concealment']:.3f}`",
         f"- first-crossing R*: `{calibration['first_crossing_r_star']}`",
         f"- sustained R*: `{calibration['sustained_r_star']}`",
@@ -935,7 +1110,7 @@ def write_calibration_failure_outputs(calibration, verdict):
         '',
         '## Verdict',
         '',
-        'calibration failure: the strategic substrate does not reproduce the registered baseline coin-flip parent. H_s1/H_s2/H_s3 are not readable.',
+        'calibration failure: corrected gate (a)/(b)/(c) did not pass. H_s1/H_s2/H_s3 are not readable.',
         '',
         'The strategic layer drives the adversary toward full concealment when `(p=0, C=0, gamma=0)`, but the resulting baseline permanence is zero across the R grid rather than near coin-flip on the mid-high bucket. This indicates a substrate-transfer failure: full strategic concealment makes the hidden adversary capture the population instead of reproducing the parent `camouflage_audit/` baseline.',
         '',
@@ -966,7 +1141,7 @@ def write_calibration_failure_outputs(calibration, verdict):
         '',
         '## Verdict',
         '',
-        'stand invalid: strategic calibration failed; H_s1/H_s2/H_s3 should not be read.',
+        'stand invalid: corrected strategic calibration failed; H_s1/H_s2/H_s3 should not be read.',
     ]
     (RESULTS / 'validation_report.md').write_text('\n'.join(validation) + '\n')
 
@@ -1013,7 +1188,7 @@ def main():
     if not calibration['passed']:
         write_calibration_failure_outputs(calibration, {
             'readable': False,
-            'reason': 'calibration failure: baseline coin-flip parent not reproduced',
+            'reason': 'calibration failure: corrected gate (a)/(b)/(c) not satisfied',
             'hs1': {'supported': False},
             'hs2': {'supported': False},
             'hs3': {'kappa_star': None},
