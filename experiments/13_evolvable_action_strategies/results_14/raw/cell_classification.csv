@@ -1,0 +1,4 @@
+cell_id,class,perturb_pass_rate,perturb_pass_count,perturb_total
+W6_action_channel_containment,Robust,0.9285714285714286,13,14
+W6_consequence_plus_diversity,Robust,0.9285714285714286,13,14
+W1_consequence_plus_diversity,Seed artifact,0.42857142857142855,6,14

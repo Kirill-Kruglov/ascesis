@@ -1,0 +1,42 @@
+{
+  "git_head": "1c4ec21015a2914135b7ec33802e4a951ab013f3",
+  "git_status_short": "?? SPEC_IMPLEMENTED_14.md\n?? results_14/\n?? run14.py",
+  "spec_implemented_14_sha256": "9bdf817cbe624a4f2b3ec18a4001229174089544e50c57cebedb4cbd5fb3cfec",
+  "num_cases": 4675,
+  "num_runs": 4675,
+  "num_summary_cells": 178,
+  "validation_checks": {
+    "feeder_observation_excludes_strategy_parameters": true,
+    "derived_exploitative_label_not_in_policy": true,
+    "fixed_hidden_types_absent": true,
+    "mutation_and_selection_occur": true,
+    "exploitative_strategies_rise_under_no_control_baseline": true,
+    "feature_proxy_fails_W1": true,
+    "monoculture_fails_W5": true,
+    "full_policy_reproduces_at_least_one_exp13_viable_cell": true,
+    "ablation_code_preserves_base_full_dynamics": true,
+    "no_fixed_mi_claim_without_band": true
+  },
+  "cell_classification": {
+    "W6_action_channel_containment": {
+      "class": "Robust",
+      "perturb_pass_rate": 0.9285714285714286,
+      "perturb_pass_count": 13,
+      "perturb_total": 14
+    },
+    "W6_consequence_plus_diversity": {
+      "class": "Robust",
+      "perturb_pass_rate": 0.9285714285714286,
+      "perturb_pass_count": 13,
+      "perturb_total": 14
+    },
+    "W1_consequence_plus_diversity": {
+      "class": "Seed artifact",
+      "perturb_pass_rate": 0.42857142857142855,
+      "perturb_pass_count": 6,
+      "perturb_total": 14
+    }
+  },
+  "w2_boundary": "C. broad viable region under stronger containment",
+  "final_verdict": "A. At least one Experiment 13 kernel is robust."
+}
