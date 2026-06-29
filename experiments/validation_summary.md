@@ -1,8 +1,10 @@
-# Ascesis Experiments: External Validation Summary
+# Ascesis Experiments 01-06: External Validation Summary
 
-Audience: external reviewer without repository/file access. This document summarizes all six current experiments, their configurations, artifact checks, and current results. It intentionally avoids graphs and includes tables directly.
+Audience: external reviewer without repository/file access. This document summarizes experiments 01-06, their configurations, artifact checks, and current results. It intentionally avoids graphs and includes tables directly.
 
 Status note: these are toy experiments for boundary-finding, not claims of alignment progress. A negative result is treated as valid when artifact checks pass.
+
+Historical note: this summary covers the original experiments 01-06 only. Later experiment families are indexed in `experiments/INDEX.md`, including the 08-hosted 09-12 sequence, experiment 13, the 14-17F DSL/consequence/backbone/latent-geometry line, and the BA/FA/JB evidence trees.
 
 ## Narrowed Research Question
 

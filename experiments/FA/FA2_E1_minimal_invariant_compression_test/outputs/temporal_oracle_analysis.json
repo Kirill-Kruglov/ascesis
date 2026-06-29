@@ -1,0 +1,17 @@
+{
+  "circularity_risk": "high",
+  "class_counts": {
+    "forward_dynamics_blind": 1364,
+    "history_blind": 1932,
+    "policy_visible_concentration_blind": 1115,
+    "unknown_or_mixed": 304
+  },
+  "constructive_refinement_status": "not_constructive_future_label_oracle",
+  "coverage_fraction_all_witnesses": 0.8075012844665183,
+  "covers_current_not_collapsed_false_safe_witnesses": 4715,
+  "oracle_invariant": "steps_to_future_collapse is finite and current_collapse_clause == none",
+  "steps_to_collapse_max": 99,
+  "steps_to_collapse_mean": 20.561611876988334,
+  "steps_to_collapse_median": 18,
+  "steps_to_collapse_min": 1
+}

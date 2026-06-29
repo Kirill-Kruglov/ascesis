@@ -1,0 +1,50 @@
+{
+  "classification": "H_BA2_rejected",
+  "dominated_clean_edges": [
+    {
+      "dominated": "MB2",
+      "dominated_benefit": 0.027051479130870092,
+      "dominated_cost": 0.37749999999999995,
+      "dominator": "MB1",
+      "dominator_benefit": 0.13571208449216943,
+      "dominator_cost": 0.2719496855345912,
+      "involves_noncomparable_shift": 0
+    },
+    {
+      "dominated": "MB5",
+      "dominated_benefit": 0.009382309932929073,
+      "dominated_cost": 0.39083333333333337,
+      "dominator": "MB1",
+      "dominator_benefit": 0.13571208449216943,
+      "dominator_cost": 0.2719496855345912,
+      "involves_noncomparable_shift": 0
+    },
+    {
+      "dominated": "MB5",
+      "dominated_benefit": 0.009382309932929073,
+      "dominated_cost": 0.39083333333333337,
+      "dominator": "MB2",
+      "dominator_benefit": 0.027051479130870092,
+      "dominator_cost": 0.37749999999999995,
+      "involves_noncomparable_shift": 0
+    }
+  ],
+  "high_cost_low_benefit_mechanisms": [
+    "MB2",
+    "MB5"
+  ],
+  "investigate_first": "MB5",
+  "mb4_note": "MB4 has an apparent strong effect but is non-comparable because BA1 marked it severe_semantic_shift.",
+  "pareto_frontier_all": [
+    "MB4",
+    "MB3",
+    "MB1"
+  ],
+  "pareto_frontier_comparable_only": [
+    "MB3",
+    "MB1"
+  ],
+  "reason": "at least one clean mechanism has high structural cost and low semantic benefit",
+  "strongest_counterexample_against_H_BA2": "MB2",
+  "worst_benefit_cost_ratio": "MB5"
+}

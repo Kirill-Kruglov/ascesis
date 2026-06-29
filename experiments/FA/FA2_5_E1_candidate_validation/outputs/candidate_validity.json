@@ -1,0 +1,20 @@
+{
+  "acceptance_criteria": {
+    "C1_precision_exceeds_18_0_by_margin": false,
+    "C1_precision_gain": -0.08405155679788812,
+    "C1_required_margin": 0.05,
+    "C2_recall_does_not_collapse": true,
+    "C3_no_oracle_information": true,
+    "C4_only_layer_eligible_coordinates": true,
+    "C5_not_matched_by_history_baseline": false,
+    "equivalence_epsilon": 0.02,
+    "history_baseline_matches_candidate": true
+  },
+  "candidate_exists": false,
+  "classification": "No_discriminative_candidate",
+  "do_not_claim_safety": true,
+  "do_not_modify_shield": true,
+  "history_baseline_relation": "Equivalent_to_standard_history_refinement",
+  "reason": "Candidate fails discrimination acceptance criteria; history relation is still recorded separately.",
+  "should_T_C_be_executed": "NO"
+}

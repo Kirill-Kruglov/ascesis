@@ -1,0 +1,11 @@
+{
+  "level_A": "fidelity_fails_false_safe",
+  "level_B": "not_run",
+  "classification": "special_theory_precondition_fails_at_abstraction_fidelity",
+  "false_safe_rate": 0.29897577629653715,
+  "pure_abstraction_blindness_rate": 0.19305525223848002,
+  "pre_registered_threshold": 0.05,
+  "blocking_issue": "18.0's 2-counter abstraction is not faithful to real justitia collapse: it is blind to zone-welfare spread and total mass, and (its doomed set being U only) predicts no forward collapse.",
+  "reformulation_hint": "A faithful abstraction needs at least: min-zone-welfare (or count of failed zones) AND total mass as coordinates, AND a genuine forward reachability on the real (or a richer) transition \u2014 not the trivial bounded-sword game that collapses doomed to U.",
+  "next_step": "Reformulate the abstraction with min-zone-welfare/failed-zone-count and total-mass coordinates and a genuine forward reachability, then re-run 18.0 fidelity BEFORE any training. Do NOT proceed to 18.2/18.3."
+}

@@ -1,0 +1,94 @@
+{
+  "clause_overlap_matrix": {
+    "mass_clause": {
+      "mass_clause": 0.0,
+      "mean_clause": 0.0,
+      "spread_clause": 0.0
+    },
+    "mean_clause": {
+      "mass_clause": 0.0,
+      "mean_clause": 0.0,
+      "spread_clause": 0.0
+    },
+    "spread_clause": {
+      "mass_clause": 0.0,
+      "mean_clause": 0.0,
+      "spread_clause": 0.0
+    }
+  },
+  "code_flag_agreement_fraction": 1.0,
+  "collapse_coverage": {
+    "mass_clause": 0.0,
+    "mean_clause": 0.0,
+    "spread_clause": 0.0
+  },
+  "current_collapse_rate": 0.0,
+  "false_blindness_decomposition": {
+    "false_safe_current_mass_clause_blind": 0,
+    "false_safe_current_spread_clause_blind": 0,
+    "false_safe_due_forward_dynamics": 0,
+    "false_safe_total": 0,
+    "false_unsafe_primary_mean_only": 0,
+    "false_unsafe_total": 0
+  },
+  "false_safe_rate": 0.0,
+  "false_unsafe_rate": 0.0,
+  "future_collapse_rate": 0.0,
+  "mean_welfare_mean": 0.9504439330018092,
+  "minimal_counterexample_count": 0,
+  "monotonicity_witness_count": 0,
+  "n_doomed": 0,
+  "n_safe": 24000,
+  "n_states": 24000,
+  "per_policy": {
+    "action_channel_containment": {
+      "false_safe_rate": 0.0,
+      "false_unsafe_rate": 0.0,
+      "n": 4800,
+      "n_safe": 4800
+    },
+    "consequence_neighbor": {
+      "false_safe_rate": 0.0,
+      "false_unsafe_rate": 0.0,
+      "n": 4800,
+      "n_safe": 4800
+    },
+    "consequence_plus_diversity": {
+      "false_safe_rate": 0.0,
+      "false_unsafe_rate": 0.0,
+      "n": 4800,
+      "n_safe": 4800
+    },
+    "feature_proxy": {
+      "false_safe_rate": 0.0,
+      "false_unsafe_rate": 0.0,
+      "n": 4800,
+      "n_safe": 4800
+    },
+    "response_to_aid": {
+      "false_safe_rate": 0.0,
+      "false_unsafe_rate": 0.0,
+      "n": 4800,
+      "n_safe": 4800
+    }
+  },
+  "pure_blindness": {
+    "currently_collapsed_labeled_safe": 0,
+    "n_currently_collapsed": 0,
+    "rate": 0.0
+  },
+  "resource_hhi_mean": 0.11688036816030775,
+  "run": "MB4",
+  "semantic_delta_vs_baseline": {
+    "current_collapse_rate_delta": -0.35641666666666666,
+    "future_collapse_rate_delta": -0.5531666666666667,
+    "mean_welfare_delta": 0.32432120808806264,
+    "shield_acceptance_rate_delta": 0.309875,
+    "total_mass_delta": -2666.224200050532
+  },
+  "semantic_validity": "severe_semantic_shift",
+  "shield_acceptance_rate": 1.0,
+  "total_mass_mean": 247.5,
+  "transition_witness_examples": [],
+  "witness_type_counts": {}
+}

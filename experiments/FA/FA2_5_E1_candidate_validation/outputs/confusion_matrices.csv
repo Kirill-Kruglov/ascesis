@@ -1,0 +1,5 @@
+model,tp,fp,tn,fn
+B0_current_18_0,1369,221,1482,415
+B1_history_CEGAR,1331,256,1447,453
+B2_raw_current_state,1224,286,1417,560
+Candidate_FA2_compact,944,271,1432,840

@@ -1,0 +1,7 @@
+{
+  "best_precision": 0.6495433789954338,
+  "best_predicted_unsafe_fraction": 0.753656438199025,
+  "final_precision": 0.6495433789954338,
+  "final_predicted_unsafe_fraction": 0.753656438199025,
+  "vacuity_observed": true
+}

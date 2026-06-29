@@ -1,0 +1,28 @@
+{
+  "best_benefit_cost_ratio": 1.9415341783280828,
+  "best_benefit_cost_surrogate": "S4b_reporting_ratios",
+  "best_false_safe_rate": 0.31171889150516213,
+  "best_false_safe_surrogate": "S4a_policy_visible_concentration",
+  "best_transition_benefit_cost_ratio": 1.0452775637545912,
+  "best_transition_benefit_cost_surrogate": "S4a_policy_visible_concentration",
+  "decision": "MB5_functionally_split",
+  "failed_transition_surrogates": [
+    "S1_absolute_deficit",
+    "S2_threshold_boolean",
+    "S3_conservative_upper_bound"
+  ],
+  "fidelity_useful_but_costly_transition_surrogates": [
+    "S4a_policy_visible_concentration"
+  ],
+  "invalid_surrogates": [],
+  "strongest_counterexample_against_H0": "S4b_reporting_ratios",
+  "strongest_counterexample_against_H1": "S1_absolute_deficit",
+  "successful_subfamily_replacements": [
+    "S4b_reporting_ratios",
+    "S4c_projection_resource_hhi",
+    "S4d_capture_components"
+  ],
+  "successful_surrogates": [],
+  "successful_transition_surrogates": [],
+  "surrogates_reducing_witness_count": []
+}

@@ -1,0 +1,192 @@
+{
+  "R3_residual_class_counts": {
+    "forward_dynamics_blind": 1364
+  },
+  "R3_residual_count": 1364,
+  "constructive_limit": "FA1 witness-only input supports witness coverage, but not false-positive/precision estimates against non-false-safe SAFE states.",
+  "selected_proxy": "min_zone_welfare <= 0.96",
+  "selected_proxy_coverage_count": 1354,
+  "selected_proxy_coverage_fraction_of_R3_residual": 0.9926686217008798,
+  "selected_proxy_missed_count": 10,
+  "selected_proxy_missed_examples": [
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96211618",
+      "policy": "consequence_neighbor",
+      "seed": "9602",
+      "step": "7",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96055058",
+      "policy": "consequence_neighbor",
+      "seed": "9602",
+      "step": "8",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96413692",
+      "policy": "consequence_neighbor",
+      "seed": "9607",
+      "step": "7",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96233314",
+      "policy": "consequence_neighbor",
+      "seed": "9607",
+      "step": "8",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96025975",
+      "policy": "consequence_neighbor",
+      "seed": "9607",
+      "step": "9",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "44",
+      "min_zone_welfare": "0.96235528",
+      "policy": "response_to_aid",
+      "seed": "9602",
+      "step": "7",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "44",
+      "min_zone_welfare": "0.96078014",
+      "policy": "response_to_aid",
+      "seed": "9602",
+      "step": "8",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96377912",
+      "policy": "response_to_aid",
+      "seed": "9607",
+      "step": "7",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.96233923",
+      "policy": "response_to_aid",
+      "seed": "9607",
+      "step": "8",
+      "world": "W6_mutation_corridor"
+    },
+    {
+      "future_collapse_step": "43",
+      "min_zone_welfare": "0.9607194",
+      "policy": "response_to_aid",
+      "seed": "9607",
+      "step": "9",
+      "world": "W6_mutation_corridor"
+    }
+  ],
+  "selected_proxy_reason": "highest single-threshold coverage among non-oracle current/delayed fields available in FA1 witness rows",
+  "top_candidate_thresholds": [
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1354
+      },
+      "proxy": "min_zone_welfare <= 0.96",
+      "residual_after_R3_coverage_count": 1354,
+      "residual_after_R3_coverage_fraction": 0.9926686217008798
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1348
+      },
+      "proxy": "delayed_obs_min_welfare <= 0.96",
+      "residual_after_R3_coverage_count": 1348,
+      "residual_after_R3_coverage_fraction": 0.9882697947214076
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1297
+      },
+      "proxy": "total_mass <= 1000",
+      "residual_after_R3_coverage_count": 1297,
+      "residual_after_R3_coverage_fraction": 0.9508797653958945
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1293
+      },
+      "proxy": "total_mass <= 750",
+      "residual_after_R3_coverage_count": 1293,
+      "residual_after_R3_coverage_fraction": 0.9479472140762464
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1271
+      },
+      "proxy": "obs_neighbor_delta_min <= 0.0",
+      "residual_after_R3_coverage_count": 1271,
+      "residual_after_R3_coverage_fraction": 0.9318181818181818
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1238
+      },
+      "proxy": "min_zone_welfare <= 0.94",
+      "residual_after_R3_coverage_count": 1238,
+      "residual_after_R3_coverage_fraction": 0.907624633431085
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1198
+      },
+      "proxy": "delayed_obs_min_welfare <= 0.94",
+      "residual_after_R3_coverage_count": 1198,
+      "residual_after_R3_coverage_fraction": 0.8782991202346041
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1136
+      },
+      "proxy": "min_zone_welfare <= 0.92",
+      "residual_after_R3_coverage_count": 1136,
+      "residual_after_R3_coverage_fraction": 0.8328445747800587
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1098
+      },
+      "proxy": "mean_welfare <= 0.96",
+      "residual_after_R3_coverage_count": 1098,
+      "residual_after_R3_coverage_fraction": 0.8049853372434017
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1090
+      },
+      "proxy": "delayed_obs_min_welfare <= 0.92",
+      "residual_after_R3_coverage_count": 1090,
+      "residual_after_R3_coverage_fraction": 0.7991202346041055
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1050
+      },
+      "proxy": "min_zone_welfare <= 0.9",
+      "residual_after_R3_coverage_count": 1050,
+      "residual_after_R3_coverage_fraction": 0.7697947214076246
+    },
+    {
+      "covered_class_counts": {
+        "forward_dynamics_blind": 1045
+      },
+      "proxy": "total_mass <= 500",
+      "residual_after_R3_coverage_count": 1045,
+      "residual_after_R3_coverage_fraction": 0.7661290322580645
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "projection": "a = round(A_collapse*(1-mean_welfare)/(1-0.32)); c = round(resource_hhi*Cmax); a>=A_collapse <=> mean_welfare<0.32 (reproduces the real PRIMARY collapse clause).",
+  "shield_doomed_set": "18.0 bounded-coupling doomed set = U only (backward reachability converged in 1 iteration); so DOOMED <=> projected mean_welfare<0.32.",
+  "headline_rest_of_trajectory": {
+    "horizon": "rest_of_trajectory",
+    "n_states": 16000,
+    "n_safe": 12302,
+    "n_doomed": 3698,
+    "confusion_matrix": {
+      "tp_doomed_collapse": 3698,
+      "fp_doomed_nocollapse": 0,
+      "tn_safe_nocollapse": 8624,
+      "fn_safe_collapse": 3678
+    },
+    "false_safe_rate": 0.29897577629653715,
+    "false_doomed_rate": 0.0,
+    "doomed_precision_vs_collapse": 1.0,
+    "doomed_recall_vs_collapse": 0.5013557483731019,
+    "per_policy_false_safe_rate": {
+      "action_channel_containment": {
+        "false_safe_rate": 0.07525,
+        "false_safe": 301,
+        "n_safe": 4000
+      },
+      "consequence_neighbor": {
+        "false_safe_rate": 0.7101449275362319,
+        "false_safe": 1470,
+        "n_safe": 2070
+      },
+      "consequence_plus_diversity": {
+        "false_safe_rate": 0.09375,
+        "false_safe": 375,
+        "n_safe": 4000
+      },
+      "feature_proxy": {
+        "false_safe_rate": 0.6863799283154122,
+        "false_safe": 1532,
+        "n_safe": 2232
+      }
+    },
+    "pure_abstraction_blindness": {
+      "n_currently_collapsed": 4579,
+      "currently_collapsed_labeled_SAFE": 884,
+      "rate": 0.19305525223848002,
+      "blind_via_spread_clause": 484,
+      "blind_via_mass_clause": 400,
+      "via_mean_welfare_misround": 0
+    }
+  },
+  "windowed": {
+    "horizon_10": {
+      "horizon": 10,
+      "n_states": 16000,
+      "n_safe": 12302,
+      "n_doomed": 3698,
+      "confusion_matrix": {
+        "tp_doomed_collapse": 3698,
+        "fp_doomed_nocollapse": 0,
+        "tn_safe_nocollapse": 10617,
+        "fn_safe_collapse": 1685
+      },
+      "false_safe_rate": 0.13696959843927817,
+      "false_doomed_rate": 0.0,
+      "doomed_precision_vs_collapse": 1.0,
+      "doomed_recall_vs_collapse": 0.686977521827977,
+      "per_policy_false_safe_rate": {
+        "action_channel_containment": {
+          "false_safe_rate": 0.059,
+          "false_safe": 236,
+          "n_safe": 4000
+        },
+        "consequence_neighbor": {
+          "false_safe_rate": 0.27391304347826084,
+          "false_safe": 567,
+          "n_safe": 2070
+        },
+        "consequence_plus_diversity": {
+          "false_safe_rate": 0.0745,
+          "false_safe": 298,
+          "n_safe": 4000
+        },
+        "feature_proxy": {
+          "false_safe_rate": 0.2616487455197133,
+          "false_safe": 584,
+          "n_safe": 2232
+        }
+      },
+      "pure_abstraction_blindness": {
+        "n_currently_collapsed": 4579,
+        "currently_collapsed_labeled_SAFE": 884,
+        "rate": 0.19305525223848002,
+        "blind_via_spread_clause": 484,
+        "blind_via_mass_clause": 400,
+        "via_mean_welfare_misround": 0
+      }
+    },
+    "horizon_20": {
+      "horizon": 20,
+      "n_states": 16000,
+      "n_safe": 12302,
+      "n_doomed": 3698,
+      "confusion_matrix": {
+        "tp_doomed_collapse": 3698,
+        "fp_doomed_nocollapse": 0,
+        "tn_safe_nocollapse": 9832,
+        "fn_safe_collapse": 2470
+      },
+      "false_safe_rate": 0.20078036091692408,
+      "false_doomed_rate": 0.0,
+      "doomed_precision_vs_collapse": 1.0,
+      "doomed_recall_vs_collapse": 0.5995460440985733,
+      "per_policy_false_safe_rate": {
+        "action_channel_containment": {
+          "false_safe_rate": 0.07225,
+          "false_safe": 289,
+          "n_safe": 4000
+        },
+        "consequence_neighbor": {
+          "false_safe_rate": 0.43816425120772945,
+          "false_safe": 907,
+          "n_safe": 2070
+        },
+        "consequence_plus_diversity": {
+          "false_safe_rate": 0.09,
+          "false_safe": 360,
+          "n_safe": 4000
+        },
+        "feature_proxy": {
+          "false_safe_rate": 0.40949820788530467,
+          "false_safe": 914,
+          "n_safe": 2232
+        }
+      },
+      "pure_abstraction_blindness": {
+        "n_currently_collapsed": 4579,
+        "currently_collapsed_labeled_SAFE": 884,
+        "rate": 0.19305525223848002,
+        "blind_via_spread_clause": 484,
+        "blind_via_mass_clause": 400,
+        "via_mean_welfare_misround": 0
+      }
+    }
+  },
+  "blind_coordinates": {
+    "abstraction_coordinates": [
+      "c = concentration (resource_hhi)",
+      "a = mean-welfare deficit"
+    ],
+    "real_collapse_uses": [
+      "mean(zone_welfare)<0.32",
+      "#{zone_welfare<0.20}>=4 (zone-welfare SPREAD)",
+      "total_mass<35 (population MASS)"
+    ],
+    "blind_to": [
+      "zone-welfare SPREAD: the '>=4 zones<0.20' clause \u2014 a state with healthy MEAN welfare but 4 collapsed zones is real-collapse, projected to SAFE.",
+      "total MASS: the 'mass<35' clause \u2014 population collapse with ok welfare, projected to SAFE.",
+      "FORWARD dynamics: 18.0's doomed set converged in 1 iteration to U itself, so the shield is a current-mean-welfare-collapse DETECTOR, not a forward-collapse predictor; mean-welfare-safe states that proceed to collapse are labeled SAFE."
+    ],
+    "reformulation_hint": "A faithful abstraction needs at least: min-zone-welfare (or count of failed zones) AND total mass as coordinates, AND a genuine forward reachability on the real (or a richer) transition \u2014 not the trivial bounded-sword game that collapses doomed to U."
+  }
+}

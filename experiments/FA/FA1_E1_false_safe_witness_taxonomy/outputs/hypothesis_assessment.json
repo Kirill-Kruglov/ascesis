@@ -1,0 +1,46 @@
+{
+  "H_FA1_assessment": "supported",
+  "classification": "Case C \u2014 History_control_dominant",
+  "do_not_claim_safety": true,
+  "do_not_propose_new_shield": true,
+  "falsification_checks": {
+    "class_entropy_bits": 2.334519548257765,
+    "layer_ineligible_fraction": 0.0,
+    "policy_class_counts": {
+      "action_channel_containment": {
+        "forward_dynamics_blind": 15,
+        "mass_blind": 172,
+        "unknown_or_mixed": 114
+      },
+      "consequence_neighbor": {
+        "forward_dynamics_blind": 390,
+        "history_blind": 637,
+        "policy_visible_concentration_blind": 364,
+        "spread_blind": 240,
+        "unknown_or_mixed": 34
+      },
+      "consequence_plus_diversity": {
+        "forward_dynamics_blind": 18,
+        "mass_blind": 228,
+        "unknown_or_mixed": 129
+      },
+      "feature_proxy": {
+        "forward_dynamics_blind": 461,
+        "history_blind": 662,
+        "policy_visible_concentration_blind": 337,
+        "spread_blind": 259,
+        "unknown_or_mixed": 10
+      },
+      "response_to_aid": {
+        "forward_dynamics_blind": 480,
+        "history_blind": 633,
+        "policy_visible_concentration_blind": 414,
+        "spread_blind": 225,
+        "unknown_or_mixed": 17
+      }
+    },
+    "top3_candidate_coverage": 0.7554375749272135,
+    "unknown_or_mixed_fraction": 0.05206370953930468
+  },
+  "interpretation": "A large fraction requires delayed observation, policy-visible concentration, or control state."
+}

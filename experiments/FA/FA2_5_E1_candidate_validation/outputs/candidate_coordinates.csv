@@ -1,0 +1,6 @@
+coordinate,definition,layer_eligibility,oracle,reporting_only,justification
+failed_zone_count_ge_4,L4 spread-collapse flag,L4 eligible,no,no,Survived BA4/FA2 as non-oracle layer-eligible missing-information coordinate.
+total_mass_lt_35,L4 mass-collapse flag,L4 eligible,no,no,Survived BA4/FA2 as non-oracle layer-eligible missing-information coordinate.
+policy_visible_concentration,conditional L2/L3 Obs.resource_concentration threshold,conditional L2/L3,no,no,Survived BA4/FA2 as non-oracle layer-eligible missing-information coordinate.
+delayed_harm_signal,conditional L2/L3 compact history/consequence flag,conditional L2/L3,no,no,Survived BA4/FA2 as non-oracle layer-eligible missing-information coordinate.
+min_zone_welfare_le_0_96,BA4-eligible compact spread-risk proxy; empirical threshold from FA2,L4 eligible,no,no,Survived BA4/FA2 as non-oracle layer-eligible missing-information coordinate.

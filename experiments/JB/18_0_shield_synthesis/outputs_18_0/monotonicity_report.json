@@ -1,0 +1,82 @@
+{
+  "abstract_transition_monotonicity": {
+    "bounded_reaction": {
+      "fraction_monotone": 1.0,
+      "monotone": true,
+      "reaction_magnitude_max": 3,
+      "reaction_bounded": true,
+      "pairs_tested": 24108
+    }
+  },
+  "real_substrate_reaction_magnitude": {
+    "per_step_change_distributions": {
+      "containment_active": {
+        "welfare_up": {
+          "n": 4562,
+          "max_per_step_improvement": 0.08181400780994474,
+          "max_abs_per_step_change": 0.5850920415825077,
+          "mean_change": 0.0031855399947814654,
+          "p99_abs_change": 0.06841588351749756
+        },
+        "min_zone_welfare_up": {
+          "n": 4562,
+          "max_per_step_improvement": 0.10932703838557922,
+          "max_abs_per_step_change": 0.6465544744885807,
+          "mean_change": 0.0028268794887101813,
+          "p99_abs_change": 0.09901062480163003
+        },
+        "concentration_down": {
+          "n": 4562,
+          "max_per_step_improvement": 0.03211145639627111,
+          "max_abs_per_step_change": 0.035885702556679666,
+          "mean_change": 0.0013668112834873119,
+          "p99_abs_change": 0.022745265078160326
+        },
+        "capture_down": {
+          "n": 4562,
+          "max_per_step_improvement": 0.024685035745378836,
+          "max_abs_per_step_change": 0.032442693983672055,
+          "mean_change": -0.0003579781448182168,
+          "p99_abs_change": 0.022141048126627816
+        }
+      },
+      "containment_inactive": {
+        "welfare_up": {
+          "n": 11278,
+          "max_per_step_improvement": 0.06656925860621155,
+          "max_abs_per_step_change": 0.6199305340084651,
+          "mean_change": -0.0038030108633487704,
+          "p99_abs_change": 0.05619372607010387
+        },
+        "min_zone_welfare_up": {
+          "n": 11278,
+          "max_per_step_improvement": 0.09771416282427875,
+          "max_abs_per_step_change": 0.6405353773154083,
+          "mean_change": -0.0034368727801520485,
+          "p99_abs_change": 0.08803602247938225
+        },
+        "concentration_down": {
+          "n": 11278,
+          "max_per_step_improvement": 0.0340747513369018,
+          "max_abs_per_step_change": 0.11610188003466837,
+          "mean_change": 0.0005129251702607559,
+          "p99_abs_change": 0.028488019307795653
+        },
+        "capture_down": {
+          "n": 11278,
+          "max_per_step_improvement": 0.021518842707773267,
+          "max_abs_per_step_change": 0.1072868780098718,
+          "mean_change": 0.0022870738770516177,
+          "p99_abs_change": 0.03484697139330273
+        }
+      }
+    },
+    "structural_bound_note": "escrow welfare gain <= 0.20*raw_aid (raw_aid<=~1.92), all coords clamped to [0,1]; concentration/aid reductions are bounded multiplicative factors; accumulated-harm volumes are cumulative and never reset. => per-step reaction is bounded by construction.",
+    "max_welfare_restoration_per_step_when_active": 0.08181400780994474,
+    "max_concentration_reduction_per_step_when_active": 0.03211145639627111,
+    "sword_reaction_bounded": true,
+    "unbounded_reset_observed": false
+  },
+  "monotone": true,
+  "sword_reaction_bounded": true
+}

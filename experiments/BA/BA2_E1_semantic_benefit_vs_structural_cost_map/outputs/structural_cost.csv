@@ -1,0 +1,6 @@
+mechanism,semantic_validity,history_dependence,global_coupling,relative_observables,non_local_transitions,transition_branching,interaction_degree,static_structural_cost,baseline_monotonicity_witness_count,ablated_monotonicity_witness_count,witness_reduction_when_removed,baseline_minimal_counterexample_count,ablated_minimal_counterexample_count,counterexample_reduction_when_removed,isolation_cost,structural_cost_score
+MB1,comparable_enough_for_diagnostic,1.0,0.25,0.1,0.35,0.45,0.65,0.4666666666666666,2650,2488,0.06113207547169811,16,21,0.0,0.0,0.2719496855345912
+MB2,comparable_enough_for_diagnostic,0.0,0.95,0.8,0.9,0.65,0.75,0.6749999999999999,2650,2722,0.0,16,15,0.0625,0.0,0.37749999999999995
+MB3,comparable_enough_for_diagnostic,0.45,0.65,0.55,0.7,0.95,1.0,0.7166666666666667,2650,2532,0.04452830188679245,16,22,0.0,0.0,0.4052987421383648
+MB4,severe_semantic_shift,0.8,0.85,0.55,0.95,1.0,1.0,0.8583333333333334,2650,0,1.0,16,0,1.0,1.0,0.9220833333333334
+MB5,comparable_enough_for_diagnostic,0.1,0.75,1.0,0.55,0.5,0.75,0.6083333333333333,2650,5731,0.0,16,7,0.5625,0.0,0.39083333333333337

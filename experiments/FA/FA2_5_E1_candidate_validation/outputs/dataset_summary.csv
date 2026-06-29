@@ -1,0 +1,12 @@
+item,count,detail
+all_harvested_states,24000,BA1 baseline replay
+available_A_false_safe,5839,18.0 SAFE and future collapse
+available_B_safe_remain_safe,10724,18.0 SAFE and no future collapse
+selected_A_false_safe,5839,all available A
+selected_B_safe_remain_safe,5839,sampled with seed 2525
+train_rows,8191,group split fraction 0.7
+test_rows,3487,held-out trajectory groups
+test_A_false_safe,1784,split label/population count
+test_B_safe_remain_safe,1703,split label/population count
+train_A_false_safe,4055,split label/population count
+train_B_safe_remain_safe,4136,split label/population count

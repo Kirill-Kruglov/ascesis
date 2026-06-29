@@ -1,0 +1,13 @@
+{
+  "apparent_largest_positive_CI_including_invalid": 1.0,
+  "apparent_top_mechanism_including_invalid": "MB4",
+  "dominance_ratio": 0.0,
+  "interpretation": "the only apparently dominant ablation is a severe semantic shift; clean single-mechanism ablations do not materially reduce false-safe error",
+  "largest_positive_CI": 0.0,
+  "material_single_ablation_count": 0,
+  "qualitative_interaction_indicator": "high",
+  "semantic_shift_ablation_warnings": [
+    "MB4"
+  ],
+  "top_mechanism": "none_clean_ablation"
+}

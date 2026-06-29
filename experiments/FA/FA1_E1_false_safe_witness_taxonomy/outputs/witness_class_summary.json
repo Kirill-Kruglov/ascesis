@@ -1,0 +1,104 @@
+{
+  "class_counts": {
+    "control_blind": 0,
+    "forward_dynamics_blind": 1364,
+    "history_blind": 1932,
+    "layer_confusion_blind": 0,
+    "mass_blind": 400,
+    "mean_blind": 0,
+    "policy_visible_concentration_blind": 1115,
+    "spread_blind": 724,
+    "unknown_or_mixed": 304
+  },
+  "class_entropy_bits": 2.334519548257765,
+  "class_fractions": {
+    "control_blind": 0.0,
+    "forward_dynamics_blind": 0.23360164411714335,
+    "history_blind": 0.3308785750984758,
+    "layer_confusion_blind": 0.0,
+    "mass_blind": 0.06850488097276931,
+    "mean_blind": 0.0,
+    "policy_visible_concentration_blind": 0.19095735571159445,
+    "spread_blind": 0.12399383456071245,
+    "unknown_or_mixed": 0.05206370953930468
+  },
+  "current_collapse_rate": 0.35641666666666666,
+  "false_safe_due_current_collapse": 1124,
+  "false_safe_due_forward_dynamics": 4715,
+  "false_safe_rate_over_safe": 0.3525327537281893,
+  "future_collapse_rate": 0.5531666666666667,
+  "history_control_information_witnesses": 3047,
+  "layer_confusion_witnesses": 0,
+  "n_doomed": 7437,
+  "n_safe": 16563,
+  "n_states": 24000,
+  "omitted_real_collapse_clause_witnesses_spread_plus_mass": 1124,
+  "per_policy": {
+    "action_channel_containment": {
+      "false_safe_count": 301,
+      "false_safe_rate_over_safe": 0.06270833333333334,
+      "n_safe": 4800,
+      "n_states": 4800
+    },
+    "consequence_neighbor": {
+      "false_safe_count": 1665,
+      "false_safe_rate_over_safe": 0.7350993377483444,
+      "n_safe": 2265,
+      "n_states": 4800
+    },
+    "consequence_plus_diversity": {
+      "false_safe_count": 375,
+      "false_safe_rate_over_safe": 0.078125,
+      "n_safe": 4800,
+      "n_states": 4800
+    },
+    "feature_proxy": {
+      "false_safe_count": 1729,
+      "false_safe_rate_over_safe": 0.7118155619596542,
+      "n_safe": 2429,
+      "n_states": 4800
+    },
+    "response_to_aid": {
+      "false_safe_count": 1769,
+      "false_safe_rate_over_safe": 0.7796386073159982,
+      "n_safe": 2269,
+      "n_states": 4800
+    }
+  },
+  "per_policy_class_counts": {
+    "action_channel_containment": {
+      "forward_dynamics_blind": 15,
+      "mass_blind": 172,
+      "unknown_or_mixed": 114
+    },
+    "consequence_neighbor": {
+      "forward_dynamics_blind": 390,
+      "history_blind": 637,
+      "policy_visible_concentration_blind": 364,
+      "spread_blind": 240,
+      "unknown_or_mixed": 34
+    },
+    "consequence_plus_diversity": {
+      "forward_dynamics_blind": 18,
+      "mass_blind": 228,
+      "unknown_or_mixed": 129
+    },
+    "feature_proxy": {
+      "forward_dynamics_blind": 461,
+      "history_blind": 662,
+      "policy_visible_concentration_blind": 337,
+      "spread_blind": 259,
+      "unknown_or_mixed": 10
+    },
+    "response_to_aid": {
+      "forward_dynamics_blind": 480,
+      "history_blind": 633,
+      "policy_visible_concentration_blind": 414,
+      "spread_blind": 225,
+      "unknown_or_mixed": 17
+    }
+  },
+  "shield_acceptance_rate": 0.690125,
+  "total_false_safe_witnesses": 5839,
+  "unknown_or_mixed_fraction": 0.05206370953930468
+}

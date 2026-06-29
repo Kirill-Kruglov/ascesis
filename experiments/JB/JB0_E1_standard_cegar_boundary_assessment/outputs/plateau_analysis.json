@@ -1,0 +1,6 @@
+{
+  "final_iteration": 1,
+  "plateau_eps": 0.005,
+  "plateau_observed": false,
+  "stop_reason": "vacuity"
+}

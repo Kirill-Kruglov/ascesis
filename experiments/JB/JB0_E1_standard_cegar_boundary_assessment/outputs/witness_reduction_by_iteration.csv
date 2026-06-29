@@ -1,0 +1,3 @@
+iteration,remaining_false_safe_train,remaining_false_safe_heldout,heldout_positive_count,heldout_false_safe_rate
+0,4055,1784,1784,1.0
+1,298,77,1784,0.043161434977578475
