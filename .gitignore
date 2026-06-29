@@ -1,3 +1,16 @@
 ascesis_of_learning_grace/dialogs
+
+# Local Python/tooling artifacts
 __pycache__/
-*.pyc
+.pytest_cache/
+*.py[cod]
+.venv/
+venv/
+
+# Local assistant/tool state
+.claude/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/

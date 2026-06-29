@@ -24,9 +24,12 @@ local label is used.
 - **Extracted directions — focused packages.** When a direction passes a minimal proof
   threshold in the sandbox, it is pulled into its own self-contained package (narrative, spec,
   field references, test, results) so it can be developed in focus and read on its own.
-  - [`blind_arbiter/`](blind_arbiter/): the current active direction (below).
 
-## Current direction: the blind arbiter
+The blind-arbiter/Justitia line has been extracted into its own repository:
+<https://github.com/Kirill-Kruglov/justitia>. This repository now preserves the Ascesis
+research trail and the emerging Substrate Discovery / playbook work.
+
+## Extracted line: the blind arbiter / Justitia
 
 Can an AGI/ASI, modelled as an active **feeder** for a population rather than an optimizer of
 "the good," keep that population in equilibrium when part of it is adversarial and actively
@@ -39,8 +42,8 @@ best regime (geometric), with wide overlapping confidence bands and no sustained
 the signal is fully decoupled where it matters. What survives is an ordering of arbiter rules
 (scalar < lexicographic < geometric): active balancing and reacting to lagged consequences help,
 but do not amount to holding equilibrium. This is a weak/negative result — the harness catching
-and correcting an overstated headline. See [`blind_arbiter/`](blind_arbiter/) for the corrected
-spec, the audit, and how to reproduce.
+and correcting an overstated headline. The extracted Justitia repository holds the continued
+line: <https://github.com/Kirill-Kruglov/justitia>.
 
 ## Contributors
 

@@ -15,7 +15,7 @@ These experiments are not claims of alignment progress. They are small reproduci
 7. `07_empowerment_vs_corrigibility` - empowerment vs shutdown-corrigibility on a Thornley-style gridworld. Closed as a calibration failure: the substrate does not reproduce the Thornley baseline (see SPEC Amendments 1-2).
 8. `08_blind_consequence_feeder_viability` - blind consequence-only feeder viability map over adversarial capture, delay, catastrophe ambiguity, mutation, scavengers, and diversity pressure.
 
-The blind-arbiter direction passed a minimal proof threshold and was extracted into its own focused package at [`../blind_arbiter/`](../blind_arbiter/).
+The blind-arbiter/Justitia line passed a minimal proof threshold and was extracted into its own repository at <https://github.com/Kirill-Kruglov/justitia>.
 
 Rule: cheap refutation before expensive confirmation.
 
