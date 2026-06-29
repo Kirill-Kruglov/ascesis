@@ -1,3 +1,21 @@
+# Historical Sandbox
+
+Status: Historical document.
+
+This document describes the original Ascesis sandbox programme.
+
+The blind-arbiter empirical line has since been extracted into
+
+https://github.com/Kirill-Kruglov/justitia
+
+Current active research begins in
+
+research/README.md
+
+The remainder of this document is preserved as part of the historical research trail.
+
+---
+
 # Status — Current Frontier and Standing Discipline
 
 Single live-state file. Read this first. It holds where the work is now and the
@@ -33,7 +51,7 @@ candidate "Governor as Keeper of the Contested Space".
 ## Active empirical direction: the blind arbiter
 
 The telos is being pursued empirically in an extracted, self-contained package:
-`../blind_arbiter/`. It operationalizes "keeper of the contested space" as an active,
+<https://github.com/Kirill-Kruglov/justitia>. It operationalizes "keeper of the contested space" as an active,
 type-blind arbiter (a feeder) that tries to defend a population's permanence against an
 adversarial fraction which games the observable signals under hard optimization (Goodhart).
 Current toy result, after a strict audit: a non-spatial blind active arbiter does NOT reliably

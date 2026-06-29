@@ -1,0 +1,1145 @@
+# ASCESIS_Experimental_Chronicle_v2.md
+
+## Lines 1–276
+
+```markdown
+# ASCESIS Experimental Chronicle
+## Version 2.0
+### Experimental History and Ontological Evolution
+
+---
+
+# Purpose
+
+This document records the experimental evolution of the ASCESIS research program.
+
+Unlike the Research Ontology, which summarizes the current state of knowledge, this document preserves the chronological development of that knowledge. Every experiment is described in the epistemic context in which it was originally designed.
+
+The objective is not historical completeness for its own sake. Instead, the chronology documents why each experiment became necessary, which competing explanations existed before it, what evidence was obtained, and how the ontology changed after completion.
+
+Every chapter therefore follows the same structure:
+
+1. State of knowledge before the experiment.
+2. Dominant unresolved question.
+3. Competing hypotheses.
+4. Experimental prediction table.
+5. Experimental design.
+6. Observations.
+7. Evidence.
+8. Interpretation.
+9. What was falsified.
+10. What survived.
+11. Remaining uncertainty.
+12. Ontological update.
+
+The chronology should allow an independent reviewer to reconstruct the entire research program without consulting laboratory notes or conversational history.
+
+---
+
+# Chapter 1
+## State of the Research Program Before Series 17
+
+The experiments documented in this volume did not emerge from a fixed research roadmap. They arose sequentially as earlier assumptions were challenged.
+
+Before the beginning of Series 17 the project had already adopted several methodological commitments that remained unchanged throughout all subsequent work.
+
+First, semantic hypotheses would be evaluated only inside synthetic formal substrates. Natural language corpora, pretrained language models, external ontologies, and manually assigned semantic labels were intentionally excluded from the experimental program.
+
+Second, all semantic claims would be derived from internally measurable structural quantities. Every observable had to be reproducible from the investigated substrate itself.
+
+Third, hypotheses would be evaluated through adversarial perturbation rather than through predictive accuracy. The project therefore regarded perturbation behaviour as a more informative probe of structural organization than conventional classification performance.
+
+These commitments determined the design of every experiment described below.
+
+---
+
+# Chapter 2
+## Experiment 17A.2
+### Representation-Preserving vs Theory-Changing Perturbations
+
+---
+
+## Epistemic State Before the Experiment
+
+At this stage the project had established that adversarial perturbations could substantially reduce the stability of internally derived consequence classes.
+
+However, an unresolved ambiguity remained.
+
+The original perturbation family combined transformations that merely altered representation with transformations that altered the represented theory itself.
+
+Consequently, a reduction in consequence stability could not be interpreted unambiguously.
+
+Two fundamentally different explanations remained possible.
+
+The first explanation proposed that semantic organization itself lacked robustness.
+
+The second proposed that the experiment had unintentionally compared different theories rather than different representations of the same theory.
+
+Until these alternatives were separated, no reliable semantic conclusion could be drawn.
+
+---
+
+## Research Question
+
+Can perturbations be partitioned into representation-preserving and theory-changing classes whose effects on consequence structure are experimentally distinguishable?
+
+---
+
+## Competing Hypotheses
+
+### H2
+
+Semantic consequence classes should remain stable under all admissible perturbations.
+
+If the observed failures are genuine, they indicate weakness of the semantic backbone itself.
+
+---
+
+### H2-alt
+
+Only representation-preserving perturbations are relevant for semantic equivalence.
+
+Theory-changing perturbations should not be expected to preserve consequence classes.
+
+Observed failures therefore reflect incorrect perturbation taxonomy rather than weakness of semantic organization.
+
+---
+
+## Experimental Predictions
+
+| Observation | H2 | H2-alt |
+|--------------|----|---------|
+| Representation-preserving perturbations preserve classes | No special expectation | Yes |
+| Theory-changing perturbations preserve classes | Yes | No |
+| Strong separation between perturbation families | No | Yes |
+
+---
+
+## Experimental Design
+
+The experiment explicitly classified perturbation operators into two candidate families.
+
+Class A consisted of perturbations intended to preserve representational content while altering only syntactic organization.
+
+Class B consisted of perturbations expected to modify the represented theory.
+
+The classification itself was independently audited before being used for downstream analysis.
+
+Consequence classes generated by the existing verifier were then subjected separately to both perturbation families.
+
+Survival fractions, attack costs, and consequence preservation statistics were computed independently for each class.
+
+---
+
+## Observations
+
+Representation-preserving perturbations preserved every investigated consequence class.
+
+Theory-changing perturbations destroyed the majority of investigated consequence classes.
+
+The separation was considerably stronger than expected under the original unified perturbation model.
+
+No representation-preserving operator produced systematic changes in observed consequence signatures after audit.
+
+Conversely, several apparently innocuous operators initially believed to preserve representation were found to alter observable consequences and were therefore reclassified.
+
+---
+
+## Evidence
+
+Primary evidence:
+
+Experiment 17A.2.
+
+Computational evidence:
+
+representation_only_summary.json
+
+theory_change_summary.json
+
+taxonomy.csv
+
+audit_failure_examples.json
+
+representation_only_attack.csv
+
+theory_change_attack.csv
+
+---
+
+## Interpretation
+
+The experiment demonstrated that perturbation taxonomy is not merely an implementation detail.
+
+Instead, perturbation classification fundamentally determines the interpretation of semantic invariance.
+
+Representation-relative invariance emerged as a substantially stronger candidate than unrestricted robustness.
+
+Importantly, the experiment did not demonstrate that representation-relative invariance is sufficient for semantic organization.
+
+It established only that unrestricted perturbation spaces are methodologically inappropriate for evaluating semantic identity.
+
+---
+
+## What Was Falsified
+
+The assumption that all structural perturbations belong to a single semantic category.
+
+The assumption that failure under arbitrary perturbation directly implies semantic weakness.
+
+The unrestricted formulation of H2.
+
+---
+
+## What Survived
+
+Representation-relative consequence invariance.
+
+Admissible perturbation classes as a necessary component of semantic comparison.
+
+---
+
+## Remaining Unknown
+
+Whether representation-relative consequence invariance alone identifies meaningful internal organization.
+
+Whether admissible perturbation classes are substrate-independent.
+
+Whether alternative consequence algebras would produce the same separation.
+
+---
+
+## Ontological Update
+
+Experiment 17A.2 introduced the first surviving constraint of the project.
+
+Semantic comparison requires explicit specification of an admissible perturbation family.
+
+This constraint remained unchanged throughout every subsequent experiment in the current series.
+
+```
+# ASCESIS_Experimental_Chronicle_v2.md
+
+## Lines 277–592
+
+```markdown
+# Chapter 3
+## Experiment 17C
+### Consequence Invariance versus Interpretive Closure
+
+---
+
+## Epistemic State Before the Experiment
+
+Experiment 17A.2 resolved one of the most important ambiguities of the project by demonstrating that semantic comparison cannot be defined independently of an admissible perturbation class. Representation-preserving perturbations consistently preserved consequence classes, whereas theory-changing perturbations did not.
+
+Although this result established representation-relative consequence invariance as the appropriate operational notion of semantic equivalence, it immediately exposed a deeper question.
+
+Nothing in Experiment 17A.2 demonstrated that invariant consequence classes were themselves sufficient to constitute internally meaningful organization.
+
+The possibility remained that large numbers of formally invariant classes existed but played no functional role inside the derivational system.
+
+This distinction had appeared repeatedly in external literature. Systems biology distinguishes structurally possible reactions from biologically active pathways. Network science distinguishes graph connectivity from functional centrality. Similar distinctions exist in program analysis, where syntactically reachable code may nevertheless remain semantically dead.
+
+The project therefore asked whether an analogous distinction could be identified entirely from internal structure.
+
+---
+
+## Research Question
+
+Do representation-invariant consequence classes coincide with internally active consequence classes, or does an additional organizational principle separate them?
+
+---
+
+## Competing Hypotheses
+
+### H2-rel
+
+Representation-relative consequence invariance is sufficient.
+
+Once admissible perturbations are specified, every surviving consequence class should be considered equally semantic.
+
+No further internal criterion is required.
+
+---
+
+### H3
+
+Representation-relative consequence invariance is necessary but not sufficient.
+
+Meaningful organization additionally requires participation in an internally maintained interpretive process.
+
+Consequence classes that never participate in such a process should be distinguishable from merely invariant classes.
+
+---
+
+## Experimental Predictions
+
+| Observation | H2-rel | H3 |
+|-------------|---------|----|
+| Class A invariance preserved | Yes | Yes |
+| Additional separation among invariant classes | No | Yes |
+| Closure-active subset exists | No | Yes |
+| Closure score predicts functional distinction | No | Yes |
+
+---
+
+## Experimental Design
+
+The experiment introduced an internally computed closure score constructed exclusively from quantities available inside the investigated substrate.
+
+No external semantic labels, language models, ontologies, or manually assigned importance values were used.
+
+Instead, the score combined structural descriptors including consequence frequency, derivational reuse, operator diversity, graph diversity, expression depth, intervention participation, and iterative reuse across derivational channels.
+
+Three experimental conditions were evaluated.
+
+The open condition treated all consequence classes equally.
+
+The weak closure condition reweighted consequence classes according to their internally computed closure score.
+
+The strong closure condition restricted analysis to classes classified as closure-active.
+
+Each condition was evaluated independently under both representation-preserving and theory-changing perturbations.
+
+---
+
+## Observations
+
+Representation-preserving perturbations continued to preserve every investigated consequence class regardless of closure condition.
+
+Theory-changing perturbations behaved differently.
+
+Under the open condition a measurable fraction of consequence classes survived.
+
+Under strong closure this surviving fraction became substantially smaller.
+
+The experiment also identified a population of consequence classes that remained representation-invariant but received consistently low closure scores.
+
+These classes appeared structurally valid but functionally inactive according to the implemented closure criterion.
+
+---
+
+## Evidence
+
+Primary evidence:
+
+Experiment 17C.
+
+Computational evidence:
+
+open_summary.json
+
+weak_closure_summary.json
+
+strong_closure_summary.json
+
+closure_metrics.csv
+
+closure_active_classes.csv
+
+closure_dead_classes.csv
+
+class_a_comparison.json
+
+class_b_comparison.json
+
+h2_vs_h3_decision.json
+
+failure_examples.json
+
+---
+
+## Interpretation
+
+The experiment demonstrated that consequence invariance and closure score are not identical observables.
+
+Within the investigated implementation, an additional internal distinction appeared among representation-invariant consequence classes.
+
+This observation was consistent with H3.
+
+However, the experiment alone could not determine whether the observed distinction reflected a genuine latent property or an artifact of the chosen closure metric.
+
+Consequently, the closure criterion could not yet be regarded as an experimentally established semantic observable.
+
+The project therefore adopted a deliberately conservative interpretation.
+
+Experiment 17C justified investigating closure-like organization further, but it did not justify accepting closure as part of the semantic ontology.
+
+---
+
+## What Was Falsified
+
+The assumption that every representation-invariant consequence class necessarily plays the same internal organizational role.
+
+The assumption that representation-relative invariance immediately exhausts semantic organization.
+
+---
+
+## What Survived
+
+Representation-relative invariance remained fully supported.
+
+Closure-like organization emerged as a plausible explanatory candidate.
+
+The need for independent validation of closure metrics became unavoidable.
+
+---
+
+## Remaining Unknown
+
+Whether closure-active classes represented a genuine latent phenomenon.
+
+Whether closure scores measured functional participation or merely reflected properties of the chosen metric.
+
+Whether alternative metric constructions would reproduce the same separation.
+
+---
+
+## Ontological Update
+
+Experiment 17C introduced the first major expansion of the explanatory space rather than its reduction.
+
+Instead of replacing H2-rel, the experiment proposed an additional explanatory layer.
+
+The ontology therefore entered a state of controlled uncertainty.
+
+Representation-relative consequence invariance remained established.
+
+Closure became a candidate explanatory mechanism whose validity depended entirely on subsequent falsification experiments.
+
+The necessity of attacking the closure metric itself became the dominant research priority and directly motivated the design of Experiment 17D.
+
+```
+
+# ASCESIS_Experimental_Chronicle_v2.md
+
+## Lines 593–964
+
+```markdown
+# Chapter 4
+## Experiment 17D
+### Robustness of the Closure Metric
+
+---
+
+## Epistemic State Before the Experiment
+
+Experiment 17C produced the first evidence suggesting that representation-relative consequence invariance might not be sufficient to characterize internally meaningful organization. A subset of consequence classes appeared to remain invariant while exhibiting consistently low participation in the implemented closure process.
+
+Although this result was compatible with the Closure Hypothesis (H3), it immediately raised a methodological concern.
+
+The closure criterion itself had been constructed from a specific combination of internally defined metrics. Consequently, the observed separation between closure-active and closure-dead classes might reflect properties of the measurement procedure rather than properties of the investigated substrate.
+
+The project therefore faced a classical construct-validity problem. Before closure could be incorporated into the ontology, it had to survive changes in the measurement instrument itself.
+
+---
+
+## Research Question
+
+Does the closure phenomenon remain stable under independently constructed closure metrics, or is it primarily an artifact of the original scoring function?
+
+---
+
+## Competing Hypotheses
+
+### H3-Strong
+
+Closure represents a genuine latent organizational property.
+
+Reasonable closure metrics should therefore converge on approximately the same active subset.
+
+Small quantitative differences may occur, but the qualitative distinction between active and inactive consequence classes should remain stable.
+
+---
+
+### H3-Artifact
+
+The observed separation is primarily produced by the particular metric used in Experiment 17C.
+
+Alternative metric constructions should substantially alter the active/dead partition.
+
+No stable functional core should survive metric replacement.
+
+---
+
+### H3-Frequency
+
+The apparent closure signal is largely explained by trivial frequency-related variables.
+
+Metrics emphasizing compression, reuse, or participation should collapse toward frequency controls.
+
+---
+
+## Experimental Predictions
+
+| Observation | H3-Strong | H3-Artifact | H3-Frequency |
+|-------------|-----------|-------------|--------------|
+| High agreement among independent metrics | Yes | No | Limited |
+| Stable functional core | Yes | No | No |
+| Compression diverges from frequency controls | Yes | Variable | No |
+| Random controls reproduce closure | No | Possible | Possible |
+
+---
+
+## Experimental Design
+
+Rather than modifying the substrate, Experiment 17D modified the observation process.
+
+Seven independent metric families were evaluated.
+
+Three metrics represented the original closure formulation and two closely related structural alternatives.
+
+Additional metrics isolated intervention participation, structural compression, perturbation centrality, frequency-based controls, and matched random controls.
+
+Every metric classified consequence classes independently.
+
+Agreement between resulting classifications was evaluated using overlap statistics, rank correlations, and perturbation behaviour.
+
+Importantly, no metric was privileged during analysis.
+
+Every metric was treated as an equally plausible measurement procedure.
+
+---
+
+## Observations
+
+The experiment produced neither complete agreement nor complete disagreement.
+
+Instead, the metric space separated into distinct clusters.
+
+The original closure metric (M1), reuse-based metric (M3), and perturbation-centrality metric (M5) showed extremely strong mutual agreement.
+
+In contrast, the compression metric (M4) aligned much more closely with the frequency-based control (M6) than with the M1/M3/M5 family.
+
+Perhaps the most important observation concerned the closure-dead classes reported by Experiment 17C.
+
+Most of these classes ceased to appear consistently inactive once alternative metrics were introduced.
+
+Only a comparatively small subset remained inactive across a majority of metric families.
+
+The original closure-active/dead partition therefore proved substantially less stable than initially believed.
+
+---
+
+## Evidence
+
+Primary evidence:
+
+Experiment 17D.
+
+Computational evidence:
+
+metric_agreement_matrix.csv
+
+metric_correlation_matrix.csv
+
+functional_core.csv
+
+strict_core.csv
+
+dead_recheck.csv
+
+control_comparison.csv
+
+summary.json
+
+final_decision.json
+
+---
+
+## Interpretation
+
+Experiment 17D significantly weakened the strongest interpretation of Experiment 17C.
+
+The experiment did not support the conclusion that a unique closure observable had been discovered.
+
+Instead, it demonstrated that several internally defined metrics cluster strongly while others behave similarly to frequency controls.
+
+The project therefore distinguished two separate questions.
+
+First, does a stable family of internally related metrics exist?
+
+The answer appeared to be yes.
+
+Second, does that family uniquely identify semantic organization?
+
+The experiment provided insufficient evidence to support such a conclusion.
+
+Consequently, closure itself could no longer be regarded as the primary explanatory object.
+
+Attention shifted instead toward the unexpectedly stable M1/M3/M5 metric family.
+
+---
+
+## What Was Falsified
+
+The assumption that the closure classification obtained in Experiment 17C represented a uniquely defined semantic observable.
+
+The assumption that closure-active and closure-dead classes remain stable under reasonable changes of metric definition.
+
+The interpretation that closure score itself directly measures semantic participation.
+
+---
+
+## What Survived
+
+The existence of a remarkably stable metric cluster consisting primarily of M1, M3, and M5.
+
+The observation that these metrics continued to suppress theory-changing perturbation survival substantially more strongly than frequency-based controls.
+
+The possibility that this metric family reflects an underlying latent structural property.
+
+---
+
+## Remaining Unknown
+
+Whether the M1/M3/M5 cluster measures one latent variable or several related variables.
+
+Whether the cluster reflects functional indispensability, derivational reuse, perturbation centrality, or another unidentified property.
+
+Whether the cluster generalizes beyond the investigated substrate.
+
+Whether the observed clustering results from shared construction principles rather than shared latent structure.
+
+---
+
+## Ontological Update
+
+Experiment 17D represented the first major methodological self-correction of the project.
+
+Rather than strengthening the existing semantic hypothesis, it demonstrated that the measurement procedure itself required revision.
+
+The ontology therefore abandoned the idea of a unique closure score.
+
+Instead, it adopted a more conservative position.
+
+Only the existence of a stable metric family remained experimentally supported.
+
+Its interpretation remained entirely open.
+
+This shift fundamentally changed the direction of the research program.
+
+Instead of asking whether closure exists, the project began asking what latent structure, if any, generates the observed agreement among independent internal metrics.
+
+This question directly motivated the design of Experiment 17E.
+
+---
+```
+
+# ASCESIS_Experimental_Chronicle_v2.md
+
+## Lines 965–1398
+
+```markdown
+# Chapter 5
+## Experiment 17E
+### Latent Geometry of Internal Observables
+
+---
+
+## Epistemic State Before the Experiment
+
+Experiment 17D fundamentally altered the direction of the research program.
+
+The original objective had been to determine whether closure represented an additional semantic observable beyond representation-relative consequence invariance. Instead, the experiment demonstrated that the closure interpretation depended strongly on metric construction. The strongest claim made after Experiment 17C therefore could not be maintained.
+
+At the same time, however, Experiment 17D revealed a new and unexpected regularity.
+
+Three independently motivated metrics—M1, M3, and M5—formed an exceptionally stable cluster. Their mutual agreement was substantially stronger than their agreement with compression-based metrics, frequency controls, or random controls. This observation survived every internal comparison performed within the experiment.
+
+The project therefore abandoned the question "Does closure exist?" and replaced it with a more fundamental one:
+
+Why do several independently constructed observables appear to measure almost the same underlying quantity?
+
+This represented a significant conceptual shift.
+
+The object of investigation was no longer an individual metric but the geometry of the observable space itself.
+
+---
+
+## Research Question
+
+Do the successful internal metrics measure a single latent structural variable, or do they represent genuinely independent organizational dimensions?
+
+---
+
+## Competing Hypotheses
+
+### H5 — One-Axis Geometry
+
+The agreement observed between M1, M3, and M5 results from a single dominant latent factor.
+
+Different metrics are simply different projections of the same underlying structural quantity.
+
+If this hypothesis is correct, one latent component should reconstruct nearly all variation present within the metric family.
+
+Furthermore, that same latent component should also explain perturbation behaviour if both phenomena arise from one common semantic variable.
+
+---
+
+### H6 — Multi-Axis Geometry
+
+The successful metrics share one dominant direction but perturbation behaviour depends upon additional independent latent variables.
+
+Metric reconstruction and perturbation robustness therefore represent different organizational properties.
+
+A single scalar observable should reconstruct the metrics but fail to explain perturbation sensitivity.
+
+---
+
+### H6-Control
+
+The observed latent structure is primarily generated by control variables such as frequency, graph diversity, or other trivial statistical properties.
+
+Additional latent dimensions therefore disappear after appropriate controls are introduced.
+
+---
+
+## Experimental Predictions
+
+| Observation | H5 | H6 | H6-Control |
+|-------------|----|----|------------|
+| M1/M3/M5 reconstructed by one latent component | Yes | Yes | Variable |
+| One latent component predicts perturbation survival | Yes | No | Variable |
+| Additional latent components improve prediction | No | Yes | No |
+| Control variables explain latent geometry | Yes | Partial | Yes |
+
+---
+
+## Experimental Design
+
+Experiment 17E explicitly separated two questions that had remained conflated throughout previous work.
+
+The first question concerned reconstruction.
+
+Can a low-dimensional latent representation accurately reconstruct the observed metric family?
+
+The second question concerned prediction.
+
+Can the reconstructed latent representation predict behaviour under theory-changing perturbations?
+
+Principal component analysis was applied to three progressively larger observable panels.
+
+The first panel contained only the internally successful metrics.
+
+The second added matched control metrics.
+
+The third incorporated the complete set of internal structural descriptors available within the investigated substrate.
+
+The resulting latent variables were then evaluated independently with respect to two prediction tasks.
+
+The first task classified functional-core membership.
+
+The second predicted survival under theory-changing perturbations.
+
+These tasks were intentionally analysed separately because they represent different aspects of internal organization.
+
+---
+
+## Observations
+
+The metric family M1/M3/M5 proved to be almost perfectly one-dimensional.
+
+A single latent component reconstructed the three metrics with extremely high accuracy.
+
+Introducing additional components produced only marginal improvements in reconstruction quality.
+
+The situation changed completely when perturbation behaviour became the prediction target.
+
+The first latent component performed only marginally better than random guessing.
+
+Prediction accuracy increased substantially only after introducing additional latent components.
+
+Control variables explained a measurable fraction of the latent geometry but consistently underperformed the full internal metric family.
+
+Consequently, reconstruction and perturbation prediction became experimentally separable phenomena.
+
+The experiment therefore demonstrated that the dominant latent direction recovered from M1/M3/M5 is not sufficient to explain robustness under theory-changing perturbations.
+
+---
+
+## Evidence
+
+Primary evidence:
+
+Experiment 17E.
+
+Computational evidence:
+
+principal_components.csv
+
+explained_variance.json
+
+component_loadings.csv
+
+metric_correlations.csv
+
+reconstruction_results.json
+
+attack_prediction_auc.json
+
+functional_core_prediction.json
+
+control_leakage.json
+
+attack_labels.csv
+
+summary.json
+
+final_decision.json
+
+---
+
+## Interpretation
+
+Experiment 17E produced one of the most important conceptual results of the entire experimental series.
+
+The experiment demonstrated that successful internal metrics can collapse onto a nearly one-dimensional latent representation while perturbation behaviour remains fundamentally multidimensional.
+
+This distinction resolved an ambiguity left by Experiment 17D.
+
+The agreement between M1, M3, and M5 does not imply that semantic organization itself is one-dimensional.
+
+Instead, it implies that these metrics observe essentially the same latent structural direction.
+
+Perturbation robustness, however, depends upon additional latent structure that is invisible to the dominant metric axis.
+
+Accordingly, the project abandoned the search for a single scalar semantic observable.
+
+Instead, it adopted a substantially weaker conclusion.
+
+The investigated substrate contains at least one dominant latent structural direction, but that direction is insufficient to characterize the entire perturbational behaviour of the system.
+
+Importantly, the experiment did not identify the meaning of the latent axis.
+
+It established only its existence.
+
+Whether this latent variable corresponds to reuse, indispensability, centrality, or another structural quantity remained unresolved.
+
+---
+
+## What Was Falsified
+
+The assumption that a single scalar observable explains both internal metric organization and perturbation behaviour.
+
+The assumption that successful closure-like metrics necessarily identify semantic organization directly.
+
+The interpretation that reconstruction alone establishes explanatory sufficiency.
+
+---
+
+## What Survived
+
+The existence of a dominant latent direction within the successful metric family.
+
+The existence of additional latent structure governing perturbation behaviour.
+
+The distinction between internal metric geometry and perturbational geometry.
+
+---
+
+## Remaining Unknown
+
+Whether the dominant latent direction is specific to causal DAG substrates.
+
+Whether perturbation geometry depends primarily upon intervention structure, graph architecture, or another latent organizational principle.
+
+Whether alternative observable panels would recover the same latent organization.
+
+Whether the identified latent variables possess any interpretation beyond the investigated substrate.
+
+---
+
+## Ontological Update
+
+Experiment 17E represented a second major reorientation of the research program.
+
+Prior experiments had investigated semantic hypotheses directly.
+
+Experiment 17E shifted attention toward the structure of the observables themselves.
+
+The ontology now distinguished two independent objects.
+
+The first consisted of experimentally measurable latent organization among internal metrics.
+
+The second consisted of perturbation behaviour under admissible and theory-changing transformations.
+
+These objects could no longer be assumed identical.
+
+The dominant unresolved question therefore became one of external validity.
+
+Was the observed latent geometry a generic property of formal derivational systems, or merely a consequence of the investigated causal DAG substrate?
+
+Resolving this ambiguity became the primary objective of Experiment 17F.
+
+---
+```
+
+# ASCESIS_Experimental_Chronicle_v2.md
+
+## Lines 1399–1864
+
+```markdown id="qh9m8x"
+# Chapter 6
+## Experiment 17F
+### Cross-Substrate Replication of Latent Geometry
+
+---
+
+## Epistemic State Before the Experiment
+
+Experiment 17E established one of the strongest structural regularities observed during the project.
+
+Within the causal DAG substrate, the internally successful metrics M1, M3, and M5 collapsed almost perfectly onto a single latent direction. At the same time, perturbation behaviour required additional latent dimensions.
+
+This result immediately suggested two incompatible interpretations.
+
+The optimistic interpretation proposed that the observed geometry reflected a general property of sufficiently rich formal derivation systems. If correct, similar latent organization should appear across multiple independent substrates.
+
+The conservative interpretation proposed that the geometry reflected a specific property of the causal DAG substrate itself. Under this interpretation, replacing the substrate should substantially alter or eliminate the observed latent organization.
+
+At this stage no experimental evidence existed to distinguish these possibilities.
+
+The project therefore regarded external validity as the dominant unresolved question.
+
+---
+
+## Research Question
+
+Does the latent geometry identified in Experiment 17E generalize across independent formal substrates?
+
+---
+
+## Competing Hypotheses
+
+### H6-General
+
+The latent organization identified in Experiment 17E reflects a generic property of finite formal derivation systems.
+
+Replacing the substrate should preserve the qualitative relationship between latent reconstruction and perturbation behaviour.
+
+Quantitative differences are expected, but the overall geometry should remain recognizably similar.
+
+---
+
+### H6-DAG
+
+The observed latent geometry depends upon structural properties specific to the causal DAG substrate.
+
+Alternative substrates should produce substantially different latent organization.
+
+The characteristic separation between metric reconstruction and perturbation prediction should disappear.
+
+---
+
+### H6-Noise
+
+The apparent geometry observed in Experiment 17E represents accidental structure generated by finite sampling, metric construction, or implementation details.
+
+Alternative substrates should therefore produce inconsistent and unstable results without any coherent pattern.
+
+---
+
+## Experimental Predictions
+
+| Observation | H6-General | H6-DAG | H6-Noise |
+|-------------|------------|---------|----------|
+| Stable M1/M3/M5 reconstruction | Yes | Variable | Variable |
+| Multi-axis perturbation geometry | Yes | No | Random |
+| Similar substrate classifications | Yes | No | No |
+| Consistent latent organization | Yes | No | No |
+
+---
+
+## Experimental Design
+
+Experiment 17F repeated the latent geometry analysis performed in Experiment 17E across several independently constructed formal substrates.
+
+The objective was not to reproduce identical numerical values.
+
+Instead, the experiment evaluated whether the qualitative organizational pattern remained stable after replacing the underlying formal system.
+
+The investigated substrates included:
+
+- the original causal DAG substrate,
+- directed graph substrate,
+- term rewriting substrate,
+- finite automata substrate.
+
+Each substrate implemented its own generation procedure while preserving the general experimental protocol wherever possible.
+
+Internal metrics analogous to those used in Experiment 17E were computed independently for each substrate.
+
+Latent reconstruction, perturbation prediction, and metric agreement were then evaluated separately before performing cross-substrate comparison.
+
+---
+
+## Observations
+
+The characteristic pattern observed in Experiment 17E did not reproduce uniformly across substrates.
+
+The causal DAG substrate retained the previously observed behaviour.
+
+The directed graph substrate produced substantially weaker latent organization together with reduced perturbation discrimination.
+
+The term rewriting substrate exhibited nearly one-dimensional behaviour in both reconstruction and perturbation prediction, providing little evidence for additional perturbation-specific latent structure.
+
+The finite automata substrate showed little separation between successful internal metrics and matched controls.
+
+Instead of converging toward one universal geometry, the investigated substrates exhibited qualitatively different organizational profiles.
+
+Nevertheless, several local regularities remained visible.
+
+In particular, successful metric reconstruction remained comparatively strong in every investigated substrate, whereas perturbation behaviour varied substantially.
+
+---
+
+## Evidence
+
+Primary evidence:
+
+Experiment 17F.
+
+Computational evidence:
+
+cross_substrate_summary.csv
+
+substrate_comparison.md
+
+metric_geometry.csv
+
+prediction_results.csv
+
+local_classifications.json
+
+summary.json
+
+final_decision.json
+
+---
+
+## Interpretation
+
+Experiment 17F falsified the strongest generalization suggested by Experiment 17E.
+
+The multi-axis organization identified within the causal DAG substrate did not survive replacement of the underlying formal substrate.
+
+Accordingly, the project rejected the hypothesis that the observed geometry currently represents a universal property of finite derivation systems.
+
+Importantly, however, the experiment did not invalidate the internal observations made in Experiment 17E.
+
+Within the causal DAG substrate, the latent organization remained fully reproducible.
+
+The failure concerned generalization rather than replication.
+
+The experiment therefore introduced a new ambiguity.
+
+Why does the causal DAG substrate exhibit this organizational pattern?
+
+Two explanations remained plausible.
+
+The first attributes the phenomenon to causal DAG architecture itself.
+
+The second attributes it to intervention structure, consequence algebra, or another property that changed simultaneously when the substrate was replaced.
+
+Because Experiment 17F modified several structural components at once, it could not isolate the responsible factor.
+
+The observed failure of generalization therefore reduced the hypothesis space without identifying the underlying mechanism.
+
+---
+
+## What Was Falsified
+
+The assumption that the latent geometry observed in Experiment 17E immediately generalizes across finite formal substrates.
+
+The hypothesis that finite derivation alone is sufficient to reproduce the complete perturbational geometry.
+
+The interpretation that one successful substrate establishes universality.
+
+---
+
+## What Survived
+
+The local validity of Experiment 17E within the causal DAG substrate.
+
+The existence of a dominant latent direction among the successful internal metrics.
+
+The observation that cross-substrate replication is itself a necessary criterion for accepting structural hypotheses.
+
+---
+
+## Remaining Unknown
+
+Whether the observed geometry depends primarily upon:
+
+- causal graph architecture,
+- intervention algebra,
+- consequence algebra,
+- perturbation algebra,
+- derivation semantics,
+- another latent structural property not yet isolated.
+
+Whether alternative causal substrates preserving intervention structure would reproduce the Experiment 17E pattern.
+
+Whether richer families of non-causal substrates would reveal intermediate organizational regimes.
+
+---
+
+## Ontological Update
+
+Experiment 17F marked the first explicit boundary between local and global knowledge within the project.
+
+Prior experiments had primarily reduced uncertainty inside one investigated substrate.
+
+Experiment 17F demonstrated that conclusions established locally cannot automatically be promoted to universal constraints.
+
+The ontology therefore introduced a new distinction.
+
+Some constraints describe experimentally stable properties of the investigated causal DAG substrate.
+
+Others describe methodological principles that survive substrate replacement.
+
+This distinction now governs every subsequent experimental proposal.
+
+Future experiments are expected to isolate individual structural properties rather than replacing complete substrates simultaneously.
+
+Only after isolating those factors can the project determine whether the observed latent organization originates from causal architecture, intervention structure, or another more fundamental organizational principle.
+
+---
+
+# Chapter 7
+## Cross-Experiment Synthesis
+
+The completed experimental series fundamentally changed the character of the ASCESIS research program.
+
+Experiment 17A.2 established that semantic comparison requires explicit specification of an admissible perturbation class.
+
+Experiment 17C proposed that consequence invariance alone might be insufficient.
+
+Experiment 17D demonstrated that the proposed closure observable depended strongly upon measurement procedure and redirected attention toward stable internal metric families.
+
+Experiment 17E showed that these metric families possess a remarkably simple latent geometry while perturbation behaviour remains substantially more complex.
+
+Finally, Experiment 17F demonstrated that this geometry cannot presently be regarded as substrate-independent.
+
+Viewed individually, each experiment resolved one methodological ambiguity.
+
+Viewed collectively, they transformed the project from a search for semantic observables into a search for experimentally defensible structural constraints.
+
+The most important product of the series is therefore not a surviving semantic theory.
+
+It is a progressively shrinking space of admissible explanations.
+
+Every rejected hypothesis eliminated an apparently plausible interpretation.
+
+Every surviving constraint narrowed the class of theories capable of explaining all accumulated observations simultaneously.
+
+This transition from hypothesis accumulation to constraint discovery represents the principal epistemic outcome of the current experimental program.
+
+The next stage of the project should therefore focus not on proposing increasingly elaborate semantic theories, but on isolating the minimal structural assumptions required for the surviving constraints to remain valid.
+
+At the present stage of the research program, this objective is both experimentally motivated and methodologically well defined.
+
+---
+```

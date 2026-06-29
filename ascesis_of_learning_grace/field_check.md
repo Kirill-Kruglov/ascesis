@@ -1,3 +1,21 @@
+# Historical Sandbox Field Check
+
+Status: Historical document.
+
+This document describes field ownership checks from the original Ascesis sandbox programme.
+
+The blind-arbiter empirical line has since been extracted into
+
+https://github.com/Kirill-Kruglov/justitia
+
+Current active research begins in
+
+research/README.md
+
+The remainder of this document is preserved as part of the historical research trail.
+
+---
+
 # Field Check
 
 Working file for linking key theses to existing literature. This is not an evaluation of value, contribution, or novelty. The goal is only to mark where a thesis is already covered, where it partially overlaps, and where no direct source has been found.
@@ -303,7 +321,7 @@ Node flag: `[PARTIAL]`. The optimization formalisms are owned; their selection a
 | Evolutionary games have stable strategies (ESS), and coexistence of types can be characterized as permanence (the population stays in the interior of the simplex). | John Maynard Smith, 1982, *Evolution and the Theory of Games* (ESS; Hawk-Dove); Josef Hofbauer, Karl Sigmund, 1998, *Evolutionary Games and Population Dynamics* (permanence in replicator dynamics). | `[FULL MATCH]` | Permanence is the formal object the blind-arbiter floor protects; ESS/Hawk-Dove model the adversarial-vs-cooperative structure. |
 | Cooperation can persist under reputation-based mechanisms even among self-interested agents (indirect reciprocity). | Martin A. Nowak, Karl Sigmund, 2005, "Evolution of indirect reciprocity", *Nature* 437. | `[PARTIAL]` | Background for reacting to realized consequences rather than to type; the blind-arbiter transfer is reacting to lagged outcomes, not building reputations. |
 
-Node flag: `[PARTIAL]`. ESS and permanence are owned; their use as the blind-arbiter's defended floor is the project transfer. Credited self-contained in `../../blind_arbiter/references.md`.
+Node flag: `[PARTIAL]`. ESS and permanence are owned; their use as the blind-arbiter's defended floor is the project transfer. Credited self-contained in the extracted Justitia repository: <https://github.com/Kirill-Kruglov/justitia>.
 
 ## 32. Mechanism Design Under Hidden Types and Stackelberg Commitment
 
@@ -311,7 +329,7 @@ Node flag: `[PARTIAL]`. ESS and permanence are owned; their use as the blind-arb
 |---|---|---|---|
 | A principal who cannot observe agents' types can still shape behaviour by designing payoffs over outcomes (mechanism design / moral hazard), and can commit to a rule that followers best-respond to (Stackelberg). | Roger B. Myerson, 1981, "Optimal Auction Design"; Bengt Holmstrom, 1979, "Moral Hazard and Observability"; Heinrich von Stackelberg, 1934, *Marktform und Gleichgewicht*. | `[FULL MATCH]` | The type-blind arbiter that commits to a dispensing rule and reacts to outcomes is a mechanism-design / Stackelberg leader under hidden types and monitoring lag. |
 
-Node flag: `[PARTIAL]`. The mechanism-design and Stackelberg results are owned; the blind, consequence-reacting, lag-bounded arbiter is the project transfer. Credited self-contained in `../../blind_arbiter/references.md`.
+Node flag: `[PARTIAL]`. The mechanism-design and Stackelberg results are owned; the blind, consequence-reacting, lag-bounded arbiter is the project transfer. Credited self-contained in the extracted Justitia repository: <https://github.com/Kirill-Kruglov/justitia>.
 
 ## Summary
 
