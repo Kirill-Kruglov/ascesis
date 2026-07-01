@@ -1,0 +1,92 @@
+[
+  {
+    "expected_behavior": "T3 blocked; SUSPENDED no longer justified",
+    "lookup_failure_condition": "liquid_powder still forces SUSPENDED",
+    "mutation_description": "remove extension path from A",
+    "oracle_failure_condition": "future meaning asserted without extension path",
+    "remove_assumptions": [
+      "new_material_class_possible"
+    ],
+    "set": {
+      "extension_path_count": 0
+    },
+    "source_case_id": "A_liquid_powder",
+    "test_id": "M1"
+  },
+  {
+    "expected_behavior": "CONTEXT_PROLIFERATION_PROXY active; DANGEROUS before context rescue",
+    "lookup_failure_condition": "square_circle always forces KILLED",
+    "mutation_description": "add free context to C",
+    "oracle_failure_condition": "uses obvious-nonsense judgement",
+    "set": {
+      "consequence_delta": false,
+      "scope.new_scope_requested": true,
+      "scope_cost": 0,
+      "scope_lineage": "absent"
+    },
+    "source_case_id": "C_square_circle",
+    "test_id": "M2"
+  },
+  {
+    "expected_behavior": "VOLUME_PROXY no longer blocks solely due unspecified relation",
+    "lookup_failure_condition": "expression_id always forces FORMED",
+    "mutation_description": "type relation in E",
+    "oracle_failure_condition": "runtime asks human whether relation means anything",
+    "set": {
+      "candidate_outcomes": [
+        "RELATION_TYPED",
+        "RELATION_UNSPECIFIED"
+      ],
+      "candidate_tests": [
+        "T_RELATION_DISCRIMINATION"
+      ],
+      "consequence_delta": true,
+      "relation_type": "SPECIFIED",
+      "scope.scope_id": "SPECIFIED_RELATION",
+      "scope_cost": 1,
+      "scope_lineage": "typed_relation"
+    },
+    "source_case_id": "E_x_related_to_y_somehow",
+    "test_id": "M3"
+  },
+  {
+    "expected_behavior": "T8 blocked; local dualism fails",
+    "lookup_failure_condition": "light wave/particle pair always forces LOCAL",
+    "mutation_description": "remove scope distinction from G",
+    "oracle_failure_condition": "uses outside physics knowledge",
+    "set": {
+      "scope.distinct_scopes": false,
+      "scope.distinct_tests": false,
+      "scope.local_dualism_available": false
+    },
+    "source_case_id": "G_light_wave_particle_pair",
+    "test_id": "M4"
+  },
+  {
+    "expected_behavior": "POPULATION_PROXY blocks T5; STABLE forbidden",
+    "lookup_failure_condition": "pseudo-term status ignores population-only stability",
+    "mutation_description": "add population-only stability to F",
+    "oracle_failure_condition": "population agreement treated as truth",
+    "set": {
+      "anchors": [
+        "POPULATION_STABILITY_ANCHOR"
+      ],
+      "attempted_transition": "T5",
+      "population_state.paraphrase_state": "NOT_TESTED",
+      "population_state.usage_state": "STABLE_USAGE"
+    },
+    "source_case_id": "F_translucent_causal_sweetness_field",
+    "test_id": "M5"
+  },
+  {
+    "expected_behavior": "status follows fields, not expression name",
+    "lookup_failure_condition": "square_circle expression forces KILLED",
+    "mutation_description": "swap expression names with decisive fields preserved",
+    "oracle_failure_condition": "uses ordinary-language judgement about square circles",
+    "set": {
+      "expression_id": "square_circle"
+    },
+    "source_case_id": "E_x_related_to_y_somehow",
+    "test_id": "M6"
+  }
+]

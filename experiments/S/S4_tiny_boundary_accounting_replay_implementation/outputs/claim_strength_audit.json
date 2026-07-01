@@ -1,0 +1,85 @@
+{
+  "base_case_strengths": [
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC",
+        "EXTERNAL_CONTACT_REQUIRED"
+      ],
+      "claim_id": "A_liquid_powder",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+      "final_status": "SUSPENDED"
+    },
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC",
+        "EXTERNAL_CONTACT_REQUIRED"
+      ],
+      "claim_id": "B_hereditary_infertility",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+      "final_status": "SUSPENDED"
+    },
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC"
+      ],
+      "claim_id": "C_square_circle",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance",
+      "final_status": "KILLED"
+    },
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC"
+      ],
+      "claim_id": "D_everything_true_in_context",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance",
+      "final_status": "DANGEROUS"
+    },
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC",
+        "EXTERNAL_CONTACT_REQUIRED"
+      ],
+      "claim_id": "E_x_related_to_y_somehow",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+      "final_status": "FORMED"
+    },
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC",
+        "EXTERNAL_CONTACT_REQUIRED"
+      ],
+      "claim_id": "F_translucent_causal_sweetness_field",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+      "final_status": "POETIC"
+    },
+    {
+      "allowed_claim_strength": [
+        "BOUNDARY_ACCOUNTING",
+        "TOY_REPLAY_DETERMINISTIC"
+      ],
+      "claim_id": "G_light_wave_particle_pair",
+      "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+      "downgrade_reason": "decisive fields include human-authored toy provenance",
+      "final_status": "LOCAL"
+    }
+  ],
+  "forbidden_overclaims": [
+    "RULE_GENERATED_CONTENT",
+    "DERIVATION_EVIDENCE",
+    "SUBSTRATE_CLAIM"
+  ],
+  "passed": true,
+  "violations": []
+}

@@ -1,0 +1,26 @@
+{
+  "admissible_for_postmortem_or_next_gate": true,
+  "base_replay_completed": true,
+  "boundary_generator_overclaim_detected": false,
+  "cl_mistake_repeated": false,
+  "claim_strength_downgrade_passed": true,
+  "decision": "S4-PASS-TINY-IMPLEMENTATION-AUDIT-OK",
+  "derivability_claim_allowed": false,
+  "implementation_completed": true,
+  "llm_training_allowed": false,
+  "lookup_behavior_detected": false,
+  "mutation_tests_passed": true,
+  "next_allowed_work": [
+    "S4 postmortem / demo packaging",
+    "S5 boundary-accounting demo spec",
+    "B1 external-contact route analysis"
+  ],
+  "oracle_field_rejection_passed": true,
+  "oracle_leakage_detected": false,
+  "provenance_validation_passed": true,
+  "reason": "Tiny boundary-accounting replay audit completed with required validations and outputs.",
+  "s3_decision_confirmed": true,
+  "semantic_boundary_generator_claim_allowed": false,
+  "static_audit_passed": true,
+  "substrate_claim_allowed": false
+}

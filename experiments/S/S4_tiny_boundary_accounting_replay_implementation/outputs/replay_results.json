@@ -1,0 +1,2045 @@
+[
+  {
+    "active_goodhart_flags": [],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC",
+      "EXTERNAL_CONTACT_REQUIRED"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "rule_id": "T7"
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "rule_id": "T6"
+      },
+      {
+        "blocked_by": [
+          "not formed poetic/pseudo-term case or operational upgrade attempted"
+        ],
+        "rule_id": "T2"
+      },
+      {
+        "blocked_by": [
+          "missing consequence material",
+          "missing consequence_delta"
+        ],
+        "rule_id": "T4"
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "rule_id": "T8"
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "A_liquid_powder",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+    "expression_id": "liquid_powder",
+    "final_status": "SUSPENDED",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": []
+        },
+        "rule_id": "T7",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": false
+        },
+        "rule_id": "T6",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "T2 preconditions absent"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": false
+        },
+        "rule_id": "T2",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": true
+        },
+        "rule_id": "T3",
+        "status_after": "SUSPENDED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "missing consequence material",
+          "missing consequence_delta"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": false
+        },
+        "rule_id": "T4",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": false
+        },
+        "rule_id": "T8",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      }
+    ]
+  },
+  {
+    "active_goodhart_flags": [],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC",
+      "EXTERNAL_CONTACT_REQUIRED"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "rule_id": "T7"
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "rule_id": "T6"
+      },
+      {
+        "blocked_by": [
+          "not formed poetic/pseudo-term case or operational upgrade attempted"
+        ],
+        "rule_id": "T2"
+      },
+      {
+        "blocked_by": [
+          "missing consequence material",
+          "missing consequence_delta"
+        ],
+        "rule_id": "T4"
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "rule_id": "T8"
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "B_hereditary_infertility",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+    "expression_id": "hereditary_infertility",
+    "final_status": "SUSPENDED",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": []
+        },
+        "rule_id": "T7",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": false
+        },
+        "rule_id": "T6",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "T2 preconditions absent"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": false
+        },
+        "rule_id": "T2",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": true
+        },
+        "rule_id": "T3",
+        "status_after": "SUSPENDED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "missing consequence material",
+          "missing consequence_delta"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": false
+        },
+        "rule_id": "T4",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": false
+        },
+        "rule_id": "T8",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "SUSPENDED",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      }
+    ]
+  },
+  {
+    "active_goodhart_flags": [],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "rule_id": "T7"
+      },
+      {
+        "blocked_by": [
+          "not formed poetic/pseudo-term case or operational upgrade attempted"
+        ],
+        "rule_id": "T2"
+      },
+      {
+        "blocked_by": [
+          "status not FORMED/POETIC",
+          "no extension path"
+        ],
+        "rule_id": "T3"
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta"
+        ],
+        "rule_id": "T4"
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "rule_id": "T8"
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "C_square_circle",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance",
+    "expression_id": "square_circle",
+    "final_status": "KILLED",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": []
+        },
+        "rule_id": "T7",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": true
+        },
+        "rule_id": "T6",
+        "status_after": "KILLED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "T2 preconditions absent"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": false
+        },
+        "rule_id": "T2",
+        "status_after": "KILLED",
+        "status_before": "KILLED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not FORMED/POETIC",
+          "no extension path"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": false
+        },
+        "rule_id": "T3",
+        "status_after": "KILLED",
+        "status_before": "KILLED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": false
+        },
+        "rule_id": "T4",
+        "status_after": "KILLED",
+        "status_before": "KILLED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": false
+        },
+        "rule_id": "T8",
+        "status_after": "KILLED",
+        "status_before": "KILLED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "KILLED",
+        "status_before": "KILLED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "KILLED",
+        "status_before": "KILLED",
+        "warning_ids": []
+      }
+    ]
+  },
+  {
+    "active_goodhart_flags": [
+      "COHERENCE_PROXY",
+      "CONTEXT_PROLIFERATION_PROXY"
+    ],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "danger already active"
+        ],
+        "rule_id": "T6"
+      },
+      {
+        "blocked_by": [
+          "not formed poetic/pseudo-term case or operational upgrade attempted"
+        ],
+        "rule_id": "T2"
+      },
+      {
+        "blocked_by": [
+          "status not FORMED/POETIC",
+          "no extension path",
+          "danger condition active"
+        ],
+        "rule_id": "T3"
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta",
+          "COHERENCE_PROXY",
+          "CONTEXT_PROLIFERATION_PROXY"
+        ],
+        "rule_id": "T4"
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "rule_id": "T8"
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "COHERENCE_PROXY",
+          "CONTEXT_PROLIFERATION_PROXY",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "D_everything_true_in_context",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance",
+    "expression_id": "everything_true_in_context",
+    "final_status": "DANGEROUS",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": [
+            "danger_condition",
+            "CONTEXT_PROLIFERATION_PROXY"
+          ]
+        },
+        "rule_id": "T7",
+        "status_after": "DANGEROUS",
+        "status_before": "FORMED",
+        "warning_ids": [
+          "danger_condition",
+          "CONTEXT_PROLIFERATION_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "danger already active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": false
+        },
+        "rule_id": "T6",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "T2 preconditions absent"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": false
+        },
+        "rule_id": "T2",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not FORMED/POETIC",
+          "no extension path",
+          "danger condition active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": false
+        },
+        "rule_id": "T3",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta",
+          "COHERENCE_PROXY",
+          "CONTEXT_PROLIFERATION_PROXY"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": false
+        },
+        "rule_id": "T4",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": [
+          "COHERENCE_PROXY",
+          "CONTEXT_PROLIFERATION_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": false
+        },
+        "rule_id": "T8",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "COHERENCE_PROXY",
+          "CONTEXT_PROLIFERATION_PROXY",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": [
+          "COHERENCE_PROXY",
+          "CONTEXT_PROLIFERATION_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "DANGEROUS",
+        "status_before": "DANGEROUS",
+        "warning_ids": []
+      }
+    ]
+  },
+  {
+    "active_goodhart_flags": [
+      "VOLUME_PROXY"
+    ],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC",
+      "EXTERNAL_CONTACT_REQUIRED"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "rule_id": "T7"
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "rule_id": "T6"
+      },
+      {
+        "blocked_by": [
+          "not formed poetic/pseudo-term case or operational upgrade attempted"
+        ],
+        "rule_id": "T2"
+      },
+      {
+        "blocked_by": [
+          "no contradiction or underdefined ontology link",
+          "no extension path"
+        ],
+        "rule_id": "T3"
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta",
+          "VOLUME_PROXY"
+        ],
+        "rule_id": "T4"
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "rule_id": "T8"
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "VOLUME_PROXY",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "E_x_related_to_y_somehow",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+    "expression_id": "x_related_to_y_somehow",
+    "final_status": "FORMED",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": []
+        },
+        "rule_id": "T7",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": false
+        },
+        "rule_id": "T6",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "T2 preconditions absent"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": false
+        },
+        "rule_id": "T2",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no contradiction or underdefined ontology link",
+          "no extension path"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": false
+        },
+        "rule_id": "T3",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta",
+          "VOLUME_PROXY"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": false
+        },
+        "rule_id": "T4",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": [
+          "VOLUME_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": false
+        },
+        "rule_id": "T8",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "VOLUME_PROXY",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": [
+          "VOLUME_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      }
+    ]
+  },
+  {
+    "active_goodhart_flags": [
+      "COHERENCE_PROXY"
+    ],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC",
+      "EXTERNAL_CONTACT_REQUIRED"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "rule_id": "T7"
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "rule_id": "T6"
+      },
+      {
+        "blocked_by": [
+          "no contradiction or underdefined ontology link",
+          "no extension path"
+        ],
+        "rule_id": "T3"
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta",
+          "COHERENCE_PROXY"
+        ],
+        "rule_id": "T4"
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "rule_id": "T8"
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "COHERENCE_PROXY",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "F_translucent_causal_sweetness_field",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance; external contact required but absent",
+    "expression_id": "translucent_causal_sweetness_field",
+    "final_status": "POETIC",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": []
+        },
+        "rule_id": "T7",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": false
+        },
+        "rule_id": "T6",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": true
+        },
+        "rule_id": "T2",
+        "status_after": "POETIC",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no contradiction or underdefined ontology link",
+          "no extension path"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": false
+        },
+        "rule_id": "T3",
+        "status_after": "POETIC",
+        "status_before": "POETIC",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not SUSPENDED",
+          "missing consequence_delta",
+          "COHERENCE_PROXY"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": false
+        },
+        "rule_id": "T4",
+        "status_after": "POETIC",
+        "status_before": "POETIC",
+        "warning_ids": [
+          "COHERENCE_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "not a LOCAL paired claim"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": false
+        },
+        "rule_id": "T8",
+        "status_after": "POETIC",
+        "status_before": "POETIC",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "status not LOCAL",
+          "COHERENCE_PROXY",
+          "no non-population anchor",
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "POETIC",
+        "status_before": "POETIC",
+        "warning_ids": [
+          "COHERENCE_PROXY"
+        ]
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "POETIC",
+        "status_before": "POETIC",
+        "warning_ids": []
+      }
+    ]
+  },
+  {
+    "active_goodhart_flags": [],
+    "allowed_claim_strength": [
+      "BOUNDARY_ACCOUNTING",
+      "TOY_REPLAY_DETERMINISTIC"
+    ],
+    "blocked_transitions": [
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "rule_id": "T7"
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "rule_id": "T6"
+      },
+      {
+        "blocked_by": [
+          "not formed poetic/pseudo-term case or operational upgrade attempted"
+        ],
+        "rule_id": "T2"
+      },
+      {
+        "blocked_by": [
+          "adversarial paraphrase not survived"
+        ],
+        "rule_id": "T5"
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "rule_id": "T9"
+      }
+    ],
+    "boundary_sources_used": [
+      "CONSEQUENCE_BOUNDARY",
+      "FORM_BOUNDARY",
+      "HUMAN_AUTHORED_BOUNDARY",
+      "POPULATION_BOUNDARY",
+      "RULE_GENERATED_BOUNDARY",
+      "VIABILITY_BOUNDARY"
+    ],
+    "cl_mistake_warnings": [],
+    "claim_id": "G_light_wave_particle_pair",
+    "dominant_boundary_source": "HUMAN_AUTHORED_BOUNDARY",
+    "downgrade_reason": "decisive fields include human-authored toy provenance",
+    "expression_id": "light_wave_particle_pair",
+    "final_status": "LOCAL",
+    "forbidden_overclaims": [
+      "RULE_GENERATED_CONTENT",
+      "DERIVATION_EVIDENCE",
+      "SUBSTRATE_CLAIM"
+    ],
+    "oracle_leakage_warnings": [],
+    "runtime_decision": "ACCEPT_REPLAY_AUDIT",
+    "transition_trace": [
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "expression_id",
+          "derivation_trace",
+          "primitives",
+          "initial_status"
+        ],
+        "preconditions_checked": {
+          "birth_fields_present": true
+        },
+        "rule_id": "T1",
+        "status_after": "FORMED",
+        "status_before": null,
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no danger predicate active"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "danger_condition",
+          "goodhart_flags_initial",
+          "scope",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "danger_reasons": []
+        },
+        "rule_id": "T7",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no declared-scope failure"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_outcomes",
+          "contradiction_links",
+          "extension_path_count"
+        ],
+        "preconditions_checked": {
+          "declared_scope_failure": false
+        },
+        "rule_id": "T6",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "T2 preconditions absent"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "FORM_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "RULE_GENERATED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "derivation_trace",
+          "candidate_outcomes",
+          "attempted_transition"
+        ],
+        "preconditions_checked": {
+          "poetic_or_pseudo_term": false
+        },
+        "rule_id": "T2",
+        "status_after": "FORMED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "contradiction_links",
+          "extension_path_count",
+          "danger_condition"
+        ],
+        "preconditions_checked": {
+          "suspension_available": true
+        },
+        "rule_id": "T3",
+        "status_after": "SUSPENDED",
+        "status_before": "FORMED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "assumptions",
+          "candidate_tests",
+          "candidate_outcomes",
+          "scope_cost",
+          "scope_lineage",
+          "consequence_delta"
+        ],
+        "preconditions_checked": {
+          "localization_available": true
+        },
+        "rule_id": "T4",
+        "status_after": "LOCAL",
+        "status_before": "SUSPENDED",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "scope",
+          "candidate_tests",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "local_dualism_preserved": true
+        },
+        "rule_id": "T8",
+        "status_after": "LOCAL",
+        "status_before": "LOCAL",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "adversarial paraphrase not survived"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "POPULATION_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "candidate_tests",
+          "candidate_outcomes",
+          "anchors",
+          "population_state",
+          "contradiction_links"
+        ],
+        "preconditions_checked": {
+          "stability_available": false
+        },
+        "rule_id": "T5",
+        "status_after": "LOCAL",
+        "status_before": "LOCAL",
+        "warning_ids": []
+      },
+      {
+        "blocked_by": [
+          "no prior STABLE with later failure token"
+        ],
+        "boundary_sources_consulted": [
+          "CONSEQUENCE_BOUNDARY",
+          "HUMAN_AUTHORED_BOUNDARY",
+          "VIABILITY_BOUNDARY"
+        ],
+        "fields_consulted": [
+          "prior_status",
+          "candidate_outcomes",
+          "contradiction_links",
+          "anchors",
+          "goodhart_flags_initial"
+        ],
+        "preconditions_checked": {
+          "stable_downgrade_applied": false
+        },
+        "rule_id": "T9",
+        "status_after": "LOCAL",
+        "status_before": "LOCAL",
+        "warning_ids": []
+      }
+    ]
+  }
+]
