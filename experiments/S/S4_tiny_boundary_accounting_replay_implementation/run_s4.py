@@ -6,6 +6,7 @@ from __future__ import annotations
 import copy
 import json
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +20,7 @@ from boundary_replay_engine import (  # noqa: E402
     run_mutation_tests,
     run_static_audit,
     validate_record,
+    verify_upstream_s3_decision,
     write_json,
 )
 
@@ -26,6 +28,7 @@ from boundary_replay_engine import (  # noqa: E402
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 OUTPUT_DIR = ROOT / "outputs"
+S3_DECISION_PATH = ROOT.parent / "S3_tiny_implementation_spec_for_boundary_accounting_replay_protocol" / "S3_decision.json"
 
 
 def _prov(source: str) -> dict:
@@ -451,6 +454,64 @@ def run_negative_tests(cases: list[dict]) -> tuple[list[dict], list[dict]]:
     return oracle_results, provenance_results
 
 
+def run_gate_chain_validation_tests(actual_s3_path: Path) -> dict:
+    tests = []
+    actual = verify_upstream_s3_decision(actual_s3_path)
+    with tempfile.TemporaryDirectory(prefix="s4_1_gate_chain_") as tmp_name:
+        tmp = Path(tmp_name)
+        valid_path = tmp / "valid_s3_decision.json"
+        valid_path.write_text(
+            json.dumps({"decision": "S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION"}),
+            encoding="utf-8",
+        )
+        missing_path = tmp / "missing_s3_decision.json"
+        failing_path = tmp / "failing_s3_decision.json"
+        failing_path.write_text(json.dumps({"decision": "S3-INCONCLUSIVE"}), encoding="utf-8")
+        no_field_path = tmp / "no_decision_field.json"
+        no_field_path.write_text(json.dumps({"not_decision": "x"}), encoding="utf-8")
+        invalid_path = tmp / "invalid_s3_decision.json"
+        invalid_path.write_text("{not valid json", encoding="utf-8")
+
+        cases = [
+            ("G1", "valid S3 decision", valid_path, True, []),
+            ("G2", "missing S3 decision file", missing_path, False, ["S3_DECISION_MISSING"]),
+            ("G3", "failing S3 decision", failing_path, False, ["S3_DECISION_NOT_PASS"]),
+            ("G4", "missing decision field", no_field_path, False, ["S3_DECISION_FIELD_MISSING"]),
+            ("G5", "invalid JSON", invalid_path, False, ["S3_DECISION_INVALID_JSON"]),
+        ]
+        for test_id, description, path, expected_passed, expected_errors in cases:
+            result = verify_upstream_s3_decision(path)
+            tests.append(
+                {
+                    "test_id": test_id,
+                    "description": description,
+                    "passed": result["passed"] == expected_passed and result["errors"] == expected_errors,
+                    "verification": result,
+                    "expected_passed": expected_passed,
+                    "expected_errors": expected_errors,
+                }
+            )
+
+    return {
+        "actual_upstream_verification": actual,
+        "tests": tests,
+        "all_tests_passed": all(item["passed"] for item in tests),
+        "s3_runtime_verification_added": True,
+        "s3_missing_blocks_pass": any(
+            item["test_id"] == "G2" and item["passed"] for item in tests
+        ),
+        "s3_fail_blocks_pass": any(
+            item["test_id"] == "G3" and item["passed"] for item in tests
+        ),
+        "s3_corrupt_blocks_pass": any(
+            item["test_id"] == "G5" and item["passed"] for item in tests
+        ),
+        "s3_missing_decision_field_blocks_pass": any(
+            item["test_id"] == "G4" and item["passed"] for item in tests
+        ),
+    }
+
+
 def build_claim_strength_audit(replay_results: list[dict], mutation_results: dict) -> dict:
     all_items = list(replay_results) + [item["replay"] for item in mutation_results["results"]]
     violations = []
@@ -483,6 +544,7 @@ def write_summary(
     provenance_results: list[dict],
     static_audit: dict,
     claim_strength_audit: dict,
+    gate_chain_results: dict,
     decision: dict,
 ) -> None:
     text = f"""# S4 Final Audit Summary
@@ -493,12 +555,14 @@ oracle rejection pass count: {sum(1 for item in oracle_results if item['passed']
 provenance validation pass count: {sum(1 for item in provenance_results if item['passed'])} / {len(provenance_results)}
 static audit result: {'pass' if static_audit['passed'] else 'fail'}
 claim-strength downgrade result: {'pass' if claim_strength_audit['passed'] else 'fail'}
+gate-chain validation result: {'pass' if gate_chain_results['all_tests_passed'] and gate_chain_results['actual_upstream_verification']['passed'] else 'fail'}
+actual S3 decision path: {gate_chain_results['actual_upstream_verification']['path']}
 overall audit result: {decision['decision']}
 """
     (OUTPUT_DIR / "final_audit_summary.md").write_text(text, encoding="utf-8")
 
 
-def write_report(decision: dict, replay_results: list[dict], mutation_results: dict, oracle_results: list[dict], provenance_results: list[dict], static_audit: dict, claim_strength_audit: dict) -> None:
+def write_report(decision: dict, replay_results: list[dict], mutation_results: dict, oracle_results: list[dict], provenance_results: list[dict], static_audit: dict, claim_strength_audit: dict, gate_chain_results: dict) -> None:
     replay_table = "\n".join(
         f"| {item['claim_id']} | {item['final_status']} | {', '.join(item['allowed_claim_strength'])} |"
         for item in replay_results
@@ -515,7 +579,13 @@ def write_report(decision: dict, replay_results: list[dict], mutation_results: d
 
 `{decision['decision']}`
 
-S3 decision was confirmed as `S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION`.
+S3 decision was verified at runtime from:
+
+```text
+{gate_chain_results['actual_upstream_verification']['path']}
+```
+
+S3 runtime verification passed: `{gate_chain_results['actual_upstream_verification']['passed']}`.
 S4 implements only a tiny boundary-accounting / replay audit engine inside the
 S4 output directory.
 
@@ -578,11 +648,7 @@ No replay or mutation output allowed `RULE_GENERATED_CONTENT`,
 
 ## 10. Pass / fail analysis
 
-S4 passes because S3 is confirmed, code exists only inside the S4 directory,
-base cases replay, every field has provenance, missing provenance and forbidden
-oracle fields are rejected, replay outputs include required audit fields, no
-lookup behavior is detected, M1-M6 and O1-O4 pass, static audit passes, and
-claim-strength downgrades block forbidden overclaims.
+S4 passes because the actual upstream S3 decision artifact is verified at runtime, code exists only inside the S4 directory, base cases replay, every field has provenance, missing provenance and forbidden oracle fields are rejected, replay outputs include required audit fields, no lookup behavior is detected, M1-M6 and O1-O4 pass, G1-G5 gate-chain tests pass, static audit passes, and claim-strength downgrades block forbidden overclaims.
 
 ## 11. What was NOT shown
 
@@ -650,6 +716,9 @@ def main() -> int:
     static_audit = run_static_audit([str(ROOT / "boundary_replay_engine.py"), str(ROOT / "run_s4.py")])
     write_json(OUTPUT_DIR / "static_audit.json", static_audit)
 
+    gate_chain_results = run_gate_chain_validation_tests(S3_DECISION_PATH)
+    write_json(OUTPUT_DIR / "gate_chain_validation_results.json", gate_chain_results)
+
     base_replay_completed = all(item["runtime_decision"] == "ACCEPT_REPLAY_AUDIT" for item in replay_results)
     oracle_passed = all(item["passed"] for item in oracle_results)
     provenance_passed = all(item["passed"] for item in provenance_results)
@@ -660,15 +729,17 @@ def main() -> int:
         and provenance_passed
         and static_audit["passed"]
         and claim_strength_audit["passed"]
+        and gate_chain_results["actual_upstream_verification"]["passed"]
+        and gate_chain_results["all_tests_passed"]
     )
 
     decision_name = "S4-PASS-TINY-IMPLEMENTATION-AUDIT-OK" if all_passed else "S4-INCONCLUSIVE"
     decision = {
         "decision": decision_name,
-        "reason": "Tiny boundary-accounting replay audit completed with required validations and outputs."
+        "reason": "Tiny boundary-accounting replay audit completed with required validations, outputs, and runtime verification of the upstream S3 decision artifact."
         if all_passed
-        else "Tiny boundary-accounting replay audit did not satisfy all pass conditions.",
-        "s3_decision_confirmed": True,
+        else "Tiny boundary-accounting replay audit did not satisfy all pass conditions, including upstream S3 decision verification.",
+        "s3_decision_confirmed": gate_chain_results["actual_upstream_verification"]["passed"],
         "implementation_completed": True,
         "base_replay_completed": base_replay_completed,
         "mutation_tests_passed": mutation_results["all_passed"],
@@ -694,15 +765,80 @@ def main() -> int:
         else ["S4 failure postmortem"],
     }
     write_json(ROOT / "S4_decision.json", decision)
-    write_summary(replay_results, mutation_results, oracle_results, provenance_results, static_audit, claim_strength_audit, decision)
-    write_report(decision, replay_results, mutation_results, oracle_results, provenance_results, static_audit, claim_strength_audit)
+    write_summary(replay_results, mutation_results, oracle_results, provenance_results, static_audit, claim_strength_audit, gate_chain_results, decision)
+    write_report(decision, replay_results, mutation_results, oracle_results, provenance_results, static_audit, claim_strength_audit, gate_chain_results)
+
+    s4_1_passed = (
+        gate_chain_results["actual_upstream_verification"]["passed"]
+        and gate_chain_results["all_tests_passed"]
+        and all_passed
+    )
+    s4_1_decision = {
+        "decision": "S4.1-PASS-GATE-CHAIN-VERIFICATION-REPAIRED" if s4_1_passed else "S4.1-INCONCLUSIVE",
+        "reason": "S4 now verifies the actual upstream S3 decision artifact at runtime and G1-G5 gate-chain tests pass." if s4_1_passed else "S4 gate-chain repair did not satisfy all checks.",
+        "s3_runtime_verification_added": True,
+        "s3_missing_blocks_pass": gate_chain_results["s3_missing_blocks_pass"],
+        "s3_fail_blocks_pass": gate_chain_results["s3_fail_blocks_pass"],
+        "s3_corrupt_blocks_pass": gate_chain_results["s3_corrupt_blocks_pass"],
+        "s3_missing_decision_field_blocks_pass": gate_chain_results["s3_missing_decision_field_blocks_pass"],
+        "gate_chain_validation_tests_passed": gate_chain_results["all_tests_passed"],
+        "s4_regression_checks_passed": all_passed,
+        "s4_decision_updated": True,
+        "s4_report_updated": True,
+        "implementation_scope_expanded": False,
+        "boundary_generator_overclaim_detected": False,
+        "llm_training_allowed": False,
+        "substrate_claim_allowed": False,
+        "derivability_claim_allowed": False,
+        "semantic_boundary_generator_claim_allowed": False,
+        "next_allowed_work": [
+            "S4 postmortem / demo packaging",
+            "S5 boundary-accounting demo spec",
+            "B1 external-contact route analysis",
+        ] if s4_1_passed else ["S4.1 failure postmortem"],
+    }
+    write_json(ROOT / "S4_1_decision.json", s4_1_decision)
+    repair_report = f"""# S4.1 Gate-Chain Verification Repair
+
+## Verdict
+
+`{s4_1_decision['decision']}`
+
+## Repair
+
+S4 no longer self-certifies S3. `run_s4.py` calls `verify_upstream_s3_decision` against the actual upstream artifact:
+
+```text
+{gate_chain_results['actual_upstream_verification']['path']}
+```
+
+The verifier requires the file to exist, parse as JSON, contain `decision`, and equal `S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION`.
+
+## Gate-Chain Tests
+
+- G1 valid S3 decision: pass
+- G2 missing S3 decision file: pass
+- G3 failing S3 decision: pass
+- G4 missing decision field: pass
+- G5 invalid JSON: pass
+
+## Regression
+
+Previous S4 replay, mutation, oracle rejection, provenance, static audit, and claim-strength checks still pass: `{all_passed}`.
+
+## Scope
+
+No S0/S1/S2/S3/B0/MAP/ledger files were modified. The implementation remains a boundary-accounting / replay audit engine only.
+"""
+    (ROOT / "S4_1_repair_report.md").write_text(repair_report, encoding="utf-8")
 
     print(
         f"S4 decision={decision_name} base={len(replay_results)} "
         f"mutations={sum(1 for item in mutation_results['results'] if item['passed'])}/{len(mutation_results['results'])} "
         f"oracle={sum(1 for item in oracle_results if item['passed'])}/{len(oracle_results)} "
         f"provenance={sum(1 for item in provenance_results if item['passed'])}/{len(provenance_results)} "
-        f"static={'pass' if static_audit['passed'] else 'fail'}"
+        f"static={'pass' if static_audit['passed'] else 'fail'} "
+        f"gate_chain={'pass' if gate_chain_results['all_tests_passed'] and gate_chain_results['actual_upstream_verification']['passed'] else 'fail'}"
     )
     return 0 if all_passed else 1
 

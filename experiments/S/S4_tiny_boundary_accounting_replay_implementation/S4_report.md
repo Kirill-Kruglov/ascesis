@@ -4,7 +4,13 @@
 
 `S4-PASS-TINY-IMPLEMENTATION-AUDIT-OK`
 
-S3 decision was confirmed as `S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION`.
+S3 decision was verified at runtime from:
+
+```text
+/home/master/llm_projects/ascesis/experiments/S/S3_tiny_implementation_spec_for_boundary_accounting_replay_protocol/S3_decision.json
+```
+
+S3 runtime verification passed: `True`.
 S4 implements only a tiny boundary-accounting / replay audit engine inside the
 S4 output directory.
 
@@ -78,11 +84,7 @@ No replay or mutation output allowed `RULE_GENERATED_CONTENT`,
 
 ## 10. Pass / fail analysis
 
-S4 passes because S3 is confirmed, code exists only inside the S4 directory,
-base cases replay, every field has provenance, missing provenance and forbidden
-oracle fields are rejected, replay outputs include required audit fields, no
-lookup behavior is detected, M1-M6 and O1-O4 pass, static audit passes, and
-claim-strength downgrades block forbidden overclaims.
+S4 passes because the actual upstream S3 decision artifact is verified at runtime, code exists only inside the S4 directory, base cases replay, every field has provenance, missing provenance and forbidden oracle fields are rejected, replay outputs include required audit fields, no lookup behavior is detected, M1-M6 and O1-O4 pass, G1-G5 gate-chain tests pass, static audit passes, and claim-strength downgrades block forbidden overclaims.
 
 ## 11. What was NOT shown
 

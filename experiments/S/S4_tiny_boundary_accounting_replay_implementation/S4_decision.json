@@ -18,7 +18,7 @@
   "oracle_field_rejection_passed": true,
   "oracle_leakage_detected": false,
   "provenance_validation_passed": true,
-  "reason": "Tiny boundary-accounting replay audit completed with required validations and outputs.",
+  "reason": "Tiny boundary-accounting replay audit completed with required validations, outputs, and runtime verification of the upstream S3 decision artifact.",
   "s3_decision_confirmed": true,
   "semantic_boundary_generator_claim_allowed": false,
   "static_audit_passed": true,

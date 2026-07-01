@@ -128,7 +128,7 @@
     },
     {
       "allowed_context": true,
-      "line": 413,
+      "line": 416,
       "path": "/home/master/llm_projects/ascesis/experiments/S/S4_tiny_boundary_accounting_replay_implementation/run_s4.py",
       "pattern": "truth_label",
       "text": "o3[\"truth_label\"] = True"

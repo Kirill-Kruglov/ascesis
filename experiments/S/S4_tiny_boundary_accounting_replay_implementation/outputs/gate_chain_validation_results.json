@@ -1,0 +1,97 @@
+{
+  "actual_upstream_verification": {
+    "decision": "S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION",
+    "errors": [],
+    "passed": true,
+    "path": "/home/master/llm_projects/ascesis/experiments/S/S3_tiny_implementation_spec_for_boundary_accounting_replay_protocol/S3_decision.json"
+  },
+  "all_tests_passed": true,
+  "s3_corrupt_blocks_pass": true,
+  "s3_fail_blocks_pass": true,
+  "s3_missing_blocks_pass": true,
+  "s3_missing_decision_field_blocks_pass": true,
+  "s3_runtime_verification_added": true,
+  "tests": [
+    {
+      "description": "valid S3 decision",
+      "expected_errors": [],
+      "expected_passed": true,
+      "passed": true,
+      "test_id": "G1",
+      "verification": {
+        "decision": "S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION",
+        "errors": [],
+        "passed": true,
+        "path": "/tmp/s4_1_gate_chain_q0wzsz5f/valid_s3_decision.json"
+      }
+    },
+    {
+      "description": "missing S3 decision file",
+      "expected_errors": [
+        "S3_DECISION_MISSING"
+      ],
+      "expected_passed": false,
+      "passed": true,
+      "test_id": "G2",
+      "verification": {
+        "decision": null,
+        "errors": [
+          "S3_DECISION_MISSING"
+        ],
+        "passed": false,
+        "path": "/tmp/s4_1_gate_chain_q0wzsz5f/missing_s3_decision.json"
+      }
+    },
+    {
+      "description": "failing S3 decision",
+      "expected_errors": [
+        "S3_DECISION_NOT_PASS"
+      ],
+      "expected_passed": false,
+      "passed": true,
+      "test_id": "G3",
+      "verification": {
+        "decision": "S3-INCONCLUSIVE",
+        "errors": [
+          "S3_DECISION_NOT_PASS"
+        ],
+        "passed": false,
+        "path": "/tmp/s4_1_gate_chain_q0wzsz5f/failing_s3_decision.json"
+      }
+    },
+    {
+      "description": "missing decision field",
+      "expected_errors": [
+        "S3_DECISION_FIELD_MISSING"
+      ],
+      "expected_passed": false,
+      "passed": true,
+      "test_id": "G4",
+      "verification": {
+        "decision": null,
+        "errors": [
+          "S3_DECISION_FIELD_MISSING"
+        ],
+        "passed": false,
+        "path": "/tmp/s4_1_gate_chain_q0wzsz5f/no_decision_field.json"
+      }
+    },
+    {
+      "description": "invalid JSON",
+      "expected_errors": [
+        "S3_DECISION_INVALID_JSON"
+      ],
+      "expected_passed": false,
+      "passed": true,
+      "test_id": "G5",
+      "verification": {
+        "decision": null,
+        "errors": [
+          "S3_DECISION_INVALID_JSON"
+        ],
+        "passed": false,
+        "path": "/tmp/s4_1_gate_chain_q0wzsz5f/invalid_s3_decision.json"
+      }
+    }
+  ]
+}

@@ -135,6 +135,34 @@ def load_json(path: str) -> dict | list:
         return json.load(handle)
 
 
+def verify_upstream_s3_decision(path: str | Path) -> dict:
+    decision_path = Path(path)
+    result = {
+        "passed": False,
+        "decision": None,
+        "path": str(decision_path),
+        "errors": [],
+    }
+    if not decision_path.exists():
+        result["errors"].append("S3_DECISION_MISSING")
+        return result
+    try:
+        with decision_path.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except json.JSONDecodeError:
+        result["errors"].append("S3_DECISION_INVALID_JSON")
+        return result
+    if "decision" not in payload:
+        result["errors"].append("S3_DECISION_FIELD_MISSING")
+        return result
+    result["decision"] = payload.get("decision")
+    if result["decision"] != "S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION":
+        result["errors"].append("S3_DECISION_NOT_PASS")
+        return result
+    result["passed"] = True
+    return result
+
+
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
