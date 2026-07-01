@@ -1,0 +1,22 @@
+{
+  "decision": "S3-PASS-ADMISSIBLE-FOR-TINY-IMPLEMENTATION",
+  "reason": "B0 pass was confirmed, and S3 specifies only a boundary-accounting / replay engine: every input field requires boundary-source provenance, forbidden oracle fields are rejected, outputs include transition traces, blocked transitions, boundary sources, downgrade reasons, warnings, and mutation results, replay follows T1-T9 in fixed order, anti-lookup controls and M1-M6 mutation tests are defined, and CL/oracle mistake controls block stronger claims.",
+  "b0_decision_confirmed": true,
+  "s3_specifies_boundary_accounting_only": true,
+  "input_schema_defined": true,
+  "output_schema_defined": true,
+  "anti_lookup_controls_defined": true,
+  "mutation_tests_defined": true,
+  "provenance_required_for_all_fields": true,
+  "claim_strength_downgrade_defined": true,
+  "oracle_leakage_controls_defined": true,
+  "cl_mistake_controls_defined": true,
+  "admissible_for_tiny_implementation": true,
+  "implementation_allowed_by_s3": false,
+  "llm_training_allowed": false,
+  "substrate_claim_allowed": false,
+  "derivability_claim_allowed": false,
+  "next_allowed_work": [
+    "S4 tiny implementation task"
+  ]
+}
