@@ -1,0 +1,41 @@
+{
+  "classification": "Representation_invariant",
+  "interpretation": "Backbone survives representation-preserving edits but fails under theory-changing edits.",
+  "representation_only": {
+    "allowed_ops": [
+      "P10_replace_subgraph",
+      "P4_alpha_rename",
+      "P9_split_node"
+    ],
+    "analyzed_class_count": 1200,
+    "broken_class_count": 0,
+    "label": "representation_only",
+    "mean_attack_cost_broken": null,
+    "mean_auc_gns": 1.0,
+    "min_attack_cost": null,
+    "surviving_class_count": 1200,
+    "surviving_fraction": 1.0
+  },
+  "runtime_sec": 210.27142896782607,
+  "theory_change": {
+    "allowed_ops": [
+      "P11_swap_branches",
+      "P12_alternative_derivation",
+      "P1_remove_edge",
+      "P2_add_edge",
+      "P3_reverse_edge",
+      "P5_split_mediator",
+      "P6_delete_path",
+      "P7_replace_chain",
+      "P8_merge_internal_nodes"
+    ],
+    "analyzed_class_count": 1200,
+    "broken_class_count": 1046,
+    "label": "theory_change",
+    "mean_attack_cost_broken": 1.2103250478011471,
+    "mean_auc_gns": 0.3930208333333333,
+    "min_attack_cost": 1,
+    "surviving_class_count": 154,
+    "surviving_fraction": 0.12833333333333333
+  }
+}

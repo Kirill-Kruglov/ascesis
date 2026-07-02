@@ -1,0 +1,118 @@
+{
+  "F1_real_metrics": {
+    "columns": [
+      "M1_original_score",
+      "M2_intervention_score",
+      "M3_reuse_score",
+      "M4_compression_score",
+      "M5_perturbation_centrality_score"
+    ],
+    "components_for_80": 2,
+    "components_for_90": 2,
+    "components_for_95": 3,
+    "cumulative_variance": [
+      0.719848717629418,
+      0.9309079094498146,
+      0.993520764437292,
+      0.9988498505923084,
+      1.0
+    ],
+    "explained_variance_ratio": [
+      0.719848717629418,
+      0.2110591918203966,
+      0.06261285498747741,
+      0.0053290861550163516,
+      0.0011501494076917116
+    ]
+  },
+  "F1_success_cluster": {
+    "columns": [
+      "M1_original_score",
+      "M3_reuse_score",
+      "M5_perturbation_centrality_score"
+    ],
+    "components_for_80": 1,
+    "components_for_90": 1,
+    "components_for_95": 2,
+    "cumulative_variance": [
+      0.9336359997331903,
+      0.9895062499559286,
+      1.0
+    ],
+    "explained_variance_ratio": [
+      0.9336359997331903,
+      0.05587025022273828,
+      0.010493750044071404
+    ]
+  },
+  "F2_real_plus_controls": {
+    "columns": [
+      "M1_original_score",
+      "M2_intervention_score",
+      "M3_reuse_score",
+      "M4_compression_score",
+      "M5_perturbation_centrality_score",
+      "M6_frequency_control_score",
+      "M7_random_matched_score"
+    ],
+    "components_for_80": 3,
+    "components_for_90": 3,
+    "components_for_95": 4,
+    "cumulative_variance": [
+      0.5415008930511878,
+      0.7913090212439283,
+      0.9330976823777514,
+      0.9806385875649384,
+      0.9962249831613728
+    ],
+    "explained_variance_ratio": [
+      0.5415008930511878,
+      0.2498081281927406,
+      0.14178866113382305,
+      0.04754090518718698,
+      0.015586395596434321
+    ]
+  },
+  "F3_all_internal": {
+    "columns": [
+      "class_size",
+      "object_diversity",
+      "depth_min",
+      "depth_max",
+      "reuse_count",
+      "role_score",
+      "action_effect_score",
+      "redundancy_score",
+      "signature_len",
+      "frequency",
+      "object_diversity_score",
+      "depth_score",
+      "reuse_rate",
+      "complexity",
+      "M2_intervention_score",
+      "M3_reuse_score",
+      "M4_compression_score",
+      "M5_perturbation_centrality_score",
+      "M1_original_score",
+      "M6_frequency_control_score",
+      "M7_random_matched_score"
+    ],
+    "components_for_80": 3,
+    "components_for_90": 4,
+    "components_for_95": 5,
+    "cumulative_variance": [
+      0.4160450722176306,
+      0.708682820863299,
+      0.8603314288295403,
+      0.907356875250345,
+      0.943203577136329
+    ],
+    "explained_variance_ratio": [
+      0.4160450722176306,
+      0.29263774864566844,
+      0.15164860796624124,
+      0.0470254464208048,
+      0.035846701885983885
+    ]
+  }
+}

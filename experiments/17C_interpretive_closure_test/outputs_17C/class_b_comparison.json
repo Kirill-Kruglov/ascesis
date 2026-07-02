@@ -1,0 +1,67 @@
+{
+  "open": {
+    "allowed_ops": [
+      "P11_swap_branches",
+      "P12_alternative_derivation",
+      "P1_remove_edge",
+      "P2_add_edge",
+      "P3_reverse_edge",
+      "P5_split_mediator",
+      "P6_delete_path",
+      "P7_replace_chain",
+      "P8_merge_internal_nodes"
+    ],
+    "analyzed_class_count": 900,
+    "broken_class_count": 782,
+    "label": "open_class_b",
+    "mean_attack_cost_broken": 1.20076726342711,
+    "mean_auc_gns": 0.41618055555555555,
+    "min_attack_cost": 1,
+    "surviving_class_count": 118,
+    "surviving_fraction": 0.13111111111111112
+  },
+  "strong": {
+    "allowed_ops": [
+      "P11_swap_branches",
+      "P12_alternative_derivation",
+      "P1_remove_edge",
+      "P2_add_edge",
+      "P3_reverse_edge",
+      "P5_split_mediator",
+      "P6_delete_path",
+      "P7_replace_chain",
+      "P8_merge_internal_nodes"
+    ],
+    "analyzed_class_count": 900,
+    "broken_class_count": 897,
+    "label": "strong_closure_class_b",
+    "mean_attack_cost_broken": 1.0724637681159421,
+    "mean_auc_gns": 0.3131481481481482,
+    "min_attack_cost": 1,
+    "surviving_class_count": 3,
+    "surviving_fraction": 0.0033333333333333335
+  },
+  "weak": {
+    "allowed_ops": [
+      "P11_swap_branches",
+      "P12_alternative_derivation",
+      "P1_remove_edge",
+      "P2_add_edge",
+      "P3_reverse_edge",
+      "P5_split_mediator",
+      "P6_delete_path",
+      "P7_replace_chain",
+      "P8_merge_internal_nodes"
+    ],
+    "analyzed_class_count": 900,
+    "broken_class_count": 782,
+    "label": "weak_closure_class_b",
+    "mean_attack_cost_broken": 1.20076726342711,
+    "mean_auc_gns": 0.41618055555555555,
+    "min_attack_cost": 1,
+    "surviving_class_count": 118,
+    "surviving_fraction": 0.13111111111111112,
+    "weighted_auc_gns": 0.43744178835588493,
+    "weighted_surviving_fraction": 0.1129280696974645
+  }
+}

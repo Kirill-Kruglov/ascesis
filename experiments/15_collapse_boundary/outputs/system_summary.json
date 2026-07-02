@@ -1,0 +1,11 @@
+{
+  "max_horizon": 128,
+  "samples": 20000,
+  "seed": 42,
+  "systems": [
+    "A_dead_control",
+    "B_fake_live_control",
+    "C_collapsing_live_candidate",
+    "D_structured_live_candidate"
+  ]
+}

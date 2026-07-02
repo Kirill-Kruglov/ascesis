@@ -1,0 +1,6 @@
+observation_depth,semantic_class_count,trajectory_count,semantic_class_rate,trajectory_rate,sample_limited_any,semantic_growth_from_previous,semantic_growth_ratio_from_previous
+4,98749,100000,0.98749,1.0,True,,
+6,98749,100000,0.98749,1.0,True,0.0,1.0
+8,98749,100000,0.98749,1.0,True,0.0,1.0
+10,98749,100000,0.98749,1.0,True,0.0,1.0
+12,98749,100000,0.98749,1.0,True,0.0,1.0

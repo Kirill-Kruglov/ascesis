@@ -1,0 +1,9 @@
+component,controls,variance_explained_by_controls,all_raw_auc,controls_auc,latent1_auc,residual_predictive_power_after_controls
+PC1,class_size;frequency;dag_diversity;operator_diversity;depth_max;M6_frequency_control_score;M7_random_matched_score,0.6963947274868871,,,,
+PC2,class_size;frequency;dag_diversity;operator_diversity;depth_max;M6_frequency_control_score;M7_random_matched_score,0.650158511260013,,,,
+PC3,class_size;frequency;dag_diversity;operator_diversity;depth_max;M6_frequency_control_score;M7_random_matched_score,0.9329605539389613,,,,
+PC4,class_size;frequency;dag_diversity;operator_diversity;depth_max;M6_frequency_control_score;M7_random_matched_score,0.4591157305886917,,,,
+PC5,class_size;frequency;dag_diversity;operator_diversity;depth_max;M6_frequency_control_score;M7_random_matched_score,0.3814497020948625,,,,
+predictive_leakage_functional_core_membership,,,0.997426395065905,0.690433630852173,0.9928286045991502,0.3023949737469772
+predictive_leakage_strict_core_membership,,,0.9578472712224846,0.743576672573806,0.6665186252644903,-0.07705804730931565
+predictive_leakage_class_b_survives,,,0.7795156564277023,0.6963509721635917,0.5023683295671824,-0.1939826425964093

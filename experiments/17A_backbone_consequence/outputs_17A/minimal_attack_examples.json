@@ -1,0 +1,281 @@
+[
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "3763d524e609c5a0",
+    "mode": "left_only",
+    "operations": [
+      "P3_reverse_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N0, N1) || Effect(N0 -> N1) || Reachable(N0, N1)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "60466c6446f76f07",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N2, N0) || Effect(N2 -> N0) || Reachable(N2, N0)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "f06dc8aafaee6a0a",
+    "mode": "left_only",
+    "operations": [
+      "P3_reverse_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N3, N0) || Effect(N3 -> N0) || Reachable(N3, N0)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "41546aa101ee86db",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N3, N2) || Effect(N3 -> N2) || Reachable(N3, N2)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "44cb71513a7afb4d",
+    "mode": "left_only",
+    "operations": [
+      "P3_reverse_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N0, N3) || Effect(N0 -> N3) || Reachable(N0, N3)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "9661609533bdfcb4",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N1, N0) || Effect(N1 -> N0) || Reachable(N1, N0)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "9bc6ba0c3dc6afe7",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N0, N2) || Effect(N0 -> N2) || Reachable(N0, N2)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 2,
+    "class_id": "3565b8aaa8bf8450",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes",
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N2, N3) || Effect(N2 -> N3) || Reachable(N2, N3)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "5961ca3dd5952899",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N2, N1) || Effect(N2 -> N1) || Reachable(N2, N1)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "1c190318372b2dbe",
+    "mode": "right_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N1, N2) || Effect(N1 -> N2) || Reachable(N1, N2)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "57a8c160fd4fd10b",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N3, N1) || Effect(N3 -> N1) || Reachable(N3, N1)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 2,
+    "class_id": "59aedb85463f5af4",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes",
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N1, N3) || Effect(N1 -> N3) || Reachable(N1, N3)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "48aee7c8bbd92059",
+    "mode": "right_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N1, N5) || Effect(N1 -> N5) || Reachable(N1, N5)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 2,
+    "class_id": "f9bba2c615ac1262",
+    "mode": "right_only",
+    "operations": [
+      "P8_merge_internal_nodes",
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N2, N5) || Effect(N2 -> N5) || Reachable(N2, N5)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 2,
+    "class_id": "801deb2b9ea182d1",
+    "mode": "right_only",
+    "operations": [
+      "P8_merge_internal_nodes",
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N5, N2) || Effect(N5 -> N2) || Reachable(N5, N2)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "62675f7f509bc627",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N5, N0) || Effect(N5 -> N0) || Reachable(N5, N0)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "6d6102308ec6a212",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N3, N5) || Effect(N3 -> N5) || Reachable(N3, N5)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "01835177404ee03d",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N5, N1) || Effect(N5 -> N1) || Reachable(N5, N1)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "5efbd02805d9d21b",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N0, N5) || Effect(N0 -> N5) || Reachable(N0, N5)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "bb1b7bc9d74e5bd4",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N5, N4) || Effect(N5 -> N4) || Reachable(N5, N4)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "4a1870c1c07b3acf",
+    "mode": "left_only",
+    "operations": [
+      "P2_add_edge"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N5, N3) || Effect(N5 -> N3) || Reachable(N5, N3)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "c343797fefb52184",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N4, N1) || Effect(N4 -> N1) || Reachable(N4, N1)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "6ed62e6193bc3040",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N2, N4) || Effect(N2 -> N4) || Reachable(N2, N4)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "bcd16b88418b30b5",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N4, N2) || Effect(N4 -> N2) || Reachable(N4, N2)"
+  },
+  {
+    "alias_pair": true,
+    "attack_cost": 1,
+    "class_id": "39f1cf0cb64a3125",
+    "mode": "left_only",
+    "operations": [
+      "P8_merge_internal_nodes"
+    ],
+    "pair_type": "cross_dag",
+    "representative": "Ancestor(N4, N5) || Effect(N4 -> N5) || Reachable(N4, N5)"
+  }
+]

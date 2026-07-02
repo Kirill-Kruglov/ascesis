@@ -1,0 +1,26 @@
+{
+  "M6_frequency_control": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.13833333333333334,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.2185686653771761,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.4347916666666667,
+    "mean_score": 0.013404306089765318,
+    "total_classes": 29934
+  },
+  "M7_random_matched": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.16833333333333333,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.1843687374749499,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.4312847222222223,
+    "mean_score": 0.4577319333252087,
+    "total_classes": 29934
+  },
+  "controls_mean_Class_B_survival": 0.15333333333333332,
+  "real_metrics_mean_Class_B_survival": 0.06666666666666667
+}

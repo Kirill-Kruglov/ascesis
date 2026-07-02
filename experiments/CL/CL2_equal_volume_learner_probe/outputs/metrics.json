@@ -1,0 +1,54 @@
+{
+  "primary_learner": {
+    "random_split_exact_accuracy": 1.0,
+    "random_split_coordinate_accuracy": 1.0,
+    "source_state_holdout_exact_accuracy": 1.0,
+    "source_state_holdout_coordinate_accuracy": 1.0,
+    "structural_holdout_exact_accuracy": 1.0,
+    "structural_holdout_coordinate_accuracy": 1.0
+  },
+  "copy_source_baseline": {
+    "random_split_exact_accuracy": 0.0,
+    "random_split_coordinate_accuracy": 0.4792736872146119,
+    "source_state_holdout_exact_accuracy": 0.0,
+    "source_state_holdout_coordinate_accuracy": 0.48006703751248037,
+    "structural_holdout_exact_accuracy": 0.0,
+    "structural_holdout_coordinate_accuracy": 0.4799513194978222
+  },
+  "memorizer_baseline": {
+    "random_split_exact_accuracy": 0.1292808219178082,
+    "random_split_coordinate_accuracy": 0.60238299086758,
+    "source_state_holdout_exact_accuracy": 0.12216516902011125,
+    "source_state_holdout_coordinate_accuracy": 0.6384253316217373,
+    "structural_holdout_exact_accuracy": 0.0,
+    "structural_holdout_coordinate_accuracy": 0.44926979246733284
+  },
+  "majority_delta_baseline": {
+    "random_split_exact_accuracy": 0.1292808219178082,
+    "random_split_coordinate_accuracy": 0.60238299086758,
+    "source_state_holdout_exact_accuracy": 0.12216516902011125,
+    "source_state_holdout_coordinate_accuracy": 0.6384253316217373,
+    "structural_holdout_exact_accuracy": 0.0,
+    "structural_holdout_coordinate_accuracy": 0.44926979246733284
+  },
+  "shuffled_target_control": {
+    "random_split_exact_accuracy": 0.0,
+    "random_split_coordinate_accuracy": 0.6386629566210046,
+    "source_state_holdout_exact_accuracy": 0.6463414634146342,
+    "source_state_holdout_coordinate_accuracy": 0.9410569105691057,
+    "structural_holdout_exact_accuracy": 0.0,
+    "structural_holdout_coordinate_accuracy": 0.6778332906311384
+  },
+  "equal_volume_unfiltered_control_learner": {
+    "random_split_exact_accuracy": 1.0,
+    "random_split_coordinate_accuracy": 1.0,
+    "source_state_holdout_exact_accuracy": 1.0,
+    "source_state_holdout_coordinate_accuracy": 1.0,
+    "structural_holdout_exact_accuracy": 1.0,
+    "structural_holdout_coordinate_accuracy": 1.0
+  },
+  "memorization_gap": 1.0,
+  "copy_gap": 1.0,
+  "control_gap": 0.0,
+  "shuffled_target_accuracy": 0.6463414634146342
+}

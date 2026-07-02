@@ -1,0 +1,28 @@
+{
+  "operation_counts": [
+    {
+      "broken_pair_count": 735,
+      "operation": "P8_merge_internal_nodes"
+    },
+    {
+      "broken_pair_count": 546,
+      "operation": "P3_reverse_edge"
+    },
+    {
+      "broken_pair_count": 499,
+      "operation": "P2_add_edge"
+    },
+    {
+      "broken_pair_count": 488,
+      "operation": "P6_delete_path"
+    },
+    {
+      "broken_pair_count": 150,
+      "operation": "P1_remove_edge"
+    },
+    {
+      "broken_pair_count": 82,
+      "operation": "P11_swap_branches"
+    }
+  ]
+}

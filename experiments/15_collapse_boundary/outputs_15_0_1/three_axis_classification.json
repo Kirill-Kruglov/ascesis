@@ -1,0 +1,241 @@
+{
+  "params": {
+    "growth_eps": 0.05,
+    "tau_low_rate": 0.05,
+    "sample_limit_frac": 0.9,
+    "window": 2,
+    "note": "openness is judged on unique-object COUNT vs horizon, not novelty rate at fixed sample budget"
+  },
+  "legend": {
+    "trivial": "count plateaus and per-object novelty rate ~0: channel collapses to ~no diversity",
+    "saturating": "count plateaus at a finite set well below the sample budget (closed at a bounded size)",
+    "open": "count still growing at the largest horizon (or filled the sample budget -> sample-limited, openness indeterminate)",
+    "degenerate": "<=1 distinct object ever; channel uninformative"
+  },
+  "systems": {
+    "A_dead_control": {
+      "state_axis": "trivial",
+      "trajectory_axis": "saturating",
+      "semantic_axis": "trivial",
+      "summary": "state-trivial / trajectory-saturating / semantic-trivial",
+      "semantic_proxy_degenerate": false,
+      "evidence": {
+        "state": {
+          "verdict": "trivial",
+          "saturation_count": 653,
+          "saturation_horizon": 16,
+          "final_rate": 0.0060749837194157595,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "trajectory": {
+          "verdict": "saturating",
+          "saturation_count": 2201,
+          "saturation_horizon": 16,
+          "final_rate": 0.11005,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "normal_form": {
+          "verdict": "trivial",
+          "saturation_count": 8,
+          "saturation_horizon": 16,
+          "final_rate": 0.0004,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic": {
+          "verdict": "trivial",
+          "saturation_count": 8,
+          "saturation_horizon": 16,
+          "final_rate": 0.0004,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic_label": {
+          "verdict": "saturating",
+          "saturation_count": 1360,
+          "saturation_horizon": 16,
+          "final_rate": 0.068,
+          "sample_limited": false,
+          "still_growing": false
+        }
+      },
+      "non_monotonic_plateau": {
+        "state": false,
+        "trajectory": true,
+        "normal_form": false,
+        "semantic": false,
+        "semantic_label": true
+      }
+    },
+    "B_fake_live_control": {
+      "state_axis": "open",
+      "trajectory_axis": "saturating",
+      "semantic_axis": "trivial",
+      "summary": "state-open / trajectory-saturating / semantic-trivial",
+      "semantic_proxy_degenerate": false,
+      "evidence": {
+        "state": {
+          "verdict": "open",
+          "saturation_count": 1609343,
+          "saturation_horizon": 128,
+          "final_rate": 0.6237763565891473,
+          "sample_limited": false,
+          "still_growing": true
+        },
+        "trajectory": {
+          "verdict": "saturating",
+          "saturation_count": 13953,
+          "saturation_horizon": 32,
+          "final_rate": 0.69765,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "normal_form": {
+          "verdict": "degenerate",
+          "saturation_count": 0,
+          "saturation_horizon": null,
+          "final_rate": null,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic": {
+          "verdict": "trivial",
+          "saturation_count": 9,
+          "saturation_horizon": 4,
+          "final_rate": 0.00045,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic_label": {
+          "verdict": "saturating",
+          "saturation_count": 13953,
+          "saturation_horizon": 32,
+          "final_rate": 0.69765,
+          "sample_limited": false,
+          "still_growing": false
+        }
+      },
+      "non_monotonic_plateau": {
+        "state": true,
+        "trajectory": true,
+        "normal_form": false,
+        "semantic": false,
+        "semantic_label": true
+      }
+    },
+    "C_collapsing_live_candidate": {
+      "state_axis": "saturating",
+      "trajectory_axis": "open",
+      "semantic_axis": "saturating",
+      "summary": "state-saturating / trajectory-open(sample-limited) / semantic-saturating",
+      "semantic_proxy_degenerate": false,
+      "evidence": {
+        "state": {
+          "verdict": "saturating",
+          "saturation_count": 79244,
+          "saturation_horizon": 32,
+          "final_rate": 0.14018365892015913,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "trajectory": {
+          "verdict": "open",
+          "saturation_count": 19999,
+          "saturation_horizon": 16,
+          "final_rate": 0.99995,
+          "sample_limited": true,
+          "still_growing": false
+        },
+        "normal_form": {
+          "verdict": "saturating",
+          "saturation_count": 1024,
+          "saturation_horizon": 32,
+          "final_rate": 0.0512,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic": {
+          "verdict": "saturating",
+          "saturation_count": 1024,
+          "saturation_horizon": 64,
+          "final_rate": 0.0512,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic_label": {
+          "verdict": "open",
+          "saturation_count": 19999,
+          "saturation_horizon": 16,
+          "final_rate": 0.99995,
+          "sample_limited": true,
+          "still_growing": false
+        }
+      },
+      "non_monotonic_plateau": {
+        "state": true,
+        "trajectory": true,
+        "normal_form": false,
+        "semantic": true,
+        "semantic_label": true
+      }
+    },
+    "D_structured_live_candidate": {
+      "state_axis": "trivial",
+      "trajectory_axis": "trivial",
+      "semantic_axis": "trivial",
+      "summary": "state-trivial / trajectory-trivial / semantic-trivial",
+      "semantic_proxy_degenerate": false,
+      "evidence": {
+        "state": {
+          "verdict": "trivial",
+          "saturation_count": 31,
+          "saturation_horizon": 4,
+          "final_rate": 0.00034716000716717436,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "trajectory": {
+          "verdict": "trivial",
+          "saturation_count": 364,
+          "saturation_horizon": 8,
+          "final_rate": 0.0182,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "normal_form": {
+          "verdict": "trivial",
+          "saturation_count": 2,
+          "saturation_horizon": 4,
+          "final_rate": 0.0001,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic": {
+          "verdict": "trivial",
+          "saturation_count": 2,
+          "saturation_horizon": 8,
+          "final_rate": 0.0001,
+          "sample_limited": false,
+          "still_growing": false
+        },
+        "semantic_label": {
+          "verdict": "trivial",
+          "saturation_count": 227,
+          "saturation_horizon": 8,
+          "final_rate": 0.01135,
+          "sample_limited": false,
+          "still_growing": false
+        }
+      },
+      "non_monotonic_plateau": {
+        "state": false,
+        "trajectory": true,
+        "normal_form": false,
+        "semantic": false,
+        "semantic_label": false
+      }
+    }
+  }
+}

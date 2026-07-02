@@ -1,0 +1,18 @@
+{
+  "classification": "DAG_artifact",
+  "interpretation": "Only the causal-DAG substrate reproduced the 17E multi-axis pattern.",
+  "kill_conditions": {
+    "at_least_two_nontrivial_failures": true,
+    "controls_reproduce_across_substrates": false,
+    "non_causal_reproduces_pattern": false,
+    "only_S1_reproduces_pattern": true
+  },
+  "local_classifications": {
+    "S1_causal_dag": "multi_axis",
+    "S2_directed_graph": "metric_noise",
+    "S3_term_rewrite": "one_axis",
+    "S4_finite_automata": "control_artifact"
+  },
+  "non_causal_multi_axis_count": 0,
+  "substrate_count": 4
+}

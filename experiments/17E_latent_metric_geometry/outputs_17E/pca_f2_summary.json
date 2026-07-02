@@ -1,0 +1,33 @@
+{
+  "columns": [
+    "M1_original_score",
+    "M2_intervention_score",
+    "M3_reuse_score",
+    "M4_compression_score",
+    "M5_perturbation_centrality_score",
+    "M6_frequency_control_score",
+    "M7_random_matched_score"
+  ],
+  "components_for_80": 3,
+  "components_for_90": 3,
+  "components_for_95": 4,
+  "cumulative_variance": [
+    0.5307946047687934,
+    0.7881844539420236,
+    0.9310205892650076,
+    0.9855012236730352,
+    0.9956230671541733,
+    0.9994909655406695,
+    1.0
+  ],
+  "explained_variance_ratio": [
+    0.5307946047687934,
+    0.25738984917323027,
+    0.14283613532298395,
+    0.054480634408027535,
+    0.010121843481138097,
+    0.0038678983864962463,
+    0.0005090344593305903
+  ],
+  "name": "F2_real_plus_controls"
+}

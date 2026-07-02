@@ -1,0 +1,14 @@
+{
+  "all_raw_auc": 0.5423581328858227,
+  "class_a_survival": 1.0,
+  "class_b_auc_latent1": 0.5067748150910559,
+  "class_b_auc_latent2": 0.5560009944682702,
+  "class_b_auc_latent3": 0.571290944123314,
+  "class_b_survival": 0.5181058495821727,
+  "class_count": 359,
+  "controls_auc": 0.534744235191746,
+  "local_classification": "control_artifact",
+  "m135_reconstruction_r2_k1": 0.9442067941325619,
+  "pc1_control_variance_explained": 0.9468218885290185,
+  "pc1_f1_explained_variance": 0.6418063726674605
+}

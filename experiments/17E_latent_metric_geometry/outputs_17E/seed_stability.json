@@ -1,0 +1,10 @@
+{
+  "available_seeds": [
+    42
+  ],
+  "component_loading_correlation_across_seeds": null,
+  "latent_score_correlation_across_seeds": null,
+  "note": "17D full outputs are available only for seed 42. The script is deterministic on those inputs.",
+  "stable_axis_count": null,
+  "status": "single_seed_only"
+}

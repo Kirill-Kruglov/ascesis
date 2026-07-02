@@ -1,0 +1,21 @@
+{
+  "classification": "H2_supported",
+  "evidence": {
+    "analyzed_class_count": 3065,
+    "ast_identity_mean_persistence": 0.7462109375,
+    "consequence_mean_gns": 1.0,
+    "feature_mean_persistence": 0.0,
+    "frozen_alias_pair_fraction_mean": 0.23752039151712886,
+    "frozen_class_count": 3065,
+    "frozen_coverage": 1.0,
+    "frozen_mean_dag_diversity": 13.277650897226753,
+    "frozen_mean_operator_diversity": 2.197716150081566,
+    "frozen_nontrivial_class_count": 2337,
+    "random_mean_persistence": 0.003992015968063872,
+    "total_class_count": 29934,
+    "weak_class_count": 0,
+    "weighted_frozen_coverage": 1.0
+  },
+  "reason": "Nontrivial high-GNS consequence classes exist and outperform feature baseline.",
+  "recommendation": "Use Global Necessity alongside consequence class identity; proceed to richer fragments only if high-GNS diversity persists."
+}

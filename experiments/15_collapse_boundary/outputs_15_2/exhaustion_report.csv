@@ -1,0 +1,11 @@
+instrument,cap,exhausted,censored,n_semantic_final,n_term_shapes_final,nodes_expanded,layers_to_exhaustion,node_budget
+state_bfs,4,True,False,4,25,25,6,200000
+state_bfs,5,True,False,8,676,676,12,200000
+state_bfs,6,False,True,16,200000,200000,,200000
+exact_semantic,6,True,False,16,,46,5,
+exact_semantic,8,True,False,64,,190,7,
+exact_semantic,10,True,False,256,,766,9,
+exact_semantic,12,True,False,1024,,3070,11,
+exact_semantic,14,True,False,4096,,12286,13,
+exact_semantic,16,True,False,16384,,49150,15,
+exact_semantic,18,True,False,65536,,196606,17,

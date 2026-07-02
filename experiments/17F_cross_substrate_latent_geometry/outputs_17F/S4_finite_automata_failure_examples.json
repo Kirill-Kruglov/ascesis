@@ -1,0 +1,38 @@
+{
+  "class_b_broken": [
+    "b1a7f90062c0d62d",
+    "bb9a3157cd3959d3",
+    "934f181845b305c0",
+    "14709c68f0d380bb",
+    "004357f29d430e75",
+    "3f6e1c07dc447ae0",
+    "1a2603046273b010",
+    "8bbc978c8f8a648a",
+    "cd8d3acfe382968e",
+    "b6f0c35cf5291e0b"
+  ],
+  "class_b_survivors": [
+    "e849088e731b6272",
+    "dc5948d5ef1f9f14",
+    "35439fef3fe46b50",
+    "b2621cf5c83bc658",
+    "2149a74c903a6202",
+    "c87028894b8057c6",
+    "fb4a7cae8d0cb6e1",
+    "9e63738b9d266201",
+    "5d7ff61c921734c2",
+    "fab41381a120c46e"
+  ],
+  "low_metric_cluster_examples": [
+    "321c9a47bd8e60aa",
+    "13b637b549c90e84",
+    "178519ea31da0807",
+    "a3bf645df0a2a67b",
+    "2da22a8eb14b4954",
+    "81b760fc1a5e4476",
+    "fab41381a120c46e",
+    "1640d1a23c72400c",
+    "504f9d5701b1dc8a",
+    "941e88d084e991a4"
+  ]
+}

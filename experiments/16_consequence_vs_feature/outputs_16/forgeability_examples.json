@@ -1,0 +1,136 @@
+{
+  "different_features_same_consequences": [
+    {
+      "ast": "('Reachable', 'N0', 'N1', (), ())",
+      "consequence_signature": {
+        "ancestor": false,
+        "common_ancestor": true,
+        "conditioned": [],
+        "d_separated": false,
+        "direct_edge": false,
+        "directed_path_bucket": "0",
+        "intervened": [],
+        "kind": "pair_consequence",
+        "reachable": false,
+        "x": "N0",
+        "y": "N1"
+      },
+      "dag_id": "dag_n4_p015_0000",
+      "dag_size": 4,
+      "edge_probability": 0.15,
+      "expr_id": "dag_n4_p015_0000:d1:00000:Reachable",
+      "features": {
+        "conditioning_set_size": 0,
+        "has_do": false,
+        "mentioned_variables": [
+          "N0",
+          "N1"
+        ],
+        "num_variables": 2,
+        "operator_type": "Reachable",
+        "surface_template": "Reachable(X,Y)"
+      },
+      "surface": "Reachable(N0, N1)"
+    },
+    {
+      "ast": "('Effect', 'N0', 'N1', (), ())",
+      "consequence_signature": {
+        "ancestor": false,
+        "common_ancestor": true,
+        "conditioned": [],
+        "d_separated": false,
+        "direct_edge": false,
+        "directed_path_bucket": "0",
+        "intervened": [],
+        "kind": "pair_consequence",
+        "reachable": false,
+        "x": "N0",
+        "y": "N1"
+      },
+      "dag_id": "dag_n4_p015_0000",
+      "dag_size": 4,
+      "edge_probability": 0.15,
+      "expr_id": "dag_n4_p015_0000:d1:00012:Effect",
+      "features": {
+        "conditioning_set_size": 0,
+        "has_do": false,
+        "mentioned_variables": [
+          "N0",
+          "N1"
+        ],
+        "num_variables": 2,
+        "operator_type": "Effect",
+        "surface_template": "Effect(X->Y)"
+      },
+      "surface": "Effect(N0 -> N1)"
+    }
+  ],
+  "different_features_same_consequences_exists": true,
+  "same_features_different_consequences": [
+    {
+      "ast": "('Reachable', 'N0', 'N1', (), ())",
+      "consequence_signature": {
+        "ancestor": false,
+        "common_ancestor": true,
+        "conditioned": [],
+        "d_separated": false,
+        "direct_edge": false,
+        "directed_path_bucket": "0",
+        "intervened": [],
+        "kind": "pair_consequence",
+        "reachable": false,
+        "x": "N0",
+        "y": "N1"
+      },
+      "dag_id": "dag_n4_p015_0000",
+      "dag_size": 4,
+      "edge_probability": 0.15,
+      "expr_id": "dag_n4_p015_0000:d1:00000:Reachable",
+      "features": {
+        "conditioning_set_size": 0,
+        "has_do": false,
+        "mentioned_variables": [
+          "N0",
+          "N1"
+        ],
+        "num_variables": 2,
+        "operator_type": "Reachable",
+        "surface_template": "Reachable(X,Y)"
+      },
+      "surface": "Reachable(N0, N1)"
+    },
+    {
+      "ast": "('Reachable', 'N1', 'N0', (), ())",
+      "consequence_signature": {
+        "ancestor": true,
+        "common_ancestor": true,
+        "conditioned": [],
+        "d_separated": false,
+        "direct_edge": true,
+        "directed_path_bucket": "1",
+        "intervened": [],
+        "kind": "pair_consequence",
+        "reachable": true,
+        "x": "N1",
+        "y": "N0"
+      },
+      "dag_id": "dag_n4_p015_0000",
+      "dag_size": 4,
+      "edge_probability": 0.15,
+      "expr_id": "dag_n4_p015_0000:d1:00003:Reachable",
+      "features": {
+        "conditioning_set_size": 0,
+        "has_do": false,
+        "mentioned_variables": [
+          "N0",
+          "N1"
+        ],
+        "num_variables": 2,
+        "operator_type": "Reachable",
+        "surface_template": "Reachable(X,Y)"
+      },
+      "surface": "Reachable(N1, N0)"
+    }
+  ],
+  "same_features_different_consequences_exists": true
+}

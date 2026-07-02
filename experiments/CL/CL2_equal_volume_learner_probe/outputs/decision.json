@@ -1,0 +1,15 @@
+{
+  "decision": "LEARNER-LEAKAGE-FAIL",
+  "reason": "Leakage was detected or shuffled-target control scored above the pre-registered maximum.",
+  "thresholds_used": {
+    "random_split_accuracy_min": 0.95,
+    "source_state_holdout_accuracy_min": 0.8,
+    "structural_holdout_accuracy_min": 0.75,
+    "memorization_gap_min": 0.2,
+    "copy_gap_min": 0.3,
+    "control_gap_min": -0.1,
+    "shuffled_target_accuracy_max": 0.25,
+    "leakage_allowed": false
+  },
+  "downstream_allowed": false
+}

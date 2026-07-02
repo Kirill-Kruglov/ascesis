@@ -1,0 +1,19 @@
+{
+  "classification": "Weak_backbone",
+  "evidence": {
+    "analyzed_class_count": 1200,
+    "ast_broken_fraction": 0.8233333333333334,
+    "broken_class_count": 1092,
+    "cross_dag_broken_fraction": 0.8591666666666666,
+    "feature_broken_fraction": 1.0,
+    "mean_attack_auc_gns": 0.35291666666666666,
+    "mean_attack_cost_broken": 1.2023809523809523,
+    "min_attack_cost": 1,
+    "nontrivial_broken_class_count": 678,
+    "old_gns_mean": 1.0,
+    "random_broken_fraction": 1.0,
+    "surviving_class_count": 108,
+    "surviving_fraction": 0.08999999999999997
+  },
+  "reason": "Most analyzed classes fail under low-cost adversarial attacks."
+}

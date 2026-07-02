@@ -1,0 +1,7 @@
+component,variance_explained_by_controls,controls,latent1_auc,latent2_auc,latent3_auc,controls_auc,all_raw_auc
+PC1,0.7370212001568578,class_size;frequency;depth_max;object_diversity;operator_diversity;M6_frequency_control_score;M7_random_matched_score,,,,,
+PC2,0.5943928120639731,class_size;frequency;depth_max;object_diversity;operator_diversity;M6_frequency_control_score;M7_random_matched_score,,,,,
+PC3,0.9039342193856923,class_size;frequency;depth_max;object_diversity;operator_diversity;M6_frequency_control_score;M7_random_matched_score,,,,,
+PC4,0.5380757463537519,class_size;frequency;depth_max;object_diversity;operator_diversity;M6_frequency_control_score;M7_random_matched_score,,,,,
+PC5,0.47935209076105456,class_size;frequency;depth_max;object_diversity;operator_diversity;M6_frequency_control_score;M7_random_matched_score,,,,,
+predictive_leakage_class_b_survives,,,0.5192787613915721,0.6575978992326985,0.76445519108043,0.7520982841250528,0.7795156564277023

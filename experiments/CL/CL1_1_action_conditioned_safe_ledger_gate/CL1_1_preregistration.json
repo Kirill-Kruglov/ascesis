@@ -1,0 +1,48 @@
+{
+  "gate": "CL1.1",
+  "inherits_from": [
+    "playbook_extraction/CL0_preregistration.json",
+    "experiments/CL/CL1_boundary_fidelity_pilot/CL1_preregistration.json"
+  ],
+  "repair_reason": "CL1 checked SAFE(state) under safety-policy rollout but counted admitted transitions as if all actions from SAFE states were admissible.",
+  "domain_name": "FourZoneMassDomain",
+  "horizon": 6,
+  "state_action_space_description": "Exhaustive finite pair set: 17500 CL1 states times 5 actions = 87500 (state, action) pairs.",
+  "transition_semantics": "The CL1 deterministic transition is reused unchanged. AID_i increases zone i and costs mass; CONSERVE restores mass; the phase-indexed exogenous shock damages one zone; failed zones drain mass; phase advances modulo 4.",
+  "collapse_predicate": "Collapse if at least two zones have health <= 0 (spread mechanism) or if mass <= 0 (mass mechanism). The predicate is audit-only.",
+  "learner_visible_transition": "observe(state), action, observe(successor). Observations contain zones, mass, and phase only. No collapse labels, future outcomes, mechanisms, witness classes, or reporting-only metrics are learner-visible.",
+  "candidate_admission_rule": "ADMIT(state, action) is true iff the source is not already collapsed, the successor transition(state, action) is not already collapsed, and rollout from the successor under the CL1 deterministic safety policy remains non-collapse for horizon - 1.",
+  "continuation_policy": "CL1 deterministic safety_policy. CL1.1 tests one-step action admission followed by safety-policy continuation; it does not prove safety under arbitrary future learner actions.",
+  "forbidden_admission_inputs": [
+    "future_collapse_label",
+    "collapse_mechanism_label",
+    "already_collapsed_label_as_input",
+    "trajectory_outcome_label",
+    "post_hoc_witness_class",
+    "reporting_only_safe_count"
+  ],
+  "metrics": {
+    "unsafe_admitted_transition_rate": "P(full collapse within horizon after taking action | ADMIT(state, action) = true)",
+    "already_collapsed_source_admitted_rate": "P(source state already collapsed | ADMIT(state, action) = true)",
+    "already_collapsed_successor_admitted_rate": "P(successor state already collapsed | ADMIT(state, action) = true)",
+    "false_positive_action_rate": "P(ADMIT(state, action) = false | action transition remains safe within horizon)",
+    "equal_volume_possible": "Whether action-conditioned admitted ledger can match the declared minimum transition volume and unfiltered control budget"
+  },
+  "thresholds": {
+    "unsafe_admitted_transition_rate_max": 0.05,
+    "already_collapsed_source_admitted_rate_max": 0.0,
+    "already_collapsed_successor_admitted_rate_max": 0.0,
+    "false_positive_action_rate_max": 0.2,
+    "equal_volume_required": true
+  },
+  "minimum_equal_volume_transitions": 500,
+  "decision_vocabulary": [
+    "ACTION-LEDGER-OK",
+    "ACTION-LEDGER-FAILS-UNSAFE-ADMISSION",
+    "ACTION-LEDGER-CONSERVATIVE-BUT-VACUOUS",
+    "ACTION-LEDGER-INCONCLUSIVE-MISSING-GROUND-TRUTH",
+    "HALT-GOAL-DRIFT"
+  ],
+  "downstream_halt_rule": "No learner training, no LLM scaling, and no derivability claim unless decision is ACTION-LEDGER-OK.",
+  "provenance_attestation": "This preregistration file was written before final CL1.1 metric computation. Thresholds must not be moved after seeing results."
+}

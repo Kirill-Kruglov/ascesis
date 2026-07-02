@@ -1,0 +1,13 @@
+operator,candidate_class,initial_class,final_class,audit_tested,audit_preserved,audit_changed,audit_success_rate,justification
+P1_remove_edge,B,B,B,400,352,48,0.88,Removing an edge removes a dependency/path and changes the causal theory.
+P2_add_edge,B,B,B,400,331,69,0.8275,Adding an edge introduces a new dependency/path and changes the causal theory.
+P3_reverse_edge,B,B,B,400,316,84,0.79,"Reversing an edge changes causal direction, ancestors, interventions and d-separation."
+P4_alpha_rename,A,A,A,401,401,0,1.0,Renames an internal unmentioned variable while preserving graph structure over mentioned variables.
+P5_split_mediator,A,audit_required,B,400,393,7,0.9825,Edge subdivision is representation-like only if the verifier abstracts away direct-edge/path-length facts; current verifier may observe them.
+P6_delete_path,B,B,B,400,310,90,0.775,Deleting a complete path intentionally removes causal support.
+P7_replace_chain,A,audit_required,B,397,368,29,0.9269521410579346,Chain replacement can be proof refactoring only if all external verifier consequences are preserved.
+P8_merge_internal_nodes,B,B,B,400,378,22,0.945,Merging nodes conflates variables/mechanisms and changes the theory.
+P9_split_node,A,audit_required,A,401,401,0,1.0,Node split can be representation-preserving only if the split node is unmentioned and all verifier signatures are preserved.
+P10_replace_subgraph,A,audit_required,A,343,343,0,1.0,Equal-interface subgraph replacement needs verifier audit; current signatures may expose internal structure.
+P11_swap_branches,B,B,B,383,351,32,0.9164490861618799,Swapping branches changes which causes support which effects.
+P12_alternative_derivation,B,B,B,400,391,9,0.9775,Alternative derivation changes direct-edge/path evidence under the current verifier.

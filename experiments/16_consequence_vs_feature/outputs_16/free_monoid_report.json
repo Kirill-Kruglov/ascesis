@@ -1,0 +1,27 @@
+{
+  "relation_flags": {
+    "ast_identity": true,
+    "consequence": false,
+    "feature": false
+  },
+  "relations": [
+    {
+      "free_monoid_like": true,
+      "mean_class_count_ratio": 1.0,
+      "mean_singleton_fraction": 1.0,
+      "relation": "ast_identity"
+    },
+    {
+      "free_monoid_like": false,
+      "mean_class_count_ratio": 0.34454032609394475,
+      "mean_singleton_fraction": 0.45665802337257083,
+      "relation": "consequence"
+    },
+    {
+      "free_monoid_like": false,
+      "mean_class_count_ratio": 0.0812438562407581,
+      "mean_singleton_fraction": 0.06242374127511391,
+      "relation": "feature"
+    }
+  ]
+}

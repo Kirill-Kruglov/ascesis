@@ -1,0 +1,22 @@
+[
+  {
+    "noisy_tv_score": 0.6,
+    "reason": "compression gain low; OOD learnability does not improve; weak gain over memorization",
+    "system": "A_dead_control"
+  },
+  {
+    "noisy_tv_score": 0.8,
+    "reason": "novelty high; compression extremely easy; OOD learnability does not improve; normal forms absent",
+    "system": "B_fake_live_control"
+  },
+  {
+    "noisy_tv_score": 0.6,
+    "reason": "novelty high; compression gain low; OOD learnability does not improve",
+    "system": "C_collapsing_live_candidate"
+  },
+  {
+    "noisy_tv_score": 0.4,
+    "reason": "compression gain low; OOD learnability does not improve",
+    "system": "D_structured_live_candidate"
+  }
+]

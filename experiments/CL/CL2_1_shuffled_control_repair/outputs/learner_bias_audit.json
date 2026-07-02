@@ -1,0 +1,189 @@
+{
+  "primary_rule_family_learner": {
+    "original_global_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.6463414634146342,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.6463414634146342
+    },
+    "within_action_shuffle": {
+      "random_exact": 1.0,
+      "source_holdout_exact": 1.0,
+      "structural_holdout_exact": 1.0,
+      "max_exact": 1.0
+    },
+    "within_phase_shuffle": {
+      "random_exact": 0.816138698630137,
+      "source_holdout_exact": 0.23876765083440307,
+      "structural_holdout_exact": 1.0,
+      "max_exact": 1.0
+    },
+    "cross_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 1.0,
+      "max_exact": 1.0
+    },
+    "cross_phase_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "independent_impossible_target": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "feature_permutation_control": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.42854086435601196,
+      "structural_holdout_exact": 0.0988982833717653,
+      "max_exact": 0.42854086435601196
+    }
+  },
+  "majority_delta_baseline": {
+    "original_global_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "within_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "within_phase_shuffle": {
+      "random_exact": 0.007491438356164383,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.007491438356164383
+    },
+    "cross_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "cross_phase_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "independent_impossible_target": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "feature_permutation_control": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    }
+  },
+  "memorizer_baseline": {
+    "original_global_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "within_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "within_phase_shuffle": {
+      "random_exact": 0.007491438356164383,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.007491438356164383
+    },
+    "cross_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "cross_phase_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "independent_impossible_target": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "feature_permutation_control": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    }
+  },
+  "copy_source_baseline": {
+    "original_global_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "within_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "within_phase_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "cross_action_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "cross_phase_shuffle": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "independent_impossible_target": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    },
+    "feature_permutation_control": {
+      "random_exact": 0.0,
+      "source_holdout_exact": 0.0,
+      "structural_holdout_exact": 0.0,
+      "max_exact": 0.0
+    }
+  },
+  "high_score_concentrated_in_primary": true,
+  "primary_high_controls": [
+    "cross_action_shuffle",
+    "feature_permutation_control",
+    "original_global_shuffle",
+    "within_action_shuffle",
+    "within_phase_shuffle"
+  ],
+  "baseline_high_controls": [],
+  "bias_artifact_supported": true,
+  "notes": "High shuffled scores are interpreted only as diagnostic evidence, not as CL2 success."
+}

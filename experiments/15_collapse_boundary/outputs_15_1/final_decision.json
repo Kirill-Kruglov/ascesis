@@ -1,0 +1,36 @@
+{
+  "classification": "sample_limited_inconclusive",
+  "evidence": {
+    "any_channel_sample_limited_fraction": 0.9333333333333333,
+    "cap_growth": {
+      "delta": 98685,
+      "monotonic": true,
+      "ratio": 1542.953125,
+      "substantial": true
+    },
+    "exceeded_old_1024_ceiling": true,
+    "large_cap_semantic_sample_limited_fraction": 0.5,
+    "max_corner_semantic_rate": 0.98749,
+    "max_corner_semantic_sample_limited_fraction": 1.0,
+    "max_semantic_class_count": 98843,
+    "max_trajectory_count": 100000,
+    "observation_depth_growth": {
+      "delta": 0,
+      "monotonic": true,
+      "ratio": 1.0,
+      "substantial": false
+    },
+    "sample_budget_growth": {
+      "delta": 78800,
+      "monotonic": true,
+      "ratio": 4.950072685347637,
+      "substantial": true
+    },
+    "sample_budget_tracks_semantics": true,
+    "semantic_sample_limited_fraction": 0.14933333333333335,
+    "top_grid_far_below_sample_budget": false,
+    "top_grid_semantic_plateaued": false
+  },
+  "interpretation": "Cannot distinguish semantic openness from sampling limit.",
+  "next_recommended_action": "Increase sampling budget or change sampler before making liveness claims."
+}

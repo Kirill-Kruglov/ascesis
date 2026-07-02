@@ -1,0 +1,17 @@
+{
+  "candidate_transition_count": 31142,
+  "candidate_features": [
+    "source_zones",
+    "source_mass",
+    "source_phase",
+    "action"
+  ],
+  "candidate_targets": [
+    "successor_zones",
+    "successor_mass",
+    "successor_phase"
+  ],
+  "forbidden_fields_present": false,
+  "random_seed": 20260630,
+  "ledger_scope": "one-step action admission plus safety-policy continuation"
+}

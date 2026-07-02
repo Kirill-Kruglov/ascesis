@@ -1,0 +1,34 @@
+{
+  "generic_learner_corrupted_controls": {
+    "independent_impossible_target": {
+      "source_holdout_exact": 0.0002139495079161318,
+      "source_holdout_coordinate": 0.20114819569248324,
+      "structural_holdout_exact": 0.0,
+      "structural_holdout_coordinate": 0.21052182082159024,
+      "cross_phase_exact": 0.00012810658467845247,
+      "cross_phase_coordinate": 0.19617388333760355,
+      "max_exact": 0.0002139495079161318
+    },
+    "cross_phase_target_shuffle": {
+      "source_holdout_exact": 0.0002139495079161318,
+      "source_holdout_coordinate": 0.24668378262729995,
+      "structural_holdout_exact": 0.0,
+      "structural_holdout_coordinate": 0.19122042873003672,
+      "cross_phase_exact": 0.0,
+      "cross_phase_coordinate": 0.1843240242548467,
+      "max_exact": 0.0002139495079161318
+    },
+    "feature_permutation_control": {
+      "source_holdout_exact": 0.0002139495079161318,
+      "source_holdout_coordinate": 0.22347026101839965,
+      "structural_holdout_exact": 0.0,
+      "structural_holdout_coordinate": 0.18541293022461355,
+      "cross_phase_exact": 0.0,
+      "cross_phase_coordinate": 0.18323511828507985,
+      "max_exact": 0.0002139495079161318
+    }
+  },
+  "best_corrupted_target_accuracy": 0.0002139495079161318,
+  "corruption_drop": 0.0,
+  "leakage_detected": false
+}

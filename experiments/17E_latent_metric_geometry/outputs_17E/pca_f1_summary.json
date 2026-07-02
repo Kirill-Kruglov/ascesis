@@ -1,0 +1,27 @@
+{
+  "columns": [
+    "M1_original_score",
+    "M2_intervention_score",
+    "M3_reuse_score",
+    "M4_compression_score",
+    "M5_perturbation_centrality_score"
+  ],
+  "components_for_80": 2,
+  "components_for_90": 2,
+  "components_for_95": 3,
+  "cumulative_variance": [
+    0.721998293170383,
+    0.9175994989113148,
+    0.9937126294631364,
+    0.9991385367731945,
+    1.0
+  ],
+  "explained_variance_ratio": [
+    0.721998293170383,
+    0.1956012057409318,
+    0.07611313055182169,
+    0.0054259073100581005,
+    0.0008614632268055611
+  ],
+  "name": "F1_real_metrics"
+}

@@ -1,0 +1,15 @@
+{
+  "frozen_alias_pair_fraction_mean": 0.23752039151712886,
+  "frozen_class_count": 3065,
+  "frozen_depth_range": [
+    1,
+    6
+  ],
+  "frozen_mean_dag_diversity": 13.277650897226753,
+  "frozen_mean_operator_diversity": 2.197716150081566,
+  "frozen_nontrivial_class_count": 2337,
+  "high_gns_class_count": 3065,
+  "high_gns_mean_dag_diversity": 13.277650897226753,
+  "high_gns_mean_operator_diversity": 2.197716150081566,
+  "high_gns_nontrivial_class_count": 2337
+}

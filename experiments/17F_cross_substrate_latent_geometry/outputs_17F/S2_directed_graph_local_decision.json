@@ -1,0 +1,14 @@
+{
+  "all_raw_auc": 0.6286149825783972,
+  "class_a_survival": 1.0,
+  "class_b_auc_latent1": 0.5643183797909408,
+  "class_b_auc_latent2": 0.6227025261324042,
+  "class_b_auc_latent3": 0.6186411149825783,
+  "class_b_survival": 0.5271828665568369,
+  "class_count": 607,
+  "controls_auc": 0.5700130662020907,
+  "local_classification": "metric_noise",
+  "m135_reconstruction_r2_k1": 0.9470656585992994,
+  "pc1_control_variance_explained": 0.9316066686185751,
+  "pc1_f1_explained_variance": 0.6175370334087373
+}

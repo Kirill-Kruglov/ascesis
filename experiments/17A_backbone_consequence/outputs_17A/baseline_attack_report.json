@@ -1,0 +1,27 @@
+{
+  "ast_identity": {
+    "broken_fraction": 0.8233333333333334,
+    "expression_count": 300,
+    "initial_equivalence_rate": 1.0,
+    "mean_attack_cost": 1.319838056680162,
+    "min_attack_cost": 1
+  },
+  "feature": {
+    "broken_fraction": 1.0,
+    "initial_equivalence_rate": 0.0,
+    "initially_equal_count": 0,
+    "invalid_or_prebroken_count": 300,
+    "mean_attack_cost": 0.0,
+    "min_attack_cost": 0,
+    "pair_count": 300
+  },
+  "random": {
+    "broken_fraction": 1.0,
+    "initial_equivalence_rate": 0.0,
+    "initially_equal_count": 0,
+    "invalid_or_prebroken_count": 300,
+    "mean_attack_cost": 0.0,
+    "min_attack_cost": 0,
+    "pair_count": 300
+  }
+}

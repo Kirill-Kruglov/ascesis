@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "closure-metric-robustness"
+version = "0.1.0"
+description = "Experiment 17D: closure metric robustness and functional indispensability."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas",
+  "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

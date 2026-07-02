@@ -1,0 +1,30 @@
+{
+  "best_k_by_mse": 5,
+  "candidate_dimensions": [
+    {
+      "converged": true,
+      "k": 1,
+      "reconstruction_mse": 0.5944321853023131
+    },
+    {
+      "converged": true,
+      "k": 2,
+      "reconstruction_mse": 0.41516389965284944
+    },
+    {
+      "converged": true,
+      "k": 3,
+      "reconstruction_mse": 0.29119585871101683
+    },
+    {
+      "converged": true,
+      "k": 4,
+      "reconstruction_mse": 0.21660922292870977
+    },
+    {
+      "converged": true,
+      "k": 5,
+      "reconstruction_mse": 0.15800252659827763
+    }
+  ]
+}

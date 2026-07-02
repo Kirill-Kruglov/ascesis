@@ -1,0 +1,155 @@
+{
+  "P11_swap_branches": [
+    {
+      "dag_id": "dag_n10_p035_0001",
+      "operator": "P11_swap_branches",
+      "surface": "P(N0 | do(N6), N9)"
+    },
+    {
+      "dag_id": "dag_n8_p025_0002",
+      "operator": "P11_swap_branches",
+      "surface": "P(N2 | N6)"
+    },
+    {
+      "dag_id": "dag_n10_p025_0001",
+      "operator": "P11_swap_branches",
+      "surface": "Ancestor(N8, N6)"
+    }
+  ],
+  "P12_alternative_derivation": [
+    {
+      "dag_id": "dag_n8_p035_0015",
+      "operator": "P12_alternative_derivation",
+      "surface": "P(N1 | do(N2))"
+    },
+    {
+      "dag_id": "dag_n8_p025_0022",
+      "operator": "P12_alternative_derivation",
+      "surface": "P(N2 | do(N0), N1)"
+    },
+    {
+      "dag_id": "dag_n6_p015_0023",
+      "operator": "P12_alternative_derivation",
+      "surface": "P(N2 | do(N1), N4)"
+    }
+  ],
+  "P1_remove_edge": [
+    {
+      "dag_id": "dag_n10_p015_0024",
+      "operator": "P1_remove_edge",
+      "surface": "P(N6 | do(N7), N3)"
+    },
+    {
+      "dag_id": "dag_n8_p025_0008",
+      "operator": "P1_remove_edge",
+      "surface": "Independent(N7, N1 | N4)"
+    },
+    {
+      "dag_id": "dag_n6_p035_0033",
+      "operator": "P1_remove_edge",
+      "surface": "Blocked(N5, N2 | N1, N3)"
+    }
+  ],
+  "P2_add_edge": [
+    {
+      "dag_id": "dag_n10_p035_0022",
+      "operator": "P2_add_edge",
+      "surface": "Effect(N6 -> N1)"
+    },
+    {
+      "dag_id": "dag_n6_p035_0028",
+      "operator": "P2_add_edge",
+      "surface": "P(N4 | N0)"
+    },
+    {
+      "dag_id": "dag_n6_p015_0036",
+      "operator": "P2_add_edge",
+      "surface": "Blocked(N2, N4 | N0)"
+    }
+  ],
+  "P3_reverse_edge": [
+    {
+      "dag_id": "dag_n6_p035_0040",
+      "operator": "P3_reverse_edge",
+      "surface": "Independent(N3, N5 | N4)"
+    },
+    {
+      "dag_id": "dag_n10_p035_0027",
+      "operator": "P3_reverse_edge",
+      "surface": "Independent(N8, N2 | N3)"
+    },
+    {
+      "dag_id": "dag_n10_p035_0027",
+      "operator": "P3_reverse_edge",
+      "surface": "Independent(N8, N2 | N3)"
+    }
+  ],
+  "P5_split_mediator": [
+    {
+      "dag_id": "dag_n4_p015_0024",
+      "operator": "P5_split_mediator",
+      "surface": "P(N1 | do(N2), do(N3))"
+    },
+    {
+      "dag_id": "dag_n10_p035_0033",
+      "operator": "P5_split_mediator",
+      "surface": "P(N5 | do(N2), N6)"
+    },
+    {
+      "dag_id": "dag_n6_p025_0014",
+      "operator": "P5_split_mediator",
+      "surface": "P(N0 | do(N2), N1, N3)"
+    }
+  ],
+  "P6_delete_path": [
+    {
+      "dag_id": "dag_n8_p025_0011",
+      "operator": "P6_delete_path",
+      "surface": "Ancestor(N1, N4)"
+    },
+    {
+      "dag_id": "dag_n10_p025_0011",
+      "operator": "P6_delete_path",
+      "surface": "P(N9 | do(N5), N4, N7)"
+    },
+    {
+      "dag_id": "dag_n10_p035_0034",
+      "operator": "P6_delete_path",
+      "surface": "P(N5 | do(N6), N1)"
+    }
+  ],
+  "P7_replace_chain": [
+    {
+      "dag_id": "dag_n10_p025_0016",
+      "operator": "P7_replace_chain",
+      "surface": "Reachable(N4, N5)"
+    },
+    {
+      "dag_id": "dag_n8_p035_0019",
+      "operator": "P7_replace_chain",
+      "surface": "Reachable(N2, N7)"
+    },
+    {
+      "dag_id": "dag_n6_p035_0039",
+      "operator": "P7_replace_chain",
+      "surface": "P(N0 | do(N5), N1, N4)"
+    }
+  ],
+  "P8_merge_internal_nodes": [
+    {
+      "dag_id": "dag_n6_p015_0030",
+      "operator": "P8_merge_internal_nodes",
+      "surface": "Reachable(N1, N4)"
+    },
+    {
+      "dag_id": "dag_n10_p025_0037",
+      "operator": "P8_merge_internal_nodes",
+      "surface": "Ancestor(N1, N3)"
+    },
+    {
+      "dag_id": "dag_n8_p025_0037",
+      "operator": "P8_merge_internal_nodes",
+      "surface": "Effect(N2 -> N7)"
+    }
+  ]
+}

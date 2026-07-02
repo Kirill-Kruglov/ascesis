@@ -1,0 +1,79 @@
+{
+  "M1_original": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.006666666666666667,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.0906040268456376,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.40475694444444443,
+    "mean_score": 0.4577319333252087,
+    "total_classes": 29934
+  },
+  "M2_intervention": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.18166666666666667,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.2484725050916496,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.46729166666666666,
+    "mean_score": 0.3408763619525556,
+    "total_classes": 29934
+  },
+  "M3_reuse": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.0016666666666666668,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.0801335559265441,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.27336805555555554,
+    "mean_score": 0.6471710354569724,
+    "total_classes": 29934
+  },
+  "M4_compression": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.13833333333333334,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.2185686653771761,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.4347916666666667,
+    "mean_score": 0.5791359585483216,
+    "total_classes": 29934
+  },
+  "M5_perturbation_centrality": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.005,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.102177554438861,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.2861458333333333,
+    "mean_score": 0.639108803203862,
+    "total_classes": 29934
+  },
+  "M6_frequency_control": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.13833333333333334,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.2185686653771761,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.4347916666666667,
+    "mean_score": 0.013404306089765318,
+    "total_classes": 29934
+  },
+  "M7_random_matched": {
+    "Class_A_surviving_fraction": 1.0,
+    "Class_B_surviving_fraction": 0.16833333333333333,
+    "active_classes": 11974,
+    "active_fraction": 0.4000133627313423,
+    "mean_attack_cost_broken": 1.1843687374749499,
+    "mean_auc_gns_Class_A": 1.0,
+    "mean_auc_gns_Class_B": 0.4312847222222223,
+    "mean_score": 0.4577319333252087,
+    "total_classes": 29934
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "decision": "CL-BRANCH-CLOSED",
+  "reason": "The CL branch produced a non-vacuous oracle-filtered action-safe ledger on one toy lawful domain, but failed to produce admissible evidence of generic non-oracle transition learning. Therefore no representation, derivability, substrate, or LLM-safety downstream work is allowed from this branch.",
+  "closed_as": [
+    "substrate_path",
+    "derivability_path",
+    "learner_evidence_path"
+  ],
+  "retained_as": [
+    "boundary_precondition_evidence",
+    "action_ledger_precondition_evidence",
+    "negative_constraints_for_future_search"
+  ],
+  "downstream_representation_allowed": false,
+  "derivability_claim_allowed": false,
+  "llm_training_allowed": false,
+  "next_allowed_work": [
+    "postmortem review",
+    "closed-direction ledger review",
+    "analytic constraint-map work"
+  ]
+}

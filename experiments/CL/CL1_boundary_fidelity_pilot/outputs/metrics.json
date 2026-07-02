@@ -1,0 +1,301 @@
+{
+  "domain": {
+    "state_count": 17500,
+    "action_count": 5,
+    "horizon": 6,
+    "minimum_equal_volume_transitions": 500
+  },
+  "candidate_boundary": {
+    "false_safe_rate": 0.0,
+    "already_collapsed_labeled_safe_rate": 0.0,
+    "false_positive_rate": 0.0,
+    "equal_volume_possible": true,
+    "safe_labeled_count": 7835,
+    "doomed_labeled_count": 9665,
+    "admitted_transition_count": 39175
+  },
+  "projection_blind_baseline": {
+    "false_safe_rate": 0.37257799671592773,
+    "already_collapsed_labeled_safe_rate": 0.4167306216423638,
+    "false_positive_rate": 0.024633056796426293,
+    "safe_labeled_count": 12180,
+    "doomed_labeled_count": 5320,
+    "false_safe_witness_examples": [
+      {
+        "state": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 0
+        },
+        "observation": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 0
+        },
+        "boundary_decision": "SAFE",
+        "full_outcome": "collapse_within_horizon_step_0",
+        "collapse_mechanism": "both",
+        "which_coordinate_or_projection_mattered": "projection omitted failed_zone_count and mass"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 1
+        },
+        "observation": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 1
+        },
+        "boundary_decision": "SAFE",
+        "full_outcome": "collapse_within_horizon_step_0",
+        "collapse_mechanism": "both",
+        "which_coordinate_or_projection_mattered": "projection omitted failed_zone_count and mass"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 2
+        },
+        "observation": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 2
+        },
+        "boundary_decision": "SAFE",
+        "full_outcome": "collapse_within_horizon_step_0",
+        "collapse_mechanism": "both",
+        "which_coordinate_or_projection_mattered": "projection omitted failed_zone_count and mass"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 3
+        },
+        "observation": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 0,
+          "phase": 3
+        },
+        "boundary_decision": "SAFE",
+        "full_outcome": "collapse_within_horizon_step_0",
+        "collapse_mechanism": "both",
+        "which_coordinate_or_projection_mattered": "projection omitted failed_zone_count and mass"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 1,
+          "phase": 0
+        },
+        "observation": {
+          "zones": [
+            0,
+            0,
+            3,
+            4
+          ],
+          "mass": 1,
+          "phase": 0
+        },
+        "boundary_decision": "SAFE",
+        "full_outcome": "collapse_within_horizon_step_0",
+        "collapse_mechanism": "spread",
+        "which_coordinate_or_projection_mattered": "projection omitted failed_zone_count and mass"
+      }
+    ],
+    "false_positive_witness_examples": [
+      {
+        "state": {
+          "zones": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "mass": 6,
+          "phase": 0
+        },
+        "observation": {
+          "zones": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "mass": 6,
+          "phase": 0
+        },
+        "boundary_decision": "DOOMED",
+        "full_outcome": "remains_safe_within_horizon",
+        "collapse_mechanism": "none",
+        "which_coordinate_or_projection_mattered": "boundary was conservative for this state"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "mass": 6,
+          "phase": 3
+        },
+        "observation": {
+          "zones": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "mass": 6,
+          "phase": 3
+        },
+        "boundary_decision": "DOOMED",
+        "full_outcome": "remains_safe_within_horizon",
+        "collapse_mechanism": "none",
+        "which_coordinate_or_projection_mattered": "boundary was conservative for this state"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mass": 5,
+          "phase": 2
+        },
+        "observation": {
+          "zones": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mass": 5,
+          "phase": 2
+        },
+        "boundary_decision": "DOOMED",
+        "full_outcome": "remains_safe_within_horizon",
+        "collapse_mechanism": "none",
+        "which_coordinate_or_projection_mattered": "boundary was conservative for this state"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mass": 5,
+          "phase": 3
+        },
+        "observation": {
+          "zones": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mass": 5,
+          "phase": 3
+        },
+        "boundary_decision": "DOOMED",
+        "full_outcome": "remains_safe_within_horizon",
+        "collapse_mechanism": "none",
+        "which_coordinate_or_projection_mattered": "boundary was conservative for this state"
+      },
+      {
+        "state": {
+          "zones": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mass": 6,
+          "phase": 0
+        },
+        "observation": {
+          "zones": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "mass": 6,
+          "phase": 0
+        },
+        "boundary_decision": "DOOMED",
+        "full_outcome": "remains_safe_within_horizon",
+        "collapse_mechanism": "none",
+        "which_coordinate_or_projection_mattered": "boundary was conservative for this state"
+      }
+    ]
+  },
+  "trivially_safe_baseline": {
+    "false_safe_rate": 0.0,
+    "already_collapsed_labeled_safe_rate": 0.0,
+    "false_positive_rate": 1.0,
+    "equal_volume_possible": false,
+    "safe_labeled_count": 0,
+    "doomed_labeled_count": 17500,
+    "admitted_transition_count": 0
+  },
+  "unfiltered_control": {
+    "collapse_rate_within_horizon": 0.5522857142857143,
+    "available_transition_count": 87500
+  }
+}
