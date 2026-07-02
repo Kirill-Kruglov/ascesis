@@ -15,11 +15,9 @@ Modules:
   - ``calibration_audit`` : anchor-volume assertions (finding #7)
   - ``seed_policy``       : multi-seed enforcement for core metrics (finding #8)
   - ``tautology_check``   : information-ratio + strong baselines (finding #5)
+  - ``evaluation_oracle`` : ground-truth hints at eval call sites (finding #6)
   - ``runner``            : refuses to run without a valid prereg lock (findings #1/#2)
-
-Not yet built (blocked on truncated spec — §1.4 tail):
-  - ``evaluation_oracle`` (1.4, finding #6): AST detection of ground-truth
-    (e.g. truth_axes) entering decision paths via kwargs / dict keys.
+  - ``verify_decision``   : standalone provenance verifier (§1.7, closes bypass gap)
 """
 
 __all__ = [
@@ -28,5 +26,7 @@ __all__ = [
     "calibration_audit",
     "seed_policy",
     "tautology_check",
+    "evaluation_oracle",
     "runner",
+    "verify_decision",
 ]

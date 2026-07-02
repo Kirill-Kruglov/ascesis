@@ -215,6 +215,25 @@ def test_verify_decision_rejects_missing_provenance():
     assert valid is False
 
 
+# 9 — finding #6: ground-truth hint (truth_axes=3) passed at an evaluation call site
+def test_evaluation_oracle_flags_literal_truth_hint():
+    from gate_harness import evaluation_oracle as EO
+
+    def suite():
+        three = generate(seed)                       # noqa: F821
+        three_coords = calibrate(three)              # noqa: F821
+        three_metric = evaluate_coords(three, three_coords, truth_axes=3)  # noqa: F821
+        return three_metric
+
+    report = EO.scan_evaluation_call_sites(suite, entrypoint_names=["evaluate_coords"])
+    log = report["evaluation_oracle_log"]
+    assert log, "must flag the truth_axes=3 hint at the call site"
+    hit = next(e for e in log if e["hint_name"] == "truth_axes")
+    assert hit["hint_value_is_literal_constant"] is True
+    assert hit["harness_provided_ground_truth_hint"] is True
+    assert hit["hint_value"] == 3
+
+
 def main():
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     results = []

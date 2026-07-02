@@ -68,10 +68,27 @@ Each module maps to a finding from the B1/B1.1/B2/B2.1 falsification audit.
 Each test reproduces a real audit finding and is RED without its defense, GREEN
 with it (tests 1/3/4 were already GREEN from the backbone layer — not faked-red).
 
-## NOT built yet — blocked on truncated spec
+### `evaluation_oracle.py` — ground-truth-at-eval detection (finding #6, §1.4)
+- `scan_evaluation_call_sites(module, entrypoint_names)` walks the full module AST
+  and flags ground-truth hints (e.g. `truth_axes=3`) passed as keyword args or
+  dict-literal values to evaluation entrypoints. A literal constant at the call
+  site is flagged `hint_value_is_literal_constant: true` (a human wrote the answer
+  into the harness call). `scan_non_entrypoints` fit-path-scans everything that is
+  not a declared entrypoint. Verified on the real B2 call site:
+  `truth_axes=3` at `relational_order_toy.py:495`.
+- `runner.run_gate` folds the oracle log into `decision.json`: any hint sets
+  `classification_success_depends_on_harness_hint: true` plus the verbatim
+  "NOT evidence of unsupervised recovery" warning — a harness-only field.
 
-- `evaluation_oracle.py` (§1.4, finding #6) — the `EVALUATION_ORACLE_LOG` schema
-  and auto-generated decision-JSON warning wording were in the truncated tail.
-  Per the maintainer's note it will reuse the AST dict-string-key technique from
-  `leakage_scanner` (truth like `truth_axes=3` likely enters via a kwarg / dict
-  key in `evaluate_coords`, not a top-level named param).
+### `verify_decision.py` — provenance verifier (§1.7)
+- `verify_decision(decision)` rejects any `decision.json` with no
+  `_harness_provenance`, a mismatched `harness_version`, or a false/missing
+  verified flag — so a gate that bypassed the runner cannot be cited no matter how
+  good its numbers look. The verifier is deliberately a *separate* module from the
+  runner it checks. Adversarial test #8.
+
+## Integration status
+
+`runner.py` end-to-end run of a real gate (B1 first) is the true system test —
+isolated green unit tests are necessary but not sufficient. See
+`experiments/B/B1_harness_rerun/` once that run exists.
