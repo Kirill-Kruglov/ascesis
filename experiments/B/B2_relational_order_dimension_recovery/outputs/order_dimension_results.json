@@ -1,0 +1,45 @@
+{
+  "chain_control": {
+    "classification": "ORDER_1D",
+    "metric": {
+      "accuracy": 0.9993723849372385,
+      "comparability_density": 0.4619072524407252,
+      "f1": 0.9993206265333082,
+      "fn": 18,
+      "fp": 18,
+      "precision": 0.9993206265333082,
+      "recall": 0.9993206265333082,
+      "tn": 30847,
+      "tp": 26477
+    }
+  },
+  "passed": true,
+  "product2d": {
+    "classification": "PRODUCT_2D",
+    "metric": {
+      "accuracy": 0.9985181311018131,
+      "comparability_density": 0.21724198047419804,
+      "f1": 0.9965894956465915,
+      "fn": 42,
+      "fp": 43,
+      "precision": 0.9965495105119564,
+      "recall": 0.9966294839900489,
+      "tn": 44856,
+      "tp": 12419
+    }
+  },
+  "three_d_control": {
+    "classification": "UNDERDIMENSIONED_FOR_2D",
+    "metric": {
+      "accuracy": 0.8915097629009763,
+      "comparability_density": 0.10536959553695956,
+      "f1": 0.6593310341052171,
+      "fn": 22,
+      "fp": 6201,
+      "precision": 0.49267773868935616,
+      "recall": 0.9963600264725347,
+      "tn": 45115,
+      "tp": 6022
+    }
+  }
+}
