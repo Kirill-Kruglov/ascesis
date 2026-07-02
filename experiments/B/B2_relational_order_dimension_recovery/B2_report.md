@@ -60,6 +60,7 @@ Items have generated latent coordinates `(x, y)`. The generated relation is coor
 ```json
 {
   "chain_control": {
+    "axis_corr_abs": 0.9999120734455574,
     "classification": "ORDER_1D",
     "metric": {
       "accuracy": 0.9993723849372385,
@@ -71,10 +72,13 @@ Items have generated latent coordinates `(x, y)`. The generated relation is coor
       "recall": 0.9993206265333082,
       "tn": 30847,
       "tp": 26477
-    }
+    },
+    "passed": true,
+    "used_generator_label": false
   },
   "passed": true,
   "product2d": {
+    "axis_corr_abs": 0.010290386547651145,
     "classification": "PRODUCT_2D",
     "metric": {
       "accuracy": 0.9985181311018131,
@@ -86,9 +90,29 @@ Items have generated latent coordinates `(x, y)`. The generated relation is coor
       "recall": 0.9966294839900489,
       "tn": 44856,
       "tp": 12419
-    }
+    },
+    "passed": true,
+    "used_generator_label": false
+  },
+  "random_relation_control": {
+    "axis_corr_abs": 0.010290386547651145,
+    "classification": "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE",
+    "metric": {
+      "accuracy": 0.6571652719665272,
+      "comparability_density": 0.21717224546722455,
+      "f1": 0.21084313174685984,
+      "fn": 9830,
+      "fp": 9835,
+      "precision": 0.21080083453699247,
+      "recall": 0.210885445934013,
+      "tn": 35068,
+      "tp": 2627
+    },
+    "passed": true,
+    "used_generator_label": false
   },
   "three_d_control": {
+    "axis_corr_abs": 0.018158475620645435,
     "classification": "UNDERDIMENSIONED_FOR_2D",
     "metric": {
       "accuracy": 0.8915097629009763,
@@ -100,7 +124,14 @@ Items have generated latent coordinates `(x, y)`. The generated relation is coor
       "recall": 0.9963600264725347,
       "tn": 45115,
       "tp": 6022
-    }
+    },
+    "passed": true,
+    "three_d_false_positive_count": 6201,
+    "three_d_false_positive_overadmission_ratio": 1.029724344071737,
+    "three_d_overadmission_detected": true,
+    "three_d_precision": 0.49267773868935616,
+    "three_d_recall": 0.9963600264725347,
+    "used_generator_label": false
   }
 }
 ```
@@ -166,6 +197,7 @@ Static audit:
 
 ```json
 {
+  "classifier_variant_conditioning_findings": [],
   "findings": [],
   "passed": true,
   "patterns_scanned": [

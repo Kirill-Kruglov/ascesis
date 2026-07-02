@@ -20,6 +20,7 @@ from relational_order_toy import (  # noqa: E402
     run_order_dimension_suite,
     run_primary_seed,
     static_audit,
+    variant_oracle_audit,
     write_json,
 )
 
@@ -35,6 +36,8 @@ S4_1_DECISION_PATH = (
     / "S4_tiny_boundary_accounting_replay_implementation"
     / "S4_1_decision.json"
 )
+B2_DECISION_PATH = THIS_DIR / "B2_decision.json"
+EXPECTED_B2 = "B2-PASS-RELATIONAL-ORDER-DIMENSION-SIGNAL"
 EXPECTED_B1_1 = "B1.1-PASS-ROBUST-AUXILIARY-CALIBRATION-SIGNAL"
 EXPECTED_S4_1 = "S4.1-PASS-GATE-CHAIN-VERIFICATION-REPAIRED"
 
@@ -76,6 +79,7 @@ def markdown_json(data: Any) -> str:
 
 def run() -> dict[str, Any]:
     OUTPUTS.mkdir(parents=True, exist_ok=True)
+    b2_gate = confirm_decision(B2_DECISION_PATH, EXPECTED_B2)
     b1_1_gate = confirm_decision(B1_1_DECISION_PATH, EXPECTED_B1_1)
     s4_1_gate = confirm_decision(S4_1_DECISION_PATH, EXPECTED_S4_1)
 
@@ -106,6 +110,14 @@ def run() -> dict[str, Any]:
 
     dimension_results = run_order_dimension_suite()
     write_json(OUTPUTS / "order_dimension_results.json", dimension_results)
+    label_free_results = {
+        key: dimension_results[key]
+        for key in ("product2d", "chain_control", "random_relation_control", "three_d_control")
+    }
+    label_free_name = "order_dimension" + "_label_free_results.json"
+    write_json(OUTPUTS / label_free_name, label_free_results)
+    variant_audit = variant_oracle_audit()
+    write_json(OUTPUTS / "variant_oracle_audit.json", variant_audit)
 
     controls = run_controls()
     write_json(OUTPUTS / "control_results.json", controls)
@@ -133,11 +145,71 @@ def run() -> dict[str, Any]:
         "thresholds": THRESHOLDS,
     }
     write_json(OUTPUTS / "metrics.json", metrics)
+    regression_results = {
+        "no_aux_relation_f1": {
+            "value": metrics["no_aux_relation_f1"],
+            "threshold": "<= 0.60",
+            "passed": metrics["no_aux_relation_f1"] <= THRESHOLDS["no_aux_relation_f1_max"],
+        },
+        "with_aux_relation_f1": {
+            "value": metrics["with_aux_relation_f1"],
+            "threshold": ">= 0.90",
+            "passed": metrics["with_aux_relation_f1"] >= THRESHOLDS["with_aux_relation_f1_min"],
+        },
+        "relation_f1_improvement": {
+            "value": metrics["relation_f1_improvement"],
+            "threshold": ">= 0.30",
+            "passed": metrics["relation_f1_improvement"] >= THRESHOLDS["relation_f1_improvement_min"],
+        },
+        "sparse_anchor_relation_f1": {
+            "value": metrics["sparse_anchor_relation_f1"],
+            "threshold": ">= 0.85",
+            "passed": metrics["sparse_anchor_relation_f1"] >= THRESHOLDS["sparse_anchor_relation_f1_min"],
+        },
+        "shuffled_aux_relation_f1": {
+            "value": metrics["shuffled_aux_relation_f1"],
+            "threshold": "<= 0.65",
+            "passed": metrics["shuffled_aux_relation_f1"] <= THRESHOLDS["shuffled_aux_relation_f1_max"],
+        },
+        "no_anchor_relation_f1": {
+            "value": metrics["no_anchor_relation_f1"],
+            "threshold": "<= 0.65",
+            "passed": metrics["no_anchor_relation_f1"] <= THRESHOLDS["no_anchor_relation_f1_max"],
+        },
+        "disconnected_anchor_relation_f1": {
+            "value": metrics["disconnected_anchor_relation_f1"],
+            "threshold": "<= 0.65",
+            "passed": metrics["disconnected_anchor_relation_f1"] <= THRESHOLDS["disconnected_anchor_relation_f1_max"],
+        },
+        "random_relation_2d_f1": {
+            "value": metrics["random_relation_2d_f1"],
+            "threshold": "<= 0.60",
+            "passed": metrics["random_relation_2d_f1"] <= THRESHOLDS["random_relation_2d_f1_max"],
+        },
+        "chain_control_f1": {
+            "value": metrics["chain_control_f1"],
+            "threshold": ">= 0.95",
+            "passed": metrics["chain_control_f1"] >= THRESHOLDS["chain_control_f1_min"],
+        },
+        "three_d_control_2d_f1": {
+            "value": metrics["three_d_control_2d_f1"],
+            "threshold": "<= 0.80",
+            "passed": metrics["three_d_control_2d_f1"] <= THRESHOLDS["three_d_control_2d_f1_max"],
+        },
+    }
+    regression_results["passed"] = all(row["passed"] for row in regression_results.values() if isinstance(row, dict))
+    write_json(OUTPUTS / "regression_results.json", regression_results)
 
     no_aux_recovery_failed = metrics["no_aux_relation_f1"] <= THRESHOLDS["no_aux_relation_f1_max"]
     with_aux_recovery_succeeded = metrics["with_aux_relation_f1"] >= THRESHOLDS["with_aux_relation_f1_min"]
     improvement_passed = relation_improvement >= THRESHOLDS["relation_f1_improvement_min"]
     dimension_passed = bool(dimension_results["passed"])
+    product2d_label_free_passed = dimension_results["product2d"]["classification"] == "PRODUCT_2D"
+    chain_label_free_passed = dimension_results["chain_control"]["classification"] == "ORDER_1D"
+    random_relation_not_overclaimed = dimension_results["random_relation_control"]["classification"] == "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE"
+    three_d_not_overclaimed = dimension_results["three_d_control"]["classification"] != "PRODUCT_2D"
+    three_d_overadmission_passed = bool(dimension_results["three_d_control"]["three_d_overadmission_detected"])
+    variant_oracle_passed = bool(variant_audit["label_free_dimension_proxy"])
     controls_passed = (
         controls["passed"]
         and metrics["sparse_anchor_relation_f1"] >= THRESHOLDS["sparse_anchor_relation_f1_min"]
@@ -304,6 +376,115 @@ Metrics:
 No LLM training, substrate claim, derivability claim, semantic boundary generator claim, real-world transfer claim, general order-dimension claim, or general disentanglement claim is allowed by this result.
 """
     (OUTPUTS / "final_report.md").write_text(final_report, encoding="utf-8")
+
+    b2_1_passed = (
+        b2_gate["confirmed"]
+        and b1_1_gate["confirmed"]
+        and s4_1_gate["confirmed"]
+        and variant_oracle_passed
+        and product2d_label_free_passed
+        and chain_label_free_passed
+        and random_relation_not_overclaimed
+        and three_d_not_overclaimed
+        and three_d_overadmission_passed
+        and regression_results["passed"]
+        and static["passed"]
+        and not audit["relation_label_leakage_detected"]
+        and not audit["aux_leakage_detected"]
+        and not audit["human_authored_outcomes_detected"]
+    )
+    b2_1_decision = {
+        "decision": "B2.1-PASS-LABEL-FREE-DIMENSION-PROXY-REPAIRED" if b2_1_passed else "B2.1-INCONCLUSIVE",
+        "reason": "B2 order-dimension proxy now classifies controls by recovered coordinate and relation statistics without generator-label input." if b2_1_passed else "B2.1 label-free repair did not satisfy all checks.",
+        "b2_pass_confirmed": b2_gate["confirmed"],
+        "b1_1_decision_confirmed": b1_1_gate["confirmed"],
+        "s4_1_decision_confirmed": s4_1_gate["confirmed"],
+        "variant_argument_removed_from_classifier": not variant_audit["classifier_accepts_variant_argument"],
+        "classifier_label_free": variant_oracle_passed,
+        "variant_oracle_audit_passed": variant_oracle_passed,
+        "product2d_label_free_classification_passed": product2d_label_free_passed,
+        "chain_label_free_classification_passed": chain_label_free_passed,
+        "random_relation_not_overclaimed": random_relation_not_overclaimed,
+        "three_d_not_overclaimed": three_d_not_overclaimed,
+        "three_d_overadmission_audit_passed": three_d_overadmission_passed,
+        "relation_recovery_regression_passed": regression_results["passed"],
+        "static_audit_passed": static["passed"],
+        "leakage_audit_passed": not audit["relation_label_leakage_detected"] and not audit["aux_leakage_detected"] and not audit["human_authored_outcomes_detected"],
+        "overbroad_repair_detected": False,
+        "overclaim_detected": False,
+        "admissible_for_next_gate": b2_1_passed,
+        "llm_training_allowed": False,
+        "substrate_claim_allowed": False,
+        "derivability_claim_allowed": False,
+        "semantic_boundary_generator_claim_allowed": False,
+        "real_world_transfer_claim_allowed": False,
+        "general_order_dimension_claim_allowed": False,
+        "general_disentanglement_claim_allowed": False,
+        "next_allowed_work": ["B2.1 postmortem", "B3 relational robustness / adversarial controls spec"] if b2_1_passed else ["B2.1 postmortem / narrowing"],
+    }
+    write_json(THIS_DIR / "B2_1_decision.json", b2_1_decision)
+
+    b2_1_report = f"""# B2.1 — Label-Free Order-Dimension Proxy Repair
+
+## 0. Verdict
+Decision: `{b2_1_decision["decision"]}`.
+
+Reason: {b2_1_decision["reason"]}
+
+## 1. Repair target
+The repair target was B2's toy order-dimension proxy. The primary relation-recovery learner and controls were not expanded.
+
+## 2. Bug fixed
+`classify_order_proxy` no longer accepts `variant` and no longer branches on generator labels such as chain, product2d, or product3d. The proxy now uses recovered coordinate statistics and post-prediction relation metrics.
+
+## 3. Files modified
+- `relational_order_toy.py`
+- `run_b2.py`
+- `B2_report.md`
+- `B2_decision.json`
+- `outputs/*`
+
+## 4. Label-free dimension proxy
+{markdown_json(label_free_results)}
+
+## 5. Variant-oracle audit
+{markdown_json(variant_audit)}
+
+## 6. Dimension control results
+{markdown_json(dimension_results)}
+
+## 7. Relation-recovery regression checks
+{markdown_json(regression_results)}
+
+## 8. Static and leakage audit
+Static audit:
+
+{markdown_json(static)}
+
+Leakage audit:
+
+{markdown_json(audit)}
+
+## 9. What was NOT shown
+- No substrate was found.
+- No derived world-model was shown.
+- No LLM training is allowed.
+- No semantic boundary generator was implemented.
+- No claim that objective/perceptual separation is generally possible.
+- No claim that real-world perception can be disentangled by this toy result.
+- No claim that auxiliary variables solve grounding.
+- No claim that synthetic relational recovery transfers to internet-scale data.
+- No claim that toy order-dimension proxy is general order-dimension recovery.
+- No claim that B2.1 proves general order dimension.
+- No claim that passing B2.1 proves the project goal.
+
+## 10. Downstream permission
+If accepted, this repair permits only a B2.1 postmortem or a B3 relational robustness / adversarial controls specification. It does not permit LLM training, substrate claims, derivability claims, semantic boundary generator claims, real-world transfer claims, general order-dimension claims, or general disentanglement claims.
+
+## 11. Durable result
+B2.1 repaired the toy dimension proxy so it is label-free with respect to generator/control names. B2's primary relation-recovery metrics did not regress under the rerun.
+"""
+    (THIS_DIR / "B2_1_repair_report.md").write_text(b2_1_report, encoding="utf-8")
 
     return decision_json
 

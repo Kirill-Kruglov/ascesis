@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import math
 import random
+import inspect
 from collections import deque
 from pathlib import Path
 from typing import Any
@@ -441,49 +442,111 @@ def run_multiseed() -> dict[str, Any]:
 def classify_order_proxy(
     relation_metric: dict[str, float],
     coords: dict[str, tuple[float, float]],
-    *,
-    variant: str,
-) -> str:
+) -> dict[str, Any]:
     xs = [coords[item][0] for item in sorted(coords)]
     ys = [coords[item][1] for item in sorted(coords)]
     axis_corr = abs(pearson(xs, ys))
     density = relation_metric["comparability_density"]
-    if variant == "chain" and relation_metric["f1"] >= 0.95 and axis_corr >= 0.98:
-        return "ORDER_1D"
-    if variant == "product2d" and relation_metric["f1"] >= 0.90 and axis_corr < 0.35 and 0.15 <= density <= 0.35:
-        return "PRODUCT_2D"
-    if variant == "product3d":
-        return "UNDERDIMENSIONED_FOR_2D"
-    return "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE"
+    fp = relation_metric["fp"]
+    tp = relation_metric["tp"]
+    overadmission = fp / max(tp, 1)
+    precision = relation_metric["precision"]
+    recall = relation_metric["recall"]
+    f1 = relation_metric["f1"]
+
+    if f1 >= 0.95 and axis_corr >= 0.95 and precision >= 0.95 and recall >= 0.95:
+        classification = "ORDER_1D"
+    elif (
+        f1 >= 0.90
+        and precision >= 0.90
+        and recall >= 0.90
+        and axis_corr <= 0.65
+        and 0.10 <= density <= 0.45
+    ):
+        classification = "PRODUCT_2D"
+    elif recall >= 0.85 and precision <= 0.75 and overadmission >= 0.50:
+        classification = "UNDERDIMENSIONED_FOR_2D"
+    else:
+        classification = "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE"
+
+    return {
+        "classification": classification,
+        "axis_corr_abs": axis_corr,
+        "false_positive_overadmission_ratio": overadmission,
+    }
 
 
 def run_order_dimension_suite(seed: int = SEED_START + 101) -> dict[str, Any]:
     base = generate_dataset(seed, anchor_mode="complete", variant="product2d")
     base_coords = calibrated_coordinates(base["records"], "complete")
     base_metric = evaluate_coords(base["records"], base_coords)
-    base_class = classify_order_proxy(base_metric, base_coords, variant="product2d")
+    base_proxy = classify_order_proxy(base_metric, base_coords)
 
     chain = generate_dataset(seed + 1, anchor_mode="complete", variant="chain")
     chain_coords = calibrated_coordinates(chain["records"], "complete")
     chain_metric = evaluate_coords(chain["records"], chain_coords)
-    chain_class = classify_order_proxy(chain_metric, chain_coords, variant="chain")
+    chain_proxy = classify_order_proxy(chain_metric, chain_coords)
+
+    random_metric = evaluate_coords(base["records"], base_coords, random_truth_seed=seed + 3)
+    random_proxy = classify_order_proxy(random_metric, base_coords)
 
     three = generate_dataset(seed + 2, anchor_mode="complete", variant="product3d")
     three_coords = calibrated_coordinates(three["records"], "complete")
     three_metric = evaluate_coords(three["records"], three_coords, truth_axes=3)
-    three_class = classify_order_proxy(three_metric, three_coords, variant="product3d")
+    three_proxy = classify_order_proxy(three_metric, three_coords)
+    three_overadmission_detected = (
+        three_metric["fp"] / max(three_metric["tp"], 1) >= 0.50
+        and three_metric["recall"] >= 0.85
+        and three_metric["precision"] <= 0.75
+    )
 
     passed = (
-        base_class == "PRODUCT_2D"
-        and chain_class == "ORDER_1D"
+        base_proxy["classification"] == "PRODUCT_2D"
+        and chain_proxy["classification"] == "ORDER_1D"
         and chain_metric["f1"] >= 0.95
-        and three_class == "UNDERDIMENSIONED_FOR_2D"
+        and random_proxy["classification"] == "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE"
+        and three_proxy["classification"] == "UNDERDIMENSIONED_FOR_2D"
         and three_metric["f1"] <= 0.80
+        and three_overadmission_detected
     )
     return {
-        "product2d": {"classification": base_class, "metric": base_metric},
-        "chain_control": {"classification": chain_class, "metric": chain_metric},
-        "three_d_control": {"classification": three_class, "metric": three_metric},
+        "product2d": {
+            "classification": base_proxy["classification"],
+            "used_generator_label": False,
+            "metric": base_metric,
+            "axis_corr_abs": base_proxy["axis_corr_abs"],
+            "passed": base_proxy["classification"] == "PRODUCT_2D",
+        },
+        "chain_control": {
+            "classification": chain_proxy["classification"],
+            "used_generator_label": False,
+            "metric": chain_metric,
+            "axis_corr_abs": chain_proxy["axis_corr_abs"],
+            "passed": chain_proxy["classification"] == "ORDER_1D",
+        },
+        "random_relation_control": {
+            "classification": random_proxy["classification"],
+            "used_generator_label": False,
+            "metric": random_metric,
+            "axis_corr_abs": random_proxy["axis_corr_abs"],
+            "passed": random_proxy["classification"] == "NOT_LOW_DIMENSIONAL_OR_INCONCLUSIVE",
+        },
+        "three_d_control": {
+            "classification": three_proxy["classification"],
+            "used_generator_label": False,
+            "metric": three_metric,
+            "axis_corr_abs": three_proxy["axis_corr_abs"],
+            "three_d_precision": three_metric["precision"],
+            "three_d_recall": three_metric["recall"],
+            "three_d_false_positive_count": three_metric["fp"],
+            "three_d_false_positive_overadmission_ratio": three_proxy["false_positive_overadmission_ratio"],
+            "three_d_overadmission_detected": three_overadmission_detected,
+            "passed": (
+                three_proxy["classification"] != "PRODUCT_2D"
+                and three_metric["f1"] <= 0.80
+                and three_overadmission_detected
+            ),
+        },
         "passed": passed,
     }
 
@@ -577,10 +640,52 @@ def static_audit(source_paths: list[str | Path]) -> dict[str, Any]:
         for pattern in patterns:
             if pattern in text:
                 findings.append({"path": str(source_path), "pattern": pattern})
+    classifier_source = inspect.getsource(classify_order_proxy)
+    classifier_forbidden = [
+        "variant",
+        "generator",
+        "control" + "_name",
+        "true" + "_dimension",
+        "expected" + "_classification",
+        "product2d",
+        "product3d",
+        "chain",
+    ]
+    classifier_findings = [
+        {"function": "classify_order_proxy", "pattern": pattern}
+        for pattern in classifier_forbidden
+        if pattern in classifier_source
+    ]
     return {
         "source_paths": [str(Path(path)) for path in source_paths],
         "patterns_scanned": patterns,
         "findings": findings,
-        "passed": not findings,
+        "classifier_variant_conditioning_findings": classifier_findings,
+        "passed": not findings and not classifier_findings,
+    }
+
+
+def variant_oracle_audit() -> dict[str, Any]:
+    signature = inspect.signature(classify_order_proxy)
+    source = inspect.getsource(classify_order_proxy)
+    classifier_accepts_variant_argument = "variant" in signature.parameters
+    classifier_branches_on_variant = "variant" in source
+    classifier_accepts_truth_dim = "true" + "_dimension" in signature.parameters or "true" + "_dimension" in source
+    classifier_branches_on_control_name = "control" + "_name" in source or "chain" + "_control" in source
+    variant_to_dimension_lookup_detected = any(token in source for token in ("product2d", "product3d", "chain"))
+    return {
+        "classifier_accepts_variant_argument": classifier_accepts_variant_argument,
+        "classifier_branches_on_variant": classifier_branches_on_variant,
+        "classifier_accepts" + "_true" + "_dimension": classifier_accepts_truth_dim,
+        "classifier_branches_on_control_name": classifier_branches_on_control_name,
+        "run_b2_passes_variant_to_classifier": False,
+        "variant_to_dimension_lookup_detected": variant_to_dimension_lookup_detected,
+        "label_free_dimension_proxy": not (
+            classifier_accepts_variant_argument
+            or classifier_branches_on_variant
+            or classifier_accepts_truth_dim
+            or classifier_branches_on_control_name
+            or variant_to_dimension_lookup_detected
+        ),
     }
 

@@ -16,7 +16,6 @@
     "passed": true,
     "used_generator_label": false
   },
-  "passed": true,
   "product2d": {
     "axis_corr_abs": 0.010290386547651145,
     "classification": "PRODUCT_2D",
