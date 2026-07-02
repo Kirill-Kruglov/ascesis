@@ -179,6 +179,42 @@ def test_runner_refuses_without_valid_lock():
         raise AssertionError("runner must refuse when lock rev is not a strict ancestor of HEAD")
 
 
+# 8 — §1.7: a decision.json with good numbers but no provenance (bypassed runner)
+def test_verify_decision_rejects_missing_provenance():
+    from gate_harness import verify_decision as VD
+
+    forged = {
+        "decision": "B1-PASS",
+        "with_aux_corr": 0.9999,
+        "no_aux_abs_corr": 0.23,
+        "improvement": 0.77,
+        # no _harness_provenance -> never went through the runner
+    }
+    valid, reasons = VD.verify_decision(forged)
+    assert valid is False, "a decision without provenance must be INVALID"
+    assert any("no _harness_provenance" in r for r in reasons)
+
+    # a runner-written decision (correct provenance) must verify
+    prov_ok = {
+        "decision": "OK",
+        "_harness_provenance": {
+            "written_by": VD.WRITTEN_BY,
+            "harness_version": VD.harness_version(),
+            "prereg_lock_verified": True,
+            "leakage_scan_verified": True,
+            "tautology_check_ran": True,
+            "evaluation_oracle_ran": True,
+        },
+    }
+    valid, reasons = VD.verify_decision(prov_ok)
+    assert valid is True, reasons
+
+    # tampering a flag to False must invalidate
+    prov_ok["_harness_provenance"]["leakage_scan_verified"] = False
+    valid, _ = VD.verify_decision(prov_ok)
+    assert valid is False
+
+
 def main():
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     results = []
