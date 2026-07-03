@@ -388,7 +388,10 @@ def run_final_sweep(prereg: dict[str, Any]) -> dict[str, Any]:
     cells_by_n: dict[str, list[dict[str, Any]]] = {}
     for n in N_VALUES:
         cells_by_n[str(n)] = []
-        for d in prereg["final_grid_by_n"][n]:
+        grid = prereg["final_grid_by_n"].get(n) or prereg["final_grid_by_n"].get(str(n))
+        if grid is None:
+            raise KeyError(f"missing final grid for n={n}")
+        for d in grid:
             cells_by_n[str(n)].append(paired_cell(d, n, FINAL_SEEDS))
             write_json(OUTPUTS / "crossover_table_partial.json", cells_by_n)
 
