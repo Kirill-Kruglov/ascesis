@@ -41,6 +41,9 @@ flowchart TD
     G --> FC(["fallacy-cutter:<br/>instrument over intention"]):::concl
     G -. enforces .-> J
     G -. enforces .-> B
+    PC --> X["09 · The corner:<br/>seed × soil (W8)"]:::open
+    JC --> X
+    FC -. disciplines .-> X
 ```
 
 The detailed maps — one per line, with milestones, commit hashes, verdicts, and
@@ -56,6 +59,7 @@ the exact artifact behind every color — are in [`ontology/lines/`](ontology/li
 | 06 | B-branch → proxylimen | Jul 2–3 | bounded positives **verified**; transfer **falsified**; CL **closed** | [06-b-branch-to-proxylimen.md](ontology/lines/06-b-branch-to-proxylimen.md) |
 | 07 | Gate harness → fallacy-cutter | Jul 2–3 | instrument **verified**; playbook **open** | [07-gate-harness-to-fallacy-cutter.md](ontology/lines/07-gate-harness-to-fallacy-cutter.md) |
 | 08 | Framing documents | Jun 15 – Jul 2 | reference; anti-overclaim gates intact | [08-framing-docs.md](ontology/lines/08-framing-docs.md) |
+| 09 | The corner: seed × soil | opened Jul 7 | **open** — preregistered, kill-condition set, no runs yet | [09-the-corner.md](ontology/lines/09-the-corner.md) |
 
 ## The products
 
