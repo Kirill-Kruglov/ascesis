@@ -45,6 +45,7 @@ flowchart TD
     JC --> X
     FC -. disciplines .-> X
     X --> X2["seeded adoption:<br/>empty simpliciter"]:::falsified
+    X2 --> Y["10 · The bonded envelope:<br/>does a stake change it?"]:::open
 ```
 
 The detailed maps — one per line, with milestones, commit hashes, verdicts, and
@@ -61,6 +62,7 @@ the exact artifact behind every color — are in [`ontology/lines/`](ontology/li
 | 07 | Gate harness → fallacy-cutter | Jul 2–3 | instrument **verified**; playbook **open** | [07-gate-harness-to-fallacy-cutter.md](ontology/lines/07-gate-harness-to-fallacy-cutter.md) |
 | 08 | Framing documents | Jun 15 – Jul 2 | reference; anti-overclaim gates intact | [08-framing-docs.md](ontology/lines/08-framing-docs.md) |
 | 09 | The corner: seed × soil | opened & killed twice, Jul 7 | **falsified simpliciter** — spontaneous adoption never ignites; forced adoption *narrows* the domain; trust without verification loses it entirely | [09-the-corner.md](ontology/lines/09-the-corner.md) |
+| 10 | The bonded envelope | opened Jul 8 | **open** — does a contingent stake heal what the free envelope could not; anti-Shylock constraints; concentration guard first-class | [10-the-bonded-envelope.md](ontology/lines/10-the-bonded-envelope.md) |
 
 ## The products
 
