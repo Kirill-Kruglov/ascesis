@@ -1,8 +1,0 @@
-x,y,pearson,spearman,partial_frequency_class_size_dag_diversity
-M1_original_score,M3_reuse_score,0.9900686967555433,0.9692826140262865,0.9923844526578283
-M1_original_score,M5_perturbation_centrality_score,0.9738116574937108,0.9934961322342185,0.9742419289601616
-M3_reuse_score,M5_perturbation_centrality_score,0.9659929988616105,0.9731163410442851,0.9636746859428311
-M1_original_score,M6_frequency_control_score,-0.18451661211209947,-0.21315118798826535,
-M3_reuse_score,M6_frequency_control_score,-0.25667740083781443,-0.3784129022371374,
-M5_perturbation_centrality_score,M6_frequency_control_score,-0.24204323530734112,-0.27716889375131704,
-M4_compression_score,M6_frequency_control_score,0.9270562057367665,0.9271789811428712,

@@ -1,4 +1,0 @@
-sample_budget,semantic_class_count,trajectory_count,semantic_class_rate,trajectory_rate,sample_limited_any,semantic_growth_from_previous,semantic_growth_ratio_from_previous
-20000,19949,20000,0.99745,1.0,True,,
-50000,49675,50000,0.9935,1.0,True,29726.0,2.4900997543736527
-100000,98749,100000,0.98749,1.0,True,49074.0,1.9879013588324106

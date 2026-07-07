@@ -1,7 +1,0 @@
-rank,minimal_missing_information_candidate,count,fraction,cumulative_count,cumulative_fraction
-1,delayed response_to_aid / neighbor_delta / last_aid,1932,0.3308785750984758,1932,0.3308785750984758
-2,bounded future reachability / time-to-collapse,1364,0.23360164411714335,3296,0.5644802192156191
-3,Obs.resource_concentration > 0.62,1115,0.19095735571159445,4411,0.7554375749272135
-4,failed_zone_count >= 4,724,0.12399383456071245,5135,0.879431409487926
-5,total_mass < 35,400,0.06850488097276931,5535,0.9479362904606953
-6,multiple or unresolved missing coordinates,304,0.05206370953930468,5839,1.0

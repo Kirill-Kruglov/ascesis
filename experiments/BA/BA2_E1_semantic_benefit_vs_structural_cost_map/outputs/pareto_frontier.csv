@@ -1,6 +1,0 @@
-mechanism,semantic_benefit_score,structural_cost_score,benefit_cost_ratio,semantic_validity,noncomparable_semantic_shift,frontier_scope
-MB4,0.16582492216531083,0.9220833333333334,0.1798372404865549,severe_semantic_shift,1,all
-MB3,0.14149343881393966,0.4052987421383648,0.3491090006038935,comparable_enough_for_diagnostic,0,all
-MB1,0.13571208449216943,0.2719496855345912,0.4990337982020106,comparable_enough_for_diagnostic,0,all
-MB3,0.14149343881393966,0.4052987421383648,0.3491090006038935,comparable_enough_for_diagnostic,0,comparable_only
-MB1,0.13571208449216943,0.2719496855345912,0.4990337982020106,comparable_enough_for_diagnostic,0,comparable_only

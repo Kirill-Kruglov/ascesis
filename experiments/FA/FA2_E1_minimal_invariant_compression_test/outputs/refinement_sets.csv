@@ -1,8 +1,0 @@
-refinement_set,description,invariants,coordinate_count,oracle
-R0,current 18.0 abstraction only,none,0,no
-R1,R0 + I1 omitted collapse clauses,I1a;I1b,2,no
-R2,R1 + I2 policy-visible concentration,I1a;I1b;I2,3,no
-R3,R2 + I3 compact history/delayed consequence,I1a;I1b;I2;I3,5,no
-R4-oracle,R3 + I4 oracle temporal reachability,I1a;I1b;I2;I3;I4_oracle,6,yes
-R4-proxy,R3 + I4 non-oracle current minimum-zone-welfare proxy,I1a;I1b;I2;I3;I4_proxy,6,no
-R5,R4-proxy + best compact mixed resolver,I1a;I1b;I2;I3;I4_proxy;I5,6,no

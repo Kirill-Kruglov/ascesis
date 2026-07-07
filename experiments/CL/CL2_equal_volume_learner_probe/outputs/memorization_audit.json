@@ -1,9 +1,0 @@
-{
-  "exact_training_pair_overlap_random_test": 0.0,
-  "exact_training_pair_overlap_source_state_holdout": 0.0,
-  "exact_training_pair_overlap_structural_holdout": 0.0,
-  "memorizer_structural_holdout_accuracy": 0.0,
-  "primary_structural_holdout_accuracy": 1.0,
-  "memorization_gap": 1.0,
-  "memorization_trap_detected": false
-}

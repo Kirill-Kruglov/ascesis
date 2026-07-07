@@ -1,9 +1,0 @@
-cap,n_semantic,instrument,exhausted
-6,16,exact_semantic,True
-8,64,exact_semantic,True
-10,256,exact_semantic,True
-12,1024,exact_semantic,True
-14,4096,exact_semantic,True
-16,16384,exact_semantic,True
-18,65536,exact_semantic,True
-6,16,state_bfs,False

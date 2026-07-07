@@ -1,8 +1,0 @@
-invariant_id,invariant_name,standalone_coverage_count,standalone_coverage_fraction,marginal_coverage_count_in_order,marginal_coverage_fraction_in_order,coordinate_count,marginal_compression_ratio,new_class_counts,oracle,layer_eligibility
-I1a,failed_zone_count >= 4,724,0.12399383456071245,724,0.12399383456071245,1,724.0,"{""spread_blind"": 724}",no,L4 eligible
-I1b,total_mass < 35,400,0.06850488097276931,400,0.06850488097276931,1,400.0,"{""mass_blind"": 400}",no,L4 eligible
-I2,Obs.resource_concentration > 0.62 after aid,1805,0.3091282753896215,1404,0.24045213221442027,1,1404.0,"{""policy_visible_concentration_blind"": 1115, ""unknown_or_mixed"": 289}",no,conditional L2/L3
-I3,delayed harmful response/neighbor signal after aid,2656,0.45487240965918824,1947,0.3334475081349546,2,973.5,"{""history_blind"": 1932, ""unknown_or_mixed"": 15}",no,conditional L2/L3
-I4_proxy,current minimum-zone-welfare risk band,5081,0.8701832505566022,1354,0.2318890220928241,1,1354.0,"{""forward_dynamics_blind"": 1354}",no,"L4 eligible, but proxy threshold is empirical"
-I4_oracle,oracle future collapse / time-to-collapse exists,4715,0.8075012844665183,10,0.0017126220243192328,1,10.0,"{""forward_dynamics_blind"": 10}",yes,L4 plus conditional L1 temporal
-I5,I2 or I3 mixed resolver,304,0.05206370953930468,0,0.0,0,0.0,{},no,inherits I2/I3 conditional L2/L3

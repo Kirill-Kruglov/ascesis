@@ -1,8 +1,0 @@
-metric,label,allowed_ops,analyzed_class_count,broken_class_count,surviving_class_count,surviving_fraction,min_attack_cost,mean_attack_cost_broken,mean_auc_gns
-M1_original,M1_original_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0
-M2_intervention,M2_intervention_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0
-M3_reuse,M3_reuse_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0
-M4_compression,M4_compression_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0
-M5_perturbation_centrality,M5_perturbation_centrality_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0
-M6_frequency_control,M6_frequency_control_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0
-M7_random_matched,M7_random_matched_A,"['P10_replace_subgraph', 'P4_alpha_rename', 'P9_split_node']",600,0,600,1.0,,,1.0

@@ -1,6 +1,0 @@
-depth_cap,semantic_class_count,trajectory_count,semantic_class_rate,trajectory_rate,sample_limited_any,semantic_growth_from_previous,semantic_growth_ratio_from_previous
-8,64,88834,0.00064,0.88834,False,,
-12,1024,99983,0.01024,0.99983,True,960.0,16.0
-16,16346,100000,0.16346,1.0,True,15322.0,15.962890625
-20,83206,100000,0.83206,1.0,True,66860.0,5.0902973204453685
-24,98749,100000,0.98749,1.0,True,15543.0,1.186801432588996

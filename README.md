@@ -1,67 +1,97 @@
-# Ascesis
+# ascesis — the forge, distilled
 
-`Ascesis` is a working code name. The final name may change.
+This repository was a research forge: three weeks of experiments, audits, dead
+ends, and extractions in AI-alignment thinking. The products left home as three
+public repositories. What remains here is the **ontology of the search** — a map
+of every direction tried, colored by what survived.
 
-This repository is a research trail for AI-alignment thinking, organized as honest bridges
-between areas usually discussed as separate bodies of work (formal verification, capability
-security, instrumental convergence, corrigibility, selective prediction, social choice,
-Goodhart/reward hacking, evolutionary dynamics, mechanism design, and related fields). It is
-not a scientific paper, not a claim of contribution, and not a claim of novelty. The value, if
-any, is in the proposed bridges and in the honest path — both of which live in the commit
-history as much as in the current files. Every field is credited to its originators before any
-local label is used.
+The working tree used to hold all of it (~300 MB of experiments, memos, and
+harness runs). It now holds only this map. **Nothing was lost:** the full tree
+lives one checkout away, at the tag
+[`forge-full-tree`](https://github.com/Kirill-Kruglov/ascesis/tree/forge-full-tree),
+and every colored node below is backed by a named artifact there. The commit
+history *is* the path — this repository's own founding principle.
 
-## How the repository is organized
+## The map
 
-- **Sandbox — the working trail.** This is where the trial-and-error research happens.
-  - [`ascesis_of_learning_grace/`](ascesis_of_learning_grace/): the map and research memos.
-    Start with [status.md](ascesis_of_learning_grace/status.md) for the current frontier and the
-    standing discipline; [field_check.md](ascesis_of_learning_grace/field_check.md) is the
-    field-ownership layer. The sandbox is kept lean: stale material is deleted rather than
-    tidied, since the full record stays in git history.
-  - [`experiments/`](experiments/): small, reproducible toy tests, each pre-registered with a
-    `SPEC.md` before running. Negative results and calibration failures are valid outputs.
-- **Extracted directions — focused packages.** When a direction passes a minimal proof
-  threshold in the sandbox, it is pulled into its own self-contained package (narrative, spec,
-  field references, test, results) so it can be developed in focus and read on its own.
+Colors are not opinions. **Green** nodes are backed by validated artifacts;
+**red** nodes are preregistered kills, audited withdrawals, or closed ledgers —
+each with the document that closed it; **grey** nodes are honestly open.
+**Gold** nodes are the conclusions that became public projects.
 
-The blind-arbiter/Justitia line has been extracted into its own repository:
-<https://github.com/Kirill-Kruglov/justitia>. This repository now preserves the Ascesis
-research trail and the emerging Substrate Discovery / playbook work.
+```mermaid
+flowchart TD
+    classDef verified fill:#1a7f37,color:#fff
+    classDef falsified fill:#8b1a1a,color:#fff
+    classDef open fill:#4a4a4a,color:#eee
+    classDef concl fill:#b8860b,color:#fff,stroke-width:3px
 
-## Extracted line: the blind arbiter / Justitia
+    Q1["Q1 · Can values refuse<br/>a single scalar?"] --> E["Experiments 01–08<br/>(non-scalar values, blind feeder)"]
+    E -->|"superiority falsified;<br/>existence survived"| Q2["Q2 · Can a blind referee<br/>keep a world shared?"]
+    Q2 --> J["Blind arbiter → 13–16.1"]
+    J --> JC(["justitia:<br/>consequence-gated<br/>anti-concentration"]):::concl
+    J --> S["Justitia as a training<br/>substrate (18.1, JB0)"]:::falsified
+    S --> D1["Door1 postmortem:<br/>durable constraints"]:::verified
+    D1 --> SD["Substrate-discovery<br/>programme (KG0-frozen)"]:::open
+    D1 --> Q3["Q3 · Where can a world model be<br/>derived rather than inherited?"]
+    Q3 --> B["B-branch:<br/>minimal contact"]
+    B --> PC(["proxylimen:<br/>calibrated derivation"]):::concl
+    B --> CL["CL: safe ledger as<br/>derivability evidence"]:::falsified
+    A["The audit that found<br/>the author's own errors"] --> G["gate_harness<br/>(fail closed)"]:::verified
+    G --> FC(["fallacy-cutter:<br/>instrument over intention"]):::concl
+    G -. enforces .-> J
+    G -. enforces .-> B
+```
 
-Can an AGI/ASI, modelled as an active **feeder** for a population rather than an optimizer of
-"the good," keep that population in equilibrium when part of it is adversarial and actively
-games the signals the feeder can see (reward hacking under hard optimization)?
+The detailed maps — one per line, with milestones, commit hashes, verdicts, and
+the exact artifact behind every color — are in [`ontology/lines/`](ontology/lines/):
 
-Current result, after a strict audit: the non-spatial toy does **not** reliably hold
-permanence. An earlier draft claimed an active blind arbiter "holds permanence above a boundary
-R*"; the audit withdrew that — the permanence curve is non-monotonic and near coin-flip for the
-best regime (geometric), with wide overlapping confidence bands and no sustained boundary, and
-the signal is fully decoupled where it matters. What survives is an ordering of arbiter rules
-(scalar < lexicographic < geometric): active balancing and reacting to lagged consequences help,
-but do not amount to holding equilibrium. This is a weak/negative result — the harness catching
-and correcting an overstated headline. The extracted Justitia repository holds the continued
-line: <https://github.com/Kirill-Kruglov/justitia>.
+| # | line | period | verdict | line file |
+|---|---|---|---|---|
+| 01 | Early experiments 01–08 | Jun 18–21 | mixed: superiority **falsified**, existence survived | [01-early-experiments.md](ontology/lines/01-early-experiments.md) |
+| 02 | Blind arbiter → justitia | Jun 20–29 | mechanism **verified**; substrate claim **falsified** | [02-blind-arbiter-to-justitia.md](ontology/lines/02-blind-arbiter-to-justitia.md) |
+| 03 | Faithful abstraction / CEGAR | Jun 29 | **falsified** as constructive path; witnesses survived | [03-faithful-abstraction.md](ontology/lines/03-faithful-abstraction.md) |
+| 04 | Door1 postmortem | Jun 29 | candidate **closed**; objective **open** | [04-door1.md](ontology/lines/04-door1.md) |
+| 05 | Substrate discovery | Jun 29 – Jul 2 | **open**, programme frozen at KG0 | [05-substrate-discovery.md](ontology/lines/05-substrate-discovery.md) |
+| 06 | B-branch → proxylimen | Jul 2–3 | bounded positives **verified**; transfer **falsified**; CL **closed** | [06-b-branch-to-proxylimen.md](ontology/lines/06-b-branch-to-proxylimen.md) |
+| 07 | Gate harness → fallacy-cutter | Jul 2–3 | instrument **verified**; playbook **open** | [07-gate-harness-to-fallacy-cutter.md](ontology/lines/07-gate-harness-to-fallacy-cutter.md) |
+| 08 | Framing documents | Jun 15 – Jul 2 | reference; anti-overclaim gates intact | [08-framing-docs.md](ontology/lines/08-framing-docs.md) |
 
-## Contributors
+## The products
 
-Kirill Kruglov (author and maintainer, who does the core work — proposing and testing
-hypotheses by mind and intuition), Claude (Opus 4.8), and Codex (GPT-5.5). The two assistants'
-contribution to the sandbox trail counts as much as to the extracted packages. See
-[CONTRIBUTORS.md](CONTRIBUTORS.md) for roles.
+Three conclusions left the forge as self-contained public projects — a triptych
+sharing one thesis: *do not try to certify intentions; build contact,
+consequences, and constraints that can be checked.*
 
-## Citation
+- [**justitia**](https://github.com/Kirill-Kruglov/justitia) — what keeps a world
+  of powerful, evolving agents livable when no one can read anyone's soul.
+  Essay: [Soil for Seeds of Loving Grace](https://kirill-kruglov.github.io/justitia/).
+- [**proxylimen**](https://github.com/Kirill-Kruglov/proxylimen) — where a mind's
+  world comes from, and where blind derivation measurably breaks.
+  Essay: [Everything From Almost Nothing](https://kirill-kruglov.github.io/proxylimen/).
+- [**fallacy-cutter**](https://github.com/Kirill-Kruglov/fallacy-cutter) — the
+  fail-closed instrument both were cut with.
+  Essay: [Instruments, Not Intentions](https://kirill-kruglov.github.io/fallacy-cutter/).
 
-If you draw on this repository, please cite it via the "Cite this repository" button
-(generated from [CITATION.cff](CITATION.cff)). It is a research trail, not a peer-reviewed
-publication; the most useful material for a researcher is often in the commit history.
+The canonical claim registries (`RESULTS_CANONICAL.md`,
+`MEMO_B_BRANCH_HARNESS.md`) live on in
+[proxylimen/canonical/](https://github.com/Kirill-Kruglov/proxylimen/tree/main/canonical)
+— and, verbatim, in the tag. Commit hashes cited there resolve in this
+repository's history.
 
-Keywords: AI alignment, AI safety, AGI, ASI, Goodhart's law, reward hacking, corrigibility,
-value pluralism, mechanism design under hidden types, replicator dynamics, permanence,
-type-blind arbiter.
+## Tools
+
+[`tools/dialog2md/`](tools/dialog2md/) converts a saved Claude/ChatGPT
+conversation page into clean Markdown — the forge's raw material was dialogue,
+and this is the harvester for its primary sources.
+
+## What this repository is not
+
+Not a paper, not a claim of novelty, not a safety result. It is a ledger of
+honest work: what was asked, what was tried, what was killed by preregistered
+gates or audits, and what remained standing. The falsified nodes are not
+failures of the forge — they are its product.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT — see [`LICENSE`](LICENSE). Cite via [`CITATION.cff`](CITATION.cff).

@@ -1,7 +1,0 @@
-import sys
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "src"))
-sys.path.insert(0, str(ROOT.parents[0] / "16_consequence_vs_feature" / "src"))
-sys.path.insert(0, str(ROOT.parents[0] / "17A_backbone_consequence" / "src"))
