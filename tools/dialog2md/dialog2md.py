@@ -6,8 +6,8 @@ sources. Feed it an HTML file saved from the browser (full page or the
 conversation container) and it emits clean Markdown, preserving code fences,
 lists, and quotes — or splits the dialog into one file per exchange.
 
-    python3 dialog2md.py saved_page.html out.md
-    python3 dialog2md.py saved_page.html out --split-dir parts/
+    python3 dialog2md.py saved_page.html out.md --user-label Kirill
+    python3 dialog2md.py saved_page.html out --user-label Kirill --split-dir parts/
 
 Design choices:
   - DOM-based, not text-based: messages are located by stable-ish data
@@ -169,7 +169,8 @@ def main() -> int:
     ap.add_argument("html", help="saved conversation page (.html)")
     ap.add_argument("out", help="output .md file, or basename when using --split-dir")
     ap.add_argument("--split-dir", help="write one .md per exchange into this directory")
-    ap.add_argument("--user-label", default="Kirill")
+    ap.add_argument("--user-label", required=True,
+                    help="speaker label for your turns (e.g. your name)")
     ap.add_argument("--assistant-label", default=None,
                     help="default: Claude or GPT, by detected flavor")
     args = ap.parse_args()

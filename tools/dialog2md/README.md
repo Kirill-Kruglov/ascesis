@@ -5,12 +5,12 @@ forge's raw material was dialogue; this is the harvester for its primary
 sources.
 
 ```sh
-python3 dialog2md.py saved_page.html out.md                 # single file
-python3 dialog2md.py saved_page.html base --split-dir parts # one file per exchange
+python3 dialog2md.py saved_page.html out.md --user-label Kirill                 # single file
+python3 dialog2md.py saved_page.html base --user-label Kirill --split-dir parts # one file per exchange
 ```
 
-Requires `beautifulsoup4`. Options: `--user-label` (default `Kirill`),
-`--assistant-label` (default `Claude`/`GPT` by detected flavor).
+Requires `beautifulsoup4`. `--user-label` (required) names your turns;
+`--assistant-label` defaults to `Claude`/`GPT` by detected flavor.
 
 ## How it works
 
