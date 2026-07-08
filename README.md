@@ -47,6 +47,8 @@ flowchart TD
     X --> X2["seeded adoption:<br/>empty simpliciter"]:::falsified
     X2 --> Y["10 · The bonded envelope:<br/>the deal itself was the flaw"]:::falsified
     Y --> Z["11 · The closed loop:<br/>change the postulate,<br/>not the price"]:::open
+    Z --> Z1["phase 1: headroom exists —<br/>oracle dynamics extend the ceiling;<br/>the referee's own contact<br/>cannot derive them (derivation gap)"]:::falsified
+    Z1 -. "the gap is Q3's wall,<br/>found standing inside justitia" .-> Q3
 ```
 
 The detailed maps — one per line, with milestones, commit hashes, verdicts, and
@@ -64,7 +66,7 @@ the exact artifact behind every color — are in [`ontology/lines/`](ontology/li
 | 08 | Framing documents | Jun 15 – Jul 2 | reference; anti-overclaim gates intact | [08-framing-docs.md](ontology/lines/08-framing-docs.md) |
 | 09 | The corner: seed × soil | opened & killed twice, Jul 7 | **falsified simpliciter** — spontaneous adoption never ignites; forced adoption *narrows* the domain; trust without verification loses it entirely | [09-the-corner.md](ontology/lines/09-the-corner.md) |
 | 10 | The bonded envelope | opened & killed Jul 8 | **falsified as locked** — price alone does not separate (P0 worst); contingent stakes do not heal; the guard fired: the channel concentrates structurally; synthesis: rewarding legibility with a softer sword is moral hazard by construction | [10-the-bonded-envelope.md](ontology/lines/10-the-bonded-envelope.md) |
-| 11 | The closed loop | opened Jul 8 | **open** — the fifth-postulate move: knowledge as a process constraint, not a consumable artifact; phase 1 = predictive referee, kills set, born with its literature shoulders listed | [11-the-closed-loop.md](ontology/lines/11-the-closed-loop.md) |
+| 11 | The closed loop | opened Jul 8; phase 1 ran Jul 8 | **open; phase 1: derivation gap** — headroom **verified**: an oracle model of the world's dynamics is the first mechanism of the saga to extend the ceiling (W6 1.2 → 1.6); derivation **falsified**: the model derived from the referee's own contact never earns authority (calibration below the random null) while the safety architecture holds (null ties baseline, the self-gate strangles the confident liar); phases 2–3 open | [11-the-closed-loop.md](ontology/lines/11-the-closed-loop.md) |
 
 ## The products
 
