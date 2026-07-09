@@ -1,4 +1,4 @@
-# 11 · The closed loop (opened Jul 8 · phase 1 ran Jul 8 — **OPEN; phase 1: derivation gap**)
+# 11 · The closed loop (opened Jul 8 · phases 1–2 ran Jul 8–9 — **OPEN; phase 1: derivation gap · phase 2: killed as locked, instrument implicated**)
 
 **Question.** Three envelope deaths (lines [09](09-the-corner.md),
 [10](10-the-bonded-envelope.md)) shared one untouched assumption — the forge's
@@ -16,13 +16,18 @@ return as limits — horizon → 0 or calibration failure ⇒ the published reac
 justitia; permitted damage → 0 ⇒ the shield; governance off ⇒ a plain active
 learner.
 
-**Status.** Open; phase 1 has run
+**Status.** Open; phases 1 and 2 have run
 ([J-N8](https://github.com/Kirill-Kruglov/justitia/tree/main/experiments/harnessed/J_N8_predictive_referee),
 [J-N8b](https://github.com/Kirill-Kruglov/justitia/tree/main/experiments/harnessed/J_N8b_W7_predictive_referee),
-both VALID, both FAIL). The middle branch of the preregistered kill — the one
-written as a *reading*, not a death — is the one that fired: **the derivation
-gap**. Headroom exists; the referee's own contact cannot derive it. Phases 2–3
-remain open, and the gap itself is now the sharpest question the forge owns.
+[J-N9](https://github.com/Kirill-Kruglov/justitia/tree/main/experiments/harnessed/J_N9_active_probing),
+all VALID, all FAIL). Phase 1: the middle branch of the preregistered kill —
+the one written as a *reading*, not a death — fired: **the derivation gap**.
+Headroom exists; the referee's own contact cannot derive it. Phase 2 asked
+whether *chosen* contact closes the gap and died on both preregistered
+branches at once — and a post-hoc sham-probe diagnostic showed the safety
+audit had measured the world's own churn, not probe harm: the one component
+of the design without its own null control strangled the experiment it was
+guarding. The gap stands, sharpened; phase 3 remains open.
 
 ```mermaid
 flowchart TD
@@ -38,7 +43,10 @@ flowchart TD
     P1 --> K2["DERIVATION GAP fired: the model derived<br/>from the referee's own contact never earns<br/>authority — calibration 0.52 vs the 0.60 bar,<br/>below the random null 0.54"]:::falsified
     P1 --> K3["Safety held: random null tied baseline;<br/>self-gate strangled the confidently-wrong<br/>model (gate open 0.2% of steps)"]:::verified
     K2 --> C1(["The ceiling of blind governance is<br/>partly epistemic — and the missing piece<br/>is exactly proxylimen's question:<br/>what contact yields a derivable model?"]):::concl
-    Z -.-> P2["Phase 2: active safe-to-fail<br/>probing (later)"]:::open
+    K2 --> P2["Phase 2: active safe-to-fail probing —<br/>does CHOSEN contact close the gap? (J-N9)"]:::open
+    P2 --> M1["Killed as locked: probes never extended<br/>the ceiling (PA = R0 = 1.2; oracle 1.8, grid top —<br/>gap replicated on fresh seeds); safety audit<br/>closed the channel in 89% of runs"]:::falsified
+    P2 --> M2["Sham-probe diagnostic (INFERENCE):<br/>non-recovery 0.87 without perturbation vs 0.88<br/>with — the audit measured baseline churn;<br/>probes were harmless; contact was never tested"]:::verified
+    M2 --> C2(["An audit without a counterfactual<br/>measures the world, not the intervention.<br/>Every channel got a null arm;<br/>the audit itself did not."]):::concl
     Z -.-> P3["Phase 3: optionality as one currency<br/>of safety and power (later)"]:::open
 ```
 
@@ -98,6 +106,43 @@ and "this contact derives it" is proxylimen's wall standing inside justitia's
 substrate — and phase 2 (active safe-to-fail probing) was designed, before
 this result existed, as exactly the question of *choosing* contact for
 information. The gap is not an obstacle on the way; it is the way.
+
+## Phase 2 — the outcome (Jul 8–9; J-N9 FAIL, VALID; the instrument implicated)
+
+Phase 2 changed one more postulate: the referee may spend a bounded budget of
+small reversible probes — interventions for information, not for governance.
+Five arms (baseline · oracle · passive-derived replica · information-directed
+probes · matched random probes), a structural health guard before each probe,
+and a mechanical recovery audit after it, closing the channel fail-closed if
+non-recovery exceeded 10%.
+
+Both preregistered kill branches fired at once. The probes never extended the
+ceiling (PA = R0 = 1.2 while the oracle reached 1.8 — the top of the grid;
+the derivation gap replicated exactly on fresh seeds). And the safety audit
+closed the probe channel in ~89% of runs: measured non-recovery was 0.80
+against the 0.10 budget.
+
+Then the diagnostic, run after the verdict and labeled as INFERENCE: **sham
+probes** — identical guard, schedule, selection, and audit, but no actual
+perturbation — show non-recovery 0.87 against the real probes' 0.88. The
+criterion was measuring the world's own churn: a healthy W6 zone fails the
+admission margin within five steps ~87% of the time with no intervention at
+all. The probes were harmless (excess +0.01, consistent with PA's ceiling
+equalling baseline rather than narrowing). The audit — the only component of
+the design without its own null control — throttled the channel after ~5
+probes per run, so the contact question phase 2 existed to ask was measured
+under almost no additional contact.
+
+What died: phase 2 as locked — including its safety instrument, which is the
+deeper finding. The forge gave every *channel* a null arm (PR in phase 1, PN
+in phase 2) and forgot to give one to the *audit*: an audit without a
+counterfactual measures the world, not the intervention. The kill is
+published exactly as preregistered; the diagnostic is not a rescue but a
+lesson — any phase-2b must preregister a counterfactual-controlled recovery
+criterion (sham-adjusted, or paired unprobed control zones) as a new gate.
+What the wave still bought: the derivation gap replicated on fresh seeds, the
+headroom bound moved from 1.6 to the grid top, and the substrate's baseline
+volatility is now a measured quantity instead of an implicit assumption.
 
 ## The shoulders (first line born with them)
 

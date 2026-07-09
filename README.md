@@ -49,6 +49,7 @@ flowchart TD
     Y --> Z["11 · The closed loop:<br/>change the postulate,<br/>not the price"]:::open
     Z --> Z1["phase 1: headroom exists —<br/>oracle dynamics extend the ceiling;<br/>the referee's own contact<br/>cannot derive them (derivation gap)"]:::falsified
     Z1 -. "the gap is Q3's wall,<br/>found standing inside justitia" .-> Q3
+    Z1 --> Z2["phase 2: chosen contact fails too —<br/>and the sham-probe diagnostic showed<br/>the safety audit measured the world's<br/>churn, not probe harm"]:::falsified
 ```
 
 The detailed maps — one per line, with milestones, commit hashes, verdicts, and
@@ -66,7 +67,7 @@ the exact artifact behind every color — are in [`ontology/lines/`](ontology/li
 | 08 | Framing documents | Jun 15 – Jul 2 | reference; anti-overclaim gates intact | [08-framing-docs.md](ontology/lines/08-framing-docs.md) |
 | 09 | The corner: seed × soil | opened & killed twice, Jul 7 | **falsified simpliciter** — spontaneous adoption never ignites; forced adoption *narrows* the domain; trust without verification loses it entirely | [09-the-corner.md](ontology/lines/09-the-corner.md) |
 | 10 | The bonded envelope | opened & killed Jul 8 | **falsified as locked** — price alone does not separate (P0 worst); contingent stakes do not heal; the guard fired: the channel concentrates structurally; synthesis: rewarding legibility with a softer sword is moral hazard by construction | [10-the-bonded-envelope.md](ontology/lines/10-the-bonded-envelope.md) |
-| 11 | The closed loop | opened Jul 8; phase 1 ran Jul 8 | **open; phase 1: derivation gap** — headroom **verified**: an oracle model of the world's dynamics is the first mechanism of the saga to extend the ceiling (W6 1.2 → 1.6); derivation **falsified**: the model derived from the referee's own contact never earns authority (calibration below the random null) while the safety architecture holds (null ties baseline, the self-gate strangles the confident liar); phases 2–3 open | [11-the-closed-loop.md](ontology/lines/11-the-closed-loop.md) |
+| 11 | The closed loop | opened Jul 8; phases 1–2 ran Jul 8–9 | **open; phase 1: derivation gap; phase 2: killed as locked, instrument implicated** — headroom **verified** (oracle extends the ceiling to the grid top, 1.8); derivation **falsified** twice: neither passive nor *chosen* contact earns authority; the phase-2 sham-probe diagnostic (INFERENCE) shows the safety audit measured the world's churn, not probe harm — the one component without its own null control strangled the experiment; lesson: an audit without a counterfactual measures the world, not the intervention; phase 3 open | [11-the-closed-loop.md](ontology/lines/11-the-closed-loop.md) |
 
 ## The products
 
