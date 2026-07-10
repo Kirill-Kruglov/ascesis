@@ -51,7 +51,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     S7g --> S8["Scout 08: Codex's own repair (component collapse +<br/>external q75) fell on BOTH his attacks — edge threshold<br/>sits below the world-floor, all world-responsive languages<br/>fuse into one component; external pairs measure the<br/>no-response floor, not the world-floor → UNKNOWNs and<br/>false flags. THE RECURSION: the field needs the very<br/>independence the instrument detects"]:::falsified
     S8 --> S9g["exit named by the line's own core: independence of<br/>the null-pool cannot be certified from inside — it must be<br/>CONSTRUCTED: preregistered reference constructions,<br/>disjointness as a declared assumption (the forge's<br/>five-minds architecture, derived as necessity)"]:::open
     S9g --> S9["Scout 09: reference field {A,P,W,M} — clone, postulate<br/>AND coin-masked flagged in ALL pools; independents clean;<br/>field structurally immune to both contamination attacks<br/>(0.40–0.41 in every pool). First full ladder pass.<br/>Lesson: admission is PER CHANNEL (a journal-blind pair<br/>belongs to the token channel)"]:::verified
-    S9 --> PREREG["Experiment A prereg: DRAFT on the table —<br/>lock pending Codex review + author sign-off"]:::open
+    S9 --> S10["Scout 10: Codex's per-stratum reference gate REJECTED<br/>as specified — defect strata force world-driven lockstep on<br/>honest references too (wobble q75 = 1.000); differential<br/>version reintroduces the recursion. Poisoned-normalizer<br/>bite on the GLOBAL field measured: +0.044. Prefix-hygiene<br/>gate separates by construction (honest max 1, poisoned min 3)"]:::falsified
+    S10 --> PREREG["Experiment A prereg: DRAFT v2 on the table —<br/>Codex UNKNOWN semantics + outcome table adopted;<br/>lock pending author sign-off"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -303,6 +304,30 @@ INDEPENDENT means clean under registered token and journal channels given
 the declared references — never proven absence of latent shared
 implementation. Artifacts:
 `experiments/12_same_wall/scouts/scout_09_reference_field.py`.
+
+**Scout 10 (the reference gate vs the poisoned references, Jul 10 — the
+gate fell, the attack was bounded, the hygiene check stood).** Codex's
+final attack: four references with surface-disjoint mechanisms sharing one
+"harmless" preprocessor (orientation-detecting preamble that flips every
+probe schedule in lockstep). His proposed per-stratum q75 gate was tested
+and REJECTED as specified: on defect strata the world's response is
+low-dimensional and forces lockstep on HONEST references too (honest
+wobble q75 = 1.000 with no normalizer at all); a differential gate
+("lockstep beyond the world's") needs independent references — the
+recursion, third arrival. What the scout bought instead: (1) the poisoned
+attack's practical bite on the GLOBAL field is measured — +0.044 (0.402 →
+0.446), not enough to flip the clone control (excess 0.27), enough to flip
+a borderline pair — so semantic shared preprocessors go into
+`not_tested_against` with a number attached; (2) a cheap lockable
+**prefix-hygiene gate** separates by construction: no two honest
+references share an emitted probe prefix ≥ 2 on any instance (honest max
+1, poisoned min 3) — catches literal shared preambles, trivially evaded
+by interleaving, and is scoped as exactly that. PREREG DRAFT v2 adopts the
+full Codex lock-list, UNKNOWN semantics (K2 fails on UNKNOWN; C1 UNKNOWN
+= FAIL; C2 UNKNOWN ⇒ run INCONCLUSIVE), and his preregistered outcome
+table verbatim. Artifacts:
+`experiments/12_same_wall/scouts/scout_10_reference_gate.py`,
+`experiments/12_same_wall/experiment_A/PREREG_DRAFT.md` (v2).
 
 ## Discipline inherited
 
