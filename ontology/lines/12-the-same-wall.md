@@ -50,6 +50,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     S6 --> S7g["Scout 07: field-relative calibration — independents<br/>deeply negative, cosmetic 0, postulate pair flagged;<br/>BUT the preregistered contamination limit FIRED:<br/>cluster-heavy pool inflates the median field, the clone<br/>under-flags. Pool diversity is now a MEASURED<br/>precondition; the field statistic goes to Codex<br/>before any lock (post-hoc tuning = Goodhart)"]:::falsified
     S7g --> S8["Scout 08: Codex's own repair (component collapse +<br/>external q75) fell on BOTH his attacks — edge threshold<br/>sits below the world-floor, all world-responsive languages<br/>fuse into one component; external pairs measure the<br/>no-response floor, not the world-floor → UNKNOWNs and<br/>false flags. THE RECURSION: the field needs the very<br/>independence the instrument detects"]:::falsified
     S8 --> S9g["exit named by the line's own core: independence of<br/>the null-pool cannot be certified from inside — it must be<br/>CONSTRUCTED: preregistered reference constructions,<br/>disjointness as a declared assumption (the forge's<br/>five-minds architecture, derived as necessity)"]:::open
+    S9g --> S9["Scout 09: reference field {A,P,W,M} — clone, postulate<br/>AND coin-masked flagged in ALL pools; independents clean;<br/>field structurally immune to both contamination attacks<br/>(0.40–0.41 in every pool). First full ladder pass.<br/>Lesson: admission is PER CHANNEL (a journal-blind pair<br/>belongs to the token channel)"]:::verified
+    S9 --> PREREG["Experiment A prereg: DRAFT on the table —<br/>lock pending Codex review + author sign-off"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -279,6 +281,28 @@ fallacy-cutter thesis — the harness removes virtue from the trust
 chain, not skill — arriving at the field statistic). Next: scout 09,
 reference-pair field. Artifacts:
 `experiments/12_same_wall/scouts/scout_08_component_field.py`.
+
+**Scout 09 (reference field — first full ladder pass, Jul 10).** Four
+references declared mechanism-disjoint by construction — A (linear origin
+scan), P (random pair sampler), W (adjacent-pair walker, new), M (interval
+bisection, new) — field = max(0, q75) of their mutual crossed
+co-adaptations, candidates excluded, <3 pairs ⇒ UNKNOWN. Results: clone
+(0.72/0.62), postulate (0.75/0.71) and coin-masked (0.60/0.67) pairs
+flagged against field 0.40–0.41 in ALL three pools, including the
+scan-heavy under-flag pool and the decoy over-flag pool — the field reads
+only reference pairs and is structurally immune to pool composition; the
+declared disjointness held empirically (reference pairs 0.36–0.41, tight).
+Independents clean (G,P at 0.46: excess 0.05 < margin). One preregistered
+expectation fell, diagnosed: the same-family positive control (P,Pv) did
+not flag because Pv, stripped of its short-circuit, lost journal
+world-sensitivity entirely (zero fingerprint) — its dependence with P
+lives in token values, not journals. Lesson folded into v3: **admission
+is per channel**; a journal-blind pair is the token channel's case. The
+instrument's scope, fixed by Codex's residual hole and adopted verbatim:
+INDEPENDENT means clean under registered token and journal channels given
+the declared references — never proven absence of latent shared
+implementation. Artifacts:
+`experiments/12_same_wall/scouts/scout_09_reference_field.py`.
 
 ## Discipline inherited
 
