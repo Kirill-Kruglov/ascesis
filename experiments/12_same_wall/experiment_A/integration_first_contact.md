@@ -58,3 +58,33 @@ Registered findings:
    cross-prior contrast (0/24 vs 24/24) anchors the C8 diagnostic axis.
 4. The encoding axis is alive too: gpt-B abstains on alias where gpt-A
    solves — same prior, different specification, different behavior.
+
+## Scout 16 (OC at scale) + Grok/Gemini first contact (Jul 11)
+
+OC at scale (R_INST=8, K=5, frozen rule): derived 4/4 flagged on
+schedule-adaptive bases (W static missed, as diagnosed); clones 3/4.
+"FPR 2/10" dissolves on inspection: (A,oA) was MISLABELED independent —
+the instrument correctly caught the documented common-prior pair; and
+(A,P) exposes that ALL same-author pairs (A/W/M/P are one author) are
+not certified-independent. Certified cross-prior pairs (X,oA): clean 3/3.
+Estimand lesson: OC's FPR must be computed on certified cross-prior
+pairs only; the bank inherits C8 classes.
+
+Grok/Gemini contact — the registered prediction FELL both ways:
+
+| pair | value agreement with A (24 cells) |
+|---|---|
+| A ~ opus-A | 24/24 |
+| A ~ grok | 12/24 |
+| A ~ gemini | 0/24 |
+
+Gemini's memo SAYS "linear scanner" yet decouples fully (its validation
+battery defeats the alias blur: finds true n); Grok's memo says
+"birthday" yet half-couples (origin-channel probes fall into A's trap).
+**Coupling follows the effective probe channel + validation discipline,
+not the declared algorithm class.** The C8 unit of dependence refines:
+not family, not declared mechanism — the converged channel; the prior
+only shifts channel probabilities (Anthropic → origin-scan 24/24; Grok
+mixed 12; GPT/Gemini contextual+validated 0). The bank now holds SIX
+provenance families across FOUR priors — the certified cross-prior
+independents the lock-scale OC was missing.
