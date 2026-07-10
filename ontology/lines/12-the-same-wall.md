@@ -47,7 +47,7 @@ flowchart TD
     S4f --> S5["Scout 05 (v2): instance-level significance +<br/>admission gate. Clone ✓, seed-sham ✓, independents ✓;<br/>masked-postulate sham invisible on its home stratum<br/>EXACTLY as preregistered (wobble exc = 0.000) — the<br/>instrument sees interface-dependence, not<br/>postulate-dependence: W→I→L measured on the<br/>instrument itself; its token language hit its own<br/>sev_L → 0 (mode-split channel owed to scout 06)"]:::verified
     S5 --> S6["Scout 06 (M6, three recorded iterations): schedule<br/>CO-ADAPTATION — the journal channel. The coin-masked<br/>postulate, invisible to every token channel, IS visible<br/>in probe-schedule geometry (0.60/0.67); cosmetic pair<br/>separated at 0.000; the S2 limit was the token
 language's,<br/>not triangulation's — π pierces it"]:::verified
-    S6 --> S7g["open: absolute threshold dead — independents sit on<br/>a world-floor ~0.47 (emission adapts via short-circuit);<br/>verdict must be floor-relative (scout 07)"]:::open
+    S6 --> S7g["Scout 07: field-relative calibration — independents<br/>deeply negative, cosmetic 0, postulate pair flagged;<br/>BUT the preregistered contamination limit FIRED:<br/>cluster-heavy pool inflates the median field, the clone<br/>under-flags. Pool diversity is now a MEASURED<br/>precondition; the field statistic goes to Codex<br/>before any lock (post-hoc tuning = Goodhart)"]:::falsified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -233,6 +233,23 @@ world-floor ≈ 0.47 (even P's emission adapts to the world through
 short-circuit confirmation probes); the verdict must be calibrated
 floor-relative, not against a constant. Artifacts:
 `experiments/12_same_wall/scouts/scout_06_schedule_coadaptation.py`.
+
+**Scout 07 (field-relative calibration, Jul 10 — the preregistered
+contamination limit fired, measured).** The null without chicken-and-egg:
+the field itself — flag a pair only if its co-adaptation exceeds the
+median co-adaptation of each partner with the rest of the pool (margin
+0.10, matched AND crossed). Clean results: independents deeply negative
+(−0.13…−0.18), cosmetic at 0, the postulate pair flagged through
+contamination (0.154/0.130). The fall, exactly where preregistered: our
+pool is deliberately cluster-heavy, the scan family (A, A', G, N2, C2)
+inflates its own members' fields to ≈ 0.66, and the CLONE under-flags
+(crossed excess 0.064 < margin) — "a thousand walkers with one brain is
+one walker" now stands as a *measured* precondition of the instrument:
+the field-null requires pool diversity. The open knob is the field
+statistic (median vs lower-quantile vs min-k); choosing it post-hoc on
+the same data would be Goodhart — the choice goes to Codex adversarially
+before any prereg lock. Artifacts:
+`experiments/12_same_wall/scouts/scout_07_field_calibration.py`.
 
 ## Discipline inherited
 
