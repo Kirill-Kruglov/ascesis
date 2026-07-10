@@ -41,7 +41,9 @@ flowchart TD
     Q --> S0["Scout (pre-line, not citable): zlib-NCD<br/>over journals confounds volume with<br/>dependence; bands converge with n"]:::falsified
     Q --> P0["Phase 0: instrument forge —<br/>competent third language; predictive<br/>independence measure; sham ladder"]:::open
     P0 --> S3["Scout 03 (Codex gate): clone caught, ordering<br/>held, BUT sham-a killed the v0 null — stratum-level<br/>marginals read world-parameter common cause as<br/>language dependence; mode-split channel untested"]:::falsified
-    S3 --> V1["v1 hypothesis: no deterministic path enters<br/>triangulation — mandatory stochastization makes<br/>per-instance nulls identifiable, splitting<br/>shared-construction from shared-world"]:::open
+    S3 --> V1["v1 (amended by Codex): no path WITHOUT A<br/>COUNTERFACTUAL PROFILE enters triangulation —<br/>RNG jitter and world-perturbation ensembles are<br/>two implementations of one admission requirement"]:::open
+    V1 --> S4["Scout 04: clone caught seed-invariantly;<br/>seed-sham correctly read as schedule-dependence;<br/>(A,G) reads construction-dependent — the detector<br/>refuses to credit Cayley agreement to the world"]:::verified
+    V1 --> S4f["Scout 04 falls: attractor verdict was an artifact —<br/>seed-block pseudo-replication (eff. n = K, not cells;<br/>Fable seed 3 in our own harness) + admission must<br/>require WORLD-SENSITIVE profiles"]:::falsified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -144,6 +146,36 @@ triangulation** — every language must carry internal randomness so that
 per-instance nulls become identifiable; then instance-level coupling
 beyond the null = shared construction, stratum-level coupling = shared
 world. Artifacts: `experiments/12_same_wall/scouts/scout_03_codex_gate.py`.
+
+**Scout 04 (v1: counterfactual profiles, Jul 10 — core survived, two new
+falls, both paid).** Codex's second review amended the v1 hypothesis before
+the build: stochastization is a property of the *instrument*, not of
+triangulation — a deterministic path gets its "how else would you have
+climbed" bundle from a fixed, truth-preserving ensemble of world
+perturbations (basepoint shift, generator reversal, budget ±, noise
+reseed). Admission requirement restated: **no path without a counterfactual
+profile enters triangulation.** Scout 04 built the two-floor design:
+per-instance pooled nulls + a seed-decorrelation control (construction
+dependence must survive crossing the languages' internal seeds).
+Outcomes: clone caught seed-invariantly (E1, and with it E6 — deterministic
+paths admitted via perturbation profiles); the deliberate shared-scheduler
+pair correctly downgraded to CONTACT_SCHEDULE_DEPENDENT (E3); independents
+clean (E5); and (A,G) reads CONSTRUCTION_DEPENDENT — the detector refuses
+to credit the Cayley pair's agreement to the world, which is precisely the
+abstention Experiment A requires (thin margin over the clone, 0.087 vs
+0.095 — not to be over-read before the null is fixed). The falls: (1) the
+attractor pair's verdict was an artifact of **seed-block
+pseudo-replication** — with world-insensitive languages every cell repeats
+the same K=3 seed pairs, effective sample size is K, and the cell-level
+null hallucinates significance (Fable seed 3 — effective sample size under
+dependent evidence — arriving inside our own harness); remedy: the null
+must resample at the seed-block level, K ≥ 8. (2) The admission criterion
+completes: the counterfactual profile must be **world-sensitive** — a
+language whose profile answers only its own dice never touched the world
+and cannot testify about walls; the attractor pair is not "falsely
+dependent" but inadmissible. Deferred and still owed: Codex shams S2
+(stochastically masked shared blindness) and GatedLollipop mode-split.
+Artifacts: `experiments/12_same_wall/scouts/scout_04_v1_counterfactual.py`.
 
 ## Discipline inherited
 
