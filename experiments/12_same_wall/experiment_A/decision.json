@@ -1,0 +1,171 @@
+{
+  "C1": true,
+  "C2": true,
+  "C_C8": false,
+  "C_PM": true,
+  "K1": true,
+  "K2a": true,
+  "K2b": true,
+  "K3": true,
+  "_harness_provenance": {
+    "evaluation_oracle_ran": true,
+    "harness_version": "53b59235a56aba8feeacf71df8d4691e9e3814309a0c37c35c1e22ee50cbcb9f",
+    "leakage_scan_verified": true,
+    "prereg_lock_verified": true,
+    "tautology_check_ran": true,
+    "written_by": "gate_harness.runner.run_gate"
+  },
+  "claim": "Within the locked stress family, the v4 instrument assigned different residual-dependence labels to one registered derived pair and one registered clean-room pair, while preserving destination agreement.",
+  "classification_success_depends_on_harness_hint": false,
+  "construction_may_be_tautological": false,
+  "decision": "EXPA-NOT-CLEAN",
+  "information_ratio": null,
+  "k1_naive": {
+    "A|Gt": "8/8",
+    "A|gptA": "8/8"
+  },
+  "k2b_dest_same_correct": "8/8",
+  "null_world_gate": {
+    "construction_may_be_tautological": false,
+    "method": "null-world gate (K3 / \u00a74.5, AMENDMENT-3): any CROSS-construction DEPENDENT on a world with no world => channels tautological; same-construction controls excluded by design",
+    "null_clone_construction_confirm": [
+      [
+        "A",
+        "A2"
+      ]
+    ],
+    "null_dependents": [],
+    "null_naive_rate": "1/8"
+  },
+  "pair_verdicts": {
+    "A|gem": {
+      "E_j": true,
+      "E_tok": true,
+      "N_inf": 19,
+      "N_tok": true,
+      "P_j": "UNKNOWN_FIELD",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "tok_c": 0.05599999999999996,
+      "tok_m": 0.05599999999999996
+    },
+    "C1": {
+      "E_j": true,
+      "E_tok": true,
+      "J_c": 0.6774193548387096,
+      "J_m": 0.6774193548387096,
+      "N_inf": 32,
+      "N_tok": true,
+      "P_j": "CLEAN",
+      "P_tok": "DEPENDENT",
+      "P_union": "DEPENDENT",
+      "field": 0.6369047619047619,
+      "tok_c": 0.15629687499999995,
+      "tok_m": 0.15004687499999997
+    },
+    "C_C8": {
+      "E_j": true,
+      "E_tok": true,
+      "J_c": 0.5652173913043478,
+      "J_m": 0.5652173913043478,
+      "N_inf": 30,
+      "N_tok": true,
+      "P_j": "CLEAN",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "field": 0.671875,
+      "tok_c": 0.033656249999999985,
+      "tok_m": 0.033656249999999985
+    },
+    "C_PM": {
+      "E_j": true,
+      "E_tok": true,
+      "J_c": 0.2051282051282051,
+      "J_m": 0.2051282051282051,
+      "N_inf": 32,
+      "N_tok": true,
+      "P_j": "CLEAN",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "field": 0.6369047619047619,
+      "tok_c": 0.086078125,
+      "tok_m": -0.019546875000000002
+    },
+    "K2a": {
+      "E_j": true,
+      "E_tok": true,
+      "J_c": 0.5652173913043478,
+      "J_m": 0.5652173913043478,
+      "N_inf": 24,
+      "N_tok": true,
+      "P_j": "CLEAN",
+      "P_tok": "DEPENDENT",
+      "P_union": "DEPENDENT",
+      "field": 0.6369047619047619,
+      "tok_c": 0.09267187499999995,
+      "tok_m": 0.15204687499999997
+    },
+    "K2b": {
+      "E_j": true,
+      "E_tok": true,
+      "J_c": 0.5,
+      "J_m": 0.5,
+      "N_inf": 7,
+      "N_tok": true,
+      "P_j": "CLEAN",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "field": 0.6369047619047619,
+      "tok_c": -0.005,
+      "tok_m": -0.005
+    },
+    "gptA|gem": {
+      "E_j": true,
+      "E_tok": true,
+      "N_inf": 5,
+      "N_tok": true,
+      "P_j": "UNKNOWN_FIELD",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "tok_c": 0.0,
+      "tok_m": 0.0
+    },
+    "gptA|gptA.r1": {
+      "E_j": true,
+      "E_tok": true,
+      "N_inf": 7,
+      "N_tok": true,
+      "P_j": "UNKNOWN_FIELD",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "tok_c": 0.0038125,
+      "tok_m": -0.0043125
+    },
+    "gptA|grok": {
+      "E_j": true,
+      "E_tok": true,
+      "N_inf": 7,
+      "N_tok": true,
+      "P_j": "UNKNOWN_FIELD",
+      "P_tok": "CLEAN",
+      "P_union": "CLEAN",
+      "tok_c": -0.0046875,
+      "tok_m": -0.0046875
+    },
+    "gptB|gem": {
+      "E_j": true,
+      "E_tok": true,
+      "N_inf": 3,
+      "N_tok": false,
+      "P_j": "UNKNOWN_FIELD",
+      "P_tok": "INADMISSIBLE",
+      "P_union": "NO_TEST"
+    }
+  },
+  "seed_count": 320,
+  "seed_masters": {
+    "primary": 550007,
+    "sanity": 88880001
+  },
+  "theta_sha256": "369e9d2f4cab125542693bd01e0dde43571921e2d9f9473f430cf52f13ff87f7"
+}
