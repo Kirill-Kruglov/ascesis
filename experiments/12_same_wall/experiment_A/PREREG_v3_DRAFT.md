@@ -1,4 +1,4 @@
-# Experiment A — PREREG v3 DRAFT (NOT LOCKED)
+# Experiment A — PREREG v3 DRAFT (SUPERSEDED by PREREG_v4_DRAFT.md; kept for the review trail)
 
 > Supersedes `PREREG_DRAFT.md` (v2). Status: DRAFT for the final
 > two-reviewer attack (Opus 4.8, GPT 5.5/5.6) and the author's sign-off.
