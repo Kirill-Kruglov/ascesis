@@ -10,9 +10,20 @@ implementations exist; their arrival must not modify it.
 |---|---|---|---|
 | A (algebra, origin scan) | Claude (this repo) | existing `lang_A` | registered |
 | A/G-translated | Claude | to be DERIVED from A via the Cayley map — the registered DEPENDENT sham | to build |
-| **G-independent** | **Codex GPT 5.5, FRESH SESSION (no history)** | spec-only (see `CODEX_SPEC.md`); never sees this repo's code | commissioned |
+| **G-independent** (`find_order_main`) | **GPT 5.6 high — WEB session, DIFFERENT ACCOUNT** (stronger than commissioned: zero filesystem access; different model version than the reviewer sessions) | spec-only (see `CODEX_SPEC.md`) | **received Jul 10**: `received/find_order_solvers.py`, sha256 `40c2493bf9837ded01137ccd5b8b62d8879065859db4e33ed0e13b1cc22ed44c` |
 | References W, M | Claude (scout 09) | existing | registered |
-| New references (2–3) | Codex, same fresh session | spec-only | commissioned |
+| New references (`find_order_ref1/2/3`: Brent; birthday+gcd; divisibility lattice) | same GPT 5.6 session | spec-only | received (same file) |
+
+**Recorded on receipt (before any run):** the four received solvers share
+internal helpers (`_difference_pair`, `_model_screen`,
+`_validate_candidate`, `_finalize`) — within the received file they form
+ONE provenance family. For reference-field purposes their pairwise
+co-adaptations are grouped as one construction, never counted as
+independent edges (per the GPT review, §5). Against Claude's builds the
+shared-code set is empty: common causes are W and I only, as required.
+The isolation actually achieved exceeds the spec: web session (no
+filesystem), different account, different model version — mechanical
+enforcement of the clean room, replacing the declared-trust variant.
 
 ## Allowed common causes (exhaustive)
 
