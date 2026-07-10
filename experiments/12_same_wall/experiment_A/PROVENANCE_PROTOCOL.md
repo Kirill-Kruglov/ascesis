@@ -12,6 +12,18 @@ implementations exist; their arrival must not modify it.
 | A/G-translated | Claude | to be DERIVED from A via the Cayley map — the registered DEPENDENT sham | to build |
 | **G-independent** (`find_order_main`) | **GPT 5.6 high — WEB session, DIFFERENT ACCOUNT** (stronger than commissioned: zero filesystem access; different model version than the reviewer sessions) | spec-only (see `CODEX_SPEC.md`) | **received Jul 10**: `received/find_order_solvers.py`, sha256 `40c2493bf9837ded01137ccd5b8b62d8879065859db4e33ed0e13b1cc22ed44c` |
 | References W, M | Claude (scout 09) | existing | registered |
+| **gpt-B family** (`find_order_spec_encoding_b.py`: main linear+votes, ref1 gcd-ladders, ref2 random-pairs, ref3 Brent-like) | GPT family, WEB clean session | **encoding B** (`SPEC_ENCODING_B.md`) | **received Jul 11**: sha256 `4a9592e6…5ba48ca` |
+| **opus-A family** (`find_order.py`: main linear+final-vote, ref1 R^k~R^2k gcd, ref2 random pairs, ref3 Brent+rho-AB) | **Opus 4.8 (Anthropic)**, clean session | encoding A (`CODEX_SPEC.md`) | **received Jul 11**: sha256 `e8a6f191…c57698f`. Declared: ref1 jitter is a stub (deterministic), stated in the author's memo |
+
+**C8 factorial now covered:** (main, gpt-B) = same prior family ×
+different encoding (SPEC_FORMAT axis); (A, opus-A) = same provider
+family (Anthropic siblings: Fable authored A, Opus authored opus-A) ×
+clean room (COMMON_PRIOR axis); (main, opus-A) = different prior × same
+encoding; (gpt-B, opus-A) = both different. Registered NOTE: opus-A
+sharing the Anthropic prior with A's author is the deliberate
+common-prior cell, not a protocol violation. Reference bank now has 6
+provenance units: W, M, P, GPT-A family, gpt-B family, opus-A family —
+satisfying the review-Y minimum (≥ 5–6 external units).
 | New references (`find_order_ref1/2/3`: Brent; birthday+gcd; divisibility lattice) | same GPT 5.6 session | spec-only | received (same file) |
 
 **Recorded on receipt (before any run):** the four received solvers share
