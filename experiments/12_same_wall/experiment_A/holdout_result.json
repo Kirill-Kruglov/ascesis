@@ -1,0 +1,79 @@
+{
+ "H1": "DEPENDENT",
+ "H2": "DEPENDENT",
+ "H2_equals_H1": true,
+ "H3": "CLEAN",
+ "H4": "DEPENDENT",
+ "H5": "DEPENDENT",
+ "holdout_master": 660011,
+ "plaintext_sha256": "a0cb7bac0cdeb6d9e76a2336f8725fdee3b2cc879e233f8937cf1188c147bce0",
+ "detail": {
+  "H1_fwd_derived": {
+   "E_tok": true,
+   "N_tok": true,
+   "E_j": true,
+   "N_inf": 14,
+   "P_tok": "DEPENDENT",
+   "tok_m": 0.06399999999999997,
+   "tok_c": 0.06399999999999997,
+   "P_j": "DEPENDENT",
+   "J_m": 0.857142857142857,
+   "J_c": 0.857142857142857,
+   "field": 0.631578947368421,
+   "P_union": "DEPENDENT"
+  },
+  "H2_rev_derived": {
+   "E_tok": true,
+   "N_tok": true,
+   "E_j": true,
+   "N_inf": 14,
+   "P_tok": "DEPENDENT",
+   "tok_m": 0.06399999999999997,
+   "tok_c": 0.06399999999999997,
+   "P_j": "DEPENDENT",
+   "J_m": 0.857142857142857,
+   "J_c": 0.857142857142857,
+   "field": 0.631578947368421,
+   "P_union": "DEPENDENT"
+  },
+  "H3_same_prior_diff_mech": {
+   "E_tok": true,
+   "N_tok": true,
+   "E_j": false,
+   "N_inf": 9,
+   "P_tok": "CLEAN",
+   "tok_m": 0.003999999999999998,
+   "tok_c": 0.003999999999999998,
+   "P_j": "INADMISSIBLE",
+   "P_union": "CLEAN"
+  },
+  "H4_cross_prior_cleanroom": {
+   "E_tok": true,
+   "N_tok": true,
+   "E_j": true,
+   "N_inf": 15,
+   "P_tok": "CLEAN",
+   "tok_m": -2.2204460492503132e-17,
+   "tok_c": -2.2204460492503132e-17,
+   "P_j": "DEPENDENT",
+   "J_m": 0.8571428571428571,
+   "J_c": 0.8571428571428571,
+   "field": 0.631578947368421,
+   "P_union": "DEPENDENT"
+  },
+  "H5_derived_replication": {
+   "E_tok": true,
+   "N_tok": true,
+   "E_j": true,
+   "N_inf": 21,
+   "P_tok": "DEPENDENT",
+   "tok_m": 0.14131249999999995,
+   "tok_c": 0.08506249999999996,
+   "P_j": "CLEAN",
+   "J_m": 0.5714285714285714,
+   "J_c": 0.5714285714285714,
+   "field": 0.6666666666666666,
+   "P_union": "DEPENDENT"
+  }
+ }
+}
