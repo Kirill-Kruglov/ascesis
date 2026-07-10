@@ -63,6 +63,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     V4 --> C8F["C8 first contact: THE COMMON-PRIOR CELL FIRES 24/24 —<br/>A (Fable) and opus-A (clean room, Anthropic sibling) agree<br/>on the wrong value in every case; A vs gpt-A: 0/24.<br/>Clone-by-convergent-design at zero communication:<br/>the clean room does not produce independence when priors<br/>are shared. Five minds = measurable independence<br/>engineering, family diversity carries it"]:::verified
     C8F --> S13["Scout 13: the blade validated — ALL SEVEN prereg
 expectations held (first all-green scout). Clone/derived/<br/>common-prior → ANCESTRY (J_fail 0.60/0.53/0.50);<br/>independent/perf-matched/shared-helpers → NO_SIGNAL;<br/>clone co-adaptation lives ONLY in failure (J_succ = 0.00):<br/>'only falls testify' confirmed by the validity gate itself.<br/>Formal bug closed by 6-unit bank (E7). Thin margins →<br/>OC resolution study next"]:::verified
+    S13 --> S14["Scout 14 (OC-tune): THE WINDOW IS EMPTY — the
+simplified rule has no operating characteristics. Three<br/>diagnoses: QUIET-FAILER HOLE (clones of AB/TO-failing,<br/>static-schedule bases invisible → applicability domain =<br/>value-failing adaptive languages, becomes an admission<br/>axis); blade WITHOUT the field has no specificity (wobble<br/>FPR 0.64); PM pseudo-replication via pert-invariant seeds<br/>(scout-04's lesson, third arrival). OC must run the FULL<br/>pipeline — the simplification itself was the failure"]:::falsified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -470,6 +472,27 @@ Honest margins for OC: ancestry 0.50–0.60 vs independent floor 0.40 —
 thin; resolution is the OC study's first estimand. Artifacts:
 `received/{find_order_spec_encoding_b.py, find_order.py}`,
 `scouts/scout_13_success_failure_split.py`.
+
+**Scout 14 (OC-tune, Jul 11 — the window is empty; three diagnoses, all
+paid).** The operating-characteristics study on a synthetic bank of
+known-status pairs (5 diverse bases × clone/derived + 10 independent +
+PM) found NO stratum satisfying power ≥ 0.8 with FPR = 0 under the
+scout-simplified rule. Diagnoses: (1) **the quiet-failer hole** — clones
+and deriveds of bases that fail via AB/TO with static schedules (W, M)
+are invisible to every channel (power 0.2): the channels' applicability
+domain is VALUE-FAILING, SCHEDULE-ADAPTIVE languages, and this becomes
+an admission axis in v4 (review Y's informative-support N-gate, now with
+a measured reason), not an instrument error rate; (2) **the blade
+without the field has no specificity** — a fixed J_fail threshold reads
+stratum-level world-common response as ancestry (wobble FPR 0.64); the
+full leave-family-out field machinery is not optional, and the
+scout-level simplification was itself the failure — the locked OC must
+run the complete pipeline; (3) a PM-wrapper artifact: perturbation-
+invariant language seeds replicate one value across 5 cells
+(pseudo-replication, scout-04's lesson arriving the third time); the
+seed-progression itself verified clean (0.060 ≈ 1/15). Next: OC-tune-2
+with the full pipeline, context-seeded PM, and the N-gate. Artifacts:
+`experiments/12_same_wall/scouts/scout_14_oc_tune.py`.
 
 **Scout 12 (stress strata, Jul 11 — H-theorem measured; the visibility
 window found; phase 0 closed).** Both hypotheses preregistered as
