@@ -65,6 +65,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
 expectations held (first all-green scout). Clone/derived/<br/>common-prior → ANCESTRY (J_fail 0.60/0.53/0.50);<br/>independent/perf-matched/shared-helpers → NO_SIGNAL;<br/>clone co-adaptation lives ONLY in failure (J_succ = 0.00):<br/>'only falls testify' confirmed by the validity gate itself.<br/>Formal bug closed by 6-unit bank (E7). Thin margins →<br/>OC resolution study next"]:::verified
     S13 --> S14["Scout 14 (OC-tune): THE WINDOW IS EMPTY — the
 simplified rule has no operating characteristics. Three<br/>diagnoses: QUIET-FAILER HOLE (clones of AB/TO-failing,<br/>static-schedule bases invisible → applicability domain =<br/>value-failing adaptive languages, becomes an admission<br/>axis); blade WITHOUT the field has no specificity (wobble<br/>FPR 0.64); PM pseudo-replication via pert-invariant seeds<br/>(scout-04's lesson, third arrival). OC must run the FULL<br/>pipeline — the simplification itself was the failure"]:::falsified
+    S14 --> S15["Scout 15 (OC-tune-2, full pipeline): PM fixed;
+field kills the wobble FPR; TWO refinements paid:<br/>the admission axis is SCHEDULE-ADAPTIVITY (W/M clones<br/>are informative yet invisible — deterministic schedules +<br/>point-mass absorption + stream misalignment); the field<br/>must be ADAPTIVITY-MATCHED to candidates (static references<br/>under-floor adaptive pairs → one FP). Window empty at<br/>scout n as the prereg allowed: the locked OC is a matter<br/>of SCALE (10–20×), not of new knobs"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -493,6 +495,26 @@ invariant language seeds replicate one value across 5 cells
 seed-progression itself verified clean (0.060 ≈ 1/15). Next: OC-tune-2
 with the full pipeline, context-seeded PM, and the N-gate. Artifacts:
 `experiments/12_same_wall/scouts/scout_14_oc_tune.py`.
+
+**Scout 15 (OC-tune-2, full pipeline, Jul 11).** PM artifact fixed by
+context-seeding (E1: CLEAN at +0.026); the leave-family-out field
+removed the wobble false-positive mass. Two refinements, both recorded:
+(1) the scout-14 "quiet-failer" diagnosis was imprecise — W/M clones are
+error-INFORMATIVE (N = 12–23) yet invisible for a third structural
+reason: deterministic schedules (blade-blind) + point-mass absorption on
+deterministic worlds + oracle-stream misalignment from padding on
+stochastic ones. The v4 admission axis is therefore
+**schedule-adaptivity** (or stream alignment), not error informativeness
+alone. (2) One false positive, (A,P) via the blade: a field built from
+STATIC-schedule references under-floors adaptive pairs (field 0.06 vs a
+genuine world-coupling of 0.33) — **the reference field must be
+adaptivity-matched to the candidates** (review Y's performance-matching
+concept, applied to the field itself). The per-stratum window remains
+empty at scout n, exactly as the prereg's E5 allowed: with 3 instances
+per stratum the power step is 0.33 and per-stratum OC is mechanically
+hopeless — the locked OC-tune/OC-validate is a matter of SCALE (10–20×
+this compute), not of new knobs. Artifacts:
+`experiments/12_same_wall/scouts/scout_15_oc_tune2.py`.
 
 **Scout 12 (stress strata, Jul 11 — H-theorem measured; the visibility
 window found; phase 0 closed).** Both hypotheses preregistered as
