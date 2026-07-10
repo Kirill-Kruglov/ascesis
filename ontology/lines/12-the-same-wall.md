@@ -44,6 +44,7 @@ flowchart TD
     S3 --> V1["v1 (amended by Codex): no path WITHOUT A<br/>COUNTERFACTUAL PROFILE enters triangulation —<br/>RNG jitter and world-perturbation ensembles are<br/>two implementations of one admission requirement"]:::open
     V1 --> S4["Scout 04: clone caught seed-invariantly;<br/>seed-sham correctly read as schedule-dependence;<br/>(A,G) reads construction-dependent — the detector<br/>refuses to credit Cayley agreement to the world"]:::verified
     V1 --> S4f["Scout 04 falls: attractor verdict was an artifact —<br/>seed-block pseudo-replication (eff. n = K, not cells;<br/>Fable seed 3 in our own harness) + admission must<br/>require WORLD-SENSITIVE profiles"]:::falsified
+    S4f --> S5["Scout 05 (v2): instance-level significance +<br/>admission gate. Clone ✓, seed-sham ✓, independents ✓;<br/>masked-postulate sham invisible on its home stratum<br/>EXACTLY as preregistered (wobble exc = 0.000) — the<br/>instrument sees interface-dependence, not<br/>postulate-dependence: W→I→L measured on the<br/>instrument itself; its token language hit its own<br/>sev_L → 0 (mode-split channel owed to scout 06)"]:::verified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -176,6 +177,32 @@ and cannot testify about walls; the attractor pair is not "falsely
 dependent" but inadmissible. Deferred and still owed: Codex shams S2
 (stochastically masked shared blindness) and GatedLollipop mode-split.
 Artifacts: `experiments/12_same_wall/scouts/scout_04_v1_counterfactual.py`.
+
+**Scout 05 (v2: block significance + admission gate + S2, Jul 10 — ladder
+survived; one limit measured exactly as preregistered).** Fixes: instance-
+level dispersion replaces cell counts (K=8; analytic per-instance null);
+admission requires world-sensitive counterfactual profiles. Sham S2 built
+as WobbleCycle (R-channel an honest n-cycle, L-channel sticky — NOT R⁻¹):
+languages N and C share the latent postulate "L is R's inverse", pick
+channels by independent coins, N lies with a value where C abstains.
+Outcomes: clone caught (0.093±0.013, seed-invariant); seed-sham correctly
+downgraded (0.291 matched → −0.108 crossed); independents clean (0.044,
+noted: close to the 0.05 bar); Lp excluded by the gate but Lr admitted at
+sens 0.338 vs the 0.30 bar — the scalar threshold is fragile at the
+boundary and needs a principled form before any prereg. Two central
+results: (1) **E6 confirmed exactly**: on its home stratum the constructed
+shared postulate is invisible (wobble excess = 0.000) while the pair still
+reads CONSTRUCTION_DEPENDENT through alias/noisy — the instrument sees
+*interface*-dependence and is blind to *postulate*-dependence: the W→I→L
+stratification measured on the instrument itself. M1's token language
+cannot express WC↔AB coupling — the detector hit its own sev_L → 0; the
+mode-split channel (fixed mode_rank, Codex spec) is scout 06's target.
+(2) The clone and the Cayley pair TIED (0.093 vs 0.094): both are refused
+world-credit — the abstention Experiment A requires — but the instrument
+does not yet separate "same effective channel" from "theorem-glued
+different channels"; that separation belongs to the interface arm
+(varying I), not to richer tokens. Artifacts:
+`experiments/12_same_wall/scouts/scout_05_v2_blocks_admission.py`.
 
 ## Discipline inherited
 
