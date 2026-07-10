@@ -293,6 +293,23 @@ outcome is published (tagged release). Only the holdout
 supports any confirmation claim; the locked run alone is internal
 validation of a development-set family.
 
+**AMENDMENT-3 (run-time, re-signed by the author; both parts forced by
+the first primary execution).** (a) *Infrastructure:* NullWorld moved to
+stable hashing — builtin `hash()` is per-process randomized, which made
+the K3 gate nondeterministic across runs (caught by the second
+execution disagreeing with the first; determinism is a listed abort
+condition). (b) *K3 scope:* the clone flagged on the null world — and
+the instrument was RIGHT: same-construction pairs couple through any
+consistent answer function; construction-dependence needs no world. K3
+as originally locked was self-defeating for the registered clone
+control. Amended rule: on null worlds, all CROSS-construction pairs
+(including both K2 pairs) must read CLEAN/INADMISSIBLE — a flag there
+is a specificity failure ⇒ run FAIL; registered same-construction
+controls are excluded from the gate, their null-world flag recorded as
+confirmation of the construction channel. The lock's
+`prereg_doc_sha256` binds the pre-A3 document; the post-A3 document
+hash is recorded in the decision payload — both hashes public.
+
 ## Appendix R — frozen reference matrix (part of the prereg hash)
 
 Units (family = one received file or one author): gptA-fam, gptB-fam,

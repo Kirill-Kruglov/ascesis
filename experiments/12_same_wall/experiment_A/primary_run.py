@@ -148,15 +148,27 @@ def null_world_gate(theta):
                         p.classify(res, truth)
                     logs[lname].setdefault(('cycle', i), {})[(pi, r)] = log
     fp = p.fingerprints(logs, LANGS, keys)
-    dep = []
+    # AMENDMENT-3(b): registered same-construction controls (the clone)
+    # are EXCLUDED from the null gate — their coupling is construction-
+    # level and needs no world (a consistent answer function suffices);
+    # a clone flag here confirms the construction channel. All
+    # cross-construction pairs must read CLEAN/INADMISSIBLE.
+    SAME_CONSTRUCTION = {GATING['C1']}
+    dep, clone_confirm = [], []
     for x, y in list(GATING.values()) + C2_PAIRS:
         v = p.pair_verdict(tokens, fp, x, y, keys, theta)
-        if v['P_union'] == 'DEPENDENT': dep.append((x, y))
+        if v['P_union'] == 'DEPENDENT':
+            if (x, y) in SAME_CONSTRUCTION: clone_confirm.append((x, y))
+            else: dep.append((x, y))
     nx, nt = naive_fires(tokens, 'A', 'gptA', keys)
-    return {'null_dependents': dep, 'null_naive_rate': f'{nx}/{nt}',
+    return {'null_dependents': dep,
+            'null_clone_construction_confirm': clone_confirm,
+            'null_naive_rate': f'{nx}/{nt}',
             'construction_may_be_tautological': bool(dep),
-            'method': 'null-world gate (K3 / §4.5): any DEPENDENT on a '
-                      'world with no world => channels tautological'}
+            'method': 'null-world gate (K3 / §4.5, AMENDMENT-3): any '
+                      'CROSS-construction DEPENDENT on a world with no '
+                      'world => channels tautological; same-construction '
+                      'controls excluded by design'}
 
 def main():
     theta = {'k': THETA['k'], 'Nmin': THETA['Nmin'],

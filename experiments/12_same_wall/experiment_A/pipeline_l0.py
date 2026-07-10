@@ -84,11 +84,15 @@ class QuotientTrap(GWorld):
         return d == 0 or d in self.trapped
 
 class NullWorld(GWorld):
-    """K3: iid Bernoulli(0.5) oracle; truth None."""
+    """K3: consistent random answer function; truth None. AMENDMENT-3(a):
+    stable hashing (process-independent) — builtin hash() is randomized
+    per process, which made the gate nondeterministic across runs."""
     def __init__(self, seed): self.seed, self.eps, self.truth = seed, 0.0, None
     def run(self, word, bp=0): return 0
     def same(self, u, v, bp=0):
-        return random.Random((hash((u, v, self.seed)) & 0xffffffff)).random() < 0.5
+        import hashlib
+        h = hashlib.md5(('%s|%s|%d' % (u, v, self.seed)).encode()).digest()
+        return h[0] < 128
 
 STRATA_DEF = [
     ('cycle',    lambda r: GCycle(r.randint(17, 40)), lambda w: w.truth),
