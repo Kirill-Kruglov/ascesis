@@ -58,6 +58,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     RD --> CR["Clean-room build received (GPT 5.6, web, different<br/>account, zero FS): first contact exposed OUR truth-label<br/>bias (wobble extensionally None — the A-language view<br/>caught by code that could not see our worlds)"]:::verified
     CR --> S11["Scout 11: THE GENEALOGIES ARE DISTINGUISHED —<br/>(A,Gt) derived: DEP(token) 0.053, seed-invariant;<br/>(A,main) clean-room: CLEAN with 9 same correct<br/>destinations — true convergence NOT written off as glue<br/>(C7 live, passed). E3 fell: shared-helper pair read CLEAN —<br/>COMPETENCE MASKS DEPENDENCE: channels see dependence<br/>only through errors; stress strata owed to scout 12"]:::verified
     S11 --> S12["Scout 12 (stress): H-THEOREM — shared thresholds<br/>without shared randomness decorrelate even under stress;<br/>only CORRELATED falls testify. Plus the VISIBILITY WINDOW:<br/>(A,Gt) flags at 0.160 on deterministic traps, decoheres at<br/>high noise. Trap attractor absorbed by the null (E3 ✓).<br/>Phase 0 closed — PREREG v3 next"]:::verified
+    S12 --> V3R["PREREG v3 → second two-review attack: FORMAL BUG<br/>(C2 pairs are reference units — leave-family-out leaves<br/>1 < 3 pairs: INCONCLUSIVE guaranteed by design) +<br/>K2b unidentifiable (N-version common causes: task,<br/>budget, spec encoding, model prior — Eckhardt–Lee) +<br/>journal channel conflates competence-convergence with<br/>genealogy-convergence. v3 NOT signed"]:::falsified
+    V3R --> V4["v4 plan: success/failure split (co-adaptation surviving<br/>into correlated failure = ancestry; success-only = the<br/>world's one door — the first rock, operationalized);<br/>C8 common-prior ladder; reference bank ≥ 5–6 external;<br/>E/D/N/P outcome axes; OC tune/validate; blind sanity;<br/>holdout escrow BEFORE the run"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -402,6 +404,40 @@ scout 12's target, before PREREG v3. Artifacts:
 `experiments/12_same_wall/experiment_A/{received/find_order_solvers.py,
 integration_first_contact.md}`,
 `experiments/12_same_wall/scouts/scout_11_two_genealogies.py`.
+
+**PREREG v3 → the second two-review attack (Jul 11 — v3 NOT signed; one
+formal bug + the identifiability wall).** Review Y found a FORMAL BUG,
+independently verified before acceptance: the C2 negative-control pairs
+(W,P), (M,P) are themselves reference units, so leave-family-out leaves
+one external pair (< 3) — UNKNOWN, hence run-level INCONCLUSIVE,
+guaranteed by construction. A prereg that cannot pass its own control
+survived phase 0 unseen because scouts never gated on C2 — caught only
+by foreign eyes. Deeper (Y): the K2b flag is unidentifiable — the
+clean-room protocol excludes artifact transfer but NOT the N-version
+common causes (task, budget, output contract, spec encoding, model
+prior; Eckhardt–Lee: independently built versions co-err far above
+independence) — remedy: the C8 common-prior ladder (factorial: spec
+encoding × builder prior × provenance) with registered diagnoses;
+"instrument conservative" is never inferable without that contrast.
+Review X: the journal channel CONFLATES competence-convergence with
+genealogy-convergence (on deterministic strata every good solver
+converges to the task's one good schedule) — remedy, and the line-level
+lever: the **success/failure split** — co-adaptation that survives into
+correlated failure is ancestry; co-adaptation living only in success is
+the world's one door. This is "only correlated falls testify" lifted to
+the journal channel, and it is the first tool that cuts the line's
+founding question itself (same dead end via shared ancestor vs via the
+terrain having one exit). Also accepted: window frozen by
+admission-quantities on C1/C2+synthetics with both K2 pairs excluded;
+clone/derivation resolution factor in OC; v3 gated on the null world
+(any DEPENDENT there = specificity failure); direction-invariance
+preregistered; E/D/N/P outcome axes (UNKNOWN is never a negative
+result); performance-matched independent control; OC-tune/OC-validate
+with confidence bounds and run-level FPR; outcome-blind sanity seed;
+**holdout escrow committed encrypted BEFORE the locked run**; per-
+stratum truth semantics; claim wording adopted verbatim. Plan:
+`experiments/12_same_wall/experiment_A/REVISION_PLAN_v4.md`; C8
+commissions specified in `SPEC_ENCODING_B.md`.
 
 **Scout 12 (stress strata, Jul 11 — H-theorem measured; the visibility
 window found; phase 0 closed).** Both hypotheses preregistered as
