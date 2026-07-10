@@ -33,6 +33,8 @@ class GCycle(GWorld):
     def __init__(self, n, eps=0.0): self.n, self.eps, self.truth = n, eps, n
     def step_R(self, s): return (s + 1) % self.n
     def step_L(self, s): return (s - 1) % self.n
+    def run(self, word, bp=0):          # count-based fast path (abelian)
+        return (bp + word.count('R') - word.count('L')) % self.n
 
 
 class GAliasCycle(GWorld):
@@ -42,6 +44,8 @@ class GAliasCycle(GWorld):
     def __init__(self, n, q): self.n, self.q, self.truth = n, q, n
     def step_R(self, s): return (s + 1) % self.n
     def step_L(self, s): return (s - 1) % self.n
+    def run(self, word, bp=0):          # count-based fast path (abelian)
+        return (bp + word.count('R') - word.count('L')) % self.n
     def same(self, u, v, bp=0):
         if (u == '' or v == '') and bp % self.n == 0:
             return (self.run(u, bp) - self.run(v, bp)) % self.q == 0
@@ -75,6 +79,8 @@ class GNonstationary(GWorld):
     def set_query_index(self, qi): self._n = self.n1 if qi <= self.switch else self.n2
     def step_R(self, s): return (s + 1) % self._n
     def step_L(self, s): return (s - 1) % self._n
+    def run(self, word, bp=0):          # count-based fast path (abelian)
+        return (bp + word.count('R') - word.count('L')) % self._n
 
 
 class GOracle:
@@ -82,8 +88,10 @@ class GOracle:
     cap_calls; logs every emitted probe pair for the journal channel."""
     class BudgetExceeded(Exception): pass
 
-    def __init__(self, world, cap_calls, seed, bp=0):
-        self.w, self.cap, self.bp = world, cap_calls, bp
+    _TR = str.maketrans('RL', 'LR')
+
+    def __init__(self, world, cap_calls, seed, bp=0, rev=False):
+        self.w, self.cap, self.bp, self.rev = world, cap_calls, bp, rev
         self.rng = random.Random(seed)
         self.count = 0
         self.log = []
@@ -91,16 +99,18 @@ class GOracle:
     def __call__(self, u, v):
         self.count += 1
         if self.count > self.cap: raise GOracle.BudgetExceeded()
-        self.log.append((u, v))
+        self.log.append((u, v))                      # as emitted (pre-rev)
+        if self.rev:
+            u, v = u.translate(GOracle._TR), v.translate(GOracle._TR)
         if isinstance(self.w, GNonstationary): self.w.set_query_index(self.count)
         b = self.w.same(u, v, self.bp)
         if self.w.eps and self.rng.random() < self.w.eps: b = not b
         return b
 
 
-def run_language(fn, world, cap_calls, seed, bp=0):
+def run_language(fn, world, cap_calls, seed, bp=0, rev=False):
     """Uniform runner: budget exhaustion inside fn becomes ('TO',)."""
-    orc = GOracle(world, cap_calls, seed, bp)
+    orc = GOracle(world, cap_calls, seed, bp, rev)
     try:
         res = fn(orc, cap_calls, seed)
     except GOracle.BudgetExceeded:

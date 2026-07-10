@@ -55,6 +55,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     S10 --> PREREG["Experiment A prereg: DRAFT v2 —<br/>Codex UNKNOWN semantics + outcome table adopted"]:::open
     PREREG --> REV["Two-review triangulation (Opus 4.8 + GPT 5.5,<br/>independent): C7 missing — no positive control for TRUE<br/>convergence; destination/dependence/truth conflated;<br/>'Cayley glue = dependence' was an ASSIGNED label —<br/>v2 NOT signed; core amendments accepted (π example,<br/>invariance analogy, bounded insight triggers,<br/>robustness not reality)"]:::falsified
     REV --> RD["Redesign: two A/G genealogies (translated vs<br/>independent-build under provenance protocol) —<br/>the founding question made measurable; two-axis<br/>verdicts; dual-oracle truth; holdout after lock"]:::open
+    RD --> CR["Clean-room build received (GPT 5.6, web, different<br/>account, zero FS): first contact exposed OUR truth-label<br/>bias (wobble extensionally None — the A-language view<br/>caught by code that could not see our worlds)"]:::verified
+    CR --> S11["Scout 11: THE GENEALOGIES ARE DISTINGUISHED —<br/>(A,Gt) derived: DEP(token) 0.053, seed-invariant;<br/>(A,main) clean-room: CLEAN with 9 same correct<br/>destinations — true convergence NOT written off as glue<br/>(C7 live, passed). E3 fell: shared-helper pair read CLEAN —<br/>COMPETENCE MASKS DEPENDENCE: channels see dependence<br/>only through errors; stress strata owed to scout 12"]:::verified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -368,6 +370,37 @@ verbatim): *v3 is a candidate detector of residual path dependence under
 fixed W, I, perturbation family, and declared references* — not yet a
 detector of "the same wall". Artifacts:
 `experiments/12_same_wall/experiment_A/REDESIGN_AFTER_REVIEW.md`.
+
+**Clean-room build + scout 11 (the two genealogies, Jul 10–11).** The
+independent implementation arrived from GPT 5.6 (high), WEB session under
+a DIFFERENT account — zero filesystem access, different model version
+than the reviewers: mechanical clean room exceeding the spec. Committed
+verbatim (sha256 40c2493b…) before any run. First contact paid
+immediately: the received solvers bypass the origin blur that fools our
+A (mixed-word contextual probes); the Cayley-translated sham decouples
+from A on alias worlds (derivation-dependence ≠ failure-profile
+identity); and the clean-room code exposed OUR truth-label bias — wobble
+truth was the A-language view; extensionally it is None, and the
+received ABSTAIN is the more correct verdict (Opus crack 3, bitten
+concretely by code that could not see our worlds). Scout 11 then ran the
+redesigned core: **the genealogies are distinguished.** (A, Gt) —
+registered derived — flags DEP(token) at 0.053, matched = crossed;
+(A, main) — registered clean-room — reads CLEAN on both channels while
+agreeing on 9 correct destinations: true independent convergence is NOT
+written off as glue. C7 ran live and passed; GPT's alternative reading
+(the metric measures world forcing) is disconfirmed for the token
+channel in this configuration — the forcing is identical across the two
+pairs, the verdicts are not. Honesty notes: the (A,Gt) margin is thin
+(0.053 vs 0.05); and expectation E3 FELL, opening the next wall —
+**(main, ref1), sharing internal helpers, read CLEAN, because both are
+competent enough to almost never err: the channels read dependence only
+through errors, so COMPETENCE MASKS DEPENDENCE.** Registered
+consequence: dependent-pair controls need stress strata (noise above
+validation thresholds, n beyond budget) where even strong solvers err —
+scout 12's target, before PREREG v3. Artifacts:
+`experiments/12_same_wall/experiment_A/{received/find_order_solvers.py,
+integration_first_contact.md}`,
+`experiments/12_same_wall/scouts/scout_11_two_genealogies.py`.
 
 ## Discipline inherited
 
