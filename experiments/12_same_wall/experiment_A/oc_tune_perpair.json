@@ -1,0 +1,100 @@
+{
+ "noisy": {
+  "A": {
+   "CLEAN": 185,
+   "NO_TEST": 15
+  },
+  "gptA": {
+   "NO_TEST": 200
+  },
+  "gem": {
+   "CLEAN": 192,
+   "NO_TEST": 8
+  }
+ },
+ "noisy+qtrap": {
+  "A": {
+   "CLEAN": 188,
+   "DEPENDENT": 12
+  },
+  "gptA": {
+   "CLEAN": 200
+  },
+  "gem": {
+   "CLEAN": 200
+  }
+ },
+ "noisy+qtrap+alias": {
+  "A": {
+   "CLEAN": 189,
+   "DEPENDENT": 11
+  },
+  "gptA": {
+   "CLEAN": 200
+  },
+  "gem": {
+   "CLEAN": 200
+  }
+ },
+ "cycle+alias+noisy+qtrap": {
+  "A": {
+   "CLEAN": 196,
+   "DEPENDENT": 4
+  },
+  "gptA": {
+   "CLEAN": 200
+  },
+  "gem": {
+   "CLEAN": 200
+  }
+ },
+ "cycle+alias+noisy+qtrap+wobble": {
+  "A": {
+   "DEPENDENT": 200
+  },
+  "gptA": {
+   "CLEAN": 200
+  },
+  "gem": {
+   "DEPENDENT": 198,
+   "CLEAN": 2
+  }
+ },
+ "cycle+alias+noisy+qtrap+wobble+lollipop+nonstat": {
+  "A": {
+   "DEPENDENT": 200
+  },
+  "gptA": {
+   "CLEAN": 200
+  },
+  "gem": {
+   "CLEAN": 152,
+   "DEPENDENT": 48
+  }
+ },
+ "_fpr": {
+  "noisy": {
+   "NO_TEST": 600
+  },
+  "noisy+qtrap": {
+   "CLEAN": 348,
+   "NO_TEST": 252
+  },
+  "noisy+qtrap+alias": {
+   "CLEAN": 348,
+   "NO_TEST": 252
+  },
+  "cycle+alias+noisy+qtrap": {
+   "CLEAN": 348,
+   "NO_TEST": 252
+  },
+  "cycle+alias+noisy+qtrap+wobble": {
+   "CLEAN": 348,
+   "NO_TEST": 252
+  },
+  "cycle+alias+noisy+qtrap+wobble+lollipop+nonstat": {
+   "CLEAN": 596,
+   "NO_TEST": 4
+  }
+ }
+}

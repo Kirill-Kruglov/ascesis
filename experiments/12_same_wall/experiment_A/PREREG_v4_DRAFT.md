@@ -244,6 +244,30 @@ predict it).
   FAIL ⇒ the experiment stops unlocked; `OC_VALIDATE_FAIL` is committed
   with the full simulation outputs; the instrument is not claimed;
   silent return to tuning is forbidden.
+
+**AMENDMENT-2 (tune-stage, re-signed by the author; forced by the
+tune's own result — the pooled estimand had no terminal state for an
+empty window, a gap the round-3b diff-review class would have
+flagged).** OC-tune (200 sims, primary scale, deterministic seed stream
+31000+977s; raw artifacts `oc_tune_results.json`,
+`oc_tune_perpair.json`) measured: **derivation visibility is a
+base-class property** — per-pair power at the best window:
+derived-A 200/200, derived-gem 198/200, **derived-gptA 0/200 (0/1200
+across all windows)**. The robust-validator class erases the observable
+trace of even its own true derivation — the discipline-buys-
+independence result (Gemini 0/24; H-theorem) at the derivation level;
+published as a measured limit, never as instrument error. Therefore:
+(1) the power estimand is computed PER BASE-CLASS; the claim domain =
+classes with measured visibility ({A-class, gem-class} — cross-prior
+diversity preserved, 2 of 3 classes); the gptA-class is excluded from
+power claims and published; K2a's base (A) is in-domain at 200/200.
+(2) The window rule, applied to the domain classes, qualifies exactly
+one window: **{cycle, alias, noisy, qtrap, wobble}** — power 398/400
+(exact one-sided LCB ≈ 0.983 ≥ 0.8), FPR 0/348 (UCB 0.0086 ≤ 0.05).
+No tie-break needed (unique). (3) The FPR estimand is unchanged.
+(4) Scope inherits: the locked run's derived-detection claims hold for
+value-failing, schedule-transparent base classes; robust-validator
+bases are `not_tested_against` — with 1200 zeros attached.
 - **REF-CALIBRATION vs C2-AUDIT split (review W, free attack):** pairs
   used in any gating pair's field never serve as C2-audit pairs; the
   run-level FWER claim is carried by OC-validate's full-run simulation,
