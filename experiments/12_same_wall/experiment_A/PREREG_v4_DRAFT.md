@@ -273,14 +273,33 @@ validation of a development-set family.
 
 Units (family = one received file or one author): gptA-fam, gptB-fam,
 grok-fam, gem-fam, opusA-fam (clean-room); A/W/M/P are same-author
-(never field-eligible); PM never eligible. **Certification criterion,
-single definition (F2):** a family-pair is eligible iff cross-prior AND
-its 24-cell value-agreement battery (run between the two mains,
-pre-L0) gives **agreement ≤ 6/24** — i.e. below the Grok-class 12/24,
-at or near the Gemini-class 0/24. Eligibility counts below are per THIS
-convergence criterion, not per family membership (E-linkage 1). Battery
-results are recorded in this table at L0; `[cert]` marks pending
-measurement — L0 cannot happen before they are filled.
+(never field-eligible); PM never eligible.
+
+**AMENDMENT-1 (pre-L0, re-signed by the author; discovered by the
+battery itself):** the certification criterion counts **WRONG-value
+agreement ≤ 6/24**, not raw agreement — agreement on correct values is
+the world's credit, not coupling (scout 02's founding lesson, inherited
+by the battery: RP-03's 16/24 was all-correct/world-forced; RP-06's
+12/24 was all-wrong/convergent). Battery run Jul 11, results frozen:
+
+| id | pair | agree-correct | agree-WRONG | eligible |
+|---|---|---|---|---|
+| RP-01 | (gptA,grok) | 0 | 0 | YES |
+| RP-02 | (gptB,gem) | 4 | 0 | YES |
+| RP-03 | (gptA,gem) | 16 | 0 | YES |
+| RP-04 | (grok,gem) | 0 | 0 | YES |
+| RP-05 | (opusA,gptB) | 0 | 0 | YES |
+| RP-06 | (opusA,grok) | 0 | **12** | **NO** |
+| RP-07 | (opusA,gem) | 0 | 0 | YES |
+| RP-08 | (gptB,grok) | 0 | 0 | YES |
+| RP-09 | (gptA,gptB) | 4 | 0 | YES |
+
+Quorum check after RP-06 exclusion: (A,gptA-main) → RP-04,05,07,08 = 4
+✓; (A,Gt)/(A,A′) → 5 ✓; (A,opus-A) → RP-04,08,09 = 3 (the registered
+quorum edge) ✓; PM → 5 ✓. The C8 comparator set S = the 8 eligible RP
+pairs; the θ_isolation quorum (≥ 10) is completed in OC-tune by
+certifying additional cross-file ref-solver pairs with this same
+(amended) battery.
 
 **C2-AUDIT family-pairs (never in any field):** RP-01 (gptA,grok),
 RP-02 (gptB,gem), RP-03 (gptA,gem); plus (A, gem-main) as the auxiliary
