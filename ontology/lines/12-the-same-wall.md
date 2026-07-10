@@ -57,6 +57,7 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     REV --> RD["Redesign: two A/G genealogies (translated vs<br/>independent-build under provenance protocol) —<br/>the founding question made measurable; two-axis<br/>verdicts; dual-oracle truth; holdout after lock"]:::open
     RD --> CR["Clean-room build received (GPT 5.6, web, different<br/>account, zero FS): first contact exposed OUR truth-label<br/>bias (wobble extensionally None — the A-language view<br/>caught by code that could not see our worlds)"]:::verified
     CR --> S11["Scout 11: THE GENEALOGIES ARE DISTINGUISHED —<br/>(A,Gt) derived: DEP(token) 0.053, seed-invariant;<br/>(A,main) clean-room: CLEAN with 9 same correct<br/>destinations — true convergence NOT written off as glue<br/>(C7 live, passed). E3 fell: shared-helper pair read CLEAN —<br/>COMPETENCE MASKS DEPENDENCE: channels see dependence<br/>only through errors; stress strata owed to scout 12"]:::verified
+    S11 --> S12["Scout 12 (stress): H-THEOREM — shared thresholds<br/>without shared randomness decorrelate even under stress;<br/>only CORRELATED falls testify. Plus the VISIBILITY WINDOW:<br/>(A,Gt) flags at 0.160 on deterministic traps, decoheres at<br/>high noise. Trap attractor absorbed by the null (E3 ✓).<br/>Phase 0 closed — PREREG v3 next"]:::verified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -401,6 +402,29 @@ scout 12's target, before PREREG v3. Artifacts:
 `experiments/12_same_wall/experiment_A/{received/find_order_solvers.py,
 integration_first_contact.md}`,
 `experiments/12_same_wall/scouts/scout_11_two_genealogies.py`.
+
+**Scout 12 (stress strata, Jul 11 — H-theorem measured; the visibility
+window found; phase 0 closed).** Both hypotheses preregistered as
+meaningful; H-theorem won. Under quotient traps (partial deterministic
+false wall at q), high noise (ε 0.15–0.30) and beyond-budget orders, the
+shared-helper received pairs STAY CLEAN (−0.006/0.009): they fall
+DIFFERENTLY (main:TO, ref1:WC:12, ref2:AB on the same world) — **shared
+thresholds without shared randomness decorrelate; only CORRELATED falls
+testify.** (main, ref1) now stands as a measured instance of the Codex
+residual hole (shared implementation with decorrelated surface), covered
+verbatim by the prereg scope. Second finding — the **visibility
+window**: (A,Gt) flags strongly on deterministic traps (0.160 — both
+scans fall into the same trapped class deterministically), flagged at
+mild noise (scout 11), decoheres at high noise (0.047 — too many flips,
+different stopping points). Dependence is readable in a stress band:
+enough errors to testify, not so many that the errors decohere.
+Registered consequences for the prereg: stress strata are chosen INSIDE
+the window; qtrap is the reference discriminator for
+schedule-deterministic dependence. The trap attractor was absorbed by
+the per-instance null ((A,main) at −0.050 on qtrap; E3 held — no kill).
+Journal channel sub-marginal on the received family under stress (0.17
+vs field 0.08; excess 0.09 < 0.10) — reported, not claimed. Artifacts:
+`experiments/12_same_wall/scouts/scout_12_stress_strata.py`.
 
 ## Discipline inherited
 
