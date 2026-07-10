@@ -52,7 +52,9 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     S8 --> S9g["exit named by the line's own core: independence of<br/>the null-pool cannot be certified from inside — it must be<br/>CONSTRUCTED: preregistered reference constructions,<br/>disjointness as a declared assumption (the forge's<br/>five-minds architecture, derived as necessity)"]:::open
     S9g --> S9["Scout 09: reference field {A,P,W,M} — clone, postulate<br/>AND coin-masked flagged in ALL pools; independents clean;<br/>field structurally immune to both contamination attacks<br/>(0.40–0.41 in every pool). First full ladder pass.<br/>Lesson: admission is PER CHANNEL (a journal-blind pair<br/>belongs to the token channel)"]:::verified
     S9 --> S10["Scout 10: Codex's per-stratum reference gate REJECTED<br/>as specified — defect strata force world-driven lockstep on<br/>honest references too (wobble q75 = 1.000); differential<br/>version reintroduces the recursion. Poisoned-normalizer<br/>bite on the GLOBAL field measured: +0.044. Prefix-hygiene<br/>gate separates by construction (honest max 1, poisoned min 3)"]:::falsified
-    S10 --> PREREG["Experiment A prereg: DRAFT v2 on the table —<br/>Codex UNKNOWN semantics + outcome table adopted;<br/>lock pending author sign-off"]:::open
+    S10 --> PREREG["Experiment A prereg: DRAFT v2 —<br/>Codex UNKNOWN semantics + outcome table adopted"]:::open
+    PREREG --> REV["Two-review triangulation (Opus 4.8 + GPT 5.5,<br/>independent): C7 missing — no positive control for TRUE<br/>convergence; destination/dependence/truth conflated;<br/>'Cayley glue = dependence' was an ASSIGNED label —<br/>v2 NOT signed; core amendments accepted (π example,<br/>invariance analogy, bounded insight triggers,<br/>robustness not reality)"]:::falsified
+    REV --> RD["Redesign: two A/G genealogies (translated vs<br/>independent-build under provenance protocol) —<br/>the founding question made measurable; two-axis<br/>verdicts; dual-oracle truth; holdout after lock"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -328,6 +330,44 @@ full Codex lock-list, UNKNOWN semantics (K2 fails on UNKNOWN; C1 UNKNOWN
 table verbatim. Artifacts:
 `experiments/12_same_wall/scouts/scout_10_reference_gate.py`,
 `experiments/12_same_wall/experiment_A/PREREG_DRAFT.md` (v2).
+
+**The two-review triangulation (Opus 4.8 + GPT 5.5, independent,
+Jul 10 — v2 NOT signed; the line's method applied to itself).** Both
+reviews, arriving by different routes, hit one blocking hole: **no C7**
+— no positive control for TRUE independent convergence; an instrument
+that calls every convergence "glue" passes K2+C1 while blind to real
+world-invariants ("conservative by construction" — the B1 tautology
+class, one level up). GPT went further: the design conflates destination
+agreement, path dependence, and world truth; **"Cayley glue =
+dependence" was an assigned label, not a fact** (the theorem links
+targets, not procedures; in Z/nZ agreement of competent order-finders is
+world-forced) — so the clone≈Cayley tie (0.093/0.094) has a second live
+reading: the metric may measure shared world/interface forcing, not
+shared construction. Resolved empirically in the redesign: **two A/G
+genealogies** — translated (registered dependent sham) vs
+independent-build (C7 provenance protocol: separate code paths, RNGs,
+authors; allowed common causes = W and I only) — does v3 distinguish
+genealogies of the same theorem-glued destination? The founding question
+of the line, made measurable. Opus's dichotomy ("C7 impossible ⇒ wall of
+the world") is answered constructively: scout 09's (G,P) already read a
+true convergence as clean — C7 is buildable, it was just never
+registered. Also accepted: K1 downgraded to a regression arm (unit test,
+not citable epistemology); K3 input signatures must be written out;
+dual-oracle ground truth; 6–8 references with leave-both-out spelled
+out; pre-lock operating characteristics; **holdout world family
+generated only after lock** (ten scouts made this family a development
+set). **Core amendments** (correcting the dialogue's core itself): the π
+example is wrong as algorithmic randomness (π computable, K = O(log n));
+the scout-08 recursion stands on its own measurements, NOT on the
+invariance theorem (analogy, not derivation); "insight trigger
+uncomputable" narrowed to "no known universal computable trigger"
+(DreamCoder/AlphaGeometry falsify the strong form); "reality =
+invariance" downgraded to Wimsatt-robustness conditional on competence
+and bounded error dependence. Current honest label (GPT, adopted
+verbatim): *v3 is a candidate detector of residual path dependence under
+fixed W, I, perturbation family, and declared references* — not yet a
+detector of "the same wall". Artifacts:
+`experiments/12_same_wall/experiment_A/REDESIGN_AFTER_REVIEW.md`.
 
 ## Discipline inherited
 
