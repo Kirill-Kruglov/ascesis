@@ -1,4 +1,4 @@
-# Experiment A — PREREG DRAFT v2 (NOT LOCKED)
+# Experiment A — PREREG DRAFT v2 (SUPERSEDED by PREREG_v3_DRAFT.md; kept for the review trail)
 
 > Status: DRAFT v2, incorporating the final Codex adversarial review
 > (poisoned-reference attack → scout 10; UNKNOWN semantics; outcome table).
