@@ -61,6 +61,8 @@ language's,<br/>not triangulation's — π pierces it"]:::verified
     S12 --> V3R["PREREG v3 → second two-review attack: FORMAL BUG<br/>(C2 pairs are reference units — leave-family-out leaves<br/>1 < 3 pairs: INCONCLUSIVE guaranteed by design) +<br/>K2b unidentifiable (N-version common causes: task,<br/>budget, spec encoding, model prior — Eckhardt–Lee) +<br/>journal channel conflates competence-convergence with<br/>genealogy-convergence. v3 NOT signed"]:::falsified
     V3R --> V4["v4 plan: success/failure split (co-adaptation surviving<br/>into correlated failure = ancestry; success-only = the<br/>world's one door — the first rock, operationalized);<br/>C8 common-prior ladder; reference bank ≥ 5–6 external;<br/>E/D/N/P outcome axes; OC tune/validate; blind sanity;<br/>holdout escrow BEFORE the run"]:::open
     V4 --> C8F["C8 first contact: THE COMMON-PRIOR CELL FIRES 24/24 —<br/>A (Fable) and opus-A (clean room, Anthropic sibling) agree<br/>on the wrong value in every case; A vs gpt-A: 0/24.<br/>Clone-by-convergent-design at zero communication:<br/>the clean room does not produce independence when priors<br/>are shared. Five minds = measurable independence<br/>engineering, family diversity carries it"]:::verified
+    C8F --> S13["Scout 13: the blade validated — ALL SEVEN prereg
+expectations held (first all-green scout). Clone/derived/<br/>common-prior → ANCESTRY (J_fail 0.60/0.53/0.50);<br/>independent/perf-matched/shared-helpers → NO_SIGNAL;<br/>clone co-adaptation lives ONLY in failure (J_succ = 0.00):<br/>'only falls testify' confirmed by the validity gate itself.<br/>Formal bug closed by 6-unit bank (E7). Thin margins →<br/>OC resolution study next"]:::verified
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -439,6 +441,35 @@ with confidence bounds and run-level FPR; outcome-blind sanity seed;
 stratum truth semantics; claim wording adopted verbatim. Plan:
 `experiments/12_same_wall/experiment_A/REVISION_PLAN_v4.md`; C8
 commissions specified in `SPEC_ENCODING_B.md`.
+
+**C8 ladder + scout 13 (Jul 11 — the common-prior cell fires; the blade
+validated; first all-green scout).** Two more clean-room builds arrived
+(gpt-B: encoding-B × GPT family, sha256 4a9592e6…; opus-A: encoding-A ×
+Anthropic/Opus 4.8, sha256 e8a6f191…), completing the C8 factorial.
+First contact: **A (Fable) and opus-A agree on the wrong VALUE in 24/24
+cases across worlds and seeds; A vs gpt-A: 0/24.** Clone-by-convergent-
+design at zero communication — same family prior → same linear origin
+scan → same schedule → same falls. "Common causes are W and I only" was
+false: the model-family prior is a common cause, now measured
+(Eckhardt–Lee live); the clean room does not produce independence when
+priors are shared; the five-minds doctrine is measurable independence
+engineering, and FAMILY diversity carries it. Scout 11's (A, gpt-A)
+CLEAN is retroactively strengthened by the 0/24 contrast. Scout 13 then
+ran review X's blade against three genealogies with its own validity
+gate: **all seven preregistered expectations held** — clone retains
+co-adaptation through the success→failure transition (J_fail 0.60,
+J_succ 0.00: the clone's trace lives ONLY in failure — "only falls
+testify" confirmed by the gate itself); derived 0.53 and common-prior
+0.50 read ANCESTRY (provenance-within-construction separation belongs
+to the C8 factorial, as preregistered); independent cross-prior 0.40 →
+NO_SIGNAL; the performance-matched pair sits at exactly 0.000 (channels
+read coupling, not marginals); shared helpers stay invisible (the
+declared blind spot); the 6-unit reference bank leaves ≥ 6 external
+pairs for every gating pair — the v3 formal bug closed by construction.
+Honest margins for OC: ancestry 0.50–0.60 vs independent floor 0.40 —
+thin; resolution is the OC study's first estimand. Artifacts:
+`received/{find_order_spec_encoding_b.py, find_order.py}`,
+`scouts/scout_13_success_failure_split.py`.
 
 **Scout 12 (stress strata, Jul 11 — H-theorem measured; the visibility
 window found; phase 0 closed).** Both hypotheses preregistered as
