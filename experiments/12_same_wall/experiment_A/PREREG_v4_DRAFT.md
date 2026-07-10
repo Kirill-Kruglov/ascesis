@@ -69,7 +69,7 @@ simpliciter; no world-credit; no construction-identity claims (C4).
 | (A, Gt) | derived (Cayley translation) | **K2a**: DEPENDENT\* |
 | (A, gptA-main) | clean room, cross-prior (0/24 channel overlap) | **K2b/C7**: CLEAN + destination-same ≥ 6/8 core-cycle instances |
 | (A, opus-A) | clean room, common-prior, channel-convergent (24/24) | **C8 positive**: DEPENDENT\* with diagnosis COMMON_PRIOR/CHANNEL_CONVERGENT — never counted as FPR, never called clone |
-| (gptA, grok), (gptB, gem), (grok, gem) | certified cross-prior independents | **C2 negatives**: CLEAN or channel-INADMISSIBLE for a preregistered mechanical reason; DEPENDENT\* on any admissible one ⇒ FAIL |
+| (gptA, grok), (gptB, gem), (gptA, gem) | certified cross-prior independents — **C2-AUDIT, never in any field** (F2.1: (grok,gem) reallocated to REF-CALIBRATION only) | **C2 negatives**: gate on the token channel; INADMISSIBLE excludes the pair from C2_c (per-channel quorum, §5); DEPENDENT\* on any admissible one ⇒ FAIL |
 | (A, gem-main) | clean room, cross-prior (0/24) | C2-auxiliary negative (same treatment) |
 | (PM1, PM2) | context-seeded marginal-matched wrappers over independent bases | C-PM negative: CLEAN (validated sc.15) |
 | (gptA-main, gptA-ref1) | shared helpers, decorrelated surface | REPORTED only (measured blind spot, sc.11–12); a flag = surprise requiring diagnosis |
@@ -115,11 +115,16 @@ not certified*; the claim is scoped accordingly.
    world's-one-door case; sc.13).
 4. **Axes — per channel, never one scalar (review W, structural):**
    each pair carries `E_token, N_token, P_token` and `E_journal,
-   N_journal, P_journal`; `P_union` is a derived quantity only. D:
-   DESTINATION_SAME/DIFFERENT/NA. Per-channel P values: DEPENDENT /
-   CONTACT_SCHEDULE / CLEAN / UNKNOWN / INADMISSIBLE. No combined
-   p-value; no strength ranking (diagnostic ranking exists only inside
-   the frozen C8 tags, §5).
+   N_journal, P_journal`. D: DESTINATION_SAME/DIFFERENT/NA. Per-channel
+   P values: DEPENDENT / CONTACT_SCHEDULE / CLEAN / UNKNOWN /
+   INADMISSIBLE. **P_union collapse rule (frozen; F1):** P_union is
+   computed AFTER each channel's E-gate (an INADMISSIBLE channel never
+   leaks into the union; E-linkage 2): DEPENDENT iff ≥ 1 admissible
+   channel is DEPENDENT; CLEAN iff ≥ 1 admissible channel exists and
+   ALL admissible channels are CLEAN; otherwise NO_TEST/UNKNOWN. All
+   downstream rules reference `E_c/N_c/P_c` or `P_union` explicitly.
+   No combined p-value; no strength ranking (diagnostic ranking exists
+   only inside the frozen C8 tags, §5).
 5. **Null-world gate (review X 4a):** on K3 worlds every pair must read
    CLEAN or INADMISSIBLE; any DEPENDENT\* there ⇒ channel specificity
    failure ⇒ run-level FAIL.
@@ -145,18 +150,38 @@ not certified*; the claim is scoped accordingly.
   enter the denominator; |C2_c| < 3 ⇒ NO_TEST_C2_QUORUM (run
   INCONCLUSIVE), never PASS. C2 admission (E-axis only) is verified on
   the outcome-blind sanity seed BEFORE the locked run (review Z).
+  **Structural carve-out (F2.2, documented not hidden):** with five
+  clean-room families and the AUDIT/CALIBRATION split, the C2-audit
+  pairs cannot themselves receive journal fields with ≥ 3 external
+  pairs (combinatorics in Appendix R). Therefore **C2 gates on the
+  token channel; C2 journal verdicts are structurally UNKNOWN_FIELD and
+  are reported, not gated; the journal-channel negative floor for K2b
+  is carried by OC-validate's full-run simulation** — exactly the split
+  review W itself proposed (REF-CALIBRATION vs C2-AUDIT; FWER bought by
+  OC-validate). This trade is part of the locked scope.
 - **K2b failure semantics (reviews W3+Z2 merged — C8 never rescues):**
   any DEPENDENT\* on (A,gptA-main) ⇒ **K2b = FAIL_RESIDUAL_FLAG,
-  always**. The C8 contrast then attaches exactly one frozen diagnostic
-  tag — COMMON_PRIOR_PATTERN_REPLICATED / CROSS_PRIOR_FLAG_ISOLATED /
-  BROAD_CROSS_PRIOR_ELEVATION / C8_NO_TEST — and no tag converts FAIL
-  into PASS. CROSS_PRIOR_FLAG_ISOLATED requires: the exact comparator
-  set named pre-data (Appendix R), all comparators admissible on the
-  triggering channel, the target the sole flagged pair, per channel
-  separately, AND the target's statistic above θ_isolation — frozen in
-  OC-tune as q90 (with one-sided UCB) of the J-minus-field distribution
-  over ≥ 10 certified cross-prior channel-non-convergent pairs. The
-  word "outlier" is not used as a statistical inference anywhere.
+  always, regardless of every C8 diagnostic tag**. The C8 contrast then
+  attaches exactly one tag from the frozen, mutually exclusive decision
+  table below (per triggering channel c, with θ_c frozen in OC-tune as
+  q90 with one-sided UCB over ≥ 10 certified cross-prior
+  channel-non-convergent pairs; **θ_isolation_token uses token-excess,
+  θ_isolation_journal uses J-minus-field** — F3; comparator set S =
+  the Appendix R CALIBRATION pool, named pre-data; two prior-ladder
+  controls at different heights per E-linkage 3: H = (A,opusA)
+  [24/24-class], M_ctl = (A,grok) [12/24-class]):
+  1. **C8_NO_TEST** — θ_c undefined (OC quorum failed) or any of
+     S/H/M_ctl inadmissible on c.
+  2. **BROAD_CROSS_PRIOR_ELEVATION** — ≥ 2 pairs in S exceed θ_c
+     (field-level elevation; cause at instrument/world level).
+  3. **COMMON_PRIOR_PATTERN_REPLICATED** — ≤ 1 of S exceeds θ_c AND the
+     gradient ordering holds (H > M_ctl > median(S)) AND target ≤ H
+     (coupling within the prior-ladder envelope; task/prior-level
+     cause).
+  4. **CROSS_PRIOR_FLAG_ISOLATED** — ≤ 1 of S exceeds θ_c AND (target >
+     H or the gradient ordering is violated): a labelled, unexplained
+     K2b failure demanding diagnosis. **Never a pass.**
+  The word "outlier" is not used as a statistical inference anywhere.
 - **Outcome reading** per review Y: every K/C row resolves into
   per-channel E/D/N/P sub-states; terminal states OPPOSITE /
   NO_INFORMATION / UNKNOWN_FIELD / INADMISSIBLE / COMPETENCE_FAIL /
@@ -202,12 +227,23 @@ predict it).
   labels inherited ((A,opusA)-class = positive examples of their own
   class, never FPR). Selection rule: widest contiguous region with
   power-LCB ≥ 0.8 (admissible derived pairs) and FPR-UCB ≤ 0.05
-  (certified cross-prior negatives); exact one-sided binomial bounds at
-  95%; MC full-run simulations ≥ 59 (zero-error UCB ≤ 0.05 requires
-  n ≥ 59); all counts recorded in θ.
-- **OC-validate**: a fresh synthetic bank; a SINGLE evaluation of the
-  frozen θ — no reselection of anything (review W4); acceptance by the
-  same bounds; FAIL ⇒ the experiment stops, retune forbidden.
+  (certified cross-prior negatives); exact one-sided binomial bounds
+  at 95%. **Frozen MC counts (F4.1, no optional stopping):
+  n_MC_tune = 200, n_MC_validate = 100** full-run simulations.
+  **Tie-break algorithm design-locked NOW (F4.2), not chosen by OC:**
+  widest window = most strata; ties broken by (1) lower mean FPR-UCB,
+  (2) higher mean power-LCB, (3) the stratum order listed in §2. θ
+  records only the applied outcome.
+- **Two-stage lock order (F4.3):** **L0 DESIGN LOCK** — analysis code,
+  lattice, OC algorithm, tie-break rule, MC counts, this document —
+  committed BEFORE OC-tune runs. Then OC-tune → θ → single OC-validate.
+  **L1 FINAL LOCK** — concrete θ + Appendix R certification results —
+  via `gate_harness.prereg`. Only after L1: escrow dispatch and the
+  primary run.
+- **OC-validate FAIL is a published artifact (E-annotation 4):**
+  FAIL ⇒ the experiment stops unlocked; `OC_VALIDATE_FAIL` is committed
+  with the full simulation outputs; the instrument is not claimed;
+  silent return to tuning is forbidden.
 - **REF-CALIBRATION vs C2-AUDIT split (review W, free attack):** pairs
   used in any gating pair's field never serve as C2-audit pairs; the
   run-level FWER claim is carried by OC-validate's full-run simulation,
@@ -222,43 +258,61 @@ predict it).
 
 ## 8. Holdout (escrow BEFORE the locked run — review Y §4.5)
 
-Per `HOLDOUT_ESCROW.md`: the holdout world family + shams (including
-one reversed-derivation pair) are commissioned from a fresh clean-room
-agent, generated ONCE under a hash-fixed prompt and mechanical
-acceptance tests, encrypted and committed BEFORE the locked run;
-decrypted only after the primary outcome is published. Only the holdout
+Per `HOLDOUT_ESCROW.md`: the holdout — new parameter tuples, solver
+implementations and shams inside the frozen WorldSpec metafamily,
+including one **matched forward/reverse construction from the same
+source and transform family (X, T(X), T⁻¹(X))** (F7) — is commissioned
+from a fresh clean-room agent, generated ONCE under a hash-fixed prompt
+and the frozen mechanical acceptance suite, encrypted on receipt and
+committed BEFORE the locked run; decrypted only after the primary
+outcome is published (tagged release). Only the holdout
 supports any confirmation claim; the locked run alone is internal
 validation of a development-set family.
 
 ## Appendix R — frozen reference matrix (part of the prereg hash)
 
-Units: gptA-fam, gptB-fam, grok-fam, gem-fam, opusA-fam (clean-room);
-A/W/M/P are same-author (never field-eligible); PM never eligible.
-Pair-level certification = the 24-cell value-agreement battery run
-BETWEEN the pair's members pre-lock (mechanical, before OC-tune);
-eligible iff cross-prior AND agreement ≤ 6/24 (channel-non-convergent).
+Units (family = one received file or one author): gptA-fam, gptB-fam,
+grok-fam, gem-fam, opusA-fam (clean-room); A/W/M/P are same-author
+(never field-eligible); PM never eligible. **Certification criterion,
+single definition (F2):** a family-pair is eligible iff cross-prior AND
+its 24-cell value-agreement battery (run between the two mains,
+pre-L0) gives **agreement ≤ 6/24** — i.e. below the Grok-class 12/24,
+at or near the Gemini-class 0/24. Eligibility counts below are per THIS
+convergence criterion, not per family membership (E-linkage 1). Battery
+results are recorded in this table at L0; `[cert]` marks pending
+measurement — L0 cannot happen before they are filled.
 
-**C2-AUDIT pairs (never in any field):** (gptA, grok), (gptB, gem),
-plus (A, gem-main) as the auxiliary negative.
+**C2-AUDIT family-pairs (never in any field):** RP-01 (gptA,grok),
+RP-02 (gptB,gem), RP-03 (gptA,gem); plus (A, gem-main) as the auxiliary
+negative. **C2 gates on the token channel only** (structural carve-out,
+§5).
 
-**REF-CALIBRATION candidates per gating pair** (need ≥ 4 certified
-pre-lock, ≥ 3 admissible at runtime):
+**REF-CALIBRATION pool** (immutable IDs): RP-04 (grok,gem),
+RP-05 (opusA,gptB), RP-06 (opusA,grok), RP-07 (opusA,gem),
+RP-08 (gptB,grok), RP-09 (gptA,gptB).
 
-| gating pair | candidate field pairs (pending certification battery) |
-|---|---|
-| (A, gptA-main) | (grok,gem), (opusA,gptB), (opusA,grok), (opusA,gem), (gptB,grok) |
-| (A, Gt), (A, A′) | the five above + (gptA,gptB), (gptA,gem) |
-| (A, opus-A) | (gptA,gptB), (gptA,gem), (gptB,grok), (grok,gem) |
+| gating pair | field pair IDs | count pre-lock (≥4) / runtime (≥3) |
+|---|---|---|
+| (A, gptA-main) | RP-04..RP-08 | 5 `[cert]` |
+| (A, Gt), (A, A′) | RP-04..RP-09 | 6 `[cert]` |
+| (A, opus-A) | RP-08, RP-09, RP-04 | **3 — registered quorum edge:** only three non-opusA candidates exist; if any loses certification/admission, the C-C8 journal verdict is UNKNOWN_FIELD (its registered expectation rides on the token channel, where the 24/24 effect lives) |
+| (PM1, PM2) | RP-04..RP-09 (PM is not a family in the pool) | 6 `[cert]` |
+| C2-AUDIT pairs (RP-01..03), (A,gem) | — structurally < 3 after the AUDIT split; journal = UNKNOWN_FIELD by construction, reported not gated (§5 carve-out) | — |
 
 The filter cascade for every pair is printed at run time:
 `raw_external → provenance_certified → class_eligible →
-schedule_admissible → field_used`.
+schedule_admissible → field_used`. **C8 comparator set S (§5) =
+RP-01..RP-09 restricted to certified-eligible pairs**, named here
+pre-data; prior-ladder controls H = (A,opusA), M_ctl = (A,grok).
 
 ## 9. What kills Experiment A (any one)
 
-(A,gptA-main) flagged without the C8 contrast resolving it; (A,Gt)
-cleared with E/D/N all PASS; clone missed or passed without the
-resolution margin; any certified cross-prior negative flagged; any
-DEPENDENT\* on the null world; UNKNOWN counted as success anywhere;
-post-lock changes of thresholds, pools, window, or wording; a report
-upgrading "did not detect" into "proved".
+**(A,gptA-main) DEPENDENT on either admissible channel ⇒
+K2b = FAIL_RESIDUAL_FLAG regardless of every C8 diagnostic tag** (F3);
+(A,Gt) cleared with `E_c, D, N_c` all PASS on an admissible channel
+(per-channel semantics, F1); clone missed or passed without the
+resolution margin; any admissible certified cross-prior negative
+flagged on the token channel; any DEPENDENT\* on the null world;
+UNKNOWN counted as success anywhere; post-lock (L1) changes of
+thresholds, pools, window, or wording; a report upgrading "did not
+detect" into "proved".

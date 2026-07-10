@@ -21,3 +21,30 @@ round 4. Every condition below maps to an exact v4.1 change.
 Remaining before lock (mechanical only): reviewers' diff-check of this
 map; the author's signature; OC-tune/OC-validate runs producing θ;
 escrow execution per HOLDOUT_ESCROW v2; `gate_harness.prereg` lock.
+
+## Round 3b (mechanical diff-reviews F, E) → applied fixes
+
+F found three direct contradictions introduced during integration and
+four under-frozen spots; E confirmed all seven conditions implemented
+and added three numerical linkages + three annotations. All applied:
+
+| fix | source | change |
+|---|---|---|
+| P_union collapse rule; union computed after per-channel E-gates | F1 + E-2 | §4.4 |
+| (grok,gem) single role: REF-CALIBRATION only; C2 = (gptA,grok),(gptB,gem),(gptA,gem)+(A,gem) | F2.1 | §3, App. R |
+| C2 journal fields structurally < 3 ⇒ C2 gates on token; journal floor carried by OC-validate (documented carve-out) | F2.2 (+W's own split) | §5, App. R |
+| Single certification criterion: agreement ≤ 6/24; counts by convergence criterion | F2 + E-1 | App. R |
+| Immutable reference_pair_ids RP-01..09; field rows for C-PM and C2 pairs; (A,opusA) 3-pair quorum edge registered | F2.2 | App. R |
+| §9 rewritten: flag ⇒ FAIL regardless of every C8 tag | F3 | §9 |
+| Full 4-tag mutually exclusive C8 decision table; θ_isolation_token AND _journal; two prior-ladder controls (24- and 12-class) | F3 + E-3 | §5 |
+| Frozen n_MC_tune=200, n_MC_validate=100; tie-break design-locked pre-OC; two-stage L0/L1 lock order | F4 | §7 |
+| OC_VALIDATE_FAIL is a published artifact | E-4 | §7 |
+| Exact provider labels + fallback IDs + settings snapshot at dispatch; adaptive-solvers task-language line in prompt | F5 + E-6 | ESCROW §1 |
+| Key custody offline; custodian isolation named procedural residual | F5 + E-5 | ESCROW §5 |
+| Acceptance suite extended to WorldSpec + matched-direction invariants | F6 + F7 | ESCROW §4 |
+| §8 stale "one reversed-derivation pair" → matched X, T(X), T⁻¹(X) | F7 | §8 |
+| Grok-fallback changes claim strength — annotation | E-6 | ESCROW §1 |
+
+Both diff-reviewers stated no round 4 is needed. Remaining before L0:
+none document-side. Remaining before L1: certification battery fills
+`[cert]` cells; OC-tune → θ; OC-validate.
