@@ -45,6 +45,9 @@ flowchart TD
     V1 --> S4["Scout 04: clone caught seed-invariantly;<br/>seed-sham correctly read as schedule-dependence;<br/>(A,G) reads construction-dependent — the detector<br/>refuses to credit Cayley agreement to the world"]:::verified
     V1 --> S4f["Scout 04 falls: attractor verdict was an artifact —<br/>seed-block pseudo-replication (eff. n = K, not cells;<br/>Fable seed 3 in our own harness) + admission must<br/>require WORLD-SENSITIVE profiles"]:::falsified
     S4f --> S5["Scout 05 (v2): instance-level significance +<br/>admission gate. Clone ✓, seed-sham ✓, independents ✓;<br/>masked-postulate sham invisible on its home stratum<br/>EXACTLY as preregistered (wobble exc = 0.000) — the<br/>instrument sees interface-dependence, not<br/>postulate-dependence: W→I→L measured on the<br/>instrument itself; its token language hit its own<br/>sev_L → 0 (mode-split channel owed to scout 06)"]:::verified
+    S5 --> S6["Scout 06 (M6, three recorded iterations): schedule<br/>CO-ADAPTATION — the journal channel. The coin-masked<br/>postulate, invisible to every token channel, IS visible<br/>in probe-schedule geometry (0.60/0.67); cosmetic pair<br/>separated at 0.000; the S2 limit was the token
+language's,<br/>not triangulation's — π pierces it"]:::verified
+    S6 --> S7g["open: absolute threshold dead — independents sit on<br/>a world-floor ~0.47 (emission adapts via short-circuit);<br/>verdict must be floor-relative (scout 07)"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -203,6 +206,33 @@ does not yet separate "same effective channel" from "theorem-glued
 different channels"; that separation belongs to the interface arm
 (varying I), not to richer tokens. Artifacts:
 `experiments/12_same_wall/scouts/scout_05_v2_blocks_admission.py`.
+
+**Scout 06 (M6: schedule co-adaptation — the journal channel; Jul 10;
+three iterations, all recorded in the file).** Designing Codex's mode-split
+world exposed a head-on collision between his own S1 rule ("dies under
+seed-crossing ⇒ contact schedule, not path") and the S2 goal: a
+postulate-sharing pair's probe schedule IS its postulate, and also dies
+under crossing. Resolution: cosmetic schedules are STATIC across world
+perturbations; postulate-driven schedules CO-ADAPT. So the channel reads
+journals — the line's founding move (read π, not h_t) arriving inside the
+instrument. Metric M6: correlate two languages' schedule-shift fingerprints
+across perturbation pairs (matched and crossed seeds). Iteration falls,
+each diagnosed in-file: (i) logging probes post-rev injected the world's
+response into every fingerprint; (ii) residualizing against a clustered
+language pool manufactured spurious ±correlations; (iii) budget
+perturbations are a parameter of the LANGUAGE's contact, not the world —
+including them let the cosmetic pair survive crossing (W→I→L, a third
+time, now inside the perturbation ensemble). Final state: **the
+coin-masked postulate pair (N,C), invisible to every token channel
+(scout 05: exactly 0 on its home stratum), is VISIBLE in probe-schedule
+geometry (0.60 matched / 0.67 crossed)** — the S2 limit belonged to the
+token language, not to triangulation; the journal pierces it. Cosmetic
+pair separated at 0.000; clone and postulate pairs 0.62–0.75. Open, owed
+to scout 07: the absolute threshold is dead — independent pairs sit on a
+world-floor ≈ 0.47 (even P's emission adapts to the world through
+short-circuit confirmation probes); the verdict must be calibrated
+floor-relative, not against a constant. Artifacts:
+`experiments/12_same_wall/scouts/scout_06_schedule_coadaptation.py`.
 
 ## Discipline inherited
 
