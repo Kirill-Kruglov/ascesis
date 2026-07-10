@@ -245,9 +245,20 @@ def main():
         }
         return payload
 
+    # evaluation-oracle scan (finding #6): no ground-truth literal may enter
+    # an evaluation call site; classify() receives truth as a VARIABLE from
+    # the world instance (the evaluator's legitimate channel), never a literal
+    from gate_harness import evaluation_oracle as gh_eval
+    import primary_run as _self
+    eval_scan = gh_eval.scan_evaluation_call_sites(
+        _self, ['classify'], forbidden_names=['truth_axes'])
+    print('evaluation-oracle scan passed:', eval_scan.get('passed'), flush=True)
+
     decision = gh_runner.run_gate(HERE, experiment,
                                   leakage_report=scan,
-                                  tautology_report=taut)
+                                  tautology_report=taut,
+                                  evaluation_oracle_log=eval_scan.get(
+                                      'evaluation_oracle_log', []))
     print(json.dumps({k: decision[k] for k in
                       ('decision', 'K1', 'K2a', 'K2b', 'K3', 'C1', 'C2',
                        'C_C8', 'C_PM', 'k1_naive', 'k2b_dest_same_correct',
