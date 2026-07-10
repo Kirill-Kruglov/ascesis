@@ -48,6 +48,8 @@ flowchart TD
     S5 --> S6["Scout 06 (M6, three recorded iterations): schedule<br/>CO-ADAPTATION — the journal channel. The coin-masked<br/>postulate, invisible to every token channel, IS visible<br/>in probe-schedule geometry (0.60/0.67); cosmetic pair<br/>separated at 0.000; the S2 limit was the token
 language's,<br/>not triangulation's — π pierces it"]:::verified
     S6 --> S7g["Scout 07: field-relative calibration — independents<br/>deeply negative, cosmetic 0, postulate pair flagged;<br/>BUT the preregistered contamination limit FIRED:<br/>cluster-heavy pool inflates the median field, the clone<br/>under-flags. Pool diversity is now a MEASURED<br/>precondition; the field statistic goes to Codex<br/>before any lock (post-hoc tuning = Goodhart)"]:::falsified
+    S7g --> S8["Scout 08: Codex's own repair (component collapse +<br/>external q75) fell on BOTH his attacks — edge threshold<br/>sits below the world-floor, all world-responsive languages<br/>fuse into one component; external pairs measure the<br/>no-response floor, not the world-floor → UNKNOWNs and<br/>false flags. THE RECURSION: the field needs the very<br/>independence the instrument detects"]:::falsified
+    S8 --> S9g["exit named by the line's own core: independence of<br/>the null-pool cannot be certified from inside — it must be<br/>CONSTRUCTED: preregistered reference constructions,<br/>disjointness as a declared assumption (the forge's<br/>five-minds architecture, derived as necessity)"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -250,6 +252,33 @@ statistic (median vs lower-quantile vs min-k); choosing it post-hoc on
 the same data would be Goodhart — the choice goes to Codex adversarially
 before any prereg lock. Artifacts:
 `experiments/12_same_wall/scouts/scout_07_field_calibration.py`.
+
+**Scout 08 (the Codex repair under its own attacks, Jul 10 — double kill,
+and the recursion surfaced).** Codex specified: cluster the pool (edge iff
+crossed co-adaptation ≥ 0.30, significant), calibrate each pair only
+against EXTERNAL component pairs, field = max(0, q75), UNKNOWN if < 3
+external pairs — with under-flag (70% one-cluster pool) and over-flag
+(anti-correlated decoys) shams and explicit kill conditions. Both kills
+fired. (1) The edge threshold 0.30 sits BELOW the measured world-floor
+≈ 0.45, so ALL world-responsive languages — including honest P — fuse
+into one component; only static/no-response languages remain external;
+everything returns UNKNOWN. (2) With decoys added, the external
+components are precisely the non-world-responsive ones, whose J ≈ 0 is
+the no-response floor, not the world-floor: field = 0 and honest
+independents (0.47) false-flag. Diagnosis, one level up: **the field
+needs pairs that share the world but not construction — and telling
+those apart is the instrument's own task. The recursion is real: tokens
+needed a floor → journals; journals needed a floor → the field; the
+field needs clusters; the clusters need a floor.** The exit is named by
+the line's own core: independence cannot be certified from inside — it
+must be constructed. The null-pool's diversity is an engineering INPUT:
+preregistered reference constructions whose disjointness is a declared
+assumption of the design, not a measured fact (the forge's five-minds
+architecture, derived as a necessity of the instrument; the
+fallacy-cutter thesis — the harness removes virtue from the trust
+chain, not skill — arriving at the field statistic). Next: scout 09,
+reference-pair field. Artifacts:
+`experiments/12_same_wall/scouts/scout_08_component_field.py`.
 
 ## Discipline inherited
 
