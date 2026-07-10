@@ -1,0 +1,55 @@
+{
+  "gate": "experiment_A",
+  "metadata": {
+    "oc_validate": {
+      "fpr_ucb": 0.016782617227451283,
+      "n": 100,
+      "power_lcb": 0.9765015295650492,
+      "raw": {
+        "derived": 199,
+        "derived_n": 200,
+        "fp": 0,
+        "fp_n": 177
+      },
+      "seed_stream": "71000+977s",
+      "theta_sha256": "369e9d2f4cab125542693bd01e0dde43571921e2d9f9473f430cf52f13ff87f7",
+      "verdict": "PASS"
+    },
+    "pipeline": "pipeline_l0.py (L0 commit 7becc63)",
+    "prereg_doc": "PREREG_v4_DRAFT.md (v4.1 + AMENDMENT-1 + AMENDMENT-2, author-signed)",
+    "prereg_doc_sha256": "a3cae277c7986656077076b2f38f907138f7efd1035ddc5d82e4e75c07709078",
+    "signed_by": "Kirill Kruglov (GPG 5C150B104A7E7E32B5A814F23F8787C785A1942A)",
+    "theta_sha256": "369e9d2f4cab125542693bd01e0dde43571921e2d9f9473f430cf52f13ff87f7"
+  },
+  "threshold_change_rationale": {},
+  "thresholds": {
+    "adapt_min": 0.05,
+    "alpha": 0.05,
+    "cap_calls": 400,
+    "cert_wrong_max": 6,
+    "domain_classes": [
+      "A",
+      "gem"
+    ],
+    "journal_margin": 0.1,
+    "k2b_dest_min": "6/8 core-cycle instances",
+    "k_multiplier": 2.6,
+    "k_seeds": 8,
+    "n_mc_tune": 200,
+    "n_mc_validate": 100,
+    "nmin": 4,
+    "power_min": 0.8,
+    "r_inst": 8,
+    "sens_min": 0.3,
+    "theta_isolation_journal": 0.1666666666666668,
+    "theta_isolation_token": 0.007999999999999997,
+    "token_margin": 0.05,
+    "window": [
+      "cycle",
+      "alias",
+      "noisy",
+      "qtrap",
+      "wobble"
+    ]
+  }
+}

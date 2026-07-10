@@ -1,0 +1,14 @@
+{
+ "power_lcb": 0.9765015295650492,
+ "fpr_ucb": 0.016782617227451283,
+ "raw": {
+  "derived": 199,
+  "derived_n": 200,
+  "fp": 0,
+  "fp_n": 177
+ },
+ "verdict": "PASS",
+ "theta_sha256": "369e9d2f4cab125542693bd01e0dde43571921e2d9f9473f430cf52f13ff87f7",
+ "seed_stream": "71000+977s",
+ "n": 100
+}

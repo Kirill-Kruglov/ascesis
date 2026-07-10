@@ -1,0 +1,41 @@
+{
+ "window": [
+  "cycle",
+  "alias",
+  "noisy",
+  "qtrap",
+  "wobble"
+ ],
+ "k": 2.6,
+ "Nmin": 4,
+ "adapt_min": 0.05,
+ "domain_classes": [
+  "A",
+  "gem"
+ ],
+ "theta_isolation_token": 0.007999999999999997,
+ "theta_isolation_journal": 0.1666666666666668,
+ "resolution_clone_mean": 0.13979562499999995,
+ "resolution_derived_mean": 0.09146749999999995,
+ "comparators": [
+  "gptA|grok",
+  "gptB|gem",
+  "gptA|gem",
+  "grok|gem",
+  "opusA|gptB",
+  "opusA|gem",
+  "gptB|grok",
+  "gptA|gptB",
+  "gptA.r2|grok.r1",
+  "gptB.r1|gem.r1"
+ ],
+ "extra_certs": {
+  "gptA.r2|grok.r1": 0,
+  "gptB.r1|gem.r1": 0,
+  "opusA.r1|gem.r1": 12
+ },
+ "tie_break": "unique window; rule frozen at L0 (\u00a77)",
+ "n_theta_sims": 50,
+ "j_stat_n": 200,
+ "sha256": "369e9d2f4cab125542693bd01e0dde43571921e2d9f9473f430cf52f13ff87f7"
+}
