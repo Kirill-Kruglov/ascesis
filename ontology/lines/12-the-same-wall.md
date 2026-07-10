@@ -40,6 +40,8 @@ flowchart TD
     Q["12 · The same wall: the identity-of-place<br/>detector under triangulation"]:::open
     Q --> S0["Scout (pre-line, not citable): zlib-NCD<br/>over journals confounds volume with<br/>dependence; bands converge with n"]:::falsified
     Q --> P0["Phase 0: instrument forge —<br/>competent third language; predictive<br/>independence measure; sham ladder"]:::open
+    P0 --> S3["Scout 03 (Codex gate): clone caught, ordering<br/>held, BUT sham-a killed the v0 null — stratum-level<br/>marginals read world-parameter common cause as<br/>language dependence; mode-split channel untested"]:::falsified
+    S3 --> V1["v1 hypothesis: no deterministic path enters<br/>triangulation — mandatory stochastization makes<br/>per-instance nulls identifiable, splitting<br/>shared-construction from shared-world"]:::open
     P0 --> EA["Experiment A (designed fall): in Z/nZ the<br/>algebra↔geometry agreement is a THEOREM<br/>(Cayley) — the destination-detector must fire<br/>'world wall' on a built-in false coincidence"]:::open
     EA --> EB["Experiment B: can a journal/intervention<br/>detector separate isomorphic agreement from<br/>independent agreement? (kill threshold preregistered)"]:::open
 ```
@@ -120,6 +122,28 @@ scouts may fall freely before the lock, and their falls are recorded.
    trivially — the signal, if any, lives in the surprise structure.
 3. **Sham ladder v0** — the three false coincidences above, built and thrown
    at the measure before any prereg lock.
+
+**Scout 03 (Codex adversarial gate, Jul 10 — instrument v0 fell, twice
+informative).** Codex (GPT 5.5, relayed) specified: failure tokens
+(SUCCESS/ABSTAIN/WRONG_CONFIDENT/WRONG_DEGRADED/TIMEOUT), a marginal-null
+arm with Monte Carlo resampling, metrics M1–M4 with a fixed verdict rule,
+and two sham pairs — (a) independent languages sharing a small hypothesis
+grid (error attractor), (b) one shared blind postulate with split surface
+modes (lie-with-value vs abstain). Preregistered outcomes: clone caught
+(M1 excess 0.267, p=.001), ordering clone > isomorph > independent held
+(0.267 > 0.192 > 0.000), independents clean. **Both prediction errors are
+the payout:** sham-(a) was NOT explained away — stratum-pooled nulls read
+world-parameter common cause as language dependence (the Codex
+"world-difficulty" confound returning through the remedy for point-mass
+marginals); sham-(b) was caught, but by the M1 value channel, so the
+mode-split channel (M3/M4) remains untested-positive, not confirmed. The
+measured dilemma: per-instance nulls blind the detector to deterministic
+clones; per-stratum nulls hallucinate dependence through the world. **v1
+hypothesis (line-level candidate theorem): no deterministic path enters
+triangulation** — every language must carry internal randomness so that
+per-instance nulls become identifiable; then instance-level coupling
+beyond the null = shared construction, stratum-level coupling = shared
+world. Artifacts: `experiments/12_same_wall/scouts/scout_03_codex_gate.py`.
 
 ## Discipline inherited
 
