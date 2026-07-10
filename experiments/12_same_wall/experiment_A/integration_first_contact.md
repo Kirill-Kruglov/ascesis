@@ -30,3 +30,31 @@ Findings, registered before scout 11:
    the dependent-pair signature live; received solvers honestly TO.
    **Nonstat**: all six confidently claim 17 (switch lands after their
    convergence) — pure world-forced co-failure, registered null material.
+
+## C8 first contact (Jul 11): the common-prior cell fires 24/24
+
+| world | A (Fable) | opus-A (clean room, Anthropic) | gpt-A | gpt-B |
+|---|---|---|---|---|
+| alias(24,8) | 8! | **8!** | 24=T | AB |
+| noisy(24,.1) | 13! | **13?** | TO | AB |
+| wobble | 23! | AB | AB | AB |
+
+Mini-battery (4 alias + 4 noisy worlds × 3 seeds): **A == opus-A on the
+wrong VALUE in 24/24 cases; A == gpt-A in 0/24.** On noisy the wrong
+value varies with seed (13 → 9 → 1) and opus-A varies IN LOCKSTEP:
+its main solver converged to the same linear origin scan as our A —
+identical schedule, identical exposure to the same oracle stream.
+Clone-by-convergent-design at zero communication.
+
+Registered findings:
+1. **The clean room does not produce independence when priors are
+   shared.** "Common causes are W and I only" was false; the model-family
+   prior is a common cause, now measured (Eckhardt–Lee co-error, live).
+   Review Y's K2b attack is empirically confirmed before the main run.
+2. The five-minds doctrine is measurable independence engineering:
+   family diversity, not session diversity, carries it (n=2: same family
+   → same walk, 24/24).
+3. Scout 11's (A, gpt-A) CLEAN is retroactively strengthened: the
+   cross-prior contrast (0/24 vs 24/24) anchors the C8 diagnostic axis.
+4. The encoding axis is alive too: gpt-B abstains on alias where gpt-A
+   solves — same prior, different specification, different behavior.
