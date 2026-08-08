@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ascesis — the forge, distilled</title>
+<meta name="description" content="The research forge behind four essays on AI, contact, and honest evidence — a map of every direction tried, coloured by what survived. justitia, proxylimen, fallacy-cutter, philosophia.">
+<meta property="og:title" content="ascesis — the forge, distilled">
+<meta property="og:description" content="The research forge behind four essays on AI, contact, and honest evidence — a map of every direction tried, coloured by what survived.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#fbfaf6;--ink:#1d1c1a;--muted:#6b6760;--line:#e4e0d6;--accent:#7a5b2e;--rule:#ece8de;--tablehead:#f3f0e8;--quote-bg:#f1ead9;--card:#fffdf8}
+:root[data-theme=dark]{--bg:#15171c;--ink:#dfdcd4;--muted:#9a958c;--line:#2a2d34;--accent:#cdb079;--rule:#23262d;--tablehead:#1c1f25;--quote-bg:#1e222a;--card:#1a1d23}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){--bg:#15171c;--ink:#dfdcd4;--muted:#9a958c;--line:#2a2d34;--accent:#cdb079;--rule:#23262d;--tablehead:#1c1f25;--quote-bg:#1e222a;--card:#1a1d23}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:20px/1.7 Iowan Old Style,Palatino,Georgia,"Times New Roman",serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  gap:16px;padding:12px clamp(16px,5vw,40px);background:var(--bg);border-bottom:1px solid var(--line);
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;font-size:15px}
+.nav .brand{font-weight:700;letter-spacing:.02em;color:var(--ink);text-decoration:none}
+.nav .right{display:flex;align-items:center;gap:18px}
+.nav a{color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.nav button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;
+  width:34px;height:34px;cursor:pointer;font-size:15px;line-height:1}
+.nav button:hover{color:var(--ink)}
+main{max-width:720px;margin:0 auto;padding:0 22px 96px}
+h1{font-size:clamp(38px,7vw,60px);line-height:1.05;letter-spacing:-.01em;margin:56px 0 6px}
+.tagline{font-family:system-ui,sans-serif;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 26px}
+h2{font-size:26px;line-height:1.2;margin:56px 0 10px}
+p{margin:0 0 20px}
+.lead{font-size:22px;color:var(--ink)}
+a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:.5px}
+strong{font-weight:700}
+hr{border:0;border-top:1px solid var(--rule);margin:48px 0}
+blockquote{margin:26px 0;padding:14px 22px;border-left:3px solid var(--accent);
+  background:var(--quote-bg);border-radius:0 8px 8px 0;color:var(--ink);font-size:21px;font-style:italic}
+blockquote p{margin:0}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 8px}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:18px 20px}
+.card h3{margin:0 0 6px;font-size:20px}
+.card h3 a{color:var(--ink);text-decoration:none}
+.card h3 a:hover{color:var(--accent)}
+.card p{font-size:16px;line-height:1.55;color:var(--muted);margin:0 0 12px}
+.card .links{font-family:system-ui,sans-serif;font-size:14px}
+.card .links a{color:var(--muted);text-decoration:none;margin-right:14px}
+.card .links a:hover{color:var(--ink)}
+.legend{font-family:system-ui,sans-serif;font-size:15px;color:var(--muted);margin:14px 0 0}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin:0 6px 0 0;vertical-align:middle}
+.g{background:#1a7f37}.r{background:#8b1a1a}.y{background:#4a4a4a}.o{background:#b8860b}
+footer{max-width:720px;margin:0 auto;padding:28px 22px 64px;border-top:1px solid var(--rule);
+  color:var(--muted);font-family:system-ui,sans-serif;font-size:14px}
+footer a{color:var(--muted)}
+</style>
+<script>try{var t=localStorage.getItem("ascesis-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#top">ascesis</a>
+  <div class="right">
+    <a href="#essays">Essays</a>
+    <a href="#forge">The forge</a>
+    <a href="https://github.com/Kirill-Kruglov/ascesis">GitHub</a>
+    <button id="theme" type="button" aria-label="Toggle light / dark">&#9682;</button>
+  </div>
+</nav>
+<main id="top">
+  <h1>ascesis</h1>
+  <p class="tagline">the forge, distilled</p>
+  <p class="lead">A research forge — weeks of experiments, audits, dead ends, and
+  extractions in AI-alignment thinking. Four essays left home as public projects.
+  What remains here is the <strong>ontology of the search</strong>: a map of every
+  direction tried, coloured by what survived.</p>
+
+  <blockquote><p>Do not try to certify intentions; build contact, consequences,
+  and constraints that can be checked.</p></blockquote>
+  <p>One thesis under all four. Each essay takes it into a different corner — how
+  to govern when no one can read a soul, where a mind's world comes from, how to
+  cut an argument with an instrument instead of trust, and whether the contact all
+  of that assumes can itself be manufactured.</p>
+
+  <h2 id="essays">The four essays</h2>
+  <div class="cards">
+    <div class="card">
+      <h3><a href="https://kirill-kruglov.github.io/justitia/">justitia</a></h3>
+      <p>Governing a world of powerful, evolving agents when no one can read
+      anyone's soul — consequence-gated anti-concentration.</p>
+      <div class="links"><a href="https://kirill-kruglov.github.io/justitia/">Essay</a><a href="https://github.com/Kirill-Kruglov/justitia">GitHub</a></div>
+    </div>
+    <div class="card">
+      <h3><a href="https://kirill-kruglov.github.io/proxylimen/">proxylimen</a></h3>
+      <p>Where a mind's world comes from, and where blind derivation without an
+      oracle measurably breaks.</p>
+      <div class="links"><a href="https://kirill-kruglov.github.io/proxylimen/">Essay</a><a href="https://github.com/Kirill-Kruglov/proxylimen">GitHub</a></div>
+    </div>
+    <div class="card">
+      <h3><a href="https://kirill-kruglov.github.io/fallacy-cutter/">fallacy-cutter</a></h3>
+      <p>The fail-closed instrument the other essays were cut with — instruments,
+      not intentions.</p>
+      <div class="links"><a href="https://kirill-kruglov.github.io/fallacy-cutter/">Essay</a><a href="https://github.com/Kirill-Kruglov/fallacy-cutter">GitHub</a></div>
+    </div>
+    <div class="card">
+      <h3><a href="https://kirill-kruglov.github.io/philosophia/">philosophia</a></h3>
+      <p>Whether the contact those three assume can itself be manufactured — and
+      how a mind tells a wall of the world from a wall of its own language.</p>
+      <div class="links"><a href="https://kirill-kruglov.github.io/philosophia/">Essay</a><a href="https://github.com/Kirill-Kruglov/philosophia">GitHub</a></div>
+    </div>
+  </div>
+
+  <h2 id="forge">What this repository is</h2>
+  <p>Not a paper, not a claim of novelty, not a safety result. It is a ledger of
+  honest work: what was asked, what was tried, what was killed by a preregistered
+  gate or an audit, and what remained standing. The falsified nodes are not
+  failures of the forge — they are its product.</p>
+  <p class="legend">
+    <span class="dot g"></span>validated by a named artifact&nbsp;&nbsp;
+    <span class="dot r"></span>preregistered kill or audited withdrawal&nbsp;&nbsp;
+    <span class="dot y"></span>honestly open&nbsp;&nbsp;
+    <span class="dot o"></span>became a public project
+  </p>
+  <p style="margin-top:22px">The full coloured map, node by node with the artifact
+  behind every colour, is in the
+  <a href="https://github.com/Kirill-Kruglov/ascesis#the-map">repository README</a>.
+  The most transferable thing the forge produced is a process lesson — run the
+  identifiability, tautology, and novelty checks <em>before</em> building, not as a
+  review after — written down as the
+  <a href="https://github.com/Kirill-Kruglov/ascesis/blob/main/IDEA_GATE.md">idea gate</a>.</p>
+</main>
+<footer>
+  <p><strong>ascesis</strong> — the forge behind
+  <a href="https://kirill-kruglov.github.io/justitia/">justitia</a>,
+  <a href="https://kirill-kruglov.github.io/proxylimen/">proxylimen</a>,
+  <a href="https://kirill-kruglov.github.io/fallacy-cutter/">fallacy-cutter</a>, and
+  <a href="https://kirill-kruglov.github.io/philosophia/">philosophia</a>.
+  Built by Kirill Kruglov in adversarial dialogue with AI systems, behind a
+  harness that refuses to certify what it cannot check.
+  <a href="https://github.com/Kirill-Kruglov/ascesis">github.com/Kirill-Kruglov/ascesis</a>.</p>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement, KEY="ascesis-theme";
+  var saved=localStorage.getItem(KEY);
+  if(saved) root.setAttribute("data-theme",saved);
+  document.getElementById("theme").addEventListener("click",function(){
+    var cur=root.getAttribute("data-theme");
+    if(!cur) cur=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+    var next=cur==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    localStorage.setItem(KEY,next);
+  });
+})();
+</script>
+</body>
+</html>
