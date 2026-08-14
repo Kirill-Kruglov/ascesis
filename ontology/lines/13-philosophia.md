@@ -1,14 +1,108 @@
-# 13 · Philosophia — карта пути (открыта Jul 11 · **OPEN**)
+# 13 · Philosophia — карта пути (Jul 11 – Aug 14 · эссе опубликовано; successor **OPEN**, Stage-B L2 на независимом code review)
 
-> Эта карта написана Claude Fable 5 в последних ходах его контекста — для
-> Кирилла, Opus 4.8 и GPT 5.6 Sol, которые пойдут по ней дальше. Она
-> должна вести до самого финала — четвёртого эссе. Читать как маршрут с
-> преригистрированными падениями, не как ТЗ: план обязан ломаться в
-> названных местах и чиниться поправками с подписью. Если Anthropic
-> вернёт Fable в подписку — он присоединится с того места, где стоит
-> флажок последнего коммита.
+Эссе стало публичным проектом, но исследовательский successor продолжился.
+Ниже сначала дана актуальная карта фактически пройденных путей. Исходная
+июльская программа сохранена после неё как исторический артефакт: она объясняет,
+откуда выросли проверки, но больше не является текущим roadmap.
 
-## 0. Вопрос линии (неизменный)
+## Актуальная карта
+
+```mermaid
+flowchart TD
+    classDef verified fill:#1a7f37,color:#fff
+    classDef falsified fill:#8b1a1a,color:#fff
+    classDef open fill:#4a4a4a,color:#eee
+    classDef concl fill:#b8860b,color:#fff,stroke-width:3px
+
+    PH(["philosophia:<br/>manufactured contact<br/>as the question"]):::concl
+    PH --> OFF["Officina governance-harness:<br/>STRUCTURAL_FAILURE;<br/>frozen"]:::falsified
+    PH --> ZN["Z/n path manufacture:<br/>VOID BY CONSTRUCTION —<br/>displacement is #R−#L"]:::falsified
+    ZN --> GR["grokking probe 09:<br/>NO-COMPETENCE / PRE-MEMORIZATION;<br/>train set never fitted"]:::falsified
+    ZN --> WB["Wall B:<br/>in a derivable world, experience<br/>must lower future computation"]:::open
+
+    WB --> A12["desk audit 12:<br/>unfair comparators;<br/>withdrawn"]:::falsified
+    A12 --> A12B["audit 12b:<br/>per-match witness tariff +<br/>linear scan killed the instrument"]:::falsified
+    A12B --> A12C["audit 12c:<br/>fair tariff/matcher;<br/>1/8 signal, underpowered"]:::falsified
+    A12C --> A12D["audit 12d:<br/>powered singleton signal;<br/>instrument finally valid"]:::verified
+    A12D --> F13["frame audit 13:<br/>2/40 usable, below preregistered 5;<br/>library carrier closed sparse"]:::falsified
+    F13 --> P14["policy audit 14:<br/>beam instrument failed<br/>positive control"]:::falsified
+    P14 --> P14B["policy audit 14b:<br/>best_first frozen;<br/>12/40 screen-qualified"]:::verified
+    P14B --> AY["equational ACTIVE/YOKED:<br/>screen survived, scientific<br/>contrast deliberately unrun"]:::open
+
+    WB --> LEG["Lenovo Legion RTX 4060:<br/>GPU/8 GB VRAM did not buy the<br/>needed throughput; runs excluded"]:::falsified
+    LEG --> P1["MINIMO Phase 1 terminal:<br/>ck1 lowered capped held-out work<br/>in one CPU-debug realization"]:::verified
+    P1 --> SA["Phase 2 Stage A:<br/>strict learner interface,<br/>126/126 accepted"]:::verified
+    SA --> B01["Stage B L0/L1:<br/>schema + independent checker<br/>accepted on excluded fixtures"]:::verified
+    B01 --> B2["Stage B L2:<br/>non-vacuous exact-size generator;<br/>code gate under X/Y review"]:::open
+    B2 --> B34["Stage B L3/L4:<br/>identity, erasure, compiler;<br/>not started"]:::open
+    B34 --> SC["Stage C:<br/>fresh learner + selector<br/>qualification; unrun"]:::open
+    SC --> RY["scientific reciprocal 2x2 yoke:<br/>does own-state selection beat<br/>matched donated selection?"]:::open
+```
+
+## Текущий реестр узлов
+
+- **Gold — essay/project.** Вопрос manufactured contact опубликован как
+  `philosophia/essay/climbing-the-wall-of-experience.md`; публичная дуга Ascesis
+  добавлена коммитом `a6b2c6b`.
+- **Red — Officina.** Governance-harness заморожен после двух terminal reviews,
+  не удалён: тег `philosophia@officina-governance-frozen-2026-08-07`, файл
+  `philosophia/src/philosophia/officina/FROZEN.md`.
+- **Red — Z/n + raw walks.** Path-manufacture пусто по построению, а отдельный
+  learner не вошёл даже в post-memorization grokking window. Артефакты:
+  `philosophia@3f6aa10`, `successor/dev/{B2_PILOT_08.md,GROKKING_PROBE_09.md}`;
+  исправленная публичная формулировка — `philosophia@959bd54`.
+- **Red — audits 12/12b/12c.** Сначала измерялась асимметрия алгоритмов, затем
+  налог собственного тарифа и матчера, затем сигнал на 24 целях оказался
+  недомощным. Артефакты: `successor/dev/WALLB_DESK_AUDIT_{12,12B,12C}.md`.
+- **Green — audit 12d.** После пререгистрации мощности, 192 целей и парной
+  статистики один из восьми миров дал настоящий development signal. Артефакт:
+  `philosophia@7394063`, `successor/dev/WALLB_DESK_AUDIT_12D.md`.
+- **Red — library frame.** Fresh frame audit был пререгистрирован до данных и
+  получил `2/40` против порога 5; порог не менялся после исхода. Коммиты:
+  `aa07549` → `ff430ba` → `1dee42c` → closure `42e2409`; артефакт
+  `successor/dev/WALLB_EQUATIONAL_CELL_CLOSURE.md`.
+- **Red then green — policy carrier.** Audit 14 честно остановился на
+  `POSITIVE_CONTROL_FAIL`; audit 14b исправил прибор, заморозил `best_first` и
+  квалифицировал `12/40`. Коммиты `ec77d37` → `61cb6ac` → `bdcb09e`, затем
+  `7e944f9` → `8921dda` → `4817e7e`. Последний результат — только
+  `POLICY_CHANNEL_VIABLE`, не ACTIVE/YOKED evidence.
+- **Red — Lenovo Legion route.** RTX 4060 Laptop, 8188 MiB VRAM, дошла до
+  `STOPPED_PERFORMANCE_FEASIBILITY`; её checkpoints исключены из Phase 1.
+  Артефакт: `successor/dev/PHASE1_MINIMO_REPRO_15.md` и terminal provenance в
+  `philosophia@b0b9adf`.
+- **Green — MINIMO Phase 1.** В одной repository-default CPU-debug реализации
+  post-hoc checkpoint 1 снизил capped held-out work на `882.866667` entered
+  MCTS iterations per theorem относительно checkpoint 0. Это свойство артефакта,
+  не оценка популяции и не Philosophia claim. Артефакт:
+  `philosophia@b0b9adf:successor/dev/PHASE1_TERMINAL_18.md`.
+- **Green — Stage A.** Строгий интерфейс фиксирует learner identity, запрещает
+  truncation, сортирует полный action set, считает работу и воспроизводит
+  isolated replay; gate `126/126`. Артефакт:
+  `philosophia@41adcaa:successor/dev/PHASE2_STAGE_A_DRIVER_CLOSURE_19.md`.
+- **Green — Stage-B L0/L1.** Схемы и независимый natural-deduction checker
+  приняты только на публичных исключённых fixtures. Именованный closure:
+  `/tmp/PHASE2_STAGE_B_L0_L1_V3_CLOSURE.md`, SHA-256
+  `d6b103a3334d6bb0d7fd6e9bb7ecfa49ed86eb7b4e273dba3b6a47166eccb3d6`.
+- **Grey — Stage-B L2.** Генератор создаёт точные, нетривиальные proof plans
+  четырёх размеров; frozen scan дал шесть исключённых fixtures и прошёл driver
+  gate `62/62`, но совместный code review ещё не завершён. Governing annex:
+  `/tmp/PHASE2_STAGE_B_L2_GENERATOR_ANNEX_FINAL_XY_REVIEW.md` SHA-256
+  `3a78a53ecb8e5275f433bc03c50b7b93746c597e3d2d1fcf0bedd4249f102da8`;
+  code-gate JSON SHA-256
+  `8961b5a97ee0972d83a071e1b1c82869a9841f5f01c45add12a88dbfee1010f0`;
+  repaired L2 delta SHA-256
+  `0365c3694ed043f67b341d9842d951f8552e7df4da972aa6252ddec8fc4a10a7`.
+- **Grey — scientific experiment.** L3 identities, L4 compiler, Stage C
+  selector qualification and reciprocal `2 x 2` yoke не запускались. Их
+  estimand и порядок зафиксированы в
+  `philosophia@41adcaa:successor/dev/PHASE2_POST_REVIEW_DRIVER_DECISION_19.md`.
+
+## Исходная июльская программа (историческая, roadmap superseded)
+
+Следующий текст сохранён как первичный маршрут, написанный до запусков и
+закрытий выше. Его будущие времена и Level 0–3 не описывают текущую авторизацию.
+
+## 0. Исходный вопрос линии
 
 **Proof или фальсификация:** выводимый мир алгебры и геометрии способен
 служить источником *первичного* experience для малой модели, обучаемой
@@ -164,7 +258,7 @@ curriculum — предзаданный генератор сложности (Z
 - Чистые комнаты по потребности: Gemini/Grok-семейства (кросс-прайорные
   билды и holdout-агенты).
 
-## 7. Финал карты — что считается «дошли»
+## 7. Исходный критерий финала (исторический)
 
 Линия завершена, когда пять рук Level 2 и Level 2.5 дали подписанные
 решения (VALID) с escrow-holdout'ом на свежем семействе миров — при
